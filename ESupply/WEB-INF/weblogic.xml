@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE weblogic-web-app PUBLIC "-//BEA Systems, Inc.//DTD Web Application 6.0//EN" "http://www.bea.com/servers/wls600/dtd/weblogic-web-jar.dtd">
+<weblogic-web-app>
+  <!--<session-descriptor>
+	<session-param>
+		<param-name>PersistentStoreType</param-name>
+		<param-value>replicated</param-value>
+	</session-param>
+</session-descriptor>-->
+  <reference-descriptor>
+       <resource-description>
+          <res-ref-name>jdbc/DB</res-ref-name>
+          <jndi-name>oraclePool</jndi-name>
+  </resource-description>
+ 
+ <resource-description>
+          <res-ref-name>mail/MS</res-ref-name>
+          <jndi-name>mailPool</jndi-name>
+        </resource-description>
+
+   </reference-descriptor>
+   
+
+   
+</weblogic-web-app>

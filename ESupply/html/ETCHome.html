@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Home</title>
+<script langauge="javascript">
+
+function setSizeOfAnimation() {
+
+	var img	=	document.getElementById("flash");
+
+	if(img!=null) {
+		img.width	=	(screen.width * 0.70) +"px";	// parent.frames['main'].width;
+		img.height	=	(screen.height * 0.70) +"px";	// parent.frames['main'].height;
+		
+		//alert(	"IMG is OK ");
+	}
+	
+}
+
+</script>
+
+</head>
+
+<!--
+<body bgcolor="#056A9D" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+-->
+<body bgcolor="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="setSizeOfAnimation();">
+<!--
+<table width="100%" border="0" cellspacing="1" cellpadding="0" height>
+  <tr valign="top"> 
+    <td id="imgTD" width="100%" align="center">
+	-->
+	<center>
+	  <object id="flash" classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0">
+        <param name="movie" value="../images/Flow.swf">
+        <param name="quality" value="high">
+        <embed src="../images/Flow.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash"></embed> 
+      </object>
+	</center>
+<!--
+	</td>
+  </tr>
+</table>
+-->
+</body>
+</html>

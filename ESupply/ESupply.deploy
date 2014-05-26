@@ -1,0 +1,176 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<web-app-deployment nselem="web-app-deployment" class="oracle.jdeveloper.deploy.war.WarProfile" xmlns="http://xmlns.oracle.com/jdeveloper/10120/deploy/j2ee-war">
+   <appletArchiveName/>
+   <appletArchives>
+      <archives/>
+      <selectionMode>0</selectionMode>
+   </appletArchives>
+   <appletDeployedAsArchive>false</appletDeployedAsArchive>
+   <appletDeployment>false</appletDeployment>
+   <appletFiles>
+      <autoInclude>true</autoInclude>
+      <deploySourceAs>0</deploySourceAs>
+      <files/>
+      <selectionFilters>
+         <Item>oracle.jdevimpl.deploy.common.JavaSelectionFilter</Item>
+      </selectionFilters>
+   </appletFiles>
+   <appletLocation/>
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>true</compressed>
+      <hasManifest>false</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <contextRoot>QuoteShop</contextRoot>
+   <defaultConnection class="java.lang.String"/>
+   <deployClientMaxHeapSize/>
+   <earURL path="deploy/QMSDHL100120090831.ear"/>
+   <enterpriseAppName>QMSDHL100120090831</enterpriseAppName>
+   <fileGroups>
+      <groups>
+         <Item class="oracle.jdeveloper.deploy.common.PackagingFileGroup" internalName="web-files">
+            <contributors>
+               <Item type="5"/>
+            </contributors>
+            <displayName>Web Files</displayName>
+            <filters>
+               <rules>
+                  <Item type="1" pattern="deploy/"/>
+                  <Item type="1" pattern="**.bak"/>
+                  <Item type="1" pattern="**.java"/>
+                  <Item type="1" pattern="ListMasterAdd.jsp.bak"/>
+                  <Item type="1" pattern="Noname1.xml"/>
+                  <Item type="1" pattern="QMSBuyRatesUploadController.java"/>
+                  <Item type="1" pattern="QMSConsolidatedSellRateController.java"/>
+                  <Item type="1" pattern="QMSDensityGroupCodeView.jsp.bak"/>
+                  <Item type="1" pattern="QMSDesignationAdd.jsp.bak"/>
+                  <Item type="1" pattern="QMSSellRateController.java.bak"/>
+                  <Item type="1" pattern="QMSZoneCodeMasterEnterId.jsp.bak"/>
+                  <Item type="1" pattern="QMSZoneCodeMasterView.jsp.bak"/>
+                  <Item type="1" pattern="etrans/QMSSellChargesController.java"/>
+                  <Item type="1" pattern="etrans/QMSSellCharges.jsp.bak"/>
+                  <Item type="1" pattern="etrans/QMSRecommendedSellRatesModify.jsp.bak"/>
+                  <Item type="1" pattern="etrans/QMSRecommendedSellRateEnter.jsp.bak"/>
+                  <Item type="1" pattern="etrans/QMSIndustryRegistration.jsp.bak"/>
+                  <Item type="1" pattern="etrans/QMSCartageController.java.bak"/>
+                  <Item type="1" pattern="etrans/QMSBuyChargesController.java"/>
+                  <Item type="1" pattern="etrans/ListMasterMultipleLOV.jsp.bak"/>
+                  <Item type="1" pattern="etrans/ETMultiModeRoutePlanController.java"/>
+                  <Item type="1" pattern="etrans/ETIATARatesController.java"/>
+                  <Item type="1" pattern="etrans/ETCTerminalRegistrationView.jsp.bak"/>
+                  <Item type="1" pattern="etrans/ETCTerminalRegistrationLocationIdsLOV.jsp.bak"/>
+                  <Item type="1" pattern="etrans/ETCTerminalRegistrationAdd.jsp.bak"/>
+                  <Item type="1" pattern="etrans/ETCLOVCountryIds.jsp.bak"/>
+                  <Item type="1" pattern="etrans/ETCCarrierRegistrationAdd.jsp.bak"/>
+                  <Item type="1" pattern="etrans/BuyRatesUpLoad.jsp.bak"/>
+                  <Item type="1" pattern="etrans/BuyRatesDownLoad.jsp.bak"/>
+                  <Item type="1" pattern="etrans/BuyRatesAddSlabSlab.jsp.bak"/>
+                  <Item type="1" pattern="etrans/BuyRatesAddList.jsp.bak"/>
+                  <Item type="1" pattern="etrans/BuyRatesAddFlatFlat.jsp.bak"/>
+                  <Item type="1" pattern="etrans/BuyRatesAdd.jsp.bak"/>
+                  <Item type="1" pattern="ESupplyErrorPage.jsp.bak"/>
+                  <Item type="1" pattern="ETAdvancedLOVController.java"/>
+                  <Item type="1" pattern="ETTaskEvntController.java"/>
+                  <Item type="1" pattern="WEB-INF/classes/xml/"/>
+                  <Item type="1" pattern="WEB-INF/classes/WEB-INF/"/>
+                  <Item type="1" pattern="WEB-INF/classes/images/"/>
+                  <Item type="1" pattern="WEB-INF/classes/html/"/>
+                  <Item type="1" pattern="WEB-INF/classes/.jsps/"/>
+                  <Item type="1" pattern="WEB-INF/lib/pageTracker-original.jar"/>
+                  <Item type="1" pattern="html/Signedout.html.bak"/>
+                  <Item type="1" pattern="etrans/ETVendorRegistrationController.java"/>
+                  <Item type="1" pattern="FourSoftExpiry.java"/>
+                  <Item type="1" pattern="index.java"/>
+                  <Item type="1" pattern="ESupplyLogin.java"/>
+                  <Item type="1" pattern="ESMenuMainPage.java"/>
+                  <Item type="1" pattern="ESMenuHeadingRight.java"/>
+                  <Item type="1" pattern="ESLoginController.java"/>
+                  <Item type="1" pattern="ESLogout.java"/>
+                  <Item type="1" pattern="ESFoursoft_css.jsp.bak"/>
+                  <Item type="1" pattern="DHLQMS.deploy"/>
+                  <Item type="1" pattern="ESupply.deploy"/>
+                  <Item type="1" pattern="ESupply.jpr"/>
+                  <Item type="1" pattern="lib/"/>
+                  <Item type="1" pattern="classes/global.css"/>
+                  <Item type="1" pattern="classes/popcalendar.js"/>
+                  <Item type="1" pattern="classes/sha1.js"/>
+                  <Item type="1" pattern="classes/xml/"/>
+                  <Item type="1" pattern="classes/WEB-INF/"/>
+                  <Item type="1" pattern="classes/images/"/>
+                  <Item type="1" pattern="classes/.jsps/"/>
+                  <Item type="1" pattern="**/CVS/"/>
+                  <Item type="1" pattern="**.cdi"/>
+                  <Item type="1" pattern="**.contrib"/>
+                  <Item type="1" pattern="**.keep"/>
+                  <Item type="1" pattern="**.rvi"/>
+                  <Item type="1" pattern=".jsps/"/>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <targetWithinJar/>
+         </Item>
+         <Item class="oracle.jdeveloper.deploy.common.PackagingFileGroup" internalName="project-output">
+            <contributors>
+               <Item type="2"/>
+               <Item type="7"/>
+            </contributors>
+            <displayName>WEB-INF/classes</displayName>
+            <filters>
+               <rules>
+                  <Item type="1" pattern="**.bak"/>
+                  <Item type="1" pattern="**.java"/>
+                  <Item type="1" pattern="BuyRatesController.class"/>
+                  <Item type="1" pattern="sha1.js"/>
+                  <Item type="1" pattern="RawData.class"/>
+                  <Item type="1" pattern="popcalendar.js"/>
+                  <Item type="1" pattern="LoadServlet.class"/>
+                  <Item type="1" pattern="Lang_german.properties"/>
+                  <Item type="1" pattern="Lang_ENGLISH.properties"/>
+                  <Item type="1" pattern="Lang_CHINESE.properties"/>
+                  <Item type="1" pattern="index.class"/>
+                  <Item type="1" pattern="global.css"/>
+                  <Item type="1" pattern="FourSoftExpiry.class"/>
+                  <Item type="1" pattern="ETVendorRegistrationController.class"/>
+                  <Item type="1" pattern="ETTaskEvntController.class"/>
+                  <Item type="1" pattern="ETIATARatesController.class"/>
+                  <Item type="1" pattern="ETAdvancedLOVController.class"/>
+                  <Item type="1" pattern="ESupplyLogin.class"/>
+                  <Item type="1" pattern="ESMenuMainPage.class"/>
+                  <Item type="1" pattern="ESMenuHeadingRight.class"/>
+                  <Item type="1" pattern="ESLogout.class"/>
+                  <Item type="1" pattern="ESLoginController.class"/>
+                  <Item type="1" pattern="ENGLISH.properties"/>
+                  <Item type="1" pattern="DANISH.properties"/>
+                  <Item type="1" pattern="xml/"/>
+                  <Item type="1" pattern="WEB-INF/"/>
+                  <Item type="1" pattern="images/"/>
+                  <Item type="1" pattern="html/"/>
+                  <Item type="1" pattern=".jsps/"/>
+                  <Item type="1" pattern="**/CVS/"/>
+                  <Item type="1" pattern="**.cdi"/>
+                  <Item type="1" pattern="**.contrib"/>
+                  <Item type="1" pattern="**.keep"/>
+                  <Item type="1" pattern="**.rvi"/>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <targetWithinJar>WEB-INF/classes</targetWithinJar>
+         </Item>
+         <Item class="oracle.jdeveloper.deploy.common.LibraryFileGroup" internalName="libraries">
+            <displayName>WEB-INF/lib</displayName>
+            <filters>
+               <rules>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <selectedLibraries class="[Ljava.lang.String;"/>
+            <selectionMode>0</selectionMode>
+            <targetWithinJar>WEB-INF/lib</targetWithinJar>
+         </Item>
+      </groups>
+   </fileGroups>
+   <jarURL path="deploy/ESupply.war"/>
+   <profileDeps/>
+   <properties/>
+</web-app-deployment>

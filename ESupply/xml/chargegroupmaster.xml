@@ -1,0 +1,39 @@
+<DynamicContent>
+	<chargegroupmaster>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>chargeid</name>
+			<size>15</size>
+			<maxLength>10</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter1(this.value,"chargeid");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>button</type>
+			<name>chargeb</name>
+			<class>input</class>
+			<onClick>openChargeIdsLOV(this)</onClick>
+			<value>...</value>
+		</ChildElement>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>chargedescid</name>
+			<size>20</size>
+			<!--@@modified  by Phani sekhar for wpbn 16760-->
+			<maxLength>50</maxLength>
+      <!--@@Commented by kameswari for WPBN-15755-->
+      <!--readonly>true</readonly-->
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter1(this.value,"chargedescriptionid");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>button</type>
+			<name>chargeDescb</name>
+			<class>input</class>
+			<onClick>openChargeDescIdsLOV(this)</onClick>
+			<value>...</value>
+		</ChildElement>		
+	</chargegroupmaster>
+</DynamicContent>

@@ -1,0 +1,168 @@
+<DynamicContent>	
+
+	<!-- Quote Charge Groups -->
+	<QuoteChargeGroups>
+
+		<ChildElement elementType="input" class="formdata" startingElement="true">
+			<type>text</type>
+			<name>chargeGroupId</name>
+			<value></value>
+			<size>25</size>
+			<maxLength>25</maxLength>
+			<class>text</class>
+			<onBlur>changeToUpper(this);chrnum(this)</onBlur>
+			<onKeyPress></onKeyPress>
+		</ChildElement>
+
+		<ChildElement elementType="input" class="formdata" merged="true">
+			<type>button</type>
+			<name>chargeGroupIdBt</name>
+			<class>input</class>
+			<value>...</value>
+			<onClick>popUpWindow(this)</onClick>
+		</ChildElement>
+		
+		<ChildElement elementType="input" class="formdata" merged="true">
+			<type>button</type>
+			<name>chargeGroupIdDet</name>
+			<class>input</class>
+			<value>View Details</value>
+			<onClick>popUpWindow(this)</onClick>
+		</ChildElement>
+
+	</QuoteChargeGroups>
+
+	<!-- Quote Content -->
+	<QuoteContent>
+
+		<ChildElement elementType="select" class="formdata" >
+			<name>headerFooter</name>
+			<class>select</class>
+			<option value="H">Header</option>
+			<option value="F">Footer</option>
+		</ChildElement>
+
+		<ChildElement elementType="input" class="formdata" startingElement="true">
+			<type>text</type>
+			<name>content</name>
+			<value></value>
+			<size>20</size>
+			<maxLength>60</maxLength>
+			<class>text</class>
+			<onBlur>changeToUpper(this)</onBlur>
+			<onKeyPress></onKeyPress>
+		</ChildElement>
+
+		<ChildElement elementType="input" class="formdata" merged="true">
+			<type>button</type>
+			<name>contentLOV</name>
+			<class>input</class>
+			<value>...</value>
+			<onClick>popUpWindow(this)</onClick>
+		</ChildElement>
+
+		<ChildElement elementType="input" class="formdata">
+			<type>text</type>
+			<name>level</name>
+			<value></value>
+			<size>12</size>
+			<maxLength>12</maxLength>
+			<class>text</class>
+			<onBlur>return chkForNumeric(this)</onBlur>
+			<onKeyPress>return getNumberCode(this)</onKeyPress>
+		</ChildElement>
+
+		<ChildElement elementType="select" class="formdata">
+			<name>align</name>
+			<class>select</class>
+			<onChange></onChange>
+			<option value="L">Left</option>
+			<option value="C">Center</option>
+			<option value="R">Right</option>
+		</ChildElement>
+
+	</QuoteContent>
+
+	<QuoteNotes>
+           <!--@@Commented by Kameswari for the WPBN issue-58293-->
+		<!--<ChildElement elementType="input" class="formdata" startingElement="true">
+			<type>text</type>
+			<name>internalNotes</name>
+			<class>text</class>
+			<style>overflow:visible</style>
+			<size>20</size>
+			<maxLength>100</maxLength>
+			<onBlur>chr(this)</onBlur>
+			<onKeyPress></onKeyPress>
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata">
+			<type>text</type>
+			<name>externalNotes</name>
+			<value></value>
+			<style>overflow:visible</style>
+			<size>20</size>
+			<maxLength>100</maxLength>
+			<class>text</class>
+			<onBlur>chr(this)</onBlur>
+			<onKeyPress></onKeyPress>
+		</ChildElement>-->
+		<!--@@WPBN issue-58293-->
+		<!-- @@Added by Kameswari for the WPBN issue-58293-->
+		<ChildElement elementType="textArea" class="formdata" startingElement="true" >
+			<type>textarea</type>
+			<name>internalNotes</name>
+			<rows>4</rows>
+			<cols>50</cols>
+			  <maxLength>1000</maxLength>
+			<class>text</class>
+			 <value></value>
+			<onBlur>chr(this)</onBlur>
+       </ChildElement>
+	   <ChildElement elementType="textArea" class="formdata">
+			<type>textarea</type>
+			<name>externalNotes</name>
+		    <rows>4</rows>
+		   <cols>50</cols>
+		   <maxLength>1000</maxLength>
+			<class>text</class>
+			<value></value>
+			<onBlur>chr(this)</onBlur>
+			<onKeyPress></onKeyPress>
+		</ChildElement>
+		<!--@@WPBN issue-58293-->
+
+	</QuoteNotes>
+	<!-- @@Added by Kameswari for the WPBN issue-61289-->
+	<AttachmentId>
+
+		<ChildElement elementType="input" class="formdata" startingElement="true">
+			<type>text</type>
+			<name>attachmentId</name>
+			<class>text</class>
+			<size>20</size>
+			<maxLength>100</maxLength>
+			<onBlur>toUpper(this);chr(this)</onBlur>
+			</ChildElement>
+
+		    <ChildElement elementType="input" class="formdata" merged="true">
+			<type>button</type>
+			<name>attachmentIdLov</name>
+			<value>...</value>
+			<onClick>popUpWindow(this)</onClick>
+			<size>20</size>
+			<maxLength>100</maxLength>
+			<class>input</class>
+            </ChildElement>
+
+			<ChildElement elementType="input" class="formdata" merged="true">
+			<type>button</type>
+			<name>attachmentDtls</name>
+			<value>View Details</value>
+			<onClick>attachmentDetails(this)</onClick>
+			<size>20</size>
+			<maxLength>100</maxLength>
+			<class>input</class>
+	 	    </ChildElement>
+</AttachmentId>
+<!-- @@Added by Kameswari for the WPBN issue-61289-->
+</DynamicContent>	

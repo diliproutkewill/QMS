@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<project name="etrans-web" basedir="." default="etrans-web-war">
+
+	<description> The EJB project in eTrans. </description>
+	
+	<!--
+		Any properties below this point are defaults,
+		as ant will only allow a property to be defined
+		once, therefore the properties from the file
+		referenced above take precedence.
+	-->
+	<tstamp>
+	  <format property="TODAY"
+	          pattern="ddMMMyyyy"
+	          locale="en,US"/>
+	</tstamp>
+
+	<property name="project.name" value="ESupply" />
+	<property name="ejb.dir" value="../DHLQMSEJB" />		
+	<property name="classes.dir" value="WEB-INF/classes" />
+	<property name="dist.dir" value="../DHLQMSEJB/dist" />
+	<property name="src.dir" value="."/>
+	<property name="module.name" value="DHL-QMS-V40-" />
+	<property name="poi" value="../ESupply/WEB-INF/lib" />	
+	<property name="rules.sevierity" value="1,2" />
+	<property name="pmd.dir" value="pmd/classes/com/foursoft/pmd"  />
+	<!-- Set up some paths -->
+	
+    <path id="classpath">
+      	<pathelement location="${ejb.dir}/build/classes"/>  	
+		<pathelement location="WEB-INF/lib"/> 
+		<pathelement location="${ejb.dir}/lib"/> 
+    </path>
+	
+	<path id="srcpath">
+		<pathelement location="${src.dir}"/>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+	</target>
+
+	<target name="init">
+		<mkdir dir="${classes.dir}" />
+	</target>
+
+	
+	<target name="compile-etrans-web" depends="clean,init">
+		<ant antfile="${ejb.dir}/build.xml" target="ejb-jar" inheritAll="false" />
+		<javac debug="true" destdir="${classes.dir}" deprecation="off" source="1.5">
+			<classpath refid="classpath"/>	
+	         <src refid="srcpath"/>		
+			 <include name="**/*.java" />
+			 <classpath>
+				<fileset dir="WEB-INF/lib" />				
+			   <fileset dir="./lib" />		
+				<fileset dir="${ejb.dir}/lib" /> 
+ 			 </classpath>
+			
+		</javac>
+	</target>
+	
+	<target name="copy-web" depends="compile-etrans-web">
+		<copy todir="${classes.dir}">
+           <fileset dir="${src.dir}" excludes="**/*.java lib/**  bin/** deploy/** *.deploy  build.xml *.classpath *.project"/>
+		   <fileset dir="${src.dir}" includes="**/*.properties"/>
+         </copy>
+	</target>	
+	
+	<target name="ear" depends="etrans-web-war,copy1"> <!-- ,copy1,pmd-->
+		<ear destfile="../DHLQMSEJB/dist/${module.name}${TODAY}.ear" appxml="META-INF/application.xml">
+			<fileset dir="../DHLQMSEJB/dist" includes="*.jar, *.war" />
+		</ear>
+	</target>	
+	
+	 <fileset id="myFileSet" dir="${poi}">
+		    <include name='cos4upload.jar' />
+		   <include name='poi-2.5.1.jar' />
+	  </fileset>
+		<target name="copy1">
+		    <copy todir="${dist.dir}">
+		      <fileset refid="myFileSet"/>
+		    </copy>
+	</target>
+	<target name="etrans-web-war" depends="copy-web">
+		<war destfile="${dist.dir}/ESupply.war" webxml="WEB-INF/web.xml">
+			<fileset dir="${classes.dir}" excludes="com/** *.class **/*.properties"/>
+			<fileset dir="WebApp" includes="**/*.properties" />
+		</war>
+	</target>
+	<taskdef name="iterate" classname="net.sf.antcontrib.logic.ForEach" classpath="lib/ant-contrib-1.0b3.jar"/>	
+      <target name="pmd">
+      	<iterate target="build_pmd" list="${rules.sevierity}" param="level" >
+  	    </iterate>
+	  </target> 
+	
+	<taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpath="lib/pmd-4.2.5.jar"/>	
+	<target name="build_pmd">
+			<condition property="pmd.xml" value="myCustomrules1.xml">
+					<equals arg1="${level}" arg2="1" />
+			</condition>
+				
+			<condition property="pmd.xml" value="myCustomrules2.xml">
+						<equals arg1="${level}" arg2="2" />
+			</condition>
+		
+		  <mkdir dir="${pmd.dir}" />
+      	  <unjar src="lib/techpmdrules.jar" dest="${pmd.dir}"/>
+	      <pmd rulesetfiles="${pmd.dir}/${pmd.xml}" >
+	      	 <auxclasspath>
+              <pathelement location="pmd/classes"/>
+	         </auxclasspath>
+
+	      	  <formatter type="net.sourceforge.pmd.renderers.SummaryHTMLRenderer" toFile="WorskSpaceSummaryReport${level}.html"/>
+	      	<fileset dir="${src.dir}">
+	         <include name="**/*.java"/>
+	      	</fileset>
+	      	<fileset dir="${ejb.dir}">
+	      	  <include name="**/*.java"/>
+	      	</fileset>
+	     		
+	      </pmd>	      	 
+      	    <delete dir="${pmd.dir}" /> 
+	   </target>
+	<!-- PMD target end -->
+
+	
+</project>
+

@@ -1,0 +1,6 @@
+body {  background-color: 000000; margin-left: 5px; margin-top: 5px;  margin-width: 0px; margin-height:   0px; }
+.formlabel{ font-family: Verdana; font-size: 12pt; font-weight: bold; color: #ffffff;background-color: #333366;  vertical-align: top }
+.formheader{  font-family: Verdana; font-size: 10pt; font-weight: bold; background-color: #b3b3d9;  vertical-align: top	}
+.formdata { font-family: Verdana; font-size: 10pt; background-color: #f2f2f9; vertical-align: top }
+.input {background-color: #cacaff; border-style: solid; border-width: 1	}
+.select {font-family:tahoma,san-serif;font-size:12px;color:#000066;background-color:#f2f2f9;}

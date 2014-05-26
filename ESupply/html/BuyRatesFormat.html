@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Buy rates</title>
+</head>
+
+<body>
+
+<table width="100%" border="1">
+  <tbody>
+    <tr>
+      <td width="100%" bgColor="#DF0000"><font face="Arial" size="4" color="#FFFFFF">Buy Rates
+        - File Format</font></td>
+    </tr>
+    <tr>
+      <td width="100%" bgColor="#E1E1E1"><font face="Arial" size="2">	<u>Important Points</u><br> 													
+1	The user can uplaod buy rates for Shipment Mode - Air, Sea, Truck<br>									
+2	The formats differ for different Weight Breaks - FLAT, SLAB, BOTH<br>									
+3	For each weight break the data is entered under 2 headers<br>									
+4	First header is used to enter MASTER data for the buy rates<br>									
+e.g	SHIPMENT_MODE*	CURRENCY*	WEIGHT_BREAK*	WEIGHT_CLASS*	RATE_TYPE*	UOM	CONSOLETYPE	DENSITY RATIO*<br>		
+	AIR	AED	FLAT	General	FLAT	KG			<br>	
+  One Empty row should be there.										<br>
+5	Second header is used to store the DETAILS data for the buy rates									<br>
+<!--@@Modified by Kameswari for the WPBN issue-143515-->
+e.g	ORIGIN	DESTINATION	CARRIER_ID*	SERVICE_LEVEL	FREQUENCY	TRANSIT TIME	EFFECTIVE_FROM	VALID_UPTO	MIN	FLAT FSMIN FSKG SSMIN SSKG NOTES<br>
+	ACA	AKL	C1	EC	1&2	12:00	1-Sep-05	30-Sep-05	12	5  6 3 4 7 9 aaaaa<br>
+	ACA	ALY	C2	EC	1&2	12:00	1-Sep-05	30-Sep-05	12	5  6 3 4 7 9 aaaaa<br>
+	ACA	AKL	C3	EC	1&2	12:00	1-Sep-05	30-Sep-05	12	5  6 3 4 7 9 aaaaa<br>
+	ACA	ALY	C4	EC	1&2	12:00	1-Sep-05	30-Sep-05	12	5  6 3 4 7 9 aaaaa<br>
+							
+<!--@@WPBN issue-143515-->
+6	The user can enter any number of DETAILS data				<br>		
+7	For Weight break - SLAB, Rate Type - FLAT/SLAB, the upload format is same						<br>
+8	For Weight break - SLAB, Rate Type - BOTH; the user needs to specify a suffix F or S after the buy rate as per requirement			<br>			
+9	For Air - LIST, the user can specify an Over-Pivot rate for each tradelane						<br>
+10	If there are no buy rates for a particular weight break, the user needs to specify NA (Not Applicable) else the system will give error if left blank						<br>
+11	There are no limitation for the number of weight breaks for SLAB						<br>
+12	For Sea & Truck, the Console Type is mandatory (LCL/FCL, LTL/FTL)						<br>
+13	For Sea - LIST (FCL) & Truck - LIST (FTL), pivot rates are not applicable					<br>	
+14	FREQUENCY						<br>
+	For Air/Truck, the user cannot specify the days of the week with comma separation. Instead, & (ampersand) separator can be used.	<br>					
+	For Sea, the user can specify only the valid values - WEEKLY, FORTNIGHTLY, MONTHLY, EVERY 10 DAYS; any other value will give an error.		<br>				
+	The system checks for unique combination based on origin, destination, carrier, service level & frequency						<br>
+15	TRANSIT TIME						<br>
+	For Air, the transit time must be in HH:MM format						<br>
+	For Sea, the transit time can be specified in days <br>
+16	LIST - the system will check for valid list values for the shipment mode from the LIST MASTER<br>
+17	Density Ratio: The user must define the valid density ratio in the header level which applies to all the rows of Buy Rates in detail level.<br>
+	The system checks for the valid values of Density code entered based on the shipment mode in Density Group code master<br>
+<!--@@Added by Kameswari for the WPBN issue-143515-->
+18 In second header,
+   Surcharges weight breaks that can be used for AIR   :FSBASIC,FSMIN,FSKG,SSBASIC,SSMIN,SSKG<br>
+   Surcharges weight breaks that can be used for SEA   :BAFMIN,BAFM3,CAFMIN,CAF%,CSF,PSSMIN,PSSM3<br>
+   Surcharges weight breaks that can be used for TRUCK :SURCHARGE<br>
+19 We can use NA for notes if it is not applicable or it can be left blank.
+<!--@@WPBN issue-143515-->
+</font></td>
+    </tr>
+  </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgColor="#E1E1E1">
+
+<tr></tr>
+<tr></tr>
+<tr bgColor="#DF0000"><td colspan="11"><b>Air<b></td></tr>
+<tr><td><b>SHIPMENT_MODE*<b></td><td><b>CURRENCY*<b></td>	<td><b>WEIGHT_BREAK*<b></td>	<td><b>WEIGHT_CLASS*<b></td>	<td><b>RATE_TYPE*<b></td>	<td><b>UOM<b></td>	<td><b>CONSOLETYPE<b></td><td><b>DENSITY RATIO<b></td></tr>								
+
+<tr><td>AIR</td><td>AED</td><td>FLAT</td><td>General</td><td>FLAT</td><td>KG</td><td></td><td>9.0:15.0</td></tr>						
+</tr>
+
+
+<tr><td><b>ORIGIN<b></td><td><b>DESTINATION<b></td><td><b>CARRIER_ID*<b></td><td><b>SERVICELEVEL<b></td><td><b>FREQUENCY<b></td><td><b>TRANSIT<b></td>	<td><b>EFFECTIVE_FROM<b></td><td><b>VALID_UPTO<b></td><td><b>MIN<b></td><td><b>FLAT<b></td></tr>	
+													
+
+<tr><td>ACA</td><td>	AKL</td><td>	C1</td><td>	EC</td><td>	1&2&3</td><td>	10:00</td><td>	1/9/2005</td><td>	2/9/2005</td><td>	12</td><td>	5	</td>												</tr><tr>
+<td>ACA</td><td>	ALY</td><td>	C1</td><td>	EC</td><td>	4&5</td><td>	15:00</td><td>	1/9/2005</td><td>	2/9/2005</td><td>	12</td><td>	5</td>				</tr>	
+
+<tr bgColor="#DF0000"><td colspan="11"><b>Sea</b></td></tr>
+<tr><td><b>SHIPMENT_MODE*<b></td><td><b>CURRENCY*<b></td>	<td><b>WEIGHT_BREAK*<b></td>	<td><b>WEIGHT_CLASS*<b></td>	<td><b>RATE_TYPE*<b></td>	<td><b>UOM<b></td>	<td><b>CONSOLETYPE<b></td><td><b>DENSITY RATIO<b></td></tr>
+
+<tr><td>SEA</td><td>AED</td><td>FLAT</td><td>General</td><td>FLAT</td><td>KG</td><td>LCL</td><td>9.0:15.0</td></tr>						
+</tr>
+
+
+
+<tr><td><b>ORIGIN<b></td><td><b>DESTINATION<b></td><td><b>CARRIER_ID*<b></td><td><b>SERVICELEVEL<b></td><td><b>FREQUENCY<b></td><td><b>TRANSIT<b></td>	<td><b>EFFECTIVE_FROM<b></td><td><b>VALID_UPTO<b></td><td><b>MIN<b></td><td><b>FLAT<b></td><td><b>FSMIN<b></td><td><b>FSKG<b></td><td><b>SSMIN<b></td><td><b>SSKG<b></td></tr>								
+													
+
+<tr><td>ACA</td><td>	AKL</td><td>	C1</td><td>	EC</td><td>	Daily</td><td>	10</td><td>	1/9/2005</td><td>	2/9/2005</td><td>	12</td><td>	5	</td>												</tr><tr>
+<td>ACA</td><td>	ALY</td><td>	C1</td><td>	EC</td><td>	Weekly</td><td>	15</td><td>	1/9/2005</td><td>	2/9/2005</td><td>	12</td><td>	5</td>				</tr>
+
+<tr bgColor="#DF0000"><td colspan="11"><b>Truck</b></td></tr>
+<tr><td><b>SHIPMENT_MODE*<b></td><td><b>CURRENCY*<b></td>	<td><b>WEIGHT_BREAK*<b></td>	<td><b>WEIGHT_CLASS*<b></td>	<td><b>RATE_TYPE*<b></td>	<td><b>UOM<b></td>	<td><b>CONSOLETYPE<b></td><td><b>DENSITY RATIO<b></td></tr>
+
+<tr><td>Truck</td><td>AED</td><td>FLAT</td><td>General</td><td>FLAT</td><td>KG</td><td>LTL</td><td>9.0:15.0</td></tr>						
+</tr>
+
+
+
+<tr><td><b>ORIGIN<b></td><td><b>DESTINATION<b></td><td><b>CARRIER_ID*<b></td><td><b>SERVICELEVEL<b></td><td><b>FREQUENCY<b></td><td><b>TRANSIT<b></td>	<td><b>EFFECTIVE_FROM<b></td><td><b>VALID_UPTO<b></td><td><b>MIN<b></td><td><b>FLAT<b></td></tr>								
+													
+
+<tr><td>ACA</td><td>	AKL</td><td>	C1</td><td>	EC</td><td>	1&2</td><td>	10</td><td>	1/9/2005</td><td>	2/9/2005</td><td>	12</td><td>	5	</td>												</tr><tr>
+<td>ACA</td><td>	ALY</td><td>	C1</td><td>	EC</td><td>	3&4</td><td>	15</td><td>	1/9/2005</td><td>	2/9/2005</td><td>	12</td><td>	5</td>				</tr>
+				
+</table>
+
+</body>
+
+</html>

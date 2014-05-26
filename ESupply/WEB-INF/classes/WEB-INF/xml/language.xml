@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language-list>
+ <language>
+   <name>ENGLISH</name>
+   <value>en</value>
+ </language>
+ <language>
+   <name>DANISH</name>
+   <value>DANISH</value>
+ </language>
+ <language>
+   <name>KOREAN</name>
+   <value>KOREAN</value>
+ </language>
+ <language>
+   <name>CHINESE</name>
+   <value>zh</value>
+ </language>      
+</language-list>

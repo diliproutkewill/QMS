@@ -1,0 +1,341 @@
+<html>
+<head>
+<script type="text/javascript" src="mtmcode.js"></script>
+<script language="JavaScript" src="../eventhandler.js"></script>
+<script type="text/javascript">
+
+var MTMTableWidth = "100%";
+
+// Name of the frame where the menu is to appear.
+var MTMenuFrame = "menu";
+
+// variable for determining whether a sub-menu always gets a plus-sign
+// regardless of whether it holds another sub-menu or not
+var MTMSubsGetPlus = "Always";
+
+// variable that defines whether the menu emulates the behaviour of
+// Windows Explorer
+var MTMEmulateWE = false;
+
+// Directory of menu images/icons
+var MTMenuImageDirectory = "../images/";
+
+// Variables for controlling colors in the menu document.
+// Regular BODY atttributes as in HTML documents.
+var MTMBGColor = "#000000";
+var MTMBackground = "blueback1`s.jpg";
+var MTMTextColor = "black";
+
+// color for all menu items
+var MTMLinkColor = "black";
+
+// Hover color, when the mouse is over a menu link
+var MTMAhoverColor = "red";
+
+// Foreground color for the tracking & clicked submenu item
+var MTMTrackColor ="yellow";
+var MTMSubExpandColor = "black";
+var MTMSubClosedColor = "black";
+
+// All options regarding the root text and it's icon
+var MTMRootIcon = "Tree_root.gif";
+var MTMenuText = "4S e-Supply:";
+var MTMRootColor = "black";
+var MTMRootFont = "Arial, Helvetica, sans-serif";
+var MTMRootCSSize = "84%";
+var MTMRootFontSize = "2";
+
+// Font for menu items.
+var MTMenuFont = "Arial, Helvetica, sans-serif";
+var MTMenuCSSize = "84%";
+var MTMenuFontSize = "-1";
+
+// Variables for style sheet usage
+// 'true' means use a linked style sheet.
+var MTMLinkedSS = false;
+var MTMSSHREF = "style/menu.css";
+
+// Additional style sheet properties if you're not using a linked style sheet.
+// See the documentation for details on IDs, classes & elements used in the menu.
+// Empty string if not used.
+var MTMExtraCSS = "";
+
+// Header & footer, these are plain HTML.
+// Leave them to be "" if you're not using them
+
+var MTMHeader = "";
+var MTMFooter = "";
+
+// Whether you want an open sub-menu to close automagically
+// when another sub-menu is opened.  'true' means auto-close
+var MTMSubsAutoClose = false;
+
+// This variable controls how long it will take for the menu
+// to appear if the tracking code in the content frame has
+// failed to display the menu. Number if in tenths of a second
+// (1/10) so 10 means "wait 1 second".
+var MTMTimeOut = 25;
+
+// Tool tips.  A true/false-value defining whether the support
+// for tool tips should exist or not.
+var MTMUseToolTips = true;
+
+
+// Main menu.
+var menu = null;
+menu = new MTMenu();
+
+//function MTMenuItem(text, url, target, itemtype,itemaction,tooltip,icon) {
+
+menu.MTMAddItem(new MTMenuItem("e-VRM","","text","","","e-Trans","vendor.jpg"));
+
+// nested submenu #1, multiple submenu levels example
+var number_1 = null;
+number_1 = new MTMenu();
+
+//Sub Menu Items
+number_1.MTMAddItem(new MTMenuItem("Setup", "../ESupplyMenuEVRMSetup.jsp","text","","","","Tree_setup_open.gif"));
+number_1.MTMAddItem(new MTMenuItem("Operations","../ESupplyMenuEVRMOperations.jsp","text","","","","Tree_operations_open.gif"));
+
+menu.MTMAddItem(new MTMenuItem("Reports", "../ESupplyMenuEVRMReports.jsp", "text","","","","Tree_reports_open.gif"));
+menu.MTMAddItem(new MTMenuItem("Tracking", "../ELReceiveTrackIndex.jsp", "text","","","","Tree_reports_open.gif"));
+//menu.MTMAddItem(new MTMenuItem("Mails", "../", "text","","","","Tree_reports_open.gif"));
+
+menu.items[0].MTMakeSubmenu(number_1,false);
+//menu.items[1].MTMakeSubmenu(number_2);
+
+
+////***************************************************************************
+
+	function setDefault(str)
+	{
+		if(str==null)
+			return "";
+		else
+			return str;
+	}
+
+	function MTMenuItem( text, url, target, itemtype, itemaction, tooltip, icon, closedIcon, hotKey, ctrlKey, shiftKey, altKey) 
+	{
+		text=setDefault(text);
+		url=setDefault(url);
+		target=setDefault(target);
+		itemtype=setDefault(itemtype);
+		itemaction=setDefault(itemaction);
+		tooltip=setDefault(tooltip);
+		icon=setDefault(icon);
+
+		this.text = text;
+		this.url = url ? url : "";
+		this.target =  target ? target : "";
+		this.itemtype= itemtype;
+		this.itemaction= itemaction;
+		this.tooltip = tooltip;
+		this.icon = icon ? icon : "";
+		
+		this.number = MTMNumber++;
+		this.name = "sub"+this.number;
+		this.itemnumber = this.number;
+
+		this.hotKey		= setDefault( hotKey );
+		this.ctrlKey	= setDefault( ctrlKey );
+		this.shiftKey	= setDefault( shiftKey );
+		this.altKey		= setDefault( altKey );
+		
+		if(ctrlKey==null || ctrlKey=="") {
+			ctrlKey = "N";
+		}
+		if(shiftKey==null || shiftKey=="") {
+			shiftKey = "N";
+		}
+		if(altKey==null || altKey=="") {
+			altKey = "N";
+		}
+		
+		if(hotKey != null && hotKey != "" && hotKey.length > 0)
+		{
+			if(ctrlKey.length > 0 || shiftKey.length > 0 || altKey.length > 0)
+			{
+				hotKeys[hotKeys.length]		= hotKey.toUpperCase();
+				ctrlKeys[ctrlKeys.length]	= ctrlKey.toUpperCase();
+				shiftKeys[shiftKeys.length]	= shiftKey.toUpperCase();
+				altKeys[altKeys.length]		= altKey.toUpperCase();
+			}
+			
+			urls[urls.length]		= url;
+			targets[targets.length] = target;
+			myItems[myItems.length] = text;
+			names[names.length]		= "sub"+this.number;
+		}
+
+		this.submenu     = null;
+		this.expanded    = false;
+		this.MTMakeSubmenu = MTMakeSubmenu;
+	}
+
+	function MTMakeSubmenu(eSupply, isExpanded, collapseIcon, expandIcon) {
+	  this.submenu = eSupply;
+	  this.expanded = isExpanded;
+
+	  this.collapseIcon = collapseIcon ? collapseIcon : "menu_folder_closed.gif";
+	  this.expandIcon = expandIcon ? expandIcon : "menu_folder_open.gif";
+	}
+
+	/******************************************************************************
+	* Define the Menu object.                                                     *
+	******************************************************************************/
+
+	function MTMenu() {
+	  this.items   = new Array();
+	  this.MTMAddItem = MTMAddItem;
+	}
+
+	function MTMAddItem(item) {
+	  this.items[this.items.length] = item;
+	}
+
+	/******************************************************************************
+	* Define the icon list, addIcon function and MTMIcon item.                    *
+	******************************************************************************/
+
+	function IconList() {
+	  this.items = new Array();
+	  this.addIcon = addIcon;
+	}
+
+	function addIcon(item) {
+	  this.items[this.items.length] = item;
+	}
+
+	function MTMIcon(iconfile, match, type) {
+	  this.file = iconfile;
+	  this.match = match;
+	  this.type = type;
+	}
+
+	function MTMBrowser() {
+	  this.preHREF = "";
+	  this.MTMable = false;
+	  this.cssEnabled = true;
+	  this.browserType = "other";
+
+	  if(navigator.appName == "Netscape" && navigator.userAgent.indexOf("WebTV") == -1) {
+	    if(parseInt(navigator.appVersion) == 3 && (navigator.userAgent.indexOf("Opera") == -1)) {
+	      this.MTMable = true;
+	      this.browserType = "NN3";
+	      this.cssEnabled = false;
+
+	    } else if(parseInt(navigator.appVersion) >= 4) {
+	      this.MTMable = true;
+	      this.browserType = parseInt(navigator.appVersion) == 4 ? "NN4" : "NN5";
+	    }
+	  } else if(navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) >= 4) {
+	    this.MTMable = true;
+	    this.browserType = "IE4";
+	  } else if(navigator.appName == "Opera" && parseInt(navigator.appVersion) >= 5) {
+	    this.MTMable = true;
+	    this.browserType = "O5";
+	  }
+
+	  if(this.browserType != "NN4") {
+	    this.preHREF = location.href.substring(0, location.href.lastIndexOf("/") +1)
+	  }
+	}
+
+	/******************************************************************************
+	* Global variables.  Not to be altered unless you know what you're doing.     *
+	* User-configurable options are at the end of this document.                  *
+	******************************************************************************/
+	var MTMLoaded = false;
+	var MTMLevel;
+	var MTMBar = new Array();
+	var MTMIndices = new Array();
+
+	var MTMUA = new MTMBrowser();
+
+	var MTMClickedItem = false;
+	var MTMExpansion = false;
+
+	var MTMNumber = 1;
+	var itemnumber=0;
+	var MTMTrackedItem = false;
+	var MTMTrack = false;
+	var MTMFrameNames;
+
+	var MTMFirstRun = true;
+	var MTMCurrentTime = 0; // for checking timeout.
+	var MTMUpdating = false;
+	var MTMWinSize, MTMyval, MTMxval;
+	var MTMOutputString = "";
+	/******************************************************************************
+	* Code that picks up frame names of frames in the parent frameset.            *
+	******************************************************************************/
+
+	function MTMgetFrames() {
+	  if(MTMUA.MTMable) {
+	    MTMFrameNames = new Array();
+	    for(i = 0; i < parent.frames.length; i++) {
+	      MTMFrameNames[i] = parent.frames[i].name;
+	    }
+	  }
+	}
+	/******************************************************************************
+	* Functions to draw the menu.                                                 *
+	******************************************************************************/
+
+	function MTMSubAction(SubItem) {
+
+	  SubItem.expanded = (SubItem.expanded) ? false : true;
+	  if(SubItem.expanded) {
+	    MTMExpansion = true;
+	  }
+
+	  MTMClickedItem = SubItem.number;
+
+	  if(MTMTrackedItem && MTMTrackedItem != SubItem.number) {
+	    MTMTrackedItem = false;
+	  }
+
+	  //if(MTMEmulateWE || SubItem.url == "" || !SubItem.expanded) {
+	  //if(SubItem.url == "") {
+	    
+	    setTimeout("MTMDisplayMenu()", 10);
+		
+		if(SubItem.itemtype && SubItem.itemtype!="")
+		{
+			//alert(	"SubItem.url = "+ SubItem.url +"\n"+
+			//		"SubItem.itemaction = "+SubItem.itemaction +"\n"+
+			//		"SubItem.itemtype = "+SubItem.itemtype);
+					
+			//parent.frames[3].location.href = SubItem.itemaction;
+			parent.frames['text'].location.href = SubItem.itemaction;
+			
+		}
+		//alert("In MTMSubAction returning false : SubItem.expanded = "+SubItem.expanded);
+		return false;
+	    
+	 // } else {
+	//		alert("In MTMSubAction returning true : SubItem.expanded = "+SubItem.expanded);
+	 //		return false;
+	  //}
+	}
+
+	function MTMStartMenu() {
+	  MTMLoaded = true;
+	  if(MTMFirstRun) {
+	    MTMCurrentTime++;
+	    if(MTMCurrentTime == MTMTimeOut) {
+	      MTMDisplayMenu();
+	    } else {
+	      MTMStartMenu();
+	    }
+	  } 
+	}
+
+//********************************************************************************
+
+</script>
+</head>
+<body onload="MTMStartMenu()">
+</body>
+</html>

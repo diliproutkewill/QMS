@@ -1,0 +1,3157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<project nselem="project" class="oracle.jdeveloper.model.JProject" xmlns="http://xmlns.oracle.com/jdeveloper/10120/jproject">
+   <defaultPackage class="java.lang.String"/>
+   <defaultPackages class="java.util.ArrayList">
+      <Item class="java.lang.String"/>
+      <Item class="java.lang.String">mypackage2</Item>
+   </defaultPackages>
+   <dependencyList class="java.util.ArrayList">
+      <Item class="oracle.jdevimpl.deploy.ProfileLibrary">
+         <locked>true</locked>
+         <sourceOwnerURL path="../DHLQMSEJB/DHLQMSEJB.jpr"/>
+         <sourceURL path="../DHLQMSEJB/DHLQMSEJB.deploy"/>
+      </Item>
+      <Item class="oracle.jdeveloper.library.ProjectLibrary">
+         <locked>true</locked>
+         <sourceOwnerURL path="../DHLQMS20090616.jws"/>
+         <sourceURL path="../DHLQMSEJB/DHLQMSEJB.jpr"/>
+      </Item>
+   </dependencyList>
+   <htmlRootDirectory path="."/>
+   <j2eeWebAppName>ESupply</j2eeWebAppName>
+   <j2eeWebContextRoot>QMS</j2eeWebContextRoot>
+   <listOfChildren class="oracle.ide.model.DataList">
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/4S.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/4slogo.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/4slogo.jpg"/>
+         <nodeClass>oracle.jdeveloper.model.JpegImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/delegate/AccessControlDelegate.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Accounts.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/add.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/AddressDOB.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/ANI.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/util/ArraySupport.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/arrow.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/AttentionToLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/bg_CrmMenu.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Bg.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/book-closed.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/book-open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/branchclose-0.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/branchopen-0.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/BuildMessage.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/util/BundleFile.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/BuyRatesAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/BuyRatesAddFlatFlat.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/BuyRatesAddList.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/BuyRatesAddSlabBoth.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/BuyRatesAddSlabSlab.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="BuyRatesController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/BuyRatesDownLoad.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/BuyRatesExpiryReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/BuyRatesFormat.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/BuyRatesUpLoad.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/Cacheable.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/CachedTransactions.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/CacheManager.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/CanadaZoneCodeUploadFormat.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/CarrierInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/chargebasismaster.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ChargeDescriptionUpload.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/chargegroupmaster.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ChargeGroupUpload.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/chargesmaster.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/ClientErrorCodes.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/clip.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/close.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/CommodityFormat.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/CommodityInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ConfirmBox.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ContactLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/CountryFormat.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/CountryInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/CRM.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/util/CRMMenuUtility.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/util/CRMTreeUtility.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/CRMUIPermissions.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="CurrencyConversionListener.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/CustomerInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/customerreg.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/CustomerSupport.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="DANISH.properties"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/del.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/DHL_product_logo.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/DHL.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/DHLlogo.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/DHLlogo.jpg"/>
+         <nodeClass>oracle.jdeveloper.model.JpegImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="DHLQMS.deploy"/>
+         <nodeClass>oracle.ide.model.XMLDataNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/down.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/dynamicContent.js"/>
+         <nodeClass>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/DynamicContent.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/eagle.swf"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/EAReportPage.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="EAValidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/ecrm.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Edit.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/eLog.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ElogCRMIndex.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/ELogUserAccessConfig.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ElogVRMIndex.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/empty.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ENGLISH.properties"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/envelopeRed.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/envelopewhite.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/EPUserAccessConfig.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/ERR.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACADateValidation.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACDateValidation.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACLocationIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACLoggedUsers.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACPasswordChangeProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACPasswordChangeView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRoleIdLocationIdLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRoleIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRolePermissions.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRolePermissionsConfirm.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRolePermissionsView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRoleRegistration.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRoleRegistrationController.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACRolesViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACSessionExpired.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACSessionExpired.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACUserIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACUserRegistrationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACUserRegistrationController.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACUserRegistrationEntry.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACUserRoleEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACUserRoleEnterId22222.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACUsersViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESACVerificationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESEventHandler.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESFoursoft_css.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ESFoursoft_css.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESLoggingActivityReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESLoggingActivityViewAllReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESLoggingEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESLoggingReportView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESLoginController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESLogout.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuCRMIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuCRMRightPanel.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESMenuEmpty.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuETCHeading.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuETCIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuETCRMBottom.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuETCRMIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuETCRMTop.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuETCTreeGenerator.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuHeading.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuHeadingRight.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuMainPage.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuRightPanel.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESMenuTreeGenerator.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/eSupply_product_logo_schenker.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/eSupply_product_logo.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupply.deploy"/>
+         <nodeClass>oracle.ide.model.XMLDataNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/eSupply.js"/>
+         <nodeClass>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyAccessDenied.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/util/ESupplyDateUtility.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/eSupplyDateValidation.js"/>
+         <nodeClass>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyELogCRMTreeIndex.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyELogTreeIndex.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyELogVRMTreeIndex.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyErrorPage.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyLicensePage.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyLogin.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyMenuECRMOperations.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyMenuECRMReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyMenuECRMSetup.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyMenuELog.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyMenuETrans.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyMenuETransOperations.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyMenuETransReports.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyMenuETransSea.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyMenuEVRMOperations.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyMenuEVRMReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyMenuEVRMSetup.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyMenuSamp.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyMessagePage.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyMishandlePage.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ESupplyRemoveAttribute.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ESupplyTreeAboutPage.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/air/ETACarrierRegistrationReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/air/ETACustomerRegistrationReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ETAdvancedLOVController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETAGatewayTerminalViewAllReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/air/ETARevenueSharingReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETAShowViewAllReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETASuperUserViewAllReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/air/ETATerminalMasterReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETAViewAllAdmin.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCarrierRegistrationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCarrierRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCarrierRegistrationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCarrierRegistrationView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCBTTerminalRegistrationLocationIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCodeCustomisationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCodeCustomisationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCodeCustomisationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCodeCustomisationView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCommodityAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCommodityEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCommodityProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCommodityUploadProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCommodityView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCountriesSelection.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCountryAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCountryEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCountryProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCountryUploadProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCountryView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrency.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionAddLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionAddProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionUpdate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionViewAllLov.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionViewAllProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionViewEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyConversionViewProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCCurrencyLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ETCcustomer.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ETCEmpty.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCGatewayRegistrationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCGatewayRegistrationAddProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCGatewayRegistrationDetail.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCGatewayRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCGatewayRegistrationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCHOCompanyRegistrationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCHOCompanyRegistrationCompanyLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCHOCompanyRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCHOCompanyRegistrationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCHOCompanyRegistrationView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ETCHome.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLocationUploadProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLocTaskPlan.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ETClogin.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVCommodityIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVCountryAndCurrencyIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVCountryIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVCountryIds1.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVGatewayIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVLocationIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVLocationIds1.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVMultipleCustomers.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVMultipleSalesPerson.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVReportFormatNames.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVServiceLevelIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVServiceLevelIds1.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVTaxIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCLOVTerminalIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ETCLOVTerminalIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCOperationTerminalRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCPortUploadProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCRegionIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCServiceLevelAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCServiceLevelEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCServiceLevelProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCServiceLevelView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTaxMasterAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTaxMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTaxMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ETCterminal.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTerminalRegistrationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTerminalRegistrationAddProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTerminalRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTerminalRegistrationLocationIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTerminalRegistrationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCTerminalRegistrationView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCUploadIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustAddressLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustomerAdvLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustomerInvoiceInfo.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustomerRegistrationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustomerRegistrationAddMoreAdress.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustomerRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustomerRegistrationEnterIdC.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETCustomerRegistrationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETDateValidation.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETIATARateLaneInfo.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETIATARatePreInfo.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETIATARatesController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETLocationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETLocationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETLocationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETLocationView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETLOVMultiModeRoutePlan.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETMultiModeRoutePlanAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETMultiModeRoutePlanController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETMultiModeRoutePlanEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETransLOVCarrierIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETransLOVCarrierIds1.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETransLOVCustomerIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETransLOVVendorIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/ETransUserAccessConfig.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ETSCalendar.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETShipConsDtlsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETShipperConsigneeMappingProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/sea/ETSLOVPortIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/sea/ETSPortMasterAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/sea/ETSPortMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/sea/ETSPortMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ETTaskEvntController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETTaskLocSelectionLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/truck/ETTVendorMasterAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETTVendorMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETTVendorMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETVendorRegistration.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETVendorRegistrationController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ETVendorRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Flow.swf"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="FourSoftExpiry.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/FoursoftWebConfig.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/generate.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="global.css"/>
+         <nodeClass>oracle.jdevimpl.webapp.css.addin.CSSSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/home.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/i_minus.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/i_plus.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/image1.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/image2.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/image3.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/image4.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/image5.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/imp_flag.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/index_caption.jpg"/>
+         <nodeClass>oracle.jdeveloper.model.JpegImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="index.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/industryreg.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/INF.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="Invalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="invalidateSession.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="Lang_CHINESE.properties"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="Lang_ENGLISH.properties"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="Lang_german.properties"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/language.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ListMasterAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ListMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ListMasterLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ListMasterMultipleLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ListMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/listmasterreg.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ListMasterView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ListMasterViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/ListOfValues.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="LoadServlet.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/LocationFormat.htm"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/LocationInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/classes/log4j.properties"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/lib/log4j-1.2.8.jar"/>
+         <nodeClass>oracle.jdevimpl.jar.JarFolder</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/login_title.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Login.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/LOVListHandler.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/lib/LOVTag.jar"/>
+         <nodeClass>oracle.jdevimpl.jar.JarFolder</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/marginlimits.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_bar.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_corner_minus.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_corner_plus.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_corner.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/menu_empty.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_folder_closed.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_folder_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_bat.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_com.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_default.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_external.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_help.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_ie.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_ini.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_java.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_local.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_music.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_pdf.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_ref.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_link_txt.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_new_root.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_pixel.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_root.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_tee_minus.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_tee_plus.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/menu_tee.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/menu-config.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/menu-config-elt.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/menu-config-esc.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/menu-config-esv.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/MenuModule.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/util/MenuUtility.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/NewAddress.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/NewContactDetails.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/next.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/util/ObjectCloner.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/OnlineHelp.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Operations.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/tag/PageTracker.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="PasswordProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="PasswordReset.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="PasswordResetProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/PendingQuotesEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/PendingQuotesReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Pickup.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="popcalendar.js"/>
+         <nodeClass>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/PortFormat.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/sea/PortViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/previous.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Print.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSActivityReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSActivityReportPreInfo.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAdvSerchLovController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentIdList.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentMasterView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentPDF.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachments.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSAttachmentViewAllDtl.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSBuyChargesController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSBuyChargesMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSBuyChargesMasterDetails.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSBuyChargesMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSBuyRateModify.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSBuyRatesUploadController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSBuyRateView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSCanadaZonesController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSCanadaZonesDownloadIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSCanadaZonesUploadIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageAccept.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageAcceptanceEnter.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyCharges.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyChargesBoth.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyChargesFlat.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyChargesList.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyChargesModify.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyChargesModifyList.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyChargesModifySlab.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageBuyChargesSlab.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageMarginDisplay.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSCartagePDF.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageSellAccepetFlat.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageSellAccepetSlab.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageSellChargesFlat.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageSellChargesList.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCartageSellChargesSlab.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargeBasisMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargeBasisMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargeBasisMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargeDescriptionAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargeDescriptionEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargeDescriptionProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargeDescriptionView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargesGroupingMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargesGroupingMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargesGroupMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargesMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargesMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargesMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSChargesUploadController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSChargesUploadIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSConsolidatedSellRateController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSContentAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSContentDescriptionView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSContentEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSCostingController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCostingDetails.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCostingEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCostingPackCalLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSCSellRate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDensityGroupCodeAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDensityGroupCodeEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDensityGroupCodePerKGLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDensityGroupCodeProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDensityGroupCodeView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDensityGroupCodeViewAllEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSDensityRatioLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDesignationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDesignationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDesignationLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDesignationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDesignationView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSDesignationViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSEmailTextController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSEmailTextMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSEmailTextMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSErrorPage.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSESupplyErrorPage.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSFreightRatesExcelEnterid.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSGroupExcelReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSIndustryIdLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSIndustryIdMultipleLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSIndustryRegistration.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSIndustryRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSIndustryRegistrationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSLOVAllLevelTerminalIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSLOVChargeBasisIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSLOVChargeGroupIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSLOVChargeIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSLOVContentIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSLOVDescriptionIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSLOVLevelIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSLOVLocationIds.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSLOVZoneCodes.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSLOVZoneCodesMultiple.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSMarginLimitMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSMarginLimitMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSMarginLimitMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSMarginLimitMasterViewAllEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="xml/QMSQuote.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSQuoteApprovedReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteChargesSelect.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteChargesView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSQuoteEscalatedEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSQuoteEscalatedReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteFreightSellRates.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteFreightSellRatesView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteGroupingEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteGroupView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSQuoteIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteMaster.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteMasterView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSQuotePDF.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSQuoteRejectedReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteSummary.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteSummaryView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QMSQuoteView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSRatesReportController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRateEnter.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRatesAcceptance.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRatesAcceptanceEnter.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRatesAcceptanceModify.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRatesMarginDisplay.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRatesModify.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSellRatesView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSelRatesInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRecommendedSelRatesView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSRepOfficersIdsLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSReportController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSRoutePlanAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesIdsLov.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesPersonCodeLOV.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesPersonRegistrationAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesPersonRegistrationEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesPersonRegistrationProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesPersonRegistrationView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesPersonRegistrationViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSalesPersonViewAllProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSSellCharges.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSSellChargesController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSSellChargesDetails.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/QMSSellChargesEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSellRateController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSessionFilter.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSSetupController.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSYieldReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSYieldReportDetails.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QMSYieldReportPreInfo.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterAdd.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterDownloadIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterDownloadProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterUploadIndex.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterUploadProcess.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterView.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QMSZoneCodeMasterViewAll.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="qms/QuoteAttachmentIdList.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="QuoteAttachmentPDF.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="../DHLQMSEJB/com/qms/operations/costing/dob/QuoteRateDetails.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QuotesExpiryEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/QuotesExpiryReports.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/RAE.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Rate.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="RawData.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/registration_form.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Report.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/ReportFormatter.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/reports.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/ReportTemplate.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Reset.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ResetPassword.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/RNF.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/bean/RolePermissionControllerJBean.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/RPS.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/RSD.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/RSI.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/RSM.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="samp.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/schenkerlogo.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/SeaFreight.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="SecuritySettings.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="SecuritySettingsUpdate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/sep.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/ServiceLevelInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Setup.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="sha1.js"/>
+         <nodeClass>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/ShipmentMode.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/show.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="Signedout.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/Signedout.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/SortInList.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/SortObj.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/SPUserAccessConfig.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/TableSorting.js"/>
+         <nodeClass>oracle.jdevimpl.webapp.javascript.JavaScriptSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="etrans/TerminalInvalidate.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/util/Test.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="TestHttpSessionAttributeListener.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/util/TestTimer.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_4slogo.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_about.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_backward.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_changePassword.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_customersupport.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_feedback.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_forward.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_help.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_home.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_logout.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_logout1.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_print.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_refresh.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Toolbar_stop.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Top_Lines.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/topnav_globalentry.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Track.swf"/>
+         <nodeClass>oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Track1.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Transit.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_accountcode_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_accounting_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_accounts_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_administration_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_administrationnew_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_ap_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_budgets_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_chargeid_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_claimsmanagement_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_companyinfo_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_configuration_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_consolidation_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_corporatesetup_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_customersupport_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_definereports_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_deliveryoperations_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_destination_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_discrepancy_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_eaccounts_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_ehr_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_elog_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_etrans_air_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_etrans_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_etrans_sea_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_etrans_truck_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_etransnew_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_financial-statement_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_fleetmanagement_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_groupaccountcode_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_haulage_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_inbound-nonsystem_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_invoice_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_management_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_mis_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_module_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_monthendprocess_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_operational_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_operations_close.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_operations_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_operationsnew_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_ordermanagement_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_origin_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_originoperations_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_others-left_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_pickupoperations_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_report_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_reports_open_old.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_reports_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_reportsnew_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_root_name.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_root.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_routing_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_sea_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_settlement_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_setup_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_setupnew_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_sfa_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_terminal_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_tracking_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_transaction_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_transactiontypes_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Tree_truck_open.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/tree-config.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/tree-config-elt.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/tree-config-esc.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/xml/tree-config-esv.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/util/TreeUtility.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Truck.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/UIPermissions.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/UnitConversion.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/util/UnitConversionUtility.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/UnitConverter.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/UnitConverterFactory.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/up.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/UpdatedQuotesReport.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="reports/UpdateQuotesEnterId.jsp"/>
+         <nodeClass>oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/UserAccessConfig.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/UserAccessConfigFactory.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/util/UserAccessUtility.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/bean/UserCredentials.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/accesscontrol/java/UserInterface.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/common/java/UserPreferenceMaster.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="com/foursoft/esupply/delegate/UserRoleDelegate.java"/>
+         <nodeClass>oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/vendor.jpg"/>
+         <nodeClass>oracle.jdeveloper.model.JpegImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/View.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/Warehouse.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/warehousego.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/web.xml"/>
+         <nodeClass>oracle.jdeveloper.xml.j2ee.war.WebAppNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="WEB-INF/weblogic.xml"/>
+         <nodeClass>oracle.jdeveloper.xml.wl.war.WeblogicWebAppNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/welcome.jpg"/>
+         <nodeClass>oracle.jdeveloper.model.JpegImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/winclose.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="images/wldelete.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="html/ZoneCodeMasterFormat.html"/>
+         <nodeClass>oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+   </listOfChildren>
+   <ownerMap/>
+   <projectDocPath>
+      <entries class="[Ljava.net.URL;"/>
+   </projectDocPath>
+   <projectLibraryList class="oracle.jdeveloper.library.JProjectLibraryList">
+      <jdkList class="java.util.ArrayList"/>
+      <libraryList class="java.util.ArrayList">
+         <Item class="oracle.jdeveloper.library.JLibrary" deployedByDefault="true">
+            <defaultLibraryDefinition>
+               <JDKVersion/>
+               <classPath>
+                  <entries>
+                     <Item path="lib/poi-2.5.1.jar" jar-entry=""/>
+                  </entries>
+               </classPath>
+               <docPath>
+                  <entries class="[Ljava.net.URL;"/>
+               </docPath>
+               <locked>false</locked>
+               <sourcePath>
+                  <entries class="[Ljava.net.URL;"/>
+               </sourcePath>
+            </defaultLibraryDefinition>
+            <definitionList class="java.util.ArrayList"/>
+            <locked>false</locked>
+            <name>poi</name>
+         </Item>
+         <Item class="oracle.jdeveloper.library.JLibrary" deployedByDefault="true">
+            <defaultLibraryDefinition>
+               <JDKVersion/>
+               <classPath>
+                  <entries>
+                     <Item path="lib/cos4upload.jar" jar-entry=""/>
+                  </entries>
+               </classPath>
+               <docPath>
+                  <entries class="[Ljava.net.URL;"/>
+               </docPath>
+               <locked>false</locked>
+               <sourcePath>
+                  <entries class="[Ljava.net.URL;"/>
+               </sourcePath>
+            </defaultLibraryDefinition>
+            <definitionList class="java.util.ArrayList"/>
+            <locked>false</locked>
+            <name>cos1</name>
+         </Item>
+      </libraryList>
+   </projectLibraryList>
+   <projectSettings>
+      <activeConfigName>Development</activeConfigName>
+      <commonData class="java.util.HashMap">
+         <Item>
+            <Key>ejbModuleContainer</Key>
+            <Value class="oracle.jdeveloper.xml.j2ee.ejb.EjbJarNode">
+               <URL path="WEB-INF/lib/cos.jar" jar-entry="META-INF/ejb-jar.xml"/>
+            </Value>
+         </Item>
+         <Item>
+            <Key>oracle.bm.commonIde.data.project.ModelerProjectSettings</Key>
+            <Value class="oracle.bm.commonIde.data.project.ModelerProjectSettings">
+               <modelersPath>
+                  <entries>
+                     <Item path="model/"/>
+                  </entries>
+               </modelersPath>
+               <modelersVersion>10.12</modelersVersion>
+            </Value>
+         </Item>
+         <Item>
+            <Key>oracle.jdeveloper.compiler.ant.AntConfiguration</Key>
+            <Value class="oracle.jdeveloper.compiler.ant.AntConfiguration">
+               <arguments class="java.lang.String"/>
+               <makeTarget/>
+               <projectBuildfile/>
+               <rebuildTarget/>
+               <showOutput>true</showOutput>
+            </Value>
+         </Item>
+         <Item>
+            <Key>oracle.jdeveloper.offlinedb.OfflineDBProjectSettings</Key>
+            <Value class="oracle.jdeveloper.offlinedb.OfflineDBProjectSettings">
+               <databasePath>
+                  <entries>
+                     <Item path="database/"/>
+                  </entries>
+               </databasePath>
+            </Value>
+         </Item>
+      </commonData>
+      <configurations class="java.util.TreeMap">
+         <Item>
+            <Key>Development</Key>
+            <Value class="oracle.jdeveloper.model.JProjectConfiguration">
+               <configData class="java.util.HashMap">
+                  <Item>
+                     <Key>oracle.jdeveloper.compiler.OjcConfiguration</Key>
+                     <Value class="oracle.jdeveloper.compiler.OjcConfiguration">
+                        <assertionsEnabled>false</assertionsEnabled>
+                        <copyRes>
+                           <Item>.gif</Item>
+                           <Item>.properties</Item>
+                           <Item>.jpg</Item>
+                           <Item>.jpeg</Item>
+                           <Item>.xml</Item>
+                           <Item>-apf.xml</Item>
+                           <Item>.xcfg</Item>
+                           <Item>.cpx</Item>
+                           <Item>.css</Item>
+                           <Item>.js</Item>
+                           <Item>.png</Item>
+                           <Item>.tld</Item>
+                        </copyRes>
+                        <debugInformation>true</debugInformation>
+                        <excludedClasses class="[Ljava.lang.String;"/>
+                        <internalEncoding>Cp1252</internalEncoding>
+                        <obfuscate>false</obfuscate>
+                        <reverseCopyRes>false</reverseCopyRes>
+                        <showDeprecations>true</showDeprecations>
+                        <showObjectDotStaticWarnings>false</showObjectDotStaticWarnings>
+                        <showPartialImportWarnings>false</showPartialImportWarnings>
+                        <showSelfDeprecations>true</showSelfDeprecations>
+                        <showUnusedImportWarnings>false</showUnusedImportWarnings>
+                        <showWarnings>true</showWarnings>
+                        <target>Default</target>
+                        <updateImports>false</updateImports>
+                        <updateZipJarImports>false</updateZipJarImports>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdeveloper.javadoc.JProjectJavadoc</Key>
+                     <Value class="oracle.jdeveloper.javadoc.JProjectJavadoc">
+                        <embedDiagram>5</embedDiagram>
+                        <genDiagramDoc>true</genDiagramDoc>
+                        <generateAuthor>false</generateAuthor>
+                        <generateDeprecated>true</generateDeprecated>
+                        <generateIndex>true</generateIndex>
+                        <generateNavbar>true</generateNavbar>
+                        <generateSince>true</generateSince>
+                        <generateTree>true</generateTree>
+                        <generateVersion>false</generateVersion>
+                        <heapSize>32</heapSize>
+                        <imageFormat>1</imageFormat>
+                        <miscOptions class="java.lang.String"/>
+                        <oneOneFormat>false</oneOneFormat>
+                        <outputDirectory path="javadoc/"/>
+                        <scope>-protected</scope>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdeveloper.runner.RunConfiguration</Key>
+                     <Value class="oracle.jdeveloper.runner.RunConfiguration">
+                        <VMName>ojvm</VMName>
+                        <XSLTInputFileURL/>
+                        <XSLTOutputFileURL/>
+                        <allowInput>false</allowInput>
+                        <alwaysUseTarget>false</alwaysUseTarget>
+                        <clearLogBeforeRun>true</clearLogBeforeRun>
+                        <compileBeforeRun>false</compileBeforeRun>
+                        <connectionName/>
+                        <javaOptions class="java.lang.String"/>
+                        <logCommand>true</logCommand>
+                        <logError>true</logError>
+                        <logExit>true</logExit>
+                        <logOutput>true</logOutput>
+                        <programArguments class="java.lang.String"/>
+                        <runActiveFile>true</runActiveFile>
+                        <runDirectoryURL/>
+                        <targetURL path="index.java"/>
+                        <useProxy>true</useProxy>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.config.JProjectLibraries</Key>
+                     <Value class="oracle.jdevimpl.config.JProjectLibraries">
+                        <jdkName>1.4.2_04</jdkName>
+                        <jdkVersionNumber>1.4.2_04</jdkVersionNumber>
+                        <libraries>J2EE;JSP Runtime;Oracle9 iAS;Oracle9i SCM;Oracle Java Compiler;Oracle JDBC;Oracle XML Parser v2;Servlet Runtime;weblogic;jstl;standard;log4j;iText;JDeveloper Runtime;JSTL;poi;cos1</libraries>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.config.JProjectPaths</Key>
+                     <Value class="oracle.jdevimpl.config.JProjectPaths">
+                        <additionalClassPath>
+                           <entries>
+                              <Item path="WEB-INF/lib/LOVTag.jar" jar-entry=""/>
+                              <Item path="WEB-INF/lib/PageIterator.jar" jar-entry=""/>
+                              <Item path="WEB-INF/lib/pageTracker-original.jar" jar-entry=""/>
+                              <Item path="WEB-INF/lib/pageTracker.jar" jar-entry=""/>
+                              <Item path="WEB-INF/lib/cos.jar" jar-entry=""/>
+                              <Item path="lib/iText.jar" jar-entry=""/>
+                              <Item path="WEB-INF/lib/iText.jar" jar-entry=""/>
+                              <Item path="WEB-INF/lib/log4j-1.2.8.jar" jar-entry=""/>
+                           </entries>
+                        </additionalClassPath>
+                        <outputDirectory path="WEB-INF/classes/"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.codecoach.CCConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.codecoach.CCConfiguration">
+                        <advices>ALL</advices>
+                        <exclude>com;java;javax;sun;sunw;org;oracle</exclude>
+                        <include class="java.lang.String"/>
+                        <level>4</level>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.debug.DebugConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.debug.DebugConfiguration">
+                        <JPDAClassicDebugArguments>-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,address=&lt;port></JPDAClassicDebugArguments>
+                        <JPDADebugArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=&lt;port></JPDADebugArguments>
+                        <OJVMDebugArguments>-XXdebug,quiet,port&lt;port></OJVMDebugArguments>
+                        <breakpointScope>workspace</breakpointScope>
+                        <remoteDebugging>true</remoteDebugging>
+                        <remoteDebuggingParameters class="java.util.HashMap">
+                           <Item>
+                              <Key>Host</Key>
+                              <Value>localhost</Value>
+                           </Item>
+                           <Item>
+                              <Key>Port</Key>
+                              <Value>6666</Value>
+                           </Item>
+                        </remoteDebuggingParameters>
+                        <remoteDebuggingParametersSaved>true</remoteDebuggingParametersSaved>
+                        <remoteDebuggingProtocol>jpda</remoteDebuggingProtocol>
+                        <startOption>running</startOption>
+                        <tracingDisabled>java;javax;sun;sunw;apple;com.apple;com.evermind;com.oracle;com.orionserver;com.sun;EDU.oswego;oracle.core;oracle.dms;oracle.ide;oracle.j2ee;oracle.jdbc;oracle.jdevimpl;oracle.jsp;oracle.oc4j;oracle.ojc;oracle.security;oracle.xml;org.omg;org.w3c;org.xml</tracingDisabled>
+                        <tracingEnabled class="java.lang.String"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.profile.ProfileConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.profile.ProfileConfiguration">
+                        <DMSstartID>20000</DMSstartID>
+                        <DMSstate>0</DMSstate>
+                        <eventColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </eventColumnVisible>
+                        <events>G(All events;(G(VM Events;(E(0;GC;-16776961;1);E(10;Wait;-65485;0);E(11;Synch Blocks 0;-39322;0);E(12;Synch Blocks 1;-39322;0);E(13;Synch Blocks 2;-39322;0);E(20;Prepare Class;-16751002;0);E(21;Load Class;-16724992;0);E(22;Resolve Class;-16737997;0);));G(BC4J Events;(E(1000;JBO_MISCELLANEOUS;-4144960;1);E(1001;JDBC_SELECT;-256;1);E(1002;JDBC_CREATE_STATEMENT;-256;1);E(1003;JDBC_CONNECT;-256;1);E(1004;JDBC_CREATE_PREPARED_STATEMENT;-256;1);E(1005;JDBC_EXECUTE;-256;1);E(1006;METAOBJECT_LOAD;-65281;1);E(1007;EXECUTE_QUERY;-16776961;1);E(1008;BC4J_CREATE_COMPOBJ;-65281;0);E(1009;BC4J_CREATE_ROOTAM;-65281;1);E(1010;BC4J_CREATE_VIEWOBJECT;-65281;0);E(1011;BC4J_CREATE_AM;-65281;0);E(1012;BC4J_CREATE_VIEWLINK;-65281;0);E(1013;SQLB_DOENTITYDML;-16776961;1);E(1014;SQLB_DOENTITYSELECT;-16776961;1);E(1015;VIEWOBJECT_GETSTATEMENT;-16776961;1);E(1016;REMOTE_METHOD_CALL;-65536;1);));));</events>
+                        <excludedClasses>java;javax;sun;sunw;com;oracle</excludedClasses>
+                        <excludedInstances class="java.lang.String"/>
+                        <includedClasses class="java.lang.String"/>
+                        <includedInstances class="java.lang.String"/>
+                        <localProfiling>true</localProfiling>
+                        <memColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </memColumnVisible>
+                        <memoryUpdateInterval>10</memoryUpdateInterval>
+                        <remoteHost class="java.lang.String"/>
+                        <remoteParametersSaved>false</remoteParametersSaved>
+                        <remotePort>4000</remotePort>
+                        <sampleColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </sampleColumnVisible>
+                        <sampleInterval>5</sampleInterval>
+                        <sliderDepth>20</sliderDepth>
+                        <useAPI>false</useAPI>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.xslt.XSLTConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.xslt.XSLTConfiguration">
+                        <inputFileURL/>
+                        <outputFileURL/>
+                        <showInputFile>true</showInputFile>
+                        <showOutputFile>true</showOutputFile>
+                        <sourcePath>
+                           <entries class="[Ljava.net.URL;"/>
+                        </sourcePath>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.sqlj.config.SqljConfiguration</Key>
+                     <Value class="oracle.jdevimpl.sqlj.config.SqljConfiguration">
+                        <additionalParameters class="java.lang.String"/>
+                        <checkSemantics>false</checkSemantics>
+                        <codegen>oracle</codegen>
+                        <contextConnectionMap class="java.util.HashMap"/>
+                        <contextName>&lt;none></contextName>
+                        <useCache>false</useCache>
+                        <warnAll>false</warnAll>
+                        <warnNull>false</warnNull>
+                        <warnPortable>false</warnPortable>
+                        <warnPrecision>false</warnPrecision>
+                        <warnStrict>false</warnStrict>
+                        <warnVerbose>false</warnVerbose>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>WebappJspCompilerOptions</Key>
+                     <Value class="oracle.jdevimpl.webapp.jsp.JspCompilerOptions">
+                        <forgiveDuplicateDirectiveAttributes>false</forgiveDuplicateDirectiveAttributes>
+                        <requestTimeIntrospection>false</requestTimeIntrospection>
+                        <validate>true</validate>
+                        <validateTLD>true</validateTLD>
+                     </Value>
+                  </Item>
+               </configData>
+            </Value>
+         </Item>
+      </configurations>
+   </projectSettings>
+   <projectSourcePath>
+      <entries>
+         <Item path="."/>
+         <Item path="../DHLQMSEJB/"/>
+      </entries>
+   </projectSourcePath>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>CachedConfigTable</Key>
+         <Value class="oracle.jsp.parse.CachedConfigTable"/>
+      </Item>
+   </properties>
+</project>

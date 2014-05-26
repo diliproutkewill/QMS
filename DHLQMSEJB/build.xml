@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project name="etrans-ejb" basedir="." default="ejb-jar">
+
+	<description> The EJB project in eTrans. </description>
+	
+	<!--
+		Any properties below this point are defaults,
+		as ant will only allow a property to be defined
+		once, therefore the properties from the file
+		referenced above take precedence.
+	-->
+	<property name="project.name" value="DHLQMSEJB" />	
+	<property name="web.dir" value="../ESupply" />
+	<property name="module.name" value="DHLQMSEJB" />	
+	<property name="source.dir.java" value="." />
+	<property name="build.dir" value="build/" />
+	<property name="classes.dir" value="${build.dir}classes/" />
+	<property name="dist.dir" value="dist/" />
+	
+	<!-- Set up some paths -->
+	
+	<path id="source.path">
+		<pathelement path="${source.dir.java}" />
+	</path>
+
+   <path id="classpath">
+      	<pathelement location="./build/classes"/>
+   </path>
+	
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete dir="${classes.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${classes.dir}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac debug="true" destdir="${classes.dir}" deprecation="off" source="1.5">
+			<src path="${source.dir.java}/com" />
+			<classpath>
+				<fileset dir="${source.dir.java}/lib" /> 					
+				<fileset dir="${web.dir}/lib" />
+				<fileset dir="${web.dir}/WEB-INF/lib" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="ejb-jar" depends="compile">
+		<jar destfile="${dist.dir}/${module.name}.jar"  >
+			<fileset dir="${classes.dir}" includes="**/*.class" />
+			<fileset dir="${source.dir.java}" excludes="bin/** **/build.xml" includes="**/*.xml **/*.properties" />
+			 <manifest>
+			<attribute name="Class-Path" value="log4j-1.2.8.jar poi-2.5.1.jar cos4upload.jar gzip-filter.jar"/>
+			</manifest>
+
+		</jar>
+	</target>
+</project>
+

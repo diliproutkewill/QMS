@@ -1,0 +1,93 @@
+<DynamicContent>
+	<marginlimit>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>levelId</name>
+			<size>10</size>
+			<maxLength>3</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter(this,"levelId");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>button</type>
+			<name>levelb1</name>
+			<class>input</class>
+			<onClick>openLevelIdLOV(this)</onClick>
+			<value>...</value>
+		</ChildElement>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>serviceLevelId</name>
+			<size>10</size>
+			<maxLength>5</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter(this,"serviceLevelId");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>button</type>
+			<name>sLevelb1</name>
+			<class>input</class>
+			<onClick>openSLevelIdLOV(this)</onClick>
+			<value>...</value>
+		</ChildElement>
+		<ChildElement elementType="input"  class="formdata" align="center">
+			<type>text</type>
+			<name>maxDiscount</name>
+			<size>10</size>
+			<maxLength>15</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>return checkNumbersAndRoundToTwoDecimal(this,"maxDiscount");toUpper(this)</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input"  class="formdata" align="center">
+			<type>text</type>
+			<name>minMargin</name>
+			<size>10</size>
+			<maxLength>15</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>return checkNumbersAndRoundToTwoDecimal(this,"minMargin");</onBlur>
+		</ChildElement>
+	</marginlimit>
+	
+	<chargeDetails>
+    <ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>levelId</name>
+			<size>10</size>
+			<maxLength>3</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter(this,"levelId");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>button</type>
+			<name>levelb1</name>
+			<class>input</class>
+			<onClick>openLevelIdLOV(this)</onClick>
+			<value>...</value>
+		</ChildElement>
+		
+		<ChildElement elementType="input"  class="formdata" align="center">
+			<type>text</type>
+			<name>maxDiscount</name>
+			<size>10</size>
+			<maxLength>15</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>return checkNumbersAndRoundToTwoDecimal(this,"maxDiscount");toUpper(this)</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input"  class="formdata" align="center">
+			<type>text</type>
+			<name>minMargin</name>
+			<size>10</size>
+			<maxLength>15</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>return checkNumbersAndRoundToTwoDecimal(this,"minMargin");</onBlur>
+		</ChildElement>
+	</chargeDetails>
+
+</DynamicContent>

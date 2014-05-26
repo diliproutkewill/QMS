@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE menu-names [
+  <!ELEMENT menu-names (leaf-node+)>
+  <!ELEMENT leaf-node	(module+)>
+  <!ELEMENT module    (uiName+)> 
+  <!ELEMENT uiName    (#PCDATA)> 
+  <!ATTLIST leaf-node leafName CDATA "">
+  <!ATTLIST module name CDATA "">
+  <!ATTLIST module txid CDATA "">
+  <!ATTLIST module hotkey CDATA "" >
+  <!ATTLIST uiName alevel CDATA "1">
+  <!ATTLIST uiName process CDATA "">
+  <!ATTLIST uiName url CDATA "">
+]>
+
+<menu-names>
+
+  <leaf-node leafName="el-crm-Customer-Setup">
+    <module name="Profile" txid="20501" hotkey="F">
+	  <uiName alevel="2" process="Modify"	url="ELPartyMasterCustomerCRMModify.jsp?Process=MODIFY&amp;partyFlag=CUSTOMER">Modify</uiName>
+	  <uiName alevel="1" process="View"		url="ELPartyMasterCustomerCRMView.jsp?Process=VIEW&amp;partyFlag=CUSTOMER">View</uiName>
+    </module>
+    <module name="&amp;nbsp;&amp;nbsp;Parts&amp;nbsp;&amp;nbsp;" txid="20502" hotkey="P">
+	  <uiName alevel="2" process="Modify"	url="ELPartVendorController.jsp?Process=MODIFY&amp;flag=CUSTOMER">Modify</uiName>
+	  <uiName alevel="1" process="View"		url="ELPartVendorController.jsp?Process=VIEW&amp;flag=CUSTOMER">View</uiName>
+    </module>
+    <module name="Sales Contract" txid="20503" hotkey="C">
+	  <uiName alevel="1" process="View"		url="ELSalesContractController.jsp?Process=VIEW">View</uiName>
+    </module>
+  </leaf-node>
+
+  <leaf-node leafName="el-crm-Sales-Order">
+	<module name="Sales Order" txid="23301" hotkey="O">
+	  <uiName alevel="2" process="Add"    	url="ELSOController.jsp?Process=CRMADD">Add</uiName>
+	  <uiName alevel="1" process="View"   	url="ELSOController.jsp?Process=CRMVIEW">View</uiName>
+	  <uiName alevel="1" process="Print"  	url="ELSOController.jsp?Process=CRMPRINT">View</uiName>
+	  <uiName alevel="4" process="Cancel" 	url="ELSOController.jsp?Process=CRMCANCEL">Delete</uiName>
+    </module>
+  </leaf-node>
+
+  <leaf-node leafName="el-crm-Reports">
+    <module name="Reports" txid="25105" hotkey="R">
+	  <uiName alevel="1" process="Sales Orders"   		url="ELCrmSOReport.jsp">View</uiName>
+	  <uiName alevel="1" process="Sales Order Pending"  url="ELCrmPendingSO.jsp">View</uiName>
+	  <uiName alevel="1" process="Back Orders"   		url="ELCrmBackOrdersReport.jsp">View</uiName>
+	  <uiName alevel="1" process="View All Parts"   	url="ELCrmPartsReport.jsp">View</uiName>
+	  <uiName alevel="1" process="View All Invoices"   	url="ELCrmInvoiceReport.jsp">View</uiName>
+    </module>
+  </leaf-node>
+
+  <leaf-node leafName="el-crm-Tracking">
+    <module name="Tracking" txid="25601" hotkey="T">
+	  <uiName alevel="1" process="Track"   url="ELReleaseTrackIndex.jsp">View</uiName>
+    </module>
+  </leaf-node>
+
+
+
+
+
+
+   <leaf-node leafName="es-etc-Operations">
+    <module name="PRQ" txid="10801">
+      <uiName alevel="2" process="Add" url="etrans/crm/ETCEnterPRQ.jsp?Operation=Add">Add</uiName>
+       <uiName alevel="1" process="View" url="etrans/crm/ETCPRQEnterId.jsp?Operation=View&amp;userType=ETC">View</uiName>     
+	   
+    </module>
+    <!-- <module name="Data UpLoad" txid="10802">
+      <uiName alevel="2" process="PRQ UPLoad" url="samp.jsp">PRQ UPLoad</uiName>
+       <uiName alevel="2" process="Order UPLoad" url="samp.jsp?Operation=Add">Order UPLoad</uiName>
+        <uiName alevel="2" process="Invoice UPLoad" url="samp.jsp?Operation=Add">Invoice UPLoad</uiName>
+    </module>  -->
+  </leaf-node>
+    <leaf-node leafName="es-etc-OrderManagement">
+    <module name="POMS" txid="10601">
+    <uiName alevel="2" process="Add" url="ETConsigneeOrderController?Operation=Add&amp;fromMenu=Yes">Add</uiName>
+	 <uiName alevel="2" process="Modify" url="etrans/ETConsigneeOrderEnterId.jsp?Operation=Modify">Modify</uiName>
+	 <uiName alevel="1" process="View" url="etrans/ETConsigneeOrderEnterId.jsp?Operation=View">View</uiName>
+	 <uiName alevel="4" process="Delete" url="etrans/ETConsigneeOrderEnterId.jsp?Operation=Delete">Delete</uiName>
+	 <uiName alevel="4" process="Pending Orders" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=consigneeOrder&amp;reportType=consigneeReport">Pending Orders</uiName>
+	 <uiName alevel="4" process="View All Orders" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=consigneeOrder&amp;reportType=consigneeViewAllReport">View All Orders</uiName>
+	 <uiName alevel="4" process="PRQ" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=consigneeOrder">PRQ</uiName>
+    </module>
+    <module name="IMS" txid="10602">
+       <uiName alevel="2" process="Add" url="ETShipperInvoiceController?Operation=Add&amp;fromMenu=Yes">Add</uiName>
+	 <uiName alevel="2" process="Modify" url="etrans/ETShipperInvoiceEnterId.jsp?Operation=Modify">Modify</uiName>
+	 <uiName alevel="1" process="View" url="etrans/ETShipperInvoiceEnterId.jsp?Operation=View">View</uiName>
+	 <uiName alevel="4" process="Delete" url="etrans/ETShipperInvoiceEnterId.jsp?Operation=Delete">Delete</uiName>
+	 <uiName alevel="4" process="Pending Invoices" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=shipperInvoice&amp;reportType=invoiceReport">Pending Invoices</uiName>
+	 <uiName alevel="4" process="View All Invoices" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=shipperInvoice&amp;reportType=invoiceViewAllReport">View All Invoices</uiName>
+	 <uiName alevel="4" process="PRQ" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=shipperInvoice">PRQ</uiName>
+    </module>
+	
+  </leaf-node>
+  	<leaf-node leafName="es-etc-sfa">
+		<module name="RFQ" txid="10602">
+		<uiName alevel="1" process="Create RFQ" url="etrans/sfa/ETGeneralRatesQuote.jsp?operationType=generateQuote&amp;userType=ETC">Create RFQ</uiName>
+		<uiName alevel="1" process="Confirm to PRQ" url="etrans/sfa/ETQuoteEnterId.jsp?operationType=generatePrq&amp;userType=ETC">Confirm to PRQ</uiName>
+		</module>
+	</leaf-node>
+
+    <leaf-node leafName="es-etc-TrackNTrace">
+    <module name="Track Trace" txid="10803">
+      <uiName alevel="2" process="FasTrak" url="etrans/crm/ETCFastrak.jsp">FasTrak</uiName>
+      <uiName alevel="2" process="Specific" url="etrans/crm/ETCSpecificTracking.jsp">Specific</uiName>
+      <uiName alevel="1" process="Detailed" url="etrans/crm/ETCDetailedTracking.jsp">Detailed</uiName>
+    </module>
+  </leaf-node>
+    <leaf-node leafName="es-etc-OperationalReports">
+    <module name="Outbound" txid="10804">
+      <uiName alevel="1" process="PRQ Not Assigned to House" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=PRQNotAssignedToHouse&amp;ShipmentMode=7">PRQ Not Assigned to House</uiName>
+      <uiName alevel="1" process="House Not assigned to Master" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=HouseNotAssigned&amp;ShipmentMode=7">House Not assigned to Master</uiName>
+      <uiName alevel="1" process="Master not Closed" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=MasterNotClosed&amp;ShipmentMode=7">Master not Closed</uiName>
+      <uiName alevel="1" process="House not Invoiced" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=HouseNotInvoiced&amp;ShipmentMode=7">House not Invoiced</uiName>
+      <uiName alevel="1" process="Master Closed Break Bulk Status" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=MasterClosedBreakBulkStatusOfOrignSide&amp;ShipmentMode=7">Master Closed Break Bulk Status</uiName>
+      <uiName alevel="1" process="Origin Invoice" url="samp.jsp">Origin Invoice</uiName>
+      <!-- <uiName alevel="1" process="Origin Invoice" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=shipperInvoice&amp;ShipmentMode=7">Origin Invoice</uiName> -->
+
+
+    </module>
+    <module name="Inbound" txid="10805">
+      <uiName alevel="1" process="Master Closed Break Bulk Status" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=MasterClosedBreakBulkStatusOfDestinationSide&amp;ShipmentMode=7">Master Closed Break Bulk Status</uiName>
+      <uiName alevel="1" process="House not Invoiced" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=InboundHouseNotInvoiced&amp;ShipmentMode=7">House not Invoiced</uiName>
+      <uiName alevel="1" process="House with No DO" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=InboundHousesWithNoDeliveryOrder&amp;ShipmentMode=7">House with No DO</uiName>
+      <uiName alevel="1" process="Destination Invoice" url="samp.jsp">Destination Invoice</uiName>
+      <!-- <uiName alevel="1" process="Destination Invoice" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=consigneeInvoice&amp;ShipmentMode=7">Destination Invoice</uiName>	    -->
+    </module>
+    <module name="Ageing Outbound" txid="10806">
+      <uiName alevel="1" process="PRQ Not Assigned to House" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingOutboundPRQNotAssignedToHouse&amp;ShipmentMode=7">PRQ Not Assigned to House</uiName>
+      <uiName alevel="1" process="House Not assigned to Master" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingOutboundHouseNotAssignedToMaster&amp;ShipmentMode=7">House Not assigned to Master</uiName>
+      <uiName alevel="1" process="Master not Closed" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingOutboundMastersNotClosed&amp;ShipmentMode=7">Master not Closed</uiName>
+      <uiName alevel="1" process="House not Invoiced" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingOutboundHouseNotInvoiced&amp;ShipmentMode=7">House not Invoiced</uiName>
+      <uiName alevel="1" process="Master Closed Break Bulk Status" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingMasterClosedBreakBulkStatusOfOrignSide&amp;ShipmentMode=7">Master Closed Break Bulk Status</uiName>
+    </module>
+    <module name="Ageing Inbound" txid="10807">
+      <uiName alevel="1" process="Master Closed Break Bulk Status" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingMasterClosedBreakBulkStatusOfDestinationSide&amp;ShipmentMode=7">Master Closed Break Bulk Status</uiName>
+      <uiName alevel="1" process="House not Invoiced" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingInboundHouseNotInvoiced&amp;ShipmentMode=7">House not Invoiced</uiName>
+      <uiName alevel="1" process="House with No DO" url="etrans/crm/ETCOperationalReportsController.jsp?Operation=AgeingInboundHousesWithNoDeliveryOrder&amp;ShipmentMode=7">House with No DO</uiName>
+    </module>
+  </leaf-node>
+  <leaf-node leafName="es-etc-CustomerReports">
+    <module name="Define Reports" txid="10700">
+		<uiName alevel="2" process="Define" url="etrans/ETDefineReportDefineParam.jsp?module=CRM">Define</uiName>
+		<uiName alevel="2" process="Modify" url="etrans/ETDefineReportEnterId.jsp?Operation=Modify&amp;module=CRM">Modify</uiName>
+		<uiName alevel="1" process="View" url="etrans/ETDefineReportEnterId.jsp?Operation=View&amp;module=CRM">View</uiName>
+		<uiName alevel="4" process="Delete" url="etrans/ETDefineReportEnterId.jsp?Operation=Delete&amp;module=CRM">Delete</uiName>
+		<uiName alevel="1" process="Execute" url="etrans/ETDefineReportEnterId.jsp?Operation=Execute&amp;module=CRM">Execute</uiName>
+	</module>
+    <module name="Specific Reports" txid="10808">
+      <uiName alevel="2" process="Accounts Payable" url="etrans/crm/ETCAPBillwiseOutstandingReport.jsp">Accounts Payable</uiName>
+      <uiName alevel="2" process="Tonnage" url="etrans/crm/ETCTonnageReport.jsp">Tonnage</uiName>
+      <uiName alevel="1" process="TAT" url="etrans/crm/ETCTATReport.jsp">TAT</uiName>
+    </module>
+  </leaf-node>
+  <leaf-node leafName="es-etc-PrintReports">
+    <module name="Print Reports" txid="10809">
+      <uiName alevel="1" process="Documents" url="etrans/crm/ETCPrintDocuments.jsp">Documents</uiName>
+    </module>
+  </leaf-node> 
+</menu-names>

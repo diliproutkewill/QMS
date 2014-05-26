@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <ruleset name="My custom rules"
+            xmlns="http://pmd.sf.net/ruleset/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+            xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+	 <description></description>
+ <rule name="AvoidCreatingObjectsAtBegOfTheMethRule"
+             message="WARNING: Create the objects whenever they require. don?t create objects at the beginning of the method"
+             class="com.foursoft.pmd.AvoidCreatingObjectsAtBegOfTheMethRule">
+              <description>
+				Create the objects whenever they require. don?t create objects at the beginning of the method even though same will be used at the end of the method
+              </description>
+                <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+
+		 	 <rule name="AvoidIteratorForHeavyusageRule"
+            message="Avoid Iterator for Heavy Usage"
+            class="com.foursoft.pmd.AvoidIteratorForHeavyusageRule">
+            <description>
+				Avoid Iterator for Heavy Usage
+			</description>
+            <priority>2</priority>
+        <example>
+         <![CDATA[  
+      	  class Hello {
+			 void bar() {
+				  while (baz)
+			   buz.doSomething();
+ 			}
+		  }
+      	 ]]>
+        </example>
+      </rule>
+	   <rule name="AvoidLongVariableNameRule"
+            message="Variablesnames less than 15 characters is good"
+
+            class="com.foursoft.pmd.AvoidLongVariableNameRule">
+            <description>
+				Variable names less than 15 characters is good.
+
+			</description>
+            <priority>2</priority>
+        <example>
+         <![CDATA[  
+      	  class Hello {
+			 void bar() {
+				  while (baz)
+			   buz.doSomething();
+ 			}
+		  }
+      	 ]]>
+        </example>
+      </rule>
+
+	  <rule name="AvoidSameVariableNameDiffInCaseRule"
+             message="Avoid names that are similar or differ only in Case"
+             class="com.foursoft.pmd.AvoidSameVariableNameDiffInCaseRule">
+              <description>
+				Avoid names that are similar or differ only in Case
+              </description>
+                <priority>2</priority>
+        <example>
+         <![CDATA[      
+        
+        public class CollectionObjectsNullTest2 {	
+	HashSet hs = new HashSet();
+	HashSet hs1 = new HashSet();
+	ArrayList al3= new ArrayList();
+	Set s1= null;
+	public Set test() throws SQLException{
+		Connection con = null;
+		
+		Map m1 = null;
+		ArrayList al2= new ArrayList();
+		
+		try{
+			con = DriverManager.getConnection("");
+			 s1= new HashSet();
+			 s1.add("sai");
+			 s1.add("cnu");
+			 m1= new HashMap();
+			System.out.println("try");
+		}
+		finally{
+			con=null;
+			hs1=null;
+			
+		}
+		return s1;
+	}
+
+}
+
+      	 ]]>
+        </example>
+      </rule>
+	   <rule name="AvoidThisKeywordInEjbsRule"
+             message="Don?t use 'this' keywod in EJB's. Instead it can pass the result of SessionContext.getEJBObject() or EntityContext.getEJBObject()."
+             class="com.foursoft.pmd.AvoidThisKeywordInEjbsRule">
+              <description>
+				EJB must not attempt to pass this as an argument or end result. Instead it can pass the result of SessionContext.getEJBObject() or EntityContext.getEJBObject()
+              </description>
+             <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="AvoidToUseReflectionPackageRule"
+             message="Avoid using java.lang.reflect package."
+             class="com.foursoft.pmd.AvoidToUseReflectionPackageRule">
+              <description>
+				Avoid using java.lang.reflect package.
+               </description>
+                <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+
+		   <rule name="AvoidUsageOfMapRule"
+            message="WARNING:Use WeakHashMap Rather Than Map-4S-CS-4.7.1.5"
+            class="com.foursoft.pmd.AvoidUsageOfMapRule">
+            <description>
+               Warning:Use WeakHashMap Rather Than Map -4S-CS-4.7.1.5
+            </description>
+            <priority>2</priority>
+            
+        <example>
+         <![CDATA[  
+      	 public void foo() {
+         foo a="abc";
+    	  }
+
+      	 ]]>
+        </example>
+      </rule>
+
+	     <rule name="BigDecimalRule"
+             message="Use java.math.BigDecimal as data type for private attribute of a Java Bean
+  to capture the number for more than 7 digits.-4S-CS-2.3.18 "
+             class="com.foursoft.pmd.BigDecimalRule">
+              <description>
+      	Use java.math.BigDecimal as data type for private attribute of a Java Bean to capture the number for more than 7 digits. For only integer values, also make sure to take care of the scope of the value; if there is any unlimited scope, then use BigInteger, And with decimal values BigDecimal can be used.-4S-CS-2.3.18
+              </description>
+                <priority>2</priority>
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+      </rule>
+	     <rule name="BooleanMethodsRule"
+             message="All Boolean getter methods must be prefixed with ?is? 4S-CS-1.1.6.12"
+             class="com.foursoft.pmd.BooleanMethodsRule">
+              <description>
+         All Boolean getter methods must be prefixed with ?is? 4S-CS-1.1.6.12
+              </description>
+                <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		    <rule name="CloneMethodMustImplementCloneableRule"
+            message=" If you think that clone () may be called in a class you write, then explicitly define it 
+               (and declare the class to implement Cloneable) because the default shallow-copy version of clone
+                might not do what you want.-4S-CS-2.3.46"
+            class="com.foursoft.pmd.CloneMethodMustImplementCloneableRule">
+            <description>
+                If you think that clone () may be called in a class you write, then explicitly define it 
+               (and declare the class to implement Cloneable) because the default shallow-copy version of clone
+                might not do what you want.-4S-CS-2.3.46
+            </description>
+            <priority>2</priority>
+        <example>
+         <![CDATA[  
+      	  class Hello {
+			 void bar() {
+				  while (baz)
+			   buz.doSomething();
+ 			}
+		  }
+      	 ]]>
+        </example>
+      </rule>
+	  <rule name="CloseResourcesinfinallyBlockRule"
+             message="The finally Block is used to guarantee that any System resources (such as open files) are returned by your program-4S-CS-4.7.3 "
+             class="com.foursoft.pmd.CloseResourcesinfinallyBlockRule">
+              <description>
+			 The finally Block is used to guarantee that any System resources (such as open files) are returned by your program-4S-CS-4.7.3
+              </description>
+                <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		    <rule name="CompareObjectsWithEqualsRule"
+             message="Use ?equals? instead of ?==? when comparing objects.-4S-CS-2.3.28"
+             class="com.foursoft.pmd.CompareObjectsWithEqualsRule">
+              <description>
+				Use ?equals? instead of ?==? when comparing objects.-4S-CS-2.3.28
+              </description>
+                <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+         </rule>
+		    <rule name="CreateBeanInstanceInMsgDrivenContextRule"
+             message="Use setMesssageDrivenContext() or ejbCreate() method to cache bean specific resources. -4S-CS-4.4.4.2"
+             class="com.foursoft.pmd.CreateBeanInstanceInMsgDrivenContextRule">
+              <description>
+         Use setMesssageDrivenContext() or ejbCreate() method to cache bean specific resources. -4S-CS-4.4.4.2
+              </description>
+               <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="CustomExceptionRule"
+            message="WARNING:our custom exception is Foursoft Exception,Plese check whether  if they do not have useful information for client code.-4S-CS-2.8.1"
+            class="com.foursoft.pmd.CustomExceptionRule">
+            <description>
+             WARNING:Try not to create new custom exceptions if they do not have useful information for client code. If at all you have to write the exceptions, then make sure to maintain any hierarchy that is applicable.-4S-CS-2.8.1
+            </description>
+           <priority>2</priority> 
+        <example>
+         <![CDATA[  
+      	  class Hello {
+			 void bar() {
+				  while (baz)
+			   buz.doSomething();
+ 			}
+		  }
+      	 ]]>
+		  </example>
+         </rule>
+		  <rule name="DAONameCheckingRule"
+             message="DAOs name should be:modulename DAO .-4S-CS-1.4.3"
+             class="com.foursoft.pmd.DAONameCheckingRule">
+              <description>
+   DAOs name should be:modulename DAO.-4S-CS-1.4.3
+              </description>
+            <priority>2</priority>         
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="DontUsePrintStackTraceRule"
+             message="Never use exceptions for flow control. Generating stack traces is expensive and the value of a stack trace is in  debugging.  In a  flow-control situation, the stack trace would be ignored,  since the client just  wants to know how to proceed-4S-CS-2.8.4"
+             class="com.foursoft.pmd.DontUsePrintStackTraceRule">
+              <description>
+         Never use exceptions for flow control. Generating stack traces is expensive and the value of a stack trace is in  debugging.  In a  flow-control situation, the stack trace would be ignored,  since the client just  wants to know how to proceed-4S-CS-2.8.4
+              </description>
+               <priority>2</priority>         
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		     <rule name="DuplicateImportsRule"
+             message="Avoid duplicate import statement in EJB?s and Web tier components. -4S-CR-2.3.30"
+             class="com.foursoft.pmd.DuplicateImportsRule">
+              <description>
+         		Avoid duplicate import statement in EJB?s and Web tier components. -4S-CR-2.3.30
+              </description>
+             <priority>2</priority>         
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		      <rule name="ExceptionNamingRule"
+   message="Same as Class but ending with Exception suffix. -4S-CS-1.1.5.3"
+    class="com.foursoft.pmd.ExceptionNamingRule">
+              <description>
+		Same as Class but ending with Exception suffix. -4S-CS-1.1.5.3
+		
+
+              </description>
+                <priority>2</priority>     
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="GetConnectionCheckingRule"
+		  message="  In SessionBeans and DAO?s write one private method called getConnection() to get the connection for executing the SQL statements.-4S-CS-4.1.13"
+             class="com.foursoft.pmd.GetConnectionCheckingRule">
+              <description>
+ 				In SessionBeans and DAO?s write one private method called getConnection() to get the connection for executing the SQL statements.-4S-CS-4.1.13
+              </description>
+               <priority>2</priority>   
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		    <rule name="InitializeDAOInsetEntityContextRule"
+             message="Initialize the DAO in setEntityContext() method of the BMP.-4S-CS-2.4.9"
+             class="com.foursoft.pmd.InitializeDAOInsetEntityContextRule">
+              <description>
+			Initialize the DAO in setEntityContext() method of the BMP.-4S-CS-2.4.9
+                </description>
+             <priority>2</priority>       
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="InitialLowerGetterMethodRule"
+             message="Initial lowercase word is get, remaining sub words are capitalized-4S-CS-1.1.6.8"
+             class="com.foursoft.pmd.InitialLowerGetterMethodRule">
+              <description>
+           Initial lower case word is get remaining sub words are capitalized.-4S-CS-1.1.6.8(For Variables) 
+              </description>
+               <priority>2</priority>     
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="InstanceFieldInitialLowercaseRule"
+             message="For Instance Field,Initial letter is lowercase, all other subwords are capitalized 4S-CS-1.1.6.6"
+             class="com.foursoft.pmd.InstanceFieldInitialLowercaseRule">
+              <description>
+               Naming Convention for Instance Field 
+		  Initial letter is lower case, all other sub words are capitalized from Coding Standards -4S-CS-1.1.6.6(For Variables)
+              </description>
+               <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="InstantiateBeansReferenceInEntityContextRule"
+            message="Use setEntityContext() method to cache bean specific resources -4S-CR-4.4.29"
+            class="com.foursoft.pmd.InstantiateBeansReferenceInEntityContextRule">
+            <description>
+               Use setEntityContext() method to cache bean specific resources            
+            </description>
+            <priority>2</priority> 
+            
+        <example>
+         <![CDATA[  
+      	  class Hello {
+					int i=9;
+					protected static float f=10;
+					Connection con=null;
+					String s="hai";
+					int j=9;
+					int kk;	
+					public  void test(){
+						int j=9;
+						final float g=10;
+						String s="bye";
+						}
+					}
+
+      	 ]]>
+        </example>
+      </rule>
+	      <rule name="InstantiateBeansReferenceInSessionContextRule"
+            message="Use setSessionContext() or ejbCreate() method to cache bean specific resources. -4S-CR-4.4.20"
+            class="com.foursoft.pmd.InstantiateBeansReferenceInSessionContextRule">
+            <description>
+               Use setSessionContext() or ejbCreate() method to cache bean specific resources. -4S-CR-4.4.20            
+            </description>
+           <priority>2</priority> 
+            
+        <example>
+         <![CDATA[  
+      	  class Hello {
+					int i=9;
+					protected static float f=10;
+					Connection con=null;
+					String s="hai";
+					int j=9;
+					int kk;	
+					public  void test(){
+						int j=9;
+						final float g=10;
+						String s="bye";
+						}
+					}
+
+      	 ]]>
+        </example>
+      </rule>
+	      <rule name="InterfaceNamingRule"
+             message="Interface name should end with interface or Runnable  suffix -4S-CS-1.1.6.4"
+             class="com.foursoft.pmd.InterfaceNamingRule">
+              <description>
+  Interface name should end with interface or Runnable  suffix-4S-CS-1.1.6.4
+              </description>
+                <priority>2</priority>         
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		     <rule name="LocalandClassVarNameSameRule"
+             message=" Avoid giving method local variables names same as that of class level variable names.-4S-CS-2.3.27"
+             class="com.foursoft.pmd.LocalandClassVarNameSameRule">
+              <description>
+  Avoid giving method local variables names same as that of class level variable names.-4S-CS-2.3.27
+              </description>
+             <priority>2</priority>        
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+
+  <rule name="LocalVariablesLowerCaseRule"
+             message="For Local Variables ,Initial Letters are lowercase; all other sub words are capitalized but do not hide existing fields of the class-4S-CS-1.1.6.10"
+             class="com.foursoft.pmd.LocalVariablesLowerCaseRule">
+              <description>
+	Initial Letters are lowercase; all other sub words are capitalized but do not hide existing fields of the class -4S-CS-1.1.6.10
+              </description>
+         <priority>2</priority>           
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+
+		 <rule name="LogExceptionRule"
+            message="When wrapping or logging exceptions, add your specific data to the message-4S-CS-2.8.2"
+            class="com.foursoft.pmd.LogExceptionRule">
+            <description>
+              When wrapping or logging exceptions, add your specific data to the message-4S-CS-2.8.2
+            </description>
+           <priority>2</priority> 
+        <example>
+         <![CDATA[  
+      	  class Hello {
+			 void bar() {
+				  while (baz)
+			   buz.doSomething();
+ 			}
+		  }
+      	 ]]>
+        </example>
+      </rule>
+	      <rule name="MethodsNamingConventionRule"
+            message="Naming Convention for Method Initial letter is lowercase,all other subwords are capitalized"
+            class="com.foursoft.pmd.MethodsNamingConventionRule">
+            <description>
+			Initial Letters are lowercase; all other sub words are capitalized
+			Method
+            </description>
+           <priority>2</priority> 
+        <example>
+         <![CDATA[  
+      	  class Hello {
+					int i=9;
+					protected static float f=10;
+					Connection con=null;
+					String s="hai";
+					int j=9;
+					int kk;	
+					public  void test(){
+						int j=9;
+						final float g=10;
+						String s="bye";
+						}
+					}
+
+      	 ]]>
+        </example> 
+      </rule>
+	    <rule name="NamingConventionForPackageRule"
+             message="All characters are lower case in Package Name"
+
+             class="com.foursoft.pmd.NamingConventionForPackageRule">
+              <description>
+			All characters are lower case in Package Name
+            </description>
+           <priority>2</priority>           
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		    <rule name="NamingConventionForVariablesRule"
+             message=" For variables Use mixed case to make names readable Initial letter is lowercase, all other subwords are capitalized"
+             class="com.foursoft.pmd.NamingConventionForVariablesRule">
+              <description>
+				Initial Letters are lowercase; all other sub words are capitalized.
+				Instance Field
+              </description>
+               <priority>2</priority> 
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="NeverDeclInstaVarPublicRule"
+            message="Never declare instance variables as public."
+            class="com.foursoft.pmd.NeverDeclInstaVarPublicRule">
+            <description>
+            Never declare instance variables as public. Making variables public gives up control over internal class structure. Also, methods cannot assume that variables have valid values
+			</description>
+           <priority>2</priority> 
+        <example>
+         <![CDATA[  
+      	  class Hello {
+					int i=9;
+					protected static float f=10;
+					Connection con=null;
+					String s="hai";
+					int j=9;
+					int kk;	
+					public  void test(){
+						int j=9;
+						final float g=10;
+						String s="bye";
+						}
+					}
+
+      	 ]]>
+        </example>
+      </rule>
+	   <rule name="PackageNameValidationEntityBeanRule"
+            message="If a Class implements Entity bean then package name should contain .ejb.bmp "
+            class="com.foursoft.pmd.PackageNameValidationEntityBeanRule">
+            <description>
+			Naming of EJB?s
+			a) SessionBeans name should be: modulenameSessionBean.
+			b)EntityBeans name should be: modulenameEntityBean.
+			C)DAO?s name should be: modulenameDAO
+
+			</description>
+            <priority>2</priority> 
+        <example>
+         <![CDATA[  
+      	  class Hello {
+			 void bar() {
+				  while (baz)
+			   buz.doSomething();
+ 			}
+		  }
+      	 ]]>
+        </example>
+      </rule>
+	    <rule name="PackageNameValidationSessionBeanRule"
+             message="If a Class implements Session bean then package name should contain .ejb.sls "
+             class="com.foursoft.pmd.PackageNameValidationSessionBeanRule">
+              <description>
+			    Naming of EJB?s
+			   a) SessionBeans name should be: modulenameSessionBean.
+			   b)EntityBeans name should be: modulenameEntityBean.
+			   C)DAO?s name should be: modulenameDAO
+              </description>
+            <priority>2</priority>   
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+         </rule>
+		 <rule name="SessionBeanThreadValidationRule"
+            message="EJB should not attempt to manage the threads or thread groups like start, stop, suspend and resume -4S-CS-2.4.5"
+            class="com.foursoft.pmd.SessionBeanThreadValidationRule">
+             <description>
+              EJB should not attempt to manage the threads or thread groups like start, stop, suspend and resume -4S-CS-2.4.5
+             </description>
+            <priority>2</priority>          
+          <example>
+           <![CDATA[      
+            public void foo() {
+            foo a="abc";
+    	    }
+           ]]>
+         </example>
+    </rule>
+	 <rule name="SetterMethodsLowerCaseRule"
+             message="Initial lowercase word is set, remaining sub words are capitalized.CS-1.1.5.9(For Variables)"
+             class="com.foursoft.pmd.SetterMethodsLowerCaseRule">
+              <description>
+ 			  Initial lowercase word is set remaining sub words are capitalized.CS-1.1.5.9(For Variables)
+              </description>
+            <priority>2</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		    <rule name="SuffixAsControllerForAllControllersRule"
+             message="All controller servlets should suffix with Controller.  Ex: ETChargesController.java -4S-CS-1.3"
+             class="com.foursoft.pmd.SuffixAsControllerForAllControllersRule">
+              <description>
+  				All controller servlets should suffix with Controller.  Ex: ETChargesController.java -4S-CS-1.3
+              </description>
+                <priority>2</priority>        
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="TrimToSizeRule"
+             message="Call the trimToSize () method in ArrayList before retuning from the Session Bean business method to minimize the storage of ArrayList Instance. -4S-CS-2.3.17"
+             class="com.foursoft.pmd.TrimToSizeRule">
+              <description>
+				Call the trimToSize () method in ArrayList before retuning from the Session Bean business method to minimize the storage of ArrayList Instance. -4S-CS-2.3.17
+                </description>
+                <priority>2</priority>      
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="TuningEntityBeansRule"
+             message="Use JDBC tuning techniques in BMP. (Avoid entity beans instead use SLSB)-4S-CS-4.4.3.15"
+             class="com.foursoft.pmd.TuningEntityBeansRule">
+              <description>
+			Use JDBC tuning techniques in BMP. (Avoid entity beans instead use SLSB)-4S-CS-4.4.3.15
+				</description>
+                <priority>2</priority>         
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		    <rule name="UseDateUtilandNumberFormatRule"
+             message="Use Date util and NumberFormat classes for formatting before representing date and numeric data to the end-user.-4S-CS-2.3.20"
+             class="com.foursoft.pmd.UseDateUtilandNumberFormatRule">
+              <description>
+					Use Date util and NumberFormat classes for formatting before representing date and numeric data to the end-user.-4S-CS-2.3.20
+                </description>
+              <priority>2</priority>      
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="UseFileNameAsPerthePackageStructures"
+             message="package name should be com foursoft module submodule type FileName CS-1.2"
+             class="com.foursoft.pmd.UseFileNameAsPerthePackageStructures">
+              <description>
+         package name should be com foursoft module submodule type FileName CS-1.2
+              </description>
+              <priority>2</priority>    
+                 <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	  	<rule name="UsePrintInServletRule"
+             message="Use the print() method rather than the println() method.-4S-CS-4.2.2 "
+             class="com.foursoft.pmd.UsePrintInServletRule">
+              <description>
+        Use the print() method rather than the println() method.-4S-CS-4.2.2
+              </description>
+               <priority>2</priority> 
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+      </rule>
+	    <rule name="UsePrintMethodInsteadPrintlnRule"
+             message="Use Print rather than Println, Html Does not care about Newlines -4S-CS-4.7.1.7 "
+             class="com.foursoft.pmd.UsePrintMethodInsteadPrintlnRule">
+              <description>
+        Use Print rather than Println, Html Does not care about Newlines -4S-CS-4.7.1.7
+              </description>
+                <priority>2</priority> 
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+      </rule>
+    <rule name="UseValueObjectThanParametersRule"
+            message="The ValueObjectFactory/ValueObjectAssembler Pattern combines remote data from 	multiple remote objects into one serializable object, thus reducing the number of network transfers required to access multiple items of remote data. -4S-CS-3.10"
+            class="com.foursoft.pmd.UseValueObjectThanParametersRule">
+            <description>
+             The ValueObjectFactory/ValueObjectAssembler Pattern combines remote data from 	multiple remote objects into one serializable object, thus reducing the number of network transfers required to access multiple items of remote data. -4S-CS-3.10
+            </description>
+            <priority>2</priority> 
+        <example>
+         <![CDATA[  
+      	  class Hello {
+			 void bar() {
+				  while (baz)
+			   buz.doSomething();
+ 			}
+		  }
+      	 ]]>
+        </example>
+      </rule>
+      
+	</ruleset>
+
+
+
+

@@ -1,0 +1,1851 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+    <display-name>Web</display-name>
+    <description>No Description</description>
+    <!--distributable/-->
+
+  <!-- added for the suggestion by the R&D Team and kalyan -->
+ <!-- 
+  <filter>
+    <filter-name>GZIPFilter</filter-name>
+    <filter-class>nagiworld.net.filters.gzip.GZIPFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>GZIPFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+ -->
+
+<!-- ended for the suggestion by the R&D Team and kalyan -->
+   <filter>
+    <filter-name>QMSSessionFilter</filter-name>
+    <filter-class>QMSSessionFilter</filter-class>
+  </filter>  
+ <filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>EAValidate.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACADateValidation.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACDateValidation.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACLocationIdsLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACLocationIdsLOV1.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACLoggedUsers.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACPasswordChangeProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACPasswordChangeView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRoleIdLocationIdLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRoleIdsLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRolePermissions.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRolePermissionsConfirm.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRolePermissionsView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRoleRegistration.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRoleRegistrationController.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACRolesViewAll.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACUserIdsLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACUserRegistrationAdd.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACUserRegistrationController.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACUserRegistrationEntry.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACUserRoleEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACUserRoleEnterId22222.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACUsersViewAll.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESACVerificationProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESEventHandler.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESFoursoft_css.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESLoggingActivityReport.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESLoggingActivityViewAllReport.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESLoggingEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESLoggingReportView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuCRMIndex.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuCRMRightPanel.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuETCHeading.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuETCIndex.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuETCRMBottom.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuETCRMIndex.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuETCRMTop.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuETCTreeGenerator.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuHeading.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuIndex.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuRightPanel.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESMenuTreeGenerator.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyAccessDenied.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyErrorPage.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyMenuECRMOperations.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyMenuECRMReports.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyMenuECRMSetup.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyMenuEVRMOperations.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyMenuEVRMReports.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyMenuEVRMSetup.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyMessagePage.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ESupplyRemoveAttribute.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ETCLOVMultipleCustomers.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ETCLOVTerminalIds.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>Invalidate.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>invalidateSession.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ListMasterAdd.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ListMasterEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ListMasterLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ListMasterProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ListMasterView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ListMasterViewAll.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>PasswordProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>PasswordReset.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>PasswordResetProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSCartagePDF.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSContentAdd.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSContentDescriptionView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSContentEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDensityGroupCodeAdd.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDensityGroupCodeEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDensityGroupCodePerKGLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDensityGroupCodeProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDensityGroupCodeView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDensityGroupCodeViewAllEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDesignationAdd.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDesignationEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDesignationLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDesignationProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDesignationView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSDesignationViewAll.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSErrorPage.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSESupplyErrorPage.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSLOVAllLevelTerminalIds.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSLOVContentIds.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSLOVLocationIds.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSQuotePDF.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSRecommendedSellRateEnter.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSRecommendedSelRatesInvalidate.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSRecommendedSelRatesView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSRepOfficersIdsLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesIdsLov.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesPersonCodeLOV.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesPersonRegistrationAdd.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesPersonRegistrationEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesPersonRegistrationProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesPersonRegistrationView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesPersonRegistrationViewAll.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSSalesPersonViewAllProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterAdd.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterDownloadIndex.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterDownloadProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterEnterId.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterUploadIndex.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterUploadProcess.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterView.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>QMSZoneCodeMasterViewAll.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>ResetPassword.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>samp.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>SecuritySettings.jsp</servlet-name>
+</filter-mapping>
+<filter-mapping>
+	<filter-name>QMSSessionFilter</filter-name>
+	<servlet-name>SecuritySettingsUpdate.jsp</servlet-name>
+</filter-mapping>
+<!--@@ Commented by subrahmanyam for QuartzSchedular in place of Weblogic Timer Scheduler -->
+<!-- 
+  <listener>
+    <listener-class>CurrencyConversionListener</listener-class>
+  </listener>
+   -->
+	<servlet>
+        <servlet-name>EAValidate.jsp</servlet-name>
+		<jsp-file>EAValidate.jsp</jsp-file>
+	</servlet>
+	<servlet>
+        <servlet-name>ESACADateValidation.jsp</servlet-name>
+		<jsp-file>ESACADateValidation.jsp</jsp-file>
+	</servlet>
+	<servlet>
+        <servlet-name>ESACDateValidation.jsp</servlet-name>
+		<jsp-file>ESACDateValidation.jsp</jsp-file>
+	</servlet>
+	<!-- <servlet>
+        <servlet-name>ESACLocationIdsLOV.jsp</servlet-name>
+		<jsp-file>ESACLocationIdsLOV.jsp</jsp-file>
+	</servlet> -->
+	<servlet>
+        <servlet-name>ESACLocationIdsLOV1.jsp</servlet-name>
+		<jsp-file>ESACLocationIdsLOV1.jsp</jsp-file>
+	</servlet>
+	<!-- <servlet>
+        <servlet-name>ESACLoggedUsers.jsp</servlet-name>
+		<jsp-file>ESACLoggedUsers.jsp</jsp-file>
+	</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACPasswordChangeProcess.jsp</servlet-name>
+		<jsp-file>ESACPasswordChangeProcess.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACPasswordChangeView.jsp</servlet-name>
+		<jsp-file>ESACPasswordChangeView.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRoleIdLocationIdLOV.jsp</servlet-name>
+		<jsp-file>ESACRoleIdLocationIdLOV.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRoleIdsLOV.jsp</servlet-name>
+		<jsp-file>ESACRoleIdsLOV.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRolePermissions.jsp</servlet-name>
+		<jsp-file>ESACRolePermissions.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRolePermissionsConfirm.jsp</servlet-name>
+		<jsp-file>ESACRolePermissionsConfirm.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRolePermissionsView.jsp</servlet-name>
+		<jsp-file>ESACRolePermissionsView.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRoleRegistration.jsp</servlet-name>
+		<jsp-file>ESACRoleRegistration.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRoleRegistrationController.jsp</servlet-name>
+		<jsp-file>ESACRoleRegistrationController.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACRolesViewAll.jsp</servlet-name>
+		<jsp-file>ESACRolesViewAll.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACSessionExpired.jsp</servlet-name>
+		<jsp-file>ESACSessionExpired.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACUserIdsLOV.jsp</servlet-name>
+		<jsp-file>ESACUserIdsLOV.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACUserRegistrationAdd.jsp</servlet-name>
+		<jsp-file>ESACUserRegistrationAdd.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACUserRegistrationController.jsp</servlet-name>
+		<jsp-file>ESACUserRegistrationController.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACUserRegistrationEntry.jsp</servlet-name>
+		<jsp-file>ESACUserRegistrationEntry.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACUserRoleEnterId.jsp</servlet-name>
+		<jsp-file>ESACUserRoleEnterId.jsp</jsp-file>
+</servlet> -->
+<servlet>
+        <servlet-name>ESACUserRoleEnterId22222.jsp</servlet-name>
+		<jsp-file>ESACUserRoleEnterId22222.jsp</jsp-file>
+</servlet>
+<!-- <servlet>
+        <servlet-name>ESACUsersViewAll.jsp</servlet-name>
+		<jsp-file>ESACUsersViewAll.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESACVerificationProcess.jsp</servlet-name>
+		<jsp-file>ESACVerificationProcess.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESEventHandler.jsp</servlet-name>
+		<jsp-file>ESEventHandler.jsp</jsp-file>
+</servlet> -->
+<servlet>
+        <servlet-name>ESFoursoft_css.jsp</servlet-name>
+		<jsp-file>ESFoursoft_css.jsp</jsp-file>
+</servlet>
+<!-- <servlet>
+        <servlet-name>ESLoggingActivityReport.jsp</servlet-name>
+		<jsp-file>ESLoggingActivityReport.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESLoggingActivityViewAllReport.jsp</servlet-name>
+		<jsp-file>ESLoggingActivityViewAllReport.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESLoggingEnterId.jsp</servlet-name>
+		<jsp-file>ESLoggingEnterId.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESLoggingReportView.jsp</servlet-name>
+		<jsp-file>ESLoggingReportView.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESMenuCRMIndex.jsp</servlet-name>
+		<jsp-file>ESMenuCRMIndex.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESMenuCRMRightPanel.jsp</servlet-name>
+		<jsp-file>ESMenuCRMRightPanel.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESMenuETCHeading.jsp</servlet-name>
+		<jsp-file>ESMenuETCHeading.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESMenuETCIndex.jsp</servlet-name>
+		<jsp-file>ESMenuETCIndex.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESMenuETCRMBottom.jsp</servlet-name>
+		<jsp-file>ESMenuETCRMBottom.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESMenuETCRMIndex.jsp</servlet-name>
+		<jsp-file>ESMenuETCRMIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESMenuETCRMTop.jsp</servlet-name>
+		<jsp-file>ESMenuETCRMTop.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESMenuETCTreeGenerator.jsp</servlet-name>
+		<jsp-file>ESMenuETCTreeGenerator.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESMenuHeading.jsp</servlet-name>
+		<jsp-file>ESMenuHeading.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESMenuIndex.jsp</servlet-name>
+		<jsp-file>ESMenuIndex.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESMenuRightPanel.jsp</servlet-name>
+		<jsp-file>ESMenuRightPanel.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESMenuTreeGenerator.jsp</servlet-name>
+		<jsp-file>ESMenuTreeGenerator.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESupplyAccessDenied.jsp</servlet-name>
+		<jsp-file>ESupplyAccessDenied.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESupplyErrorPage.jsp</servlet-name>
+		<jsp-file>ESupplyErrorPage.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESupplyMenuECRMOperations.jsp</servlet-name>
+		<jsp-file>ESupplyMenuECRMOperations.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESupplyMenuECRMReports.jsp</servlet-name>
+		<jsp-file>ESupplyMenuECRMReports.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESupplyMenuECRMSetup.jsp</servlet-name>
+		<jsp-file>ESupplyMenuECRMSetup.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESupplyMenuEVRMOperations.jsp</servlet-name>
+		<jsp-file>ESupplyMenuEVRMOperations.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESupplyMenuEVRMReports.jsp</servlet-name>
+		<jsp-file>ESupplyMenuEVRMReports.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESupplyMenuEVRMSetup.jsp</servlet-name>
+		<jsp-file>ESupplyMenuEVRMSetup.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>ESupplyMessagePage.jsp</servlet-name>
+		<jsp-file>ESupplyMessagePage.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ESupplyRemoveAttribute.jsp</servlet-name>
+		<jsp-file>ESupplyRemoveAttribute.jsp</jsp-file>
+</servlet> -->
+<servlet>
+        <servlet-name>ETCLOVMultipleCustomers.jsp</servlet-name>
+		<jsp-file>ETCLOVMultipleCustomers.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ETCLOVTerminalIds.jsp</servlet-name>
+		<jsp-file>ETCLOVTerminalIds.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>Invalidate.jsp</servlet-name>
+		<jsp-file>Invalidate.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>invalidateSession.jsp</servlet-name>
+		<jsp-file>invalidateSession.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ListMasterAdd.jsp</servlet-name>
+		<jsp-file>ListMasterAdd.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ListMasterEnterId.jsp</servlet-name>
+		<jsp-file>ListMasterEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ListMasterLOV.jsp</servlet-name>
+		<jsp-file>ListMasterLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ListMasterProcess.jsp</servlet-name>
+		<jsp-file>ListMasterProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ListMasterView.jsp</servlet-name>
+		<jsp-file>ListMasterView.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>ListMasterViewAll.jsp</servlet-name>
+		<jsp-file>ListMasterViewAll.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>PasswordProcess.jsp</servlet-name>
+		<jsp-file>PasswordProcess.jsp</jsp-file>
+</servlet>
+<!-- <servlet>
+        <servlet-name>PasswordReset.jsp</servlet-name>
+		<jsp-file>PasswordReset.jsp</jsp-file>
+</servlet> -->
+<!-- <servlet>
+        <servlet-name>PasswordResetProcess.jsp</servlet-name>
+		<jsp-file>PasswordResetProcess.jsp</jsp-file>
+</servlet> -->
+<servlet>
+        <servlet-name>QMSCartagePDF.jsp</servlet-name>
+		<jsp-file>QMSCartagePDF.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSContentAdd.jsp</servlet-name>
+		<jsp-file>QMSContentAdd.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSContentDescriptionView.jsp</servlet-name>
+		<jsp-file>QMSContentDescriptionView.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSContentEnterId.jsp</servlet-name>
+		<jsp-file>QMSContentEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDensityGroupCodeAdd.jsp</servlet-name>
+		<jsp-file>QMSDensityGroupCodeAdd.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDensityGroupCodeEnterId.jsp</servlet-name>
+		<jsp-file>QMSDensityGroupCodeEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDensityGroupCodePerKGLOV.jsp</servlet-name>
+		<jsp-file>QMSDensityGroupCodePerKGLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDensityGroupCodeProcess.jsp</servlet-name>
+		<jsp-file>QMSDensityGroupCodeProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDensityGroupCodeView.jsp</servlet-name>
+		<jsp-file>QMSDensityGroupCodeView.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDensityGroupCodeViewAllEnterId.jsp</servlet-name>
+		<jsp-file>QMSDensityGroupCodeViewAllEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDesignationAdd.jsp</servlet-name>
+		<jsp-file>QMSDesignationAdd.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDesignationEnterId.jsp</servlet-name>
+		<jsp-file>QMSDesignationEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDesignationLOV.jsp</servlet-name>
+		<jsp-file>QMSDesignationLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDesignationProcess.jsp</servlet-name>
+		<jsp-file>QMSDesignationProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDesignationView.jsp</servlet-name>
+		<jsp-file>QMSDesignationView.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSDesignationViewAll.jsp</servlet-name>
+		<jsp-file>QMSDesignationViewAll.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSErrorPage.jsp</servlet-name>
+		<jsp-file>QMSErrorPage.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSESupplyErrorPage.jsp</servlet-name>
+		<jsp-file>QMSESupplyErrorPage.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSLOVAllLevelTerminalIds.jsp</servlet-name>
+		<jsp-file>QMSLOVAllLevelTerminalIds.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSLOVContentIds.jsp</servlet-name>
+		<jsp-file>QMSLOVContentIds.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSLOVLocationIds.jsp</servlet-name>
+		<jsp-file>QMSLOVLocationIds.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSQuotePDF.jsp</servlet-name>
+		<jsp-file>QMSQuotePDF.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSRecommendedSellRateEnter.jsp</servlet-name>
+		<jsp-file>QMSRecommendedSellRateEnter.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSRecommendedSelRatesInvalidate.jsp</servlet-name>
+		<jsp-file>QMSRecommendedSelRatesInvalidate.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSRecommendedSelRatesView.jsp</servlet-name>
+		<jsp-file>QMSRecommendedSelRatesView.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSRepOfficersIdsLOV.jsp</servlet-name>
+		<jsp-file>QMSRepOfficersIdsLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesIdsLov.jsp</servlet-name>
+		<jsp-file>QMSSalesIdsLov.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesPersonCodeLOV.jsp</servlet-name>
+		<jsp-file>QMSSalesPersonCodeLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesPersonRegistrationAdd.jsp</servlet-name>
+		<jsp-file>QMSSalesPersonRegistrationAdd.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesPersonRegistrationEnterId.jsp</servlet-name>
+		<jsp-file>QMSSalesPersonRegistrationEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesPersonRegistrationProcess.jsp</servlet-name>
+		<jsp-file>QMSSalesPersonRegistrationProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesPersonRegistrationView.jsp</servlet-name>
+		<jsp-file>QMSSalesPersonRegistrationView.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesPersonRegistrationViewAll.jsp</servlet-name>
+		<jsp-file>QMSSalesPersonRegistrationViewAll.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSSalesPersonViewAllProcess.jsp</servlet-name>
+		<jsp-file>QMSSalesPersonViewAllProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterAdd.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterAdd.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterDownloadIndex.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterDownloadIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterDownloadProcess.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterDownloadProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterEnterId.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterProcess.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterUploadIndex.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterUploadIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterUploadProcess.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterUploadProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterView.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterView.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>QMSZoneCodeMasterViewAll.jsp</servlet-name>
+		<jsp-file>QMSZoneCodeMasterViewAll.jsp</jsp-file>
+</servlet>
+<!-- <servlet>
+        <servlet-name>ResetPassword.jsp</servlet-name>
+		<jsp-file>ResetPassword.jsp</jsp-file>
+</servlet> -->
+<servlet>
+        <servlet-name>samp.jsp</servlet-name>
+		<jsp-file>samp.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>SecuritySettings.jsp</servlet-name>
+		<jsp-file>SecuritySettings.jsp</jsp-file>
+</servlet>
+<servlet>
+        <servlet-name>SecuritySettingsUpdate.jsp</servlet-name>
+		<jsp-file>SecuritySettingsUpdate.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>EADateValidation.jsp</servlet-name>
+	<jsp-file>EADateValidation.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ELReleaseTrackIndex.jsp</servlet-name>
+	<display-name>ELReleaseTrackIndex.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ELReleaseTrackIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACLocationIdsLOV.jsp</servlet-name>
+	<display-name>ESACLocationIdsLOV.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACLocationIdsLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACLoggedUsers.jsp</servlet-name>
+	<display-name>ESACLoggedUsers.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACLoggedUsers.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACPasswordChangeProcess.jsp</servlet-name>
+	<display-name>ESACPasswordChangeProcess.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACPasswordChangeProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACPasswordChangeView.jsp</servlet-name>
+	<display-name>ESACPasswordChangeView.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACPasswordChangeView.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACRoleIdLocationIdLOV.jsp</servlet-name>
+	<display-name>ESACRoleIdLocationIdLOV.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRoleIdLocationIdLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACRoleIdsLOV.jsp</servlet-name>
+	<display-name>ESACRoleIdsLOV.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRoleIdsLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACRolePermissions.jsp</servlet-name>
+	<display-name>ESACRolePermissions.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRolePermissions.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACRolePermissionsConfirm.jsp</servlet-name>
+	<display-name>ESACRolePermissionsConfirm.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRolePermissionsConfirm.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACRolePermissionsView.jsp</servlet-name>
+	<display-name>ESACRolePermissionsView.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRolePermissionsView.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACRoleRegistration.jsp</servlet-name>
+	<display-name>ESACRoleRegistration.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRoleRegistration.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACRoleRegistrationController.jsp</servlet-name>
+	<display-name>ESACRoleRegistrationController.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRoleRegistrationController.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>QMSSetupController</servlet-name>
+	<display-name>QMSSetupController</display-name>
+	<description>No Description</description>
+	<servlet-class>QMSSetupController</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ESACRolesViewAll.jsp</servlet-name>
+	<display-name>ESACRolesViewAll.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACRolesViewAll.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACSessionExpired.jsp</servlet-name>
+	<display-name>ESACSessionExpired.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACSessionExpired.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACUserIdsLOV.jsp</servlet-name>
+	<display-name>ESACUserIdsLOV.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACUserIdsLOV.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACUserRegistrationAdd.jsp</servlet-name>
+	<display-name>ESACUserRegistrationAdd.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACUserRegistrationAdd.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACUserRegistrationController.jsp</servlet-name>
+	<display-name>ESACUserRegistrationController.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACUserRegistrationController.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACUserRegistrationEntry.jsp</servlet-name>
+	<display-name>ESACUserRegistrationEntry.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACUserRegistrationEntry.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACUserRoleEnterId.jsp</servlet-name>
+	<display-name>ESACUserRoleEnterId.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACUserRoleEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACUsersViewAll.jsp</servlet-name>
+	<display-name>ESACUsersViewAll.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACUsersViewAll.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESACVerificationProcess.jsp</servlet-name>
+	<display-name>ESACVerificationProcess.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESACVerificationProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESEventHandler.jsp</servlet-name>
+	<display-name>ESEventHandler.jsp</display-name>
+	<jsp-file>ESEventHandler.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESLoggingActivityReport.jsp</servlet-name>
+	<display-name>ESLoggingActivityReport.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESLoggingActivityReport.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESLoggingActivityViewAllReport.jsp</servlet-name>
+	<display-name>ESLoggingActivityViewAllReport.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESLoggingActivityViewAllReport.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESLoggingEnterId.jsp</servlet-name>
+	<display-name>ESLoggingEnterId.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESLoggingEnterId.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESLoggingReportView.jsp</servlet-name>
+	<display-name>ESLoggingReportView.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESLoggingReportView.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESLoginController</servlet-name>
+	<display-name>ESLoginController</display-name>
+	<description>No Description</description>
+	<servlet-class>ESLoginController</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ESLogout</servlet-name>
+	<display-name>ESLogout</display-name>
+	<description>No Description</description>
+	<servlet-class>ESLogout</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuCRMIndex.jsp</servlet-name>
+	<display-name>ESMenuCRMIndex.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuCRMIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuCRMRightPanel.jsp</servlet-name>
+	<display-name>ESMenuCRMRightPanel.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuCRMRightPanel.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuETCHeading.jsp</servlet-name>
+	<display-name>ESMenuETCHeading.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuETCHeading.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuETCIndex.jsp</servlet-name>
+	<display-name>ESMenuETCIndex.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuETCIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuETCRMBottom.jsp</servlet-name>
+	<display-name>ESMenuETCRMBottom.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuETCRMBottom.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuETCRMIndex.jsp</servlet-name>
+	<display-name>ESMenuETCRMIndex.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuETCRMIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuETCRMTop.jsp</servlet-name>
+	<display-name>ESMenuETCRMTop.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuETCRMTop.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuETCTreeGenerator.jsp</servlet-name>
+	<display-name>ESMenuETCTreeGenerator.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuETCTreeGenerator.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuHeading.jsp</servlet-name>
+	<display-name>ESMenuHeading.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuHeading.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuHeadingRight</servlet-name>
+	<display-name>ESMenuHeadingRight</display-name>
+	<description>No Description</description>
+	<servlet-class>ESMenuHeadingRight</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuIndex.jsp</servlet-name>
+	<display-name>ESMenuIndex.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuIndex.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuMainPage</servlet-name>
+	<display-name>ESMenuMainPage</display-name>
+	<description>No Description</description>
+	<servlet-class>ESMenuMainPage</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuRightPanel.jsp</servlet-name>
+	<display-name>ESMenuRightPanel.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuRightPanel.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESMenuTreeGenerator.jsp</servlet-name>
+	<display-name>ESMenuTreeGenerator.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESMenuTreeGenerator.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyAccessDenied.jsp</servlet-name>
+	<display-name>ESupplyAccessDenied.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyAccessDenied.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyErrorPage.jsp</servlet-name>
+	<display-name>ESupplyErrorPage.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyErrorPage.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyLogin</servlet-name>
+	<display-name>ESupplyLogin</display-name>
+	<description>No Description</description>
+	<servlet-class>ESupplyLogin</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyMenuECRMOperations.jsp</servlet-name>
+	<display-name>ESupplyMenuECRMOperations.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyMenuECRMOperations.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyMenuECRMReports.jsp</servlet-name>
+	<display-name>ESupplyMenuECRMReports.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyMenuECRMReports.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyMenuECRMSetup.jsp</servlet-name>
+	<display-name>ESupplyMenuECRMSetup.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyMenuECRMSetup.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyMenuEVRMOperations.jsp</servlet-name>
+	<display-name>ESupplyMenuEVRMOperations.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyMenuEVRMOperations.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyMenuEVRMReports.jsp</servlet-name>
+	<display-name>ESupplyMenuEVRMReports.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyMenuEVRMReports.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyMenuEVRMSetup.jsp</servlet-name>
+	<display-name>ESupplyMenuEVRMSetup.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyMenuEVRMSetup.jsp</jsp-file>
+</servlet>
+<servlet>
+<servlet-name>ETTaskEvntController</servlet-name>
+<display-name>ETTaskEvntController</display-name>
+<description>No Description</description>
+<servlet-class>ETTaskEvntController</servlet-class>
+</servlet>
+<servlet>
+<servlet-name>QMSReportController</servlet-name>
+<display-name>QMSReportController</display-name>
+<description>No Description</description>
+<servlet-class>QMSReportController</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyMessagePage.jsp</servlet-name>
+	<display-name>ESupplyMessagePage.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>ESupplyMessagePage.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ESupplyRemoveAttribute.jsp</servlet-name>
+	<jsp-file>ESupplyRemoveAttribute.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>JMSTest.jsp</servlet-name>
+	<display-name>JMSTest.jsp</display-name>
+	<description>No Description</description>
+	<jsp-file>JMSTest.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>LoadServlet</servlet-name>
+	<display-name>LoadServlet</display-name>
+	<description>No Description</description>
+	<servlet-class>LoadServlet</servlet-class>
+</servlet>
+<servlet>
+<servlet-name>PasswordExpireDuration.jsp</servlet-name>
+<jsp-file>PasswordExpireDuration.jsp</jsp-file>
+</servlet>
+<servlet>
+<servlet-name>PasswordExpireDurationUpdate.jsp</servlet-name>
+<jsp-file>PasswordExpireDurationUpdate.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>PasswordReset.jsp</servlet-name>
+	<jsp-file>PasswordReset.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>PasswordResetProcess.jsp</servlet-name>
+	<jsp-file>PasswordResetProcess.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>ResetPassword.jsp</servlet-name>
+	<jsp-file>ResetPassword.jsp</jsp-file>
+</servlet>
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <display-name>index</display-name>
+        <description>No Description</description>
+        <servlet-class>index</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>index.jsp</servlet-name>
+        <servlet-class>index</servlet-class>
+    </servlet>
+    <!-- Added by Anil -->
+    <servlet>
+		<servlet-name>QMSQuoteMaster.jsp</servlet-name>
+		<jsp-file>QMSQuoteMaster.jsp</jsp-file>
+	</servlet>
+    <servlet>
+		<servlet-name>ETCustomerAdvLOV.jsp</servlet-name>
+		<jsp-file>ETCustomerAdvLOV.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>QMSLOVZoneCodes.jsp</servlet-name>
+		<jsp-file>QMSLOVZoneCodes.jsp</jsp-file>
+	</servlet>
+    <!-- Anil -->
+      <servlet>
+    <servlet-name>SetUpController</servlet-name>
+    <servlet-class>com.dhl.qms.setup.SetUpController</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>QMSConsolidatedSellRateController</servlet-name>
+    <servlet-class>QMSConsolidatedSellRateController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSSellRateController</servlet-name>
+    <servlet-class>QMSSellRateController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BuyRatesController</servlet-name>
+    <servlet-class>BuyRatesController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSQuoteAjaxController</servlet-name>
+    <servlet-class>QMSQuoteAjaxController</servlet-class>
+  </servlet>
+
+  <servlet>
+
+    <servlet-name>QMSBuyChargesController</servlet-name>
+    <servlet-class>QMSBuyChargesController</servlet-class>
+  </servlet>
+  <!-- Added by Anil -->
+  <servlet>
+        <servlet-name>QMSQuoteController</servlet-name>
+        <servlet-class>QMSQuoteController</servlet-class>
+    </servlet>
+      <servlet>
+        <servlet-name>QMSSurchargesController</servlet-name>
+        <servlet-class>QMSSurchargesController</servlet-class>
+    </servlet>
+<!--@@ Added by subrahmanyam for the quartzScheduler  -->    
+<servlet>
+    <servlet-name>LoadingScheduler</servlet-name>
+    <servlet-class>LoadingScheduler</servlet-class>
+    <init-param>
+	<param-name>shutdown-on-unload</param-name>
+	<param-value>true</param-value>
+	</init-param>
+	<init-param>
+	<param-name>start-scheduler-on-load</param-name>
+	<param-value>true</param-value>
+	</init-param>
+	<load-on-startup>4</load-on-startup>
+  </servlet>
+   <!--@@ Ended by subrahmanyam for the quartzScheduler  -->   
+  	<servlet>
+        <servlet-name>ETAdvancedLOVController</servlet-name>
+        <servlet-class>ETAdvancedLOVController</servlet-class>
+    </servlet>
+  <servlet>
+    <servlet-name>QMSSellChargesController</servlet-name>
+    <servlet-class>etrans.QMSSellChargesController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSCartageController</servlet-name>
+    <servlet-class>QMSCartageController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ETMultiModeRoutePlanController</servlet-name>
+    <servlet-class>ETMultiModeRoutePlanController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSBuyRatesUploadController</servlet-name>
+    <servlet-class>QMSBuyRatesUploadController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSCostingController</servlet-name>
+    <servlet-class>QMSCostingController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSAdvSerchLovController</servlet-name>
+    <servlet-class>QMSAdvSerchLovController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSChargesUploadController</servlet-name>
+    <servlet-class>QMSChargesUploadController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSCanadaZonesController</servlet-name>
+    <servlet-class>QMSCanadaZonesController</servlet-class>
+  </servlet>
+  <!--@@Added for the WPBN issue-61289-->
+  <servlet>
+        <servlet-name>QMSAttachmentController</servlet-name>
+        <servlet-class>QMSAttachmentController</servlet-class>
+    </servlet>
+    <!--@@WPBN issue-61289-->
+    <!--@@Added for the WPBN issue-61295-->
+	 <servlet>
+        <servlet-name>QMSEmailTextController</servlet-name>
+        <servlet-class>QMSEmailTextController</servlet-class>
+    </servlet>
+  <servlet>
+    <servlet-name>QMSRatesReportController</servlet-name>
+    <servlet-class>QMSRatesReportController</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>QMSMultiQuoteController</servlet-name>
+  <servlet-class>QMSMultiQuoteController</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QMSQuoteStatusReasonController</servlet-name>
+    <display-name>QMSQuoteStatusReasonController</display-name>
+    <description>QMSQuoteStatusReasonController</description>
+    <servlet-class>QMSQuoteStatusReasonController</servlet-class>
+  </servlet>
+
+    <!--@@WPBN issue-61295-->
+   <servlet-mapping>
+    <servlet-name>QMSCostingController</servlet-name>
+    <url-pattern>/QMSCostingController</url-pattern>
+  </servlet-mapping> 
+ 
+   <servlet-mapping>
+    <servlet-name>QMSBuyRatesUploadController</servlet-name>
+    <url-pattern>/QMSBuyRatesUploadController</url-pattern>
+  </servlet-mapping>    
+   <servlet-mapping>
+    <servlet-name>QMSSellChargesController</servlet-name>
+    <url-pattern>/QMSSellChargesController</url-pattern>
+  </servlet-mapping>   
+  <servlet-mapping>
+        <servlet-name>QMSSetupController</servlet-name>
+        <url-pattern>/QMSSetupController</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>ETAdvancedLOVController</servlet-name>
+        <url-pattern>/ETAdvancedLOVController</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>QMSQuoteController</servlet-name>
+        <url-pattern>/QMSQuoteController</url-pattern>
+    </servlet-mapping>
+    	<servlet-mapping>
+        <servlet-name>QMSSurchargesController</servlet-name>
+        <url-pattern>/QMSSurchargesController</url-pattern>
+    </servlet-mapping>
+    
+  <!-- Anil -->
+   <servlet-mapping>
+    <servlet-name>QMSSellRateController</servlet-name>
+    <url-pattern>/QMSSellRateController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QMSReportController</servlet-name>
+    <url-pattern>/QMSReportController</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QMSBuyChargesController</servlet-name>
+        <url-pattern>/QMSBuyChargesController</url-pattern>
+    </servlet-mapping> 
+    <servlet-mapping>
+        <servlet-name>LoadServlet</servlet-name>
+        <url-pattern>/LoadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ESupplyLogin</servlet-name>
+        <url-pattern>/ESupplyLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ESMenuMainPage</servlet-name>
+        <url-pattern>/ESMenuMainPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ESMenuHeadingRight</servlet-name>
+        <url-pattern>/ESMenuHeadingRight</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+    <servlet-name>ETTaskEvntController</servlet-name>
+    <url-pattern>/ETTaskEvntController</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ESLoginController</servlet-name>
+        <url-pattern>/ESLoginController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ESLogout</servlet-name>
+        <url-pattern>/ESLogout</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+    <servlet-name>BuyRatesController</servlet-name>
+    <url-pattern>/BuyRatesController</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>QMSQuoteAjaxController</servlet-name>
+    <url-pattern>/QMSQuoteAjaxController</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </servlet-mapping>
+	<!-- @@Added by Yuvraj for CR_DHLQMS_1006 -->
+	<servlet-mapping>
+    <servlet-name>QMSConsolidatedSellRateController</servlet-name>
+    <url-pattern>/QMSConsolidatedSellRateController</url-pattern>
+  </servlet-mapping>
+  <!-- @@Yuvraj -->
+<servlet-mapping>
+    <servlet-name>QMSCartageController</servlet-name>
+    <url-pattern>/QMSCartageController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ETMultiModeRoutePlanController</servlet-name>
+    <url-pattern>/ETMultiModeRoutePlanController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QMSAdvSerchLovController</servlet-name>
+    <url-pattern>/QMSAdvSerchLovController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QMSChargesUploadController</servlet-name>
+    <url-pattern>/QMSChargesUploadController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QMSCanadaZonesController</servlet-name>
+    <url-pattern>/QMSCanadaZonesController</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>QMSAttachmentController</servlet-name>
+    <url-pattern>/QMSAttachmentController</url-pattern>
+  </servlet-mapping>   
+  <servlet-mapping>
+     <servlet-name>QMSEmailTextController</servlet-name>
+    <url-pattern>/QMSEmailTextController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QMSRatesReportController</servlet-name>
+    <url-pattern>/qmsratesreportcontroller</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QMSRatesReportController</servlet-name>
+    <url-pattern>/QMSRatesReportController</url-pattern>
+  </servlet-mapping> 
+  <servlet-mapping>
+  <servlet-name>QMSMultiQuoteController</servlet-name>
+  <url-pattern>/QMSMultiQuoteController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QMSQuoteStatusReasonController</servlet-name>
+    <url-pattern>/QMSQuoteStatusReasonController</url-pattern>
+  </servlet-mapping>
+     <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+     <taglib>  
+	<taglib-uri>taglib.tld</taglib-uri>
+	<taglib-location>/WEB-INF/lib/PageIterator.jar</taglib-location>
+  </taglib>
+    <resource-ref>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+	<resource-ref>
+        <res-ref-name>oraclePool</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+    <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>mail/MS</res-ref-name>
+        <res-type>javax.mail.Session</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+    
+    <ejb-ref>
+        <ejb-ref-name>AccessControlSessionBean</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.sls.AccessControlSessionHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.sls.AccessControlSession</remote>
+        <ejb-link>AccessControlSessionBean</ejb-link>
+    </ejb-ref>
+    <ejb-ref>
+        <ejb-ref-name>RoleMasterBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMasterHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMaster</remote>
+        <ejb-link>RoleMasterBean</ejb-link>
+    </ejb-ref>
+    <ejb-ref>
+        <ejb-ref-name>UserMasterBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMasterHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMaster</remote>
+        <ejb-link>UserMasterBean</ejb-link>
+    </ejb-ref>
+    <ejb-ref>
+        <ejb-ref-name>UserRoleRegistrationSessionBean</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.sls.UserRoleRegistrationSessionHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.sls.UserRoleRegistrationSession</remote>
+        <ejb-link>UserRoleRegistrationSessionBean</ejb-link>
+    </ejb-ref>
+    <ejb-ref>
+        <ejb-ref-name>AccessControlSession</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.sls.AccessControlSessionHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.sls.AccessControlSession</remote>
+        <ejb-link>AccessControlSessionBean</ejb-link>
+    </ejb-ref>
+    <ejb-ref>
+        <ejb-ref-name>UserRoleRegistrationSession</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.sls.UserRoleRegistrationSessionHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.sls.UserRoleRegistrationSession</remote>
+        <ejb-link>UserRoleRegistrationSessionBean</ejb-link>
+    </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>CountryManagerBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.foursoft.esupply.common.ejb.sls.CountryManagerHome</home>
+    <remote>com.foursoft.esupply.common.ejb.sls.CountryManager</remote>
+    <ejb-link>CountryManagerBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>MailerBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.foursoft.esupply.common.ejb.sls.MailerHome</home>
+    <remote>com.foursoft.esupply.common.ejb.sls.Mailer</remote>
+    <ejb-link>MailerBean</ejb-link>
+  </ejb-ref>
+ 
+  <ejb-ref>
+    <ejb-ref-name>QMSQuoteSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.operations.quote.ejb.sls.QMSQuoteSessionHome</home>
+    <remote>com.qms.operations.quote.ejb.sls.QMSQuoteSession</remote>
+    <ejb-link>QMSQuoteSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>QMSMultiQuoteSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionHome</home>
+    <remote>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSession</remote>
+    <ejb-link>QMSMultiQuoteSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>ETMultiModeRoutePlanSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.foursoft.etrans.common.routeplan.ejb.sls.ETMultiModeRoutePlanSessionHome</home>
+    <remote>com.foursoft.etrans.common.routeplan.ejb.sls.ETMultiModeRoutePlanSession</remote>
+    <ejb-link>ETMultiModeRoutePlanSessionBean</ejb-link>
+  </ejb-ref>
+  
+  <ejb-ref>
+    <ejb-ref-name>BuyRatesSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.operations.rates.ejb.sls.BuyRatesSessionHome</home>
+    <remote>com.qms.operations.rates.ejb.sls.BuyRatesSession</remote>
+    <ejb-link>BuyRatesSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>ReportsSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.reports.ejb.sls.ReportsSessionBeanHome</home>
+    <remote>com.qms.reports.ejb.sls.ReportsSession</remote>
+    <ejb-link>ReportsSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>SetUpSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.setup.ejb.sls.SetUpSessionHome</home>
+    <remote>com.qms.setup.ejb.sls.SetUpSession</remote>
+    <ejb-link>SetUpSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>QMSSetUpSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.setup.ejb.sls.QMSSetUpSessionHome</home>
+    <remote>com.qms.setup.ejb.sls.QMSSetUpSession</remote>
+    <ejb-link>QMSSetUpSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>SalesPersonRegistrationBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <home>com.qms.setup.ejb.bmp.SalesPersonRegistrationHome</home>
+    <remote>com.qms.setup.ejb.bmp.SalesPersonRegistration</remote>
+    <ejb-link>SalesPersonRegistrationBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>DesignationBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <home>com.qms.setup.ejb.cmp.DesignationHome</home>
+    <remote>com.qms.setup.ejb.cmp.Designation</remote>
+    <ejb-link>DesignationBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>DensityGroupCodeBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <home>com.qms.setup.ejb.cmp.DensityGroupCodeHome</home>
+    <remote>com.qms.setup.ejb.cmp.DensityGroupCode</remote>
+    <ejb-link>DensityGroupCodeBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>OIDSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.foursoft.etrans.common.util.ejb.sls.OIDSessionHome</home>
+    <remote>com.foursoft.etrans.common.util.ejb.sls.OIDSession</remote>
+    <ejb-link>OIDSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>TerminalRegistrationEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <home>com.foursoft.etrans.setup.terminal.ejb.bmp.TerminalRegistrationEntityHome</home>
+    <remote>com.foursoft.etrans.setup.terminal.ejb.bmp.TerminalRegistrationEntity</remote>
+    <ejb-link>TerminalRegistrationEntityBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>ZoneCodeMasterBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <home>com.qms.setup.ejb.bmp.ZoneCodeMasterHome</home>
+    <remote>com.qms.setup.ejb.bmp.ZoneCodeMaster</remote>
+    <ejb-link>ZoneCodeMasterBean</ejb-link>
+  </ejb-ref>
+ 
+  <ejb-ref>
+    <ejb-ref-name>ChargeMasterSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.operations.charges.ejb.sls.ChargeMasterSessionHome</home>
+    <remote>com.qms.operations.charges.ejb.sls.ChargeMasterSession</remote>
+    <ejb-link>ChargeMasterSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>QMSSellRatesSessionBean</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.qms.operations.sellrates.ejb.sls.QMSSellRatesSessionHome</home>
+    <remote>com.qms.operations.sellrates.ejb.sls.QMSSellRatesSession</remote>
+    <ejb-link>QMSSellRatesSessionBean</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>ejb/CurrencySession</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <home>com.foursoft.etrans.setup.currency.ejb.sls.CurrencySessionHome</home>
+    <remote>com.foursoft.etrans.setup.currency.ejb.sls.CurrencySession</remote>
+    <ejb-link>CurrencySession</ejb-link>
+  </ejb-ref>
+  <ejb-ref>
+    <ejb-ref-name>ejb/BuyRatesEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <home>com.qms.operations.rates.ejb.bmp.BuyRatesEntityHome</home>
+    <remote>com.qms.operations.rates.ejb.bmp.BuyRatesEntity</remote>
+    <ejb-link>BuyRatesEntityBean</ejb-link>
+  </ejb-ref>
+
+  <ejb-local-ref>
+    <ejb-ref-name>MarginLimitMasterBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.setup.ejb.bmp.MarginLimitMasterBeanLocalHome</local-home>
+    <local>com.qms.setup.ejb.bmp.MarginLimitMasterBeanLocal</local>
+    <ejb-link>MarginLimitMasterBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>ChargesMasterEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBeanLocalHome</local-home>
+    <local>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBeanLocal</local>
+    <ejb-link>ChargesMasterEntityBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>ChargeBasisMasterEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBeanLocalHome</local-home>
+    <local>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBeanLocal</local>
+    <ejb-link>ChargeBasisMasterEntityBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>BuyChargesEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBeanLocalHome</local-home>
+    <local>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBeanLocal</local>
+    <ejb-link>BuyChargesEntityBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>SellChargesEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityBeanLocalHome</local-home>
+    <local>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityLocal</local>
+    <ejb-link>SellChargesEntityBean</ejb-link>
+  </ejb-local-ref>
+  
+  <ejb-local-ref>
+    <ejb-ref-name>ListMasterEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.setup.ejb.bmp.ListMasterEntityBeanLocalHome</local-home>
+    <local>com.qms.setup.ejb.bmp.ListMasterEntityBeanLocal</local>
+    <ejb-link>ListMasterEntityBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>QMSQuoteEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityLocalHome</local-home>
+    <local>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityLocal</local>
+    <ejb-link>QMSQuoteEntityBean</ejb-link>
+  </ejb-local-ref>
+  
+  <ejb-local-ref>
+    <ejb-ref-name>IndustryRegEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.setup.ejb.bmp.IndustryRegEntityLocalHome</local-home>
+    <local>com.qms.setup.ejb.bmp.IndustryRegEntityLocal</local>
+    <ejb-link>IndustryRegEntityBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>QMSSellRatesEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityLocalHome</local-home>
+    <local>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityLocal</local>
+    <ejb-link>QMSSellRatesEntityBean</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>BuyRatesEntityBean</ejb-ref-name>
+    <ejb-ref-type>Entity</ejb-ref-type>
+    <local-home>com.qms.operations.rates.ejb.bmp.BuyRatesEntityLocalHome</local-home>
+    <local>com.qms.operations.rates.ejb.bmp.BuyRatesEntityLocal</local>
+    <ejb-link>BuyRatesEntityBean</ejb-link>
+  </ejb-local-ref> 
+</web-app>

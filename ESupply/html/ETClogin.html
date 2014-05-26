@@ -1,0 +1,47 @@
+<html>
+<head>
+<script LANGUAGE='JavaScript'>
+<!--
+
+function newCustomerChat()
+{
+	
+	newCustWin = window.open("html/ETCcustomer.html" ,"Customer","height=100,width=375,left=0,top=0","toolbar=0,status=1,location=no,menubar=no,"
+					+ "directories=no,scrollbars=yes,resizable=yes");
+	
+}
+function newTerminalChat()
+{
+	
+	newCustWin = window.open("html/ETCterminal.html" ,"Terminal","height=100,width=375,left=0,top=0","toolbar=0,status=1,location=no,menubar=no,"
+					+ "directories=no,scrollbars=yes,resizable=yes");
+	
+}
+//-->
+</SCRIPT>
+</head>
+<body bgcolor="#f2f2f9">
+<!--
+<center><FONT SIZE="5" COLOR="#00080">Welcome to the Four Soft Customer Support.<br>
+ Please enter your Username and Email.</FONT></center>
+<form name=loginform method=post action="UserLogin.jsp">
+<B>Username : </B> <input type=text name=username><BR>
+<B>Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B> <input type=text name=email><BR>
+<B>Domain : &nbsp;&nbsp;&nbsp;</B> 
+			
+			
+			<select name="domain">
+			<option value="customer" selected>Customer
+			<option value="terminal">Terminal
+			</select><BR>
+
+<input type=button value=Customer Login onClick=customer();>
+<input type=button value=Terminal Login onClick=terminal();>
+-->
+<br><br><br>
+<center><FONT SIZE="5" COLOR="#00080">Welcome to the SNET Customer Support.<br>
+ Please Click the appropriate link.</FONT><br><br><BR>
+ <a href="javascript:newTerminalChat()">Terminal Login</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:newCustomerChat()">Customer Login</a>
+</center>
+</body>
+</html>

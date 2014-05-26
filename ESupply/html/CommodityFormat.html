@@ -1,0 +1,148 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Commodity Master</title>
+</head>
+
+<body>
+
+<table width="100%" border="1">
+  <tbody>
+    <tr>
+      <td width="100%" bgColor="#DF0000"><font face="Arial" size="4" color="#FFFFFF">Commodity
+        - File Format</font></td>
+    </tr>
+    <tr>
+      <td width="100%" bgColor="#E1E1E1"><font face="Arial" size="2">1) First
+        Row should be Header.<br>
+        2) Every column should have a tab space.<br>
+        3) Commodity Id, Description,Handling Info,Commodity Type and Hazard Indicator can be of maximum 5, 50,2000,100 and 1 of length respectively.<br>
+        4) Valid values for Hazard Indicator are: Y and N<br>
+		5) Valid values for Commodity Type are: <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;		For Edible,Animal & Vegetable Products<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;		For AVI,Inedible Animal & Vegetable Products<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;		For Textiles,Fibres & Mfrs.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;		For Metals,Mfrs Excl M/C , Vehicles & Electrical Equipment<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;		For Machinery,Vehicles & Electrical Equipment<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;		For Non-Metallic Minerals & Mfrs.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;		For Chemicals & Related Products<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;		For Paper,Reed,Rubber & Wood Mfrs.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;		For Scientific,Professional & Precision Instruments<br>
+			&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;					For Miscellaneous<br>
+        6) If Allow Modify is not selected then only new currency details can be
+        added.<br>
+        7) If Allow Modify is selected then it will update the previous currency
+        details<br>
+        8) If &quot;Export exceptions to excel file&quot; is checked then it
+        will export all the un-uploadable country details to an excel file with a
+        extra remarks column which contains the reasons for not uploading that
+        record.<br>
+        9) User can correct the remarks accordingly and upload the generated
+        file, removing the remarks column.<br>
+        10) Show Report will generate an excel report showing all the data
+        accordingly.<br>
+        <br>
+        <b>
+        Note :&nbsp;<br>
+        </b> 1. Open Microsoft Excel Sheet and enter data as mentioned above.&nbsp;<br>
+ 2. Save the
+        file in 'Comma Delimited' (.CSV) format .<br>
+        3.<font color="red">*</font>
+        Denotes Compulsory Fields.<br>
+        4.Comma's
+        are not allowed within a cell.<br>
+        5.If there
+        is any empty Row in between the file then it will be treated as End Of
+        File and the records after the empty row will not be considered for
+        upload.</font></td>
+    </tr>
+  </tbody>
+</table>
+<p><font face="Arial" size="2"><b>Example :</b></font></p>
+<div align="left">
+  <table width="503" height="254">
+    <tr>
+      <th scope="col" width="93" height="8"><font face="Arial" size="2">COMMODITY_ID</font><font face="Arial" size="2"><font color="red">*</font>
+        &nbsp;</font></th>
+      <th scope="col" width="101" height="8">
+        <p align="left"><font face="Arial" size="2">DESCRIPTION</font><font face="Arial" size="2"><font color="red">*</font>
+        </font></p>
+      </th>
+      <th scope="col" width="95" height="8">
+        <p align="left"><font face="Arial" size="2">HANDLING_INFO</font></p>
+      </th>
+      <th scope="col" width="111" height="8">
+        <p align="left"><font face="Arial" size="2">COMMODITY_TYPE</font><font face="Arial" size="2"><font color="red">*</font>
+        </font></p>
+      </th>
+      <th scope="col" width="125" height="8">
+        <font face="Arial" size="2">HAZARD_INDICATOR<font color="red">*</font> </font>
+      </th>
+      <th scope="col" width="62" height="8">
+        <FONT face="Arial" size="2">SUBCLASS</FONT>&nbsp;
+      </th>
+      <th scope="col" width="72" height="8">
+        <FONT face="Arial" size="2">CLASSTYPE</FONT>
+      </th>
+      <th scope="col" width="69" height="8">
+        <FONT face="Arial" size="2">UNNUMBER</FONT>
+      </th>
+	  
+    </tr>
+    <tr>
+      <td width="93" height="18"><font face="Arial" size="2">CPU</font></td>
+      <td width="101" height="18"><font face="Arial" size="2">CENTRAL PROCESSING UNIT </font></td>
+      <td width="95" height="18"><font face="Arial" size="2"></font></td>
+      <td width="111" height="18" align='center'><font face="Arial" size="2">8</font></td>
+      <td width="125" height="18" align="center">
+        <font face="Arial" size="2">Y</font>
+      </td>
+      <td width="62" height="18" align="center">subclass1</td>
+      <td width="72" height="18" align="center">classtype1</td>
+      <td width="69" height="18" align="center">1235</td>
+    </tr>
+    <tr>
+      <td width="93" height="18"><font face="Arial" size="2">HP</font></td>
+      <td width="101" height="18"><font face="Arial" size="2">HEWLETT PACKARD</font></td>
+      <td width="95" height="18"><font face="Arial" size="2"></font></td>
+      <td width="111" height="18" align='center'><font face="Arial" size="2">8</font></td>
+      <td width="125" height="18" align="center">
+        <font face="Arial" size="2">Y</font>
+      </td>
+      <td width="62" height="18" align="center">subclass2</td>
+      <td width="72" height="18" align="center">classtype2</td>
+      <td width="69" height="18" align="center">4568</td>
+    </tr>
+    <tr>
+      <td width="93" height="18"><font face="Arial" size="2">IBM</font></td>
+      <td width="101" height="18"><font face="Arial" size="2">INTERNATIONAL BUSINESS MACHINE</font></td>
+      <td width="95" height="18"><font face="Arial" size="2"></font></td>
+      <td width="111" height="18" align='center'><font face="Arial" size="2">8</font></td>
+      <td width="125" height="18" align="center">
+        <font face="Arial" size="2">Y</font>
+      </td>
+      <td width="62" height="18" align="center">subclass3</td>
+      <td width="72" height="18" align="center">classtype3</td>
+      <td width="69" height="18" align="center">9875</td>
+    </tr>
+    <tr>
+      <td width="93" height="18"><font face="Arial" size="2">DELL</font></td>
+      <td width="101" height="18"><font face="Arial" size="2">DELL COMPUTERS LTD</font></td>
+      <td width="95" height="18"><font face="Arial" size="2"></font></td>
+      <td width="111" height="18" align='center'><font face="Arial" size="2">8</font></td>
+      <td width="125" height="18" align="center">
+        <font face="Arial" size="2">Y</font>
+      </td>
+      <td width="62" height="18" align="center">subclass4</td>
+      <td width="72" height="18" align="center">classtype4</td>
+      <td width="69" height="18" align="center">9856</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+
+</html>

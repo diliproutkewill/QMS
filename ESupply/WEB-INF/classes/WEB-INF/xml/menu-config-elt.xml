@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE menu-names [
+  <!ELEMENT menu-names (leaf-node+)>
+  <!ELEMENT leaf-node	(module+)>
+  <!ELEMENT module    (uiName+)> 
+  <!ELEMENT uiName    (#PCDATA)> 
+  <!ATTLIST leaf-node leafName CDATA "">
+  <!ATTLIST module name CDATA "">
+  <!ATTLIST module txid CDATA "">
+  <!ATTLIST module hotkey CDATA "" >
+  <!ATTLIST uiName alevel CDATA "1">
+  <!ATTLIST uiName process CDATA "">
+  <!ATTLIST uiName url CDATA "">
+]>
+
+<menu-names>
+
+  <leaf-node leafName="el-trm-Setup">
+    <module name="Transporter&amp;nbsp;Profile" txid="25611" hotkey="T">
+	  <uiName alevel="2" process="Modify" url="elog/etrans/ELETCTRMTransporterProfileModify.jsp?process=MODIFY">Modify</uiName>
+	  <uiName alevel="1" process="View"   url="elog/etrans/ELETCTRMTransporterProfileView.jsp?process=VIEW">View</uiName>
+    </module>
+    <module name="Transporter&amp;nbsp;Contract" txid="25612" hotkey="C">
+	  <uiName alevel="2" process="View" url="ELETCustomerContractController?Corporate=No&amp;Operation=TRMView">View</uiName>
+	 </module>
+  </leaf-node>
+
+  <leaf-node leafName="el-trm-Operations">
+    <module name="Shipment&amp;nbsp;Planning&amp;nbsp;Outbound" txid="25605" hotkey="O">
+	  <uiName alevel="2" process="Modify"    url="elog/etrans/ELETTrmPrqIndex.jsp?process=MODIFY">Modify</uiName>
+	  <uiName alevel="1" process="View"   url="elog/etrans/ELETTrmPrqIndex.jsp?process=VIEW">View</uiName>
+    </module>
+
+    <module name="Shipment&amp;nbsp;Info-Origin" txid="25607" hotkey="G">
+	  <uiName alevel="2" process="Modify"    url="elog/etrans/ELShipmentInfoEnterId1.jsp?process=MODIFY&amp;operation=Add">Modify</uiName>
+	  <uiName alevel="1" process="View"   url="elog/etrans/ELShipmentInfoEnterId1.jsp?process=VIEW&amp;operation=View">View</uiName>
+    </module>
+
+    <module name="Shipment&amp;nbsp;Info-Destination" txid="25608" hotkey="D">
+	  <uiName alevel="2" process="Modify"    url="elog/etrans/ELETSDeliveryOrderEnterId.jsp?operation=Add">Update</uiName>
+	  <uiName alevel="1" process="View"   url="elog/etrans/ELETSDeliveryOrderEnterId.jsp?operation=View">View</uiName>
+    </module>
+  </leaf-node>
+
+  <leaf-node leafName="el-trm-Reports">
+    <module name="Reports" txid="25106" hotkey="R">
+	  <uiName alevel="1" process="View" url="samp.jsp">View</uiName>
+    </module>
+  </leaf-node>
+
+  <leaf-node leafName="el-trm-Tracking">
+    <module name="Tracking" txid="25602" hotkey="K">
+	  <uiName alevel="1" process="Track" url="samp.jsp">View</uiName>
+    </module>
+  </leaf-node>
+</menu-names>

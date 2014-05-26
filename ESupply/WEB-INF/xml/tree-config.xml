@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE e-supply-tree [
+	<!ELEMENT e-supply-tree (tree-node+)>
+	<!ELEMENT tree-node (hyperLink, name, display-name, status-bar-display?, open-icon?, close-icon?, hot-key?, (tree-node | leaf-node)*)>
+	<!ELEMENT leaf-node (hyperLink, name, display-name, status-bar-display?, open-icon?, close-icon?, hot-key?, permission-link)>
+	<!ELEMENT hyperLink (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT display-name (#PCDATA)>
+	<!ELEMENT status-bar-display (#PCDATA)>
+	<!ELEMENT open-icon (#PCDATA)>
+	<!ELEMENT close-icon (#PCDATA)>
+	<!ELEMENT permission-link (#PCDATA)>
+	<!ELEMENT hot-key (#PCDATA)>
+	<!ATTLIST hot-key	ctrl CDATA ""
+			shift CDATA ""
+			alt CDATA "">
+]>
+<e-supply-tree>
+	<tree-node>
+		<hyperLink/>
+		<name>eSupply</name>
+		<display-name>DHL</display-name>
+		<status-bar-display>QMS from DHL</status-bar-display>
+		<open-icon>Tree_operations_open.gif</open-icon>
+		<close-icon>Tree_operations_close.gif</close-icon>
+		<leaf-node>
+			<hyperLink>link=es-Administration-Setup</hyperLink>
+			<name>Administration</name>
+			<display-name>Administration</display-name>
+			<status-bar-display>Admin SetUp</status-bar-display>
+			<open-icon>Tree_administration_open.gif</open-icon>
+			<close-icon>Tree_administration_open.gif</close-icon>
+			<hot-key ctrl="N" shift="N" alt="N">M</hot-key>
+			<permission-link>es-Administration-Setup</permission-link>
+		</leaf-node>
+		<leaf-node>
+			<hyperLink>link=ets-configuration</hyperLink>
+			<name>Configuration</name>
+			<display-name>Configuration</display-name>
+			<status-bar-display>Configuration</status-bar-display>
+			<open-icon>Tree_setup_open.gif</open-icon>
+			<close-icon>Tree_setup_close.gif</close-icon>
+			<permission-link>ets-configuration</permission-link>
+		</leaf-node>
+		<!-- Etrans Common Moduele  -->
+		<tree-node>
+			<hyperLink>html/ESupplyMenuETrans.html</hyperLink>
+			<name>QMS</name>
+			<display-name>QuoteShop</display-name>
+			<status-bar-display>QuoteShop</status-bar-display>
+			<open-icon>Tree_etrans_open.gif</open-icon>
+			<close-icon>Tree_etrans_open.gif</close-icon>
+			<hot-key shift="N" ctrl="N" alt="N">E</hot-key>
+			<!-- ETrans Enterprise Setup -->
+			<tree-node>
+				<hyperLink/>
+				<name>EnterpriseSetup</name>
+				<display-name>Enterprise Setup</display-name>
+				<status-bar-display>Enterprise Setup</status-bar-display>
+				<open-icon>Tree_setup_open.gif</open-icon>
+				<close-icon>Tree_setup_open.gif</close-icon>
+				<hot-key shift="N" ctrl="N" alt="N">S</hot-key>
+				<leaf-node>
+					<hyperLink>link=es-et-Administration-ModuleI</hyperLink>
+					<name>ModuleI</name>
+					<display-name>Module I</display-name>
+					<status-bar-display>Masters Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key shift="Y" ctrl="N" alt="N">1</hot-key>
+					<permission-link>es-et-Administration-ModuleI</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=es-et-Administration-ModuleII</hyperLink>
+					<name>ModuleII</name>
+					<display-name>Module II</display-name>
+					<status-bar-display>Masters Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key shift="Y" ctrl="N" alt="N">2</hot-key>
+					<permission-link>es-et-Administration-ModuleII</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=es-et-Administration-ModuleIII</hyperLink>
+					<name>ModuleIII</name>
+					<display-name>Module III</display-name>
+					<status-bar-display>Masters Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key shift="Y" ctrl="N" alt="N">3</hot-key>
+					<permission-link>es-et-Administration-ModuleIII</permission-link>
+				</leaf-node>
+                <leaf-node>
+					<hyperLink>link=es-et-Administration-ModuleIV</hyperLink>
+					<name>ModuleIV</name>
+					<display-name>Module IV</display-name>
+					<status-bar-display>Masters Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key shift="Y" ctrl="N" alt="N">4</hot-key>
+					<permission-link>es-et-Administration-ModuleIV</permission-link>
+				</leaf-node>
+			</tree-node>
+			<tree-node>
+				<hyperLink/>
+				<name>TerminalSetup</name>
+				<display-name>Terminal Setup</display-name>
+				<status-bar-display>Terminal Setup</status-bar-display>
+				<open-icon>Tree_setup_open.gif</open-icon>
+				<close-icon>Tree_setup_open.gif</close-icon>
+				<hot-key ctrl="N" shift="N" alt="N">T</hot-key>
+				<leaf-node>
+					<hyperLink>link=es-et-Terminal-Setup</hyperLink>
+					<name>Terminal</name>
+					<display-name>Terminal</display-name>
+					<status-bar-display>Terminal Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key ctrl="Y" shift="N" alt="N">T</hot-key>
+					<permission-link>es-et-Terminal-Setup</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=es-et-SFA-Setup</hyperLink>
+					<name>SFA</name>
+					<display-name>SFA</display-name>
+					<status-bar-display>SFA Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key ctrl="Y" shift="N" alt="N">U</hot-key>
+					<permission-link>es-et-SFA-Setup</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=es-et-Operations-OrderManagement</hyperLink>
+					<name>Order Management</name>
+					<display-name>Order Management</display-name>
+					<status-bar-display>Order Management</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key ctrl="Y" shift="N" alt="N">M</hot-key>
+					<permission-link>es-et-Operations-OrderManagement</permission-link>
+				</leaf-node>
+			</tree-node>
+			<!--added by madhu-->
+			
+				<leaf-node>
+					<hyperLink>link=es-et-Administration-Charges</hyperLink>
+					<name>ChargesSetUp</name>
+					<display-name>Charges SetUp</display-name>
+					<status-bar-display>Charges SetUp</status-bar-display>
+					<open-icon>Tree_operations_open.gif</open-icon>
+					<close-icon>Tree_operations_close.gif</close-icon>
+					<hot-key shift="N" ctrl="N" alt="N">C</hot-key>
+					<permission-link>es-et-Administration-Charges</permission-link>
+				</leaf-node> 
+				<leaf-node>
+					<hyperLink>link=es-et-Administration-Rates</hyperLink>
+					<name>RatesSetup</name>
+					<display-name>Rates SetUp</display-name>
+					<status-bar-display>Rates SetUp</status-bar-display>
+					<open-icon>Tree_operations_open.gif</open-icon>
+					<close-icon>Tree_operations_close.gif</close-icon>
+					<hot-key shift="N" ctrl="N" alt="N">R</hot-key>
+					<permission-link>es-et-Administration-Rates</permission-link>
+				</leaf-node> 
+				<leaf-node>
+					<hyperLink>link=es-et-Administration-Operations</hyperLink>
+					<name>Operations</name>
+					<display-name>Operations</display-name>
+					<status-bar-display>Operations</status-bar-display>
+					<open-icon>Tree_operations_open.gif</open-icon>
+					<close-icon>Tree_operations_close.gif</close-icon>
+					<hot-key shift="N" ctrl="N" alt="N">O</hot-key>
+					<permission-link>es-et-Administration-Operations</permission-link>
+				</leaf-node> 
+				<leaf-node>
+					<hyperLink>link=es-et-Administration-Reports</hyperLink>
+					<name>Reports</name>
+					<display-name>Reports</display-name>
+					<status-bar-display>Reports</status-bar-display>
+					<open-icon>Tree_operations_open.gif</open-icon>
+					<close-icon>Tree_operations_close.gif</close-icon>
+					<hot-key shift="N" ctrl="N" alt="N">S</hot-key>
+					<permission-link>es-et-Administration-Reports</permission-link>
+				</leaf-node> 
+			<!--End-->
+	<!-- 		<leaf-node>
+				<hyperLink>link=es-et-PickupActivity</hyperLink>
+				<name>Pickup Operations</name>
+				<display-name>Pickup Operations</display-name>
+				<status-bar-display>Pickup Operations</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_close.gif</close-icon>
+				<hot-key shift="N" ctrl="N" alt="N">P</hot-key>
+				<permission-link>es-et-PickupActivity</permission-link>
+			</leaf-node> -->
+			<!-- Etrans Common Moduele  Ends -->
+			<!-- Etrans Air Freight  -->
+			<tree-node>
+				<hyperLink/>
+				<name>Air</name>
+				<display-name>QMS Reports</display-name>
+				<status-bar-display>QMS Reports</status-bar-display>
+				<open-icon>Tree_etrans_air_open.gif</open-icon>
+				<close-icon>Tree_etrans_air_open.gif</close-icon>
+				<hot-key shift="N" ctrl="N" alt="N">1</hot-key>
+<!-- 				<tree-node>
+					<hyperLink>html/ESupplyMenuETransOperations.html</hyperLink>
+					<name>Operations</name>
+					<display-name>Operations</display-name>
+					<status-bar-display>Company Operations</status-bar-display>
+					<open-icon>Tree_operations_open.gif</open-icon>
+					<close-icon>Tree_operations_close.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">O</hot-key>
+					<leaf-node>
+						<hyperLink>link=es-et-air-Operations-OriginOperations</hyperLink>
+						<name>Origin</name>
+						<display-name>Origin</display-name>
+						<status-bar-display>Origin Operations</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">O</hot-key>
+						<permission-link>es-et-air-Operations-OriginOperations</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-air-Operations-Consolidation</hyperLink>
+						<name>Consolidation</name>
+						<display-name>Consolidation</display-name>
+						<status-bar-display>Shipment Consoidation</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">C</hot-key>
+						<permission-link>es-et-air-Operations-Consolidation</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-air-NonSystemInboundOperations</hyperLink>
+						<name>NonSystem-Inbound</name>
+						<display-name>Inbound Operations</display-name>
+						<status-bar-display>NonSystemInboundOperations</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">B</hot-key>
+						<permission-link>es-et-air-NonSystemInboundOperations</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-air-Operations-DestinationOperations</hyperLink>
+						<name>Destination</name>
+						<display-name>Destination</display-name>
+						<status-bar-display>Destination Operations</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">D</hot-key>
+						<permission-link>es-et-air-Operations-DestinationOperations</permission-link>
+					</leaf-node>
+				</tree-node> -->
+				<tree-node>
+					<hyperLink>html/ESupplyMenuETransReports.html</hyperLink>
+					<name>Reports</name>
+					<display-name>Reports</display-name>
+					<status-bar-display>ETrans Reports</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">R</hot-key>
+					<leaf-node>
+						<hyperLink>link=es-et-air-Reports-ManagementReports</hyperLink>
+						<name>ManagementReports</name>
+						<display-name>Management</display-name>
+						<status-bar-display>Management Reports</status-bar-display>
+						<open-icon>Tree_reports_open.gif</open-icon>
+						<close-icon>Tree_reports_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">M</hot-key>
+						<permission-link>es-et-air-Reports-ManagementReports</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-air-Reports-OperationalReports</hyperLink>
+						<name>OperationalReports</name>
+						<display-name>Operational</display-name>
+						<status-bar-display>Operational Reports</status-bar-display>
+						<open-icon>Tree_reports_open.gif</open-icon>
+						<close-icon>Tree_reports_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">R</hot-key>
+						<permission-link>es-et-air-Reports-OperationalReports</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-air-Reports-CutomerServiceReports</hyperLink>
+						<name>CustomerService</name>
+						<display-name>Customer Service</display-name>
+						<status-bar-display>Customer Service</status-bar-display>
+						<open-icon>Tree_reports_open.gif</open-icon>
+						<close-icon>Tree_reports_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">S</hot-key>
+						<permission-link>es-et-air-Reports-CutomerServiceReports</permission-link>
+					</leaf-node>
+				</tree-node>
+			</tree-node>
+			<!-- Etrans Air Freight Ends -->
+			<!-- Etrans Sea Freight  -->
+			<tree-node>
+				<hyperLink>html/ESupplyMenuETransSea.html</hyperLink>
+				<name>Sea</name>
+				<display-name>Sea</display-name>
+				<status-bar-display>Sea</status-bar-display>
+				<open-icon>Tree_etrans_sea_open.gif</open-icon>
+				<close-icon>Tree_etrans_sea_open.gif</close-icon>
+				<hot-key shift="N" ctrl="N" alt="N">2</hot-key>
+				<!-- ETS Setup -->
+				<tree-node>
+					<hyperLink/>
+					<name>Setup</name>
+					<display-name>Setup</display-name>
+					<status-bar-display>Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="Y">S</hot-key>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-setup-terminal</hyperLink>
+						<name>Setup</name>
+						<display-name>Sea Setup</display-name>
+						<status-bar-display>Setup</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">E</hot-key>
+						<permission-link>es-et-sea-setup-terminal</permission-link>
+					</leaf-node>
+				</tree-node>
+				<!-- ETS Operations -->
+				<tree-node>
+					<hyperLink>html/ESupplyMenuETransOperations.html</hyperLink>
+					<name>Operations</name>
+					<display-name>Sea Operation</display-name>
+					<status-bar-display>Operations</status-bar-display>
+					<open-icon>Tree_operations_open.gif</open-icon>
+					<close-icon>Tree_operations_close.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="Y">O</hot-key>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-Operations-OriginOperations</hyperLink>
+						<name>Origin</name>
+						<display-name>Origin Operations</display-name>
+						<status-bar-display>Origin</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">G</hot-key>
+						<permission-link>es-et-sea-Operations-OriginOperations</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-Operations-Consolidation</hyperLink>
+						<name>Consolidation</name>
+						<display-name>Consolidation</display-name>
+						<status-bar-display>Consolidation</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">L</hot-key>
+						<permission-link>es-et-sea-Operations-Consolidation</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-NonSystemInboundOperations</hyperLink>
+						<name>NonSystem-Inbound</name>
+						<display-name>Inbound NonSystem</display-name>
+						<status-bar-display>Inbound NonSystem</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">N</hot-key>
+						<permission-link>es-et-sea-NonSystemInboundOperations</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-Operations-DestinationOperations</hyperLink>
+						<name>Destination</name>
+						<display-name>Destination</display-name>
+						<status-bar-display>Destination</status-bar-display>
+						<open-icon>Tree_operations_open.gif</open-icon>
+						<close-icon>Tree_operations_close.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">T</hot-key>
+						<permission-link>es-et-sea-Operations-DestinationOperations</permission-link>
+					</leaf-node>
+				</tree-node>
+				<!--ETS Reports-->
+				<tree-node>
+					<hyperLink>html/ESupplyMenuETransReports.html</hyperLink>
+					<name>Reports</name>
+					<display-name>Reports</display-name>
+					<status-bar-display>Sea Reports</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="Y">R</hot-key>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-Reports-ManagementReports</hyperLink>
+						<name>Management</name>
+						<display-name>Management</display-name>
+						<status-bar-display>Management Reports</status-bar-display>
+						<open-icon>Tree_reports_open.gif</open-icon>
+						<close-icon>Tree_reports_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">A</hot-key>
+						<permission-link>es-et-sea-Reports-ManagementReports</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-Reports-OperationalReports</hyperLink>
+						<name>Operational</name>
+						<display-name>Operational</display-name>
+						<status-bar-display>Operational Reports</status-bar-display>
+						<open-icon>Tree_reports_open.gif</open-icon>
+						<close-icon>Tree_reports_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">P</hot-key>
+						<permission-link>es-et-sea-Reports-OperationalReports</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=es-et-sea-Reports-CutomerServiceReports</hyperLink>
+						<name>Customer Service</name>
+						<display-name>Customer Service</display-name>
+						<status-bar-display>Customer Service Reports</status-bar-display>
+						<open-icon>Tree_reports_open.gif</open-icon>
+						<close-icon>Tree_reports_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="Y">U</hot-key>
+						<permission-link>es-et-sea-Reports-CutomerServiceReports</permission-link>
+					</leaf-node>
+				</tree-node>
+				<!--ETS Reports-->
+			</tree-node>
+			
+<!-- 			<leaf-node>
+				<hyperLink>link=es-et-DeliveryActivity</hyperLink>
+				<name>Delivery Operations</name>
+				<display-name>Delivery Operations</display-name>
+				<status-bar-display>Delivery Operations</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_close.gif</close-icon>
+				<hot-key ctrl="N" shift="N" alt="N">D</hot-key>
+				<permission-link>es-et-DeliveryActivity</permission-link>
+			</leaf-node> -->
+			<!-- <leaf-node>
+				<hyperLink>link=es-et-Reports</hyperLink>
+				<name>Define Reports</name>
+				<display-name>Define Reports</display-name>
+				<status-bar-display>Define Reports</status-bar-display>
+				<open-icon>Tree_setup_open.gif</open-icon>
+				<close-icon>Tree_setup_open.gif</close-icon>
+				<hot-key ctrl="N" shift="N" alt="N">F</hot-key>
+				<permission-link>es-et-Reports</permission-link>
+			</leaf-node> -->
+		</tree-node>
+		<!-- ETrans Ends-->
+		<!-- ELog -->
+    <leaf-node>
+      <hyperLink>link=es-Enterprise-Setup</hyperLink>
+      <name>Enterprise</name>
+      <display-name>Enterprise</display-name>
+      <status-bar-display>Enterprise</status-bar-display>
+      <open-icon>Tree_operations_open.gif</open-icon>
+      <close-icon>Tree_operations_open.gif</close-icon>
+      <hot-key shift="N" ctrl="N" alt="N">E</hot-key>
+      <permission-link>es-Enterprise-Setup</permission-link>
+    </leaf-node>
+		<tree-node>
+			<hyperLink>ESMenuMainPage</hyperLink>
+			<name>eLog</name>
+			<display-name>e-Log</display-name>
+			<status-bar-display>e-Logistics</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<hot-key shift="N" ctrl="N" alt="N">L</hot-key>
+	  
+			<tree-node>
+				<hyperLink>ESMenuMainPage</hyperLink>
+				<name>Setup</name>
+				<display-name>Setup</display-name>
+				<status-bar-display>Setup</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="N" ctrl="N" alt="N">S</hot-key>
+				<leaf-node>
+					<hyperLink>link=elog-WareHouse-Setup</hyperLink>
+					<name>WareHouse</name>
+					<display-name>WareHouse</display-name>
+					<status-bar-display>WareHouse</status-bar-display>
+					<open-icon>Tree_operations_open.gif</open-icon>
+					<close-icon>Tree_operations_open.gif</close-icon>
+					<hot-key shift="Y" ctrl="N" alt="N">W</hot-key>
+					<permission-link>elog-WareHouse-Setup</permission-link>
+				</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-Project-Setup</hyperLink>
+				<name>Project</name>
+				<display-name>Project</display-name>
+				<status-bar-display>Project</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">J</hot-key>
+				<permission-link>elog-Project-Setup</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-Part-Setup</hyperLink>
+				<name>Part</name>
+				<display-name>Part</display-name>
+				<status-bar-display>Part Master</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">A</hot-key>
+				<permission-link>elog-Part-Setup</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-Vendor-Setup</hyperLink>
+				<name>Vendor</name>
+				<display-name>Vendor</display-name>
+				<status-bar-display>Vendor Setup</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">V</hot-key>
+				<permission-link>elog-Vendor-Setup</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-Customer-Setup</hyperLink>
+				<name>Customer</name>
+				<display-name>Customer</display-name>
+				<status-bar-display>Customer Setup</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">C</hot-key>
+				<permission-link>elog-Customer-Setup</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-Transporter-Setup</hyperLink>
+				<name>Transporter</name>
+				<display-name>Transporter</display-name>
+				<status-bar-display>Transporter Setup</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<permission-link>elog-Transporter-Setup</permission-link>
+			</leaf-node>	
+		</tree-node>
+	  
+		<tree-node>
+			<hyperLink>ESMenuMainPage</hyperLink>
+			<name>Operations</name>
+			<display-name>Operations</display-name>
+			<status-bar-display>Operations</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<hot-key shift="N" ctrl="N" alt="N">O</hot-key>
+			<leaf-node>
+				<hyperLink>link=elog-POMS-Operations</hyperLink>
+				<name>POMS</name>
+				<display-name>POMS</display-name>
+				<status-bar-display>POMS</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">P</hot-key>
+				<permission-link>elog-POMS-Operations</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-SOMS-Operations</hyperLink>
+				<name>SOMS</name>
+				<display-name>SOMS</display-name>
+				<status-bar-display>SOMS</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">S</hot-key>
+				<permission-link>elog-SOMS-Operations</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-WMS-IN-Operations</hyperLink>
+				<name>WMS-IN</name>
+				<display-name>WMS-IN</display-name>
+				<status-bar-display>WMS-IN</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">I</hot-key>
+				<permission-link>elog-WMS-IN-Operations</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-WMS-OUT-Operations</hyperLink>
+				<name>WMS-OUT</name>
+				<display-name>WMS-OUT</display-name>
+				<status-bar-display>WMS-OUT</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">O</hot-key>
+				<permission-link>elog-WMS-OUT-Operations</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-BMS-Operations</hyperLink>
+				<name>BMS</name>
+				<display-name>BMS</display-name>
+				<status-bar-display>BMS</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">B</hot-key>
+				<permission-link>elog-BMS-Operations</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-IMS-Operations</hyperLink>
+				<name>IMS</name>
+				<display-name>IMS</display-name>
+				<status-bar-display>IMS</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">M</hot-key>
+				<permission-link>elog-IMS-Operations</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-TMS-Operations</hyperLink>
+				<name>TMS</name>
+				<display-name>TMS</display-name>
+				<status-bar-display>TMS</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">T</hot-key>
+				<permission-link>elog-TMS-Operations</permission-link>
+			</leaf-node>	
+		</tree-node>
+		<tree-node>
+			<hyperLink>ESMenuMainPage</hyperLink>
+			<name>Reports</name>
+			<display-name>Reports</display-name>
+			<status-bar-display>Reports</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<hot-key shift="N" ctrl="N" alt="N">R</hot-key>
+			<leaf-node>
+				<hyperLink>link=elog-operational-Reports</hyperLink>
+				<name>Operational Reports</name>
+				<display-name>Operational Reports</display-name>
+				<status-bar-display>Operational Reports</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">E</hot-key>
+				<permission-link>elog-operational-Reports</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-Management-Reports</hyperLink>
+				<name>Management Reports</name>
+				<display-name>Management Reports</display-name>
+				<status-bar-display>Reports</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">G</hot-key>
+				<permission-link>elog-Management-Reports</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-CustomerServices</hyperLink>
+				<name>Customer Services</name>
+				<display-name>Customer Services</display-name>
+				<status-bar-display>Customer Services</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="N" ctrl="N" alt="Y">T</hot-key>
+				<permission-link>elog-CustomerServices</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=elog-Define-Reports</hyperLink>
+				<name>Define Reports</name>
+				<display-name>Define Reports</display-name>
+				<status-bar-display>Define Reports</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key shift="Y" ctrl="N" alt="N">F</hot-key>
+				<permission-link>elog-Define-Reports</permission-link>
+			</leaf-node>
+		</tree-node>
+		<leaf-node>
+			<hyperLink>link=elog-Mail-Operations</hyperLink>
+			<name>Mail</name>
+			<display-name>Mail</display-name>
+			<status-bar-display>Mail</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<hot-key shift="Y" ctrl="N" alt="N">L</hot-key>
+			<permission-link>elog-Mail-Operations</permission-link>
+		</leaf-node>
+		<leaf-node>
+			<hyperLink>link=elog-Tracking-Operations</hyperLink>
+			<name>Tracking</name>
+			<display-name>Tracking</display-name>
+			<status-bar-display>Tracking</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<permission-link>elog-Tracking-Operations</permission-link>
+		</leaf-node>
+		<leaf-node>
+			<hyperLink>link=elog-Reports-Operations</hyperLink>
+			<name>Reports</name>
+			<display-name>Reports</display-name>
+			<status-bar-display>Reports</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<permission-link>elog-Reports-Operations</permission-link>
+		</leaf-node>
+	</tree-node>
+		<!-- ELog Ends -->
+		<!-- EAccounts -->
+	 	<tree-node>
+			<hyperLink/>
+			<name>eAccounts</name>
+			<display-name>e-Accounts</display-name>
+			<status-bar-display>e-Accounts</status-bar-display>
+			<open-icon>Tree_accounts_open.gif</open-icon>
+			<close-icon>Tree_accounts_open.gif</close-icon>
+			<hot-key ctrl="N" shift="N" alt="N">A</hot-key>
+			<tree-node>
+				<hyperLink/>
+				<name>AcctSetup</name>
+				<display-name>Setup</display-name>
+				<status-bar-display>Acconts Setup</status-bar-display>
+				<open-icon>Tree_setup_open.gif</open-icon>
+				<close-icon>Tree_setup_open.gif</close-icon>
+				<hot-key ctrl="Y" shift="Y" alt="N">S</hot-key>
+				<tree-node>
+					<hyperLink/>
+					<name>CorporateSetup</name>
+					<display-name>Corporate Setup</display-name>
+					<status-bar-display>Corporate Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key ctrl="Y" shift="Y" alt="N">C</hot-key>
+					<leaf-node>
+						<hyperLink>link=eacc-CorporateSetup-Configuration</hyperLink>
+						<name>Configuration</name>
+						<display-name>Configuration</display-name>
+						<status-bar-display>Configuration</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="N">G</hot-key>
+						<permission-link>eacc-CorporateSetup-Configuration</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=eacc-CorporateSetup-GroupsAccountCodes</hyperLink>
+						<name>Groups - Account Codes</name>
+						<display-name>Groups - Account Codes</display-name>
+						<status-bar-display>Groups - Account Codes</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="N">D</hot-key>
+						<permission-link>eacc-CorporateSetup-GroupsAccountCodes</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=eacc-CorporateSetup-ChargeId</hyperLink>
+						<name>ChargeId</name>
+						<display-name>Charge Id</display-name>
+						<status-bar-display>Charge Id</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="N">I</hot-key>
+						<permission-link>eacc-CorporateSetup-ChargeId</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=eacc-CorporateSetup-TransactionTypes</hyperLink>
+						<name>TransactionTypes</name>
+						<display-name>Transaction Types</display-name>
+						<status-bar-display>Transaction Types</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="Y" shift="Y" alt="N">N</hot-key>
+						<permission-link>eacc-CorporateSetup-TransactionTypes</permission-link>
+					</leaf-node>
+				</tree-node>
+				<tree-node>
+					<hyperLink/>
+					<name>TerminalSetup</name>
+					<display-name>Terminal Setup</display-name>
+					<status-bar-display>Terminal Setup</status-bar-display>
+					<open-icon>Tree_setup_open.gif</open-icon>
+					<close-icon>Tree_setup_open.gif</close-icon>
+					<hot-key ctrl="Y" shift="Y" alt="N">T</hot-key>
+					<leaf-node>
+						<hyperLink>link=eacc-TerminalSetup-CompanyInfo</hyperLink>
+						<name>CompanyInfo</name>
+						<display-name>Company Info</display-name>
+						<status-bar-display>CompanyInfo</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="N">C</hot-key>
+						<permission-link>eacc-TerminalSetup-CompanyInfo</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=eacc-TerminalSetup-AccountCode</hyperLink>
+						<name>AccountCode</name>
+						<display-name>Account Code</display-name>
+						<status-bar-display>Account Code</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="N">A</hot-key>
+						<permission-link>eacc-TerminalSetup-AccountCode</permission-link>
+					</leaf-node>
+					<leaf-node>
+						<hyperLink>link=eacc-TerminalSetup-TransactionTypes</hyperLink>
+						<name>TransactionTypesT</name>
+						<display-name>Transaction TypesT</display-name>
+						<status-bar-display>Transaction TypesT</status-bar-display>
+						<open-icon>Tree_setup_open.gif</open-icon>
+						<close-icon>Tree_setup_open.gif</close-icon>
+						<hot-key ctrl="N" shift="Y" alt="N">T</hot-key>
+						<permission-link>eacc-TerminalSetup-TransactionTypes</permission-link>
+					</leaf-node>
+				</tree-node>
+			</tree-node> 
+			<!-- Acct Setup Menu Ends Here -->
+			<!-- Accounts Reports Menu Starts here -->
+			<!-- Accounts Reports Menu Ends Here -->
+			<!-- Accounts Transactions Module Node Adding to Directly e-Accounts Node Starts here -->
+			<leaf-node>
+				<hyperLink>link=eacc-Transactions</hyperLink>
+				<name>Transactions</name>
+				<display-name>Transactions</display-name>
+				<status-bar-display>Transactions</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key ctrl="Y" shift="Y" alt="N">O</hot-key>
+				<permission-link>eacc-Transactions</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=eacc-Month-End-Process</hyperLink>
+				<name>Month End Process</name>
+				<display-name>Month End Process</display-name>
+				<status-bar-display>Month End Process</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key ctrl="Y" shift="Y" alt="N">E</hot-key>
+				<permission-link>eacc-Month-End-Process</permission-link>
+			</leaf-node>
+			<leaf-node>
+				<hyperLink>link=eacc-Budgets</hyperLink>
+				<name>Budgets</name>
+				<display-name>Budgets</display-name>
+				<status-bar-display>Budgets</status-bar-display>
+				<open-icon>Tree_operations_open.gif</open-icon>
+				<close-icon>Tree_operations_open.gif</close-icon>
+				<hot-key ctrl="Y" shift="Y" alt="N">B</hot-key>
+				<permission-link>eacc-Budgets</permission-link>
+			</leaf-node>
+			<!-- Accounts Transactions Module Node Adding to Directly e-Accounts Node Starts here -->
+			<tree-node>
+				<hyperLink/>
+				<name>Reports</name>
+				<display-name>Reports</display-name>
+				<status-bar-display>Reports</status-bar-display>
+				<open-icon>Tree_reports_open.gif</open-icon>
+				<close-icon>Tree_reports_open.gif</close-icon>
+				<hot-key ctrl="Y" shift="Y" alt="N">R</hot-key>
+				<leaf-node>
+					<hyperLink>link=eacc-Reports-FinancialStatements</hyperLink>
+					<name>FinancialStatements</name>
+					<display-name>Financial Statements</display-name>
+					<status-bar-display>Financial Statements</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">4</hot-key>
+					<permission-link>eacc-Reports-FinancialStatements</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=eacc-Reports-Accounting</hyperLink>
+					<name>Accounting</name>
+					<display-name>Accounting</display-name>
+					<status-bar-display>Accounting</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">5</hot-key>
+					<permission-link>eacc-Reports-Accounting</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=eacc-Reports-MIS</hyperLink>
+					<name>MIS</name>
+					<display-name>MIS</display-name>
+					<status-bar-display>MIS</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">6</hot-key>
+					<permission-link>eacc-Reports-MIS</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=eacc-Reports-Invoice</hyperLink>
+					<name>Invoice</name>
+					<display-name>Invoice</display-name>
+					<status-bar-display>Invoice</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">7</hot-key>
+					<permission-link>eacc-Reports-Invoice</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=eacc-Reports-Settlement</hyperLink>
+					<name>Settlement</name>
+					<display-name>Settlement</display-name>
+					<status-bar-display>Settlement</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">8</hot-key>
+					<permission-link>eacc-Reports-Settlement</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=eacc-Reports-Exceptional</hyperLink>
+					<name>Exceptions</name>
+					<display-name>Exceptions</display-name>
+					<status-bar-display>Exceptions</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">X</hot-key>
+					<permission-link>eacc-Reports-Exceptional</permission-link>
+				</leaf-node>
+				<leaf-node>
+					<hyperLink>link=eacc-Reports-Consolidation</hyperLink>
+					<name>Consolidation</name>
+					<display-name>Consolidation</display-name>
+					<status-bar-display>Consolidation</status-bar-display>
+					<open-icon>Tree_reports_open.gif</open-icon>
+					<close-icon>Tree_reports_open.gif</close-icon>
+					<hot-key ctrl="N" shift="N" alt="N">9</hot-key>
+					<permission-link>eacc-Reports-Consolidation</permission-link>
+				</leaf-node>
+			</tree-node>
+		</tree-node>
+		<!-- end of eaccounts -->
+	</tree-node>
+</e-supply-tree>

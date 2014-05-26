@@ -1,0 +1,51 @@
+\Version{ "2.2.0  Pro" }
+\Name{ "ESupply" }
+\JavaVersion{ "1.4" }
+\ProductID{ "1" }
+\ShowIncompleteMessage{ true }
+\OutputPath{ "C:\\20050926\\DHLQMS20050609\\ESupply\\WEB-INF\\classes" }
+\ClassPath{
+  \Path{ "C:\\jdev1012\\jdk\\jre\\lib\\rt.jar" }
+  \Path{ "C:\\jdev1012\\jdk\\jre\\lib\\i18n.jar" }
+  \Path{ "C:\\jdev1012\\jdk\\jre\\lib\\sunrsasign.jar" }
+  \Path{ "C:\\jdev1012\\jdk\\jre\\lib\\jsse.jar" }
+  \Path{ "C:\\jdev1012\\jdk\\jre\\lib\\jce.jar" }
+  \Path{ "C:\\jdev1012\\jdk\\jre\\lib\\charsets.jar" }
+  \Path{ "C:\\jdev1012\\jdk\\jre\\classes" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\WEB-INF\\classes" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\lib\\LOVTag.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\lib\\PageIterator.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\lib\\pageTracker-original.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\lib\\pageTracker.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\WEB-INF\\lib\\LOVTag.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\WEB-INF\\lib\\PageIterator.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\WEB-INF\\lib\\pageTracker-original.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\WEB-INF\\lib\\pageTracker.jar" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply\\WEB-INF\\lib\\cos.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\activation.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\ejb.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jaas.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jaxp.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jcert.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jdbc.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jms.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jndi.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jnet.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jsse.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\jta.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\mail.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\servlet.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\lib\\ojsp.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\jsp\\lib\\taglib\\ojsputil.jar" }
+  \Path{ "C:\\jdev1012\\j2ee\\home\\oc4j.jar" }
+  \Path{ "C:\\jdev1012\\jdev\\lib\\ojc.jar" }
+  \Path{ "C:\\jdev1012\\lib\\xmlparserv2.jar" }
+  \Path{ "C:\\jdev1012\\lib\\xmlcomp.jar" }
+  \Path{ "C:\\jdev1012\\opmn\\lib\\optic.jar" }
+  \Path{ "C:\\jdev1012\\lib\\iText.jar" }
+}
+\SourcePath{
+  \Path{ "C:\\20050926\\DHLQMS20050609\\ESupply" }
+  \Path{ "C:\\20050926\\DHLQMS20050609\\DHLQMSEJB" }
+}
+\ProjectMembersDir{ "." }

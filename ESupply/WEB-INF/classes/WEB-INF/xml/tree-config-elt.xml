@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE e-supply-tree[
+	<!ELEMENT e-supply-tree (tree-node+)>
+	<!ELEMENT tree-node (hyperLink, name, display-name, status-bar-display?, open-icon?, close-icon?,hot-key?,(tree-node|leaf-node)*)>
+	<!ELEMENT leaf-node (hyperLink, name, display-name, status-bar-display?, open-icon?, close-icon?,hot-key?, permission-link)>  
+	<!ELEMENT hyperLink (#PCDATA)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT display-name    (#PCDATA)>
+	<!ELEMENT status-bar-display (#PCDATA)>
+	<!ELEMENT open-icon (#PCDATA)>
+	<!ELEMENT close-icon (#PCDATA)>
+	<!ELEMENT permission-link (#PCDATA)>
+	<!ELEMENT hot-key    (#PCDATA)>
+	<!ATTLIST hot-key	ctrl  CDATA ""
+						shift CDATA ""
+						alt   CDATA "" >
+]>
+
+<e-supply-tree>
+
+  <tree-node>
+    <hyperLink>ESMenuMainPage</hyperLink>
+    <name>eSupply</name>
+    <display-name>4s-eSupply</display-name>
+    <status-bar-display>SCM TRM from Four Soft</status-bar-display>
+    <open-icon>Tree_operations_open.gif</open-icon>
+    <close-icon>Tree_operations_open.gif</close-icon>
+
+    <tree-node>
+		<hyperLink>ESMenuMainPage</hyperLink>
+		<name>eTRM</name>
+		<display-name>e-TRM</display-name>
+		<status-bar-display>SCM TRM from Four Soft</status-bar-display>
+		<open-icon>Tree_operations_open.gif</open-icon>
+		<close-icon>Tree_operations_open.gif</close-icon>
+		<hot-key ctrl="N" shift="N" alt="N">T</hot-key>
+
+		<leaf-node>
+			<hyperLink>link=el-trm-Setup</hyperLink>
+			<name>Setup</name>
+			<display-name>Setup</display-name>
+			<status-bar-display>Setup</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<hot-key ctrl="N" shift="Y" alt="N">S</hot-key>
+			<permission-link>el-trm-Setup</permission-link>
+		</leaf-node>
+
+		<leaf-node>
+			<hyperLink>link=el-trm-Operations</hyperLink>
+			<name>Operations</name>
+			<display-name>Operations</display-name>
+			<status-bar-display>Operations</status-bar-display>
+			<open-icon>Tree_operations_open.gif</open-icon>
+			<close-icon>Tree_operations_open.gif</close-icon>
+			<hot-key ctrl="N" shift="Y" alt="N">O</hot-key>
+			<permission-link>el-trm-Operations</permission-link>
+		</leaf-node>
+    </tree-node>
+
+    <leaf-node>
+		<hyperLink>link=el-trm-Reports</hyperLink>
+		<name>Reports</name>
+		<display-name>Reports</display-name>
+		<status-bar-display>Reports</status-bar-display>
+		<open-icon>Tree_operations_open.gif</open-icon>
+		<close-icon>Tree_operations_open.gif</close-icon>
+		<hot-key ctrl="N" shift="Y" alt="N">R</hot-key>
+		<permission-link>el-trm-Reports</permission-link>
+    </leaf-node>
+
+    <leaf-node>
+		<hyperLink>link=el-trm-Tracking</hyperLink>
+		<name>Tracking</name>
+		<display-name>Tracking</display-name>
+		<status-bar-display>Tracking</status-bar-display>
+		<open-icon>Tree_operations_open.gif</open-icon>
+		<close-icon>Tree_operations_open.gif</close-icon>
+		<hot-key ctrl="N" shift="Y" alt="N">K</hot-key>
+		<permission-link>el-trm-Tracking</permission-link>
+	</leaf-node>
+
+  </tree-node>
+
+</e-supply-tree>

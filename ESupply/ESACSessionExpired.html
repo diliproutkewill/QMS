@@ -1,0 +1,67 @@
+<%--
+ % 
+ % Copyright (c) 1999-2001 by FourSoft, Pvt Ltd. All Rights Reserved.
+ % This software is the proprietary information of FourSoft, Pvt Ltd.
+ % Use is subject to license terms.
+ %
+ % esupply - v 1.x 
+ %
+ --%>
+<%--
+ % File			: ESACSessionExpired.jsp
+ % sub-module	: AccessControl
+ % module		: esupply
+ %
+ % This is used to inform the SessionExpiration
+ % 
+ % author		: Madhu. P
+ % date			: 5-09-2001
+--%>
+<html>
+
+<head>
+<title></title>
+<!--link rel="stylesheet" href="ESFoursoft_css.jsp"-->
+<style>
+body {background-color: #000000; margin-left: 0px; margin-top: 0px;  margin-width: 0px; margin-height:   0px;}
+.formlabel{  font-family: Verdana; font-size: 12pt; font-weight: bold; color: #ffffff;background-color: #d00000;  vertical-align: top}
+.formdata {font-family: Verdana; font-size: 10pt; background-color: #efefef; vertical-align: top}
+</style>
+</head>
+
+<body >
+
+<form method="POST" action="" target="_top">
+
+  <table width="760" border="0" cellspacing="0" cellpadding="0">
+    <tr valign="top" bgcolor="#FFFFFF"> 
+      <td>
+	  <table width="760" border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF">
+		<tr valign="top"> 
+			<td class="formlabel">
+			  Session Expired </td>
+		  </tr>
+		  <tr class="formdata" valign="top" > 
+			<td > 
+			  Your Session has Expired!<br>
+
+			</td>
+			</tr>
+			<tr class="formdata" valign="top" > <td>
+			Possible Reasons:<br>
+			1. The idle time duration of your session might have exceeded. (or)<br>
+			2. Some other user might have logged in with same User Credentials.
+			</td></tr>
+		  <tr valign="top" align="right"> 
+			<td width="50%"> 
+				&nbsp;
+			</td>
+		  </tr>
+	  </table>
+	  </td>
+	</tr>
+  </table>
+  
+</form>
+</body>
+</html>

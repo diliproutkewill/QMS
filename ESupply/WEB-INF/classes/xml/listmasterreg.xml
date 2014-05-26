@@ -1,0 +1,50 @@
+<DynamicContent>
+<listMasterReg>
+	<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+		<type>text</type>
+		<name>Type</name>
+		<size>10</size>
+		<maxLength>10</maxLength>
+		<class>text</class>
+		<onKeyPress></onKeyPress>
+		<onBlur>specialCharFilter(this,"Type");toUpper(this);</onBlur>
+	</ChildElement>
+
+	<ChildElement elementType="input" class="formdata" align="center">
+		<type>text</type>
+		<name>description</name>
+		<size>15</size>
+		<maxLength>25</maxLength>
+		<class>text</class>
+		<onKeyPress></onKeyPress>
+		<onBlur>specialCharFilter(this,"Description");toUpper(this);</onBlur>
+	</ChildElement>
+	<ChildElement elementType="input" class="formdata" align="center">
+		<type>text</type>
+		<name>volume</name>
+		<size>10</size>
+		<maxLength>10</maxLength>
+		<class>text</class>
+		<onKeyPress></onKeyPress>
+		<onBlur></onBlur>
+	</ChildElement>
+	<ChildElement elementType="input" class="formdata" align="center">
+		<type>text</type>
+		<name>upweight</name>
+		<size>10</size>
+		<maxLength>10</maxLength>
+		<class>text</class>
+		<onKeyPress></onKeyPress>
+		<onBlur></onBlur>
+	</ChildElement>
+	<ChildElement elementType="input" class="formdata" align="center">
+		<type>text</type>
+		<name>otweight</name>
+		<size>10</size>
+		<maxLength>10</maxLength>
+		<class>text</class>
+		<onKeyPress></onKeyPress>
+		<onBlur></onBlur>
+	</ChildElement>
+</listMasterReg>
+</DynamicContent>

@@ -1,0 +1,96 @@
+<html>
+<head>
+<script language="JavaScript" src="../eventhandler.js"></script>
+<script LANGUAGE='JavaScript'>
+	var historyStack = new Array();
+	historyMax = 100;
+	historyCurr = -1;
+	historyLast = -1;
+	historyIgnore = false;
+	historyTrailLast = -1;
+	historyTrailIndex = -1;
+function historyAdd(url, longName, shortName, icon, isRoot)
+{
+	// This function can be called with just one parameter (= the url),
+	// in which case the page will not be part of the trail or with
+	// 5 parameters to make it part of the trail.
+	if (arguments.length != 1 && arguments.length != 5)
+		return;
+	// check flag to indicate that this is a historic page.
+	if (historyIgnore == true)
+	{
+		historyIgnore = false;
+		if (arguments.length == 5)
+		{
+			historyTrailLast = historyCurr;
+			paintHistoryTrail(false);
+		}
+		else
+			paintHistoryTrail(true);
+		return;
+	}
+	// Avoid multiple entries of the same url.
+	if (historyCurr >= 0)
+	{
+		if (historyStack[historyCurr].url == url)
+			return;
+	}
+	// Check if stack is full
+	if (historyCurr >= historyMax)
+	{
+		// Worry about this later
+	}
+	historyCurr += 1;
+	// Add the entry to the history
+	if (arguments.length == 5)
+	{
+		historyStack[historyCurr] = new HTE(longName, shortName, url,icon, isRoot, historyCurr);
+		// Check if page is already on the trail, if so just use it.
+		if (historyTrailLast != -1)
+		{
+			var obj = historyStack[historyTrailLast];
+			while (obj != null)
+			{
+				if (obj.url == historyStack[historyCurr].url)
+					break;
+				obj = obj.parent;
+			}
+			if (obj != null)
+				historyStack[historyCurr].parent = obj.parent;
+			else if (!isRoot && historyTrailLast >= 0)
+				historyStack[historyCurr].parent = historyStack[historyTrailLast];
+		}
+		historyTrailLast = historyCurr;
+		paintHistoryTrail(false);
+	}
+	else
+	{
+		historyStack[historyCurr] = new HTE("", "", url, "", false);
+		paintHistoryTrail(true);
+	}
+	historyLast = historyCurr;
+}
+    top.historyAdd('ESupplyMenuELog.html',"e-Logistics","e-Log","Tree_elog_open.gif",false);
+  </script>
+
+</head>
+<body>
+<table width="700" cellpadding="4" cellspacing="1" height="95" bordercolordark="#81721F">
+  <tr valign="top" bgcolor="#000000">
+    <td width="1" height="85" rowspan="3" bordercolor="#81721F" bgcolor="#FFFFFF" style="border-style: solid; border-width: 2" valign="middle" align="justify">
+      <p align="center"><img border="0" src="images/Warehouse.gif" width="77" height="72" align="center">
+    </td>
+    <td width="543" height="17" bgcolor="#81721F"><font color="#FFFFFF" size="3" face="Verdana"><b><span class="unnamed1">E
+      Logistics</span></b></font></td>
+  </tr>
+  <tr valign="top" bgcolor="#000000">
+    <td width="543" height="24" bgcolor="#E5E5E5"><font face="Verdana" size="2">Browse
+      for Logistics</font></td>
+  </tr>
+  <tr valign="top" bgcolor="#000000">
+    <td width="543" height="24" bgcolor="#E5E5E5"><font face="Verdana" size="2">Copy
+      right Four soft PVT Ltd.</font></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1173 @@
+<html>
+<script language="JavaScript" src="../eventhandler.js"></script>
+<script LANGUAGE='JavaScript' >
+uniqueId		= 0;
+bgColor			= "#FFFFFF";			// Menu background color
+LinkColor		= "#000000";			// text color with link
+aLinkColor		= "#FF0000";			// text color for active link (hover-Effect)
+bLinkColor		= "#003894";			// text color visited link
+sLinkColor		= "#FFFFFF";			// text color selected link
+sLinkBgColor	= "#003894";			// background color selected link
+Menuwidth		= "20%";				// menu width in pixel
+TargetFrame		= "detailsFrame";		// target frame name
+Font			= "\"Verdana\",Arial";	// Menu font
+FolderOpen		= "Open Folder";		// Standard-Mouseover and Status text for closed folders
+FolderClose		= "Close Folder";		// Standard-Mouseover- and Status text for open folders
+FolderCloseLink	= "1"				// Folder link will be opened for closed folders (1=yes, 0=no)
+StatusLine		= "";					// Standard-Status line text, if empty, same as title
+StatURL			= "0";					// Show Link-URL(1) or Link Text(0) with empty link status text
+FolderOpenX		= 0;					// Special folder open behaviour: Open/Close by click on +/- only else display url
+WH6				= "\" WIDTH=16 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\""
+WH9				= ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP BORDER=0 ALT=\""
+WHA				= ".gif\" WIDTH=19 HEIGHT=16 ALIGN=TOP>"
+oMO				= "\" onMouseOver=\"window.status='"
+rt				= "'; return true\" onMouseOut=\"window.status='"+StatusLine+"'; return true\">"
+Title			= "no Title";			// Page Title
+ImageSrc		= "";					// Path to icons
+DocSrc			= "";					// Path to docs
+StartPage		= "";					// StartPage
+SortMenu		= 1;					// Sort by default
+PaintBranches	= 1;					// Show tree branches by default
+HistoryTrail	= false;				// Show history trail
+//----------------------------------------------------------------------------
+//
+//  Public functions for creating and maintaining the menu tree
+//
+//----------------------------------------------------------------------------
+//  Open a new window without toolbars, menus etc. 
+//  Not really part of the tree structure.
+var cloneNumber = 0;
+var newWin = null;
+function newWindow(url, winName)
+{
+	// If winName is not passed just reuse current windows.name
+	if (arguments.length < 2)
+		winName = window.name;
+	// Always add the clone number to the end of the current window name, so 
+	// it doesn't reuse the existing one.
+	newWin = window.open( url,winName + cloneNumber,"toolbar=0,status=1,location=no,menubar=no,"
+					+ "directories=no,scrollbars=yes,resizable=yes");
+	newWin.focus();
+	history.back();
+	cloneNumber += 1;
+}
+//
+// Start the page. Sets the frame layout, image and doc source.
+//
+function startPage(myTitle, docs, images, sp, history)
+{
+	// For UNIX Netscape force a refresh on resizing of the window.
+	if (navigator.appName == "Netscape" && navigator.platform != "Win32")
+		window.onResize = function(){window.location.reload();};
+	// Check if history argument is passed
+	if (arguments.length == 5)
+	{
+		if (history == true)
+			HistoryTrail = true;
+	}
+
+	Title = myTitle;
+	document.write("<TITLE>"+Title+"<\/TITLE>\n");
+	StatusLine=(StatusLine=="")?Title:StatusLine;
+	DocSrc = docs;
+	ImageSrc = "<IMG SRC=\""+images;
+	if (sp.search(/\:/) != -1)
+		StartPage=sp;
+	else
+		StartPage=DocSrc + sp;
+	// FrameSet-Definition A: For Browser with active JavaScript
+	document.write('<FRAMESET ROWS="35,*">');
+	document.write('<FRAME NAME="toolbar" SRC="ESupplyMenuEmpty.jsp" MARGINWIDTH="0"' 
+			+ ' MARGINHEIGHT="0" SCROLLING=no noresize>');
+	document.write('<FRAMESET COLS="'+Menuwidth+',*">');
+	document.write('<FRAME NAME="menuFrame" SRC="ESupplyMenuEmpty.jsp" MARGINWIDTH="0"'
+			+ ' MARGINHEIGHT="0" SCROLLING="auto">');
+	if (HistoryTrail)
+	{
+		document.write('<FRAMESET ID=TrailSet ROWS="60,*">');
+		document.write('<FRAME NAME="trail" SRC="ESupplyMenuTopPanel.jsp" MARGINWIDTH="0"'
+				+ ' MARGINHEIGHT="0" SCROLLING=auto>');
+	}
+	document.write('<FRAME NAME="'+TargetFrame+'" SRC="' + StartPage 
+			+ '" SCROLLING="Auto">');
+	if (HistoryTrail)
+	{
+		document.write('</FRAMESET>');
+	}
+	document.write('</FRAMESET>');
+	document.write('</FRAMESET>');
+}
+// Tree menu.Starts Here
+function startMenu(name, text, icon, statustext)
+{
+	rootElem = new RE(name, text, icon, statustext);
+	toolbarSet = new TBSet();
+}
+//  Add a folder to the tree. Ignores multiple definitions
+function addFolder(name, parentName, text, url,iconclosed, iconopen, statustext)
+{
+	// Root must always be defined first
+	if (rootElem == null)
+	{
+		return(0);
+	}
+
+	// check if folder with same name already exists
+	existingFolder = findFolder(rootElem, name);
+	if (existingFolder != null)
+	{
+		existingFolder.deletion = 0;
+		return(0);
+	}
+	parentFolder = findFolder(rootElem, parentName);
+	if (parentFolder == null)
+	{
+		return(0);
+	}
+	if (parentFolder.kids == null)
+	{
+		parentFolder.kids=new Set();
+	}
+	parentFolder.kids.newElem(new FE(name, parentName, text, url,iconclosed, iconopen, statustext));
+	return(1);
+}
+//  Delete an existing folder
+function deleteFolder(name)
+{
+	folder = findFolder(rootElem, name);
+	if (folder == null)
+	{
+		return(0);
+	}
+	parentFolder = findFolder(rootElem, folder.parent);
+	parentFolder.kids.delElem(folder);
+	return(1);
+}
+// Mark all folders for deletion. No argument marks the lot.
+
+function markAllFolders(parentFolder)
+{
+	if (arguments.length == 0)
+		parentFolder = rootElem;
+	if (parentFolder.kids != null)
+	{
+		for (var i = parentFolder.kids.length - 1; i >= 0; i--)
+		{
+			if (parentFolder.kids[i].typ == "folder")
+				markAllFolders(parentFolder.kids[i]);
+			parentFolder.kids[i].deletion = 1;
+		}
+	}
+	return(1);
+}
+// Delete all folders and links inside a folder. No arguments deletes the lot
+function deleteAllFolders(parentFolder)
+{
+	if (arguments.length == 0)
+		parentFolder = rootElem;
+	if (parentFolder.kids != null)
+	{
+		for (var i = parentFolder.kids.length - 1; i >= 0; i--)
+		{
+			if (parentFolder.kids[i].typ == "folder")
+				deleteAllFolders(parentFolder.kids[i]);
+			parentFolder.kids.delElem(parentFolder.kids[i]);
+		}
+	}
+	return(1);
+}
+// Delete all marked folders and links inside a folder. 
+// No arguments deletes the lot
+function deleteAllMarkedFolders(parentFolder)
+{
+	if (arguments.length == 0)
+		parentFolder = rootElem;
+	if (parentFolder.kids != null)
+	{
+		for (var i = parentFolder.kids.length - 1; i >= 0; i--)
+		{
+			if (parentFolder.kids[i].typ == "folder")
+				deleteAllMarkedFolders(parentFolder.kids[i]);
+			if (parentFolder.kids[i].deletion == 1)
+				parentFolder.kids.delElem(parentFolder.kids[i]);
+		}
+	}
+	return(1);
+}
+
+//  Add a link entry to a specified parent folder.
+function addLink(parentName, text, url, target, icon, statustext)
+{
+	if (rootElem == null)
+	{
+		return(0);
+	}
+	parentFolder = findFolder(rootElem, parentName);
+	if (parentFolder == null)
+	{
+		return(0);
+	}
+	if (parentFolder.kids == null)
+	{
+		parentFolder.kids=new Set();
+	}
+	parentFolder.kids.newElem(new LE(parentName, text, url, target,icon, statustext));
+	return(1);
+}
+// Delete an existing link entry.
+function deleteLink(parentName, text)
+{
+	folder = findFolder(rootElem, parentName);
+	if (folder == null)
+	{
+		return(0);
+	}
+	if (text != "*")
+	{
+		link = findLink(folder, text);
+		folder.kids.delElem(link);
+	}
+	else
+	{
+		// wildcard: delete all links in this folder
+		if (folder.kids != null)
+		{
+			for (var i = 0; i < folder.kids.length;)
+			{
+				if (folder.kids[i].typ == "link")
+					folder.kids.delElem(folder.kids[i]);
+				else
+					i += 1;
+			}
+		}
+	}
+	return(1)
+}
+
+// Add a button to the toolbar
+function addToolbar(text, icon, url, target)
+{
+	toolbarSet.newTBElem(new TBE(text, icon, url, target));
+}
+// Add a separator to the toolbar
+function addToolbarSep(icon)
+{
+	toolbarSet.newTBElem(new TBS(icon));
+}
+//  Public functions for finding items in the tree. Mostly used internally,
+//  but may be useful for some applications.
+//  Recursively finds a folder under a parent folder.
+function findFolder(folder, parentName)
+{
+	if (folder.name == parentName)
+	{
+		return(folder);
+	}
+	else if (folder.kids == null)
+	{
+		return(null);
+	}
+	else
+	{
+		for (var i = 0; i < folder.kids.length; i++)
+		{
+			if (folder.kids[i].typ == "link")
+			{
+				return(null);
+			}
+			if (folder.kids[i].name == parentName)
+			{
+				return(folder.kids[i]);
+			}
+			else
+			{
+				sub = findFolder(folder.kids[i], parentName);
+				if (sub != null)
+				{
+					return(sub);
+				}
+			}
+		}
+		return(null);
+	}
+}
+// Gets the first open folder under a parent folder. Depends on sorting!
+function getFirstOpenFolder(parent)
+{
+	parentFolder = findFolder(rootElem, parent);
+	if (parentFolder == null)
+	{
+		return("");
+	}
+	if (parentFolder.kids == null)
+	{
+		return("");
+	}
+	for (var i = 0; i < parentFolder.kids.length; i++)
+	{
+		if (parentFolder.kids[i].typ == "folder" && parentFolder.kids[i].open != 0)
+			return(parentFolder.kids[i].name);
+	}
+	return("");
+}
+
+//  Finds a link entry in a specified folder.
+function findLink(folder, text)
+{
+	for (var i = 0; i < folder.kids.length; i++)
+	{
+		if (folder.kids[i].typ == "link" && folder.kids[i].text == text)
+		{
+			return(folder.kids[i]);
+		}
+	}
+	return(null);
+}
+//  Public functions for painting or repainting the tree. Some functions 
+//  call those automatically.
+// Utilities used by paintMenu
+var selectedId = -1;
+var oldSel = null;
+var offset = 0;
+
+function changeSelection(newSel)
+{
+	if (oldSel != null)
+	{
+		oldSel.style.backgroundColor=bgColor;
+		oldSel.style.color=LinkColor;
+	}
+	oldSel = newSel;
+	newSel.style.backgroundColor=sLinkBgColor;
+	newSel.style.color=sLinkColor;
+}
+//  Paints the menu tree.
+//
+function paintMenu()
+{
+	// Check if objects exist
+	if (frames["menuFrame"] == null)
+	{
+		eval(setTimeout("paintMenu()",500));
+		return;
+	}
+	if (frames["menuFrame"].window.document == null)
+	{
+		eval(setTimeout("paintMenu()",500));
+		return;
+	}
+	m=frames["menuFrame"].window.document;
+	m.open("text/html");
+	m.write("<HTML>\n<HEAD>\n");
+	m.write("<STYLE>\n<!--\n");
+	m.write("body{margin:4px;background-color:#FFFFFF}\n");
+	m.write("body,p,li,td,nobr,font {font-size:10pt;font-family:"
+		+Font+";font-weight:normal;color:#000000}\n");
+	m.write("A:link{text-decoration:none;color:" + LinkColor+"}\n");
+	m.write("A:visited{text-decoration:none;color:" + LinkColor+"}\n");
+	m.write("A:hover{text-decoration:none;color:" + aLinkColor+"}\n");
+	m.write("A:focus{text-decoration:none;color:" + bLinkColor+"}\n");
+	m.write("//-->\n</STYLE>\n")
+	m.write("<script>\n");
+	m.write("function handleEvent(evnt)\n");
+	m.write("{\n");
+	m.write("if (evnt.button == 2)\n");
+	m.write("{\n");
+	m.write("alert('We are sorry, you cant activate Right mouse Button');\n");
+	m.write("return false;\n");
+	m.write("}\n");
+	m.write("}\n");
+	m.write("<\/script>\n");
+	m.write("</HEAD>\n");
+	m.write("<BODY ");
+	m.write((bgColor!="") ? "BGCOLOR=\""+bgColor+"\" " : "");
+	m.write("onMouseDown = 'handleEvent(event)'>\n");
+	m.write("<P>\n<NOBR>");
+	m.write("<A HREF=\""+StartPage+"\" TARGET=\""+TargetFrame+oMO);
+	m.write(rootElem.stat+rt+ImageSrc+((rootElem.icon=="") ? 
+			"esupply.gif":rootElem.icon)+WH6+rootElem.stat
+			+"\">&nbsp;<B>"+rootElem.text+"</B></A><BR>\n")
+	paintFolders(rootElem, "");
+	m.write("</P>\n");
+	m.write("</BODY>\n");
+	m.write("</HTML>");
+	m.close();
+	window.defaultStatus=StatusLine;
+	// Find a selected link and set the link object
+	for (i = 0; i < m.links.length; i++)
+	{
+		if (m.links[i].id == 1)
+		{
+			oldSel = m.links[i];
+		}
+	}
+	frames["menuFrame"].window.scrollBy(0,offset);
+}
+// Paint folders and links. Called by paintMenu. Do not call yourself.
+function paintFolders(parentFolder, prefix)
+{
+	if (parentFolder.kids == null)
+		return;
+	for (var i = 0; i < parentFolder.kids.length; i++)
+	{
+		var onclickStr;
+		var scrollPos;
+		if (navigator.appName == "Netscape")
+			scrollPos="window.pageYOffset";
+		else
+			scrollPos="document.body.scrollTop";
+		if (parentFolder.kids[i].url != "")
+			onclickStr= " onclick=\"top.offset ="+scrollPos
+				+ ";top.lastClicked=this;top.selectedId="
+				+ parentFolder.kids[i].id
+				+ ";top.changeSelection(this); ";
+		else
+			onclickStr = " onclick=\"top.offset ="+scrollPos+"; ";
+		if (parentFolder.kids[i].id == selectedId)
+			aprefix = "<A id=1 style=\"color:"+sLinkColor
+				+ ";background-color:"+sLinkBgColor
+				+ "\""+onclickStr+"\" ";
+		else
+			aprefix = "<A id=0 "+onclickStr+"\" ";
+		if (PaintBranches == 1)
+		{
+			openText=(parentFolder.kids[i].vstat=="") ? 
+			FolderOpen : parentFolder.kids[i].vstat;
+			closeText=(parentFolder.kids[i].vstat=="") ? 
+			FolderClose : parentFolder.kids[i].vstat;
+			w1=(parentFolder.kids[i].open==0) ? 1 : 0;
+			if (parentFolder.kids[i].kids != null)
+				w2=(w1==1) ? "branchopen-" : "branchclose-";
+			else
+				w2=(w1==1) ? "branch" : "branch";
+			w2+=(i == parentFolder.kids.length - 1) ? "e" : "";
+			i_empty = "empty";
+			i_stem = "stem-";
+			i_end = "end";
+			i_branch = "branch";
+			i_branche = "branche";
+		}
+		else
+		{
+			openText=(parentFolder.kids[i].vstat=="") ? 
+			FolderOpen : parentFolder.kids[i].vstat;
+			closeText=(parentFolder.kids[i].vstat=="") ? 
+			FolderClose : parentFolder.kids[i].vstat;
+			w1=(parentFolder.kids[i].open==0) ? 1 : 0;
+			if (parentFolder.kids[i].kids != null)
+				w2=(w1==1) ? "brancheopen-" : "brancheclose-";
+			else
+				w2="empty";
+			i_empty = "empty";
+			i_stem = "empty";
+			i_end = "empty";
+			i_branch = "empty";
+			i_branche = "empty";
+		}
+		if (parentFolder.kids[i].typ == "folder")
+		{
+			branch = prefix;
+			m.write(prefix);
+			cicon=(parentFolder.kids[i].cicon=="") ? 
+				"fclosed-0.gif" : parentFolder.kids[i].cicon;
+			oicon=(parentFolder.kids[i].oicon=="") ? 
+				"fopen-0.gif" : parentFolder.kids[i].oicon;
+			if (FolderOpenX == 0)
+			{
+				//default: just one link
+				m.write(aprefix + "HREF=\"javascript:parent.openclose('" 
+					+ parentFolder.kids[i].name + "'," + w1 + ")" 
+					+ oMO + ((w1==1)?openText:closeText)+rt+ImageSrc+w2+"0"
+					+WH9+openText+"\">"+ImageSrc);
+				m.write(((w1==1)?cicon:oicon)+WH6+((w1==1)?openText:closeText)
+					+ "\">&nbsp;"+parentFolder.kids[i].text+"</A><BR>\n");
+			}
+			else
+			{
+				//special: add link for the +- sign plus one for icon and text
+				m.write("<A onclick=\"top.offset ="+scrollPos
+					+ ";\" HREF=\"javascript:parent.opencloseonly('" 
+					+ parentFolder.kids[i].name + "'," + w1 + ");parent.paintMenu();" 
+					+ oMO + ((w1==1)?FolderOpen:FolderClose)+rt
+					+ ImageSrc + w2 + "0" + WH9 + openText+"\"></A>");
+				if (parentFolder.kids[i].url != "")
+					m.write(aprefix + "HREF=\"" 
+						+ parentFolder.kids[i].url + "\" TARGET=\"" 
+						+ TargetFrame + oMO + ((w1==1)?openText:closeText)+rt);
+				m.write(ImageSrc + ((w1==1)?cicon:oicon)+WH6
+					+ ((w1==1)?openText:closeText)+"\">&nbsp;"+parentFolder.kids[i].text);
+				if (parentFolder.kids[i].url != "")
+					m.write("</A>");
+				m.write("<BR>\n");
+			}
+			if(w1==0)
+			{
+				branch += ImageSrc+((i==parentFolder.kids.length - 1) ? 
+					i_empty : i_stem + "0" )+WHA;
+				paintFolders(parentFolder.kids[i], branch);
+			}
+		}
+		else
+		{
+			m.write(prefix);
+			w1=(StatURL==0) ? parentFolder.kids[i].text : parentFolder.kids[i].url;
+			m.write((parentFolder.kids[i].icon=="empty.gif") ? 
+			ImageSrc + ((i != parentFolder.kids.length - 1) ? 
+			i_stem : i_end)+"0"+WHA : 
+			ImageSrc + ((i != parentFolder.kids.length - 1) ? 
+			i_branch : i_branche)+"0"+WHA);
+			lstat=(parentFolder.kids[i].lstat=="") ? 
+				w1 : parentFolder.kids[i].lstat;
+			m.write(aprefix + "HREF=\"" + parentFolder.kids[i].url 
+				+ "\" TARGET=\"" + ((parentFolder.kids[i].target=="") ? 
+					TargetFrame : parentFolder.kids[i].target));
+			m.write(oMO + lstat + rt + ImageSrc 
+				+ ((parentFolder.kids[i].icon=="") ? 
+				"empty0.gif" : parentFolder.kids[i].icon));
+			m.write(WH6 + ((parentFolder.kids[i].lstat == "") ? 
+				parentFolder.kids[i].url : parentFolder.kids[i].lstat) 
+				+ "\">&nbsp;" + parentFolder.kids[i].text + "</A><BR>\n");
+		}
+	}
+}
+
+function paintHistoryTrail(defaultDisplay)
+{
+	if (arguments.length < 1)
+		defaultDisplay = false;
+	// Check if objects exist
+	if (frames["trail"] == null)
+	{
+		eval(setTimeout("paintHistoryTrail(defaultDisplay)",500));
+		return;
+	}
+	if (frames["trail"].document == null)
+	{
+		eval(setTimeout("paintHistoryTrail(defaultDisplay)",500));
+		return;
+	}
+	x=frames['trail'].window.document;
+	x.open("text/html");
+	x.write("<html>\n<head>\n\n");
+	x.write("<STYLE>\n<!--\n");
+	x.write("body{margin:5px;background-color:#FFFFFF}\n");
+	x.write("body,p,li,td,nobr {font-size:8pt;font-family:"
+		+ Font+";font-weight:normal;color:#000000}\n");
+	x.write("A:link{text-decoration:none;color:" + LinkColor+"}\n");
+	x.write("A:visited{text-decoration:none;color:" + LinkColor+"}\n");
+	x.write("A:hover{text-decoration:none;color:" + aLinkColor+"}\n");
+	x.write("//-->\n</STYLE>\n")
+
+	x.write("<script>\n");
+	x.write("function handleEvent(evnt)\n");
+	x.write("{\n");
+	x.write("if (evnt.button == 2)\n");
+	x.write("{\n");
+	x.write("alert('We are sorry, you cant activate Right mouse Button');\n");
+	x.write("return false;\n");
+	x.write("}\n");
+	x.write("}\n");
+	x.write("<\/script>\n");
+
+	
+	x.write("</HEAD>\n");
+	x.write("<BODY ");
+	x.write((bgColor!="") ? "BGCOLOR=\""+bgColor+"\" " : "");
+	x.write(" onMouseDown ='handleEvent(event)'>\n");
+	if (historyTrailLast == -1 || defaultDisplay == true)
+	{
+		// empty trail. Put some text in the frame
+		x.write("<p align=center>" +ImageSrc+((rootElem.icon=="") ? 
+		"Tree_root.gif":rootElem.icon)+WH6+rootElem.stat
+			+"\">&nbsp;<B>"+rootElem.text
+			+"</B><br>Use Navigation Tree on the left to make a selection.\n");
+	}
+	else
+	{
+		x.write("<table BORDER=\"0\" CELLSPACING=\"2\" CELLPADDING=\"0\""
+			+ "WIDTH=\"*\" HEIGHT=\"35\" BGCOLOR=\"#FFFFFF\">\n");
+		x.write("<tr>\n");
+		// Create an array containing all the trail indices from the 
+		// last one in the list to the root.
+		// Whenever an item in the trail can be found in the tree use the
+		// tree path, rather than the actual history trail.
+		var t = new Array();
+		var obj = historyStack[historyTrailLast];
+		while (obj != null)
+		{
+			if ((treeObj = findFolder(rootElem, obj.longName)) != null)
+			{
+				// Make sure the last tree elem in the trail gets selected.
+				// Note this requires the tree to be painted after the trail
+				selectedId = treeObj.id;
+				openParent(treeObj);
+				// Construct a fake history
+				while (treeObj != null && treeObj.typ == "folder")
+				{
+					t[t.length] = new HTE(treeObj.name, treeObj.text,treeObj.url, treeObj.cicon, false, false); 
+					treeObj = findFolder(rootElem, treeObj.parent);
+				}
+				obj = null;
+			}
+			else
+			{
+				t[t.length] = obj;
+				if (obj.isRoot)
+					break;
+				obj = obj.parent;
+			}
+		}
+		for (i = t.length - 1; i >= 0; i--) 
+		{
+			x.write("<td valign=\"top\" align=\"center\" WIDTH=\"100\""
+				+ " HEIGHT=\"35\" BGCOLOR=\"#FFFFFF\">");
+			x.write("<a href=\"" + t[i].url + "\" target = " + TargetFrame 
+				+ " onmouseover=\"status = '" + t[i].longName 
+				+ "';return true\" onmouseout=\"status = '';return true;\">");
+			x.write(ImageSrc + t[i].icon + "\" ALT=\"" + t[i].longName 
+				+ "\" BORDER=\"0\"");
+			x.write(" height=\"16\" width=\"16\"><br>" + t[i].shortName 
+				+ "</a></td>\n");
+			if (i != 0)
+			{
+				x.write("<td valign=\"top\" align=\"center\" WIDTH=\"10\""
+					+ " HEIGHT=\"100%\" BGCOLOR=\"#FFFFFF\">");
+				x.write(ImageSrc + "arrow.gif" + "\" ALT=\"\" BORDER=\"0\"");
+				x.write(" height=\"24\" width=\"10\"></td>\n");
+			}
+		}
+		x.write("</tr>\n");
+		x.write("</table>\n");
+	}
+	x.write("</body></html>");
+	x.close()
+	eval(setTimeout("x.close;",10));
+	eval(setTimeout("frames['trail'].window.scrollTo(1000000,0);",10));
+}
+// Paint the toolbar
+
+function paintToolbar()
+{
+	// Check if objects exist
+	if (frames["toolbar"] == null)
+	{
+		eval(setTimeout("paintToolbar()",500));
+		return;
+	}
+	if (frames["toolbar"].window.document == null)
+	{
+		eval(setTimeout("paintToolbar()",500));
+		return;
+	}
+	t=frames["toolbar"].window.document;
+	t.open("text/html");
+
+	// start document and toolbar table
+	t.write("<html>\n<head>\n");
+	t.write("<STYLE>\n");
+	t.write("<!--\n");
+	t.write("body{margin:0px;background-color:#C0C0C0}\n");
+	t.write("body,p,li,td,nobr {font-size:10pt;font-family:"+Font
+		+ ";font-weight:normal;color:#000000}\n");
+	t.write("A:link{color:#000000}\n");
+	t.write("A:visited{color:#000000}\n");
+	t.write("A:hover{color:#FF0000}\n");
+	t.write("//-->\n");
+	t.write("</STYLE>  \n");
+	t.write("<script>function showAboutPage()\n");
+	t.write("{\n");
+	t.write("var URL 		= 'ESupplyTreeAboutPage.jsp';\n");
+	t.write("var Features 	='directories = no, location = no, menubar = no, status = no,width = 340,height = 180,resizable = no,titlebar = no,scrollbars = no';\n");
+	t.write("window.open(URL,'',Features);\n");
+	t.write("}\n");
+	t.write("function printFrame()\n");
+	t.write("{\n");
+	t.write("parent.detailsFrame.focus();\n");
+	t.write("parent.detailsFrame.print();\n");
+	t.write("}\n");
+	t.write("function handleEvent(evnt)\n");
+	t.write("{\n");
+	t.write("if (evnt.button == 2)\n");
+	t.write("{\n");
+	t.write("alert('We are sorry, you cant activate Right mouse Button');\n");
+	t.write("return false;\n");
+	t.write("}\n");
+	t.write("}\n");
+	t.write("</\script>\n");
+	t.write("</head>\n<BODY onMouseDown ='handleEvent(event)'>\n");
+	t.write("<table border='0' cellspacing='0' cellpadding='0' width='100%'"
+		+ " height='30' bgcolor='#C0C0C0'>\n");
+	t.write("<tr><td valign='middle'>\n");
+	t.write("<table border='0' cellspacing='0' cellpadding='0' height='24'" 
+		+ " bgcolor='#C0C0C0'>\n");
+	t.write("<tr>  \n");
+	// add a cell for each entry
+	for (var i = 0; i < toolbarSet.length; i++)
+	{
+		if (toolbarSet[i].typ == "button")
+		{
+			t.write("<td valign=\"middle\" WIDTH=\"20\" HEIGHT=\"24\"" 
+				+ " BGCOLOR=\"#C0C0C0\">");
+			t.write("<a href=\"" + toolbarSet[i].url + "\" " 
+				+ (toolbarSet[i].target != "" ? "target = \"" 
+				+ toolbarSet[i].target + "\"": "") + ">");
+			t.write(ImageSrc + toolbarSet[i].icon + "\" ALT=\"" 
+				+ toolbarSet[i].text 
+				+ "\" BORDER=\"0\" onmouseover=\"status = '" 
+				+ toolbarSet[i].text + "';return true;\" ");
+			t.write("onmouseout=\"status = '';return true;\" height=\"16\""
+				+ " width=\"16\"></a></td>\n");
+			if (i + 1 != toolbarSet.length && toolbarSet[i+1].typ != "sep")
+			{
+				t.write("<td valign=\"middle\" WIDTH=\"4\" HEIGHT=\"24\""
+					+ "BGCOLOR=\"#C0C0C0\">");
+				t.write(ImageSrc + "empty.gif\" height=\"16\" width=\"4\"></td>\n");
+			}
+		}
+		else // sep
+		{
+			t.write("<td valign=\"middle\" WIDTH=\"12\" HEIGHT=\"24\""
+				+ "BGCOLOR=\"#C0C0C0\">");
+			t.write(ImageSrc + toolbarSet[i].icon 
+				+ "\" height=\"16\" width=\"12\"></td>\n");
+		}
+	}
+	t.write("</tr>\n");
+	t.write("</table>\n");
+	t.write("</td>\n");
+	t.write("</tr>\n");
+	t.write("</table>\n");
+	t.write("</body>\n");
+	t.close();
+}
+
+//  This function forces a reload of the details frame.
+function reloadDetails()
+{
+	frames[TargetFrame].location.reload(true);
+}
+//  Public functions for opening and closing folders. The ones with an "only"
+//  suffix do NOT invoke repainting the tree, the others do.
+//  Open all folders and repaint
+function openall()
+{
+	opencloseall(rootElem, 1);
+	eval(setTimeout("paintMenu()",50));
+}
+//  Open all folders
+function openallonly()
+{
+	opencloseall(rootElem, 1);
+}
+//  Close all folders and repaint
+function closeall()
+{
+	opencloseall(rootElem, 0);
+	eval(setTimeout("paintMenu()",50));
+}
+//  Close all folders
+function closeallonly()
+{
+	opencloseall(rootElem, 0);
+}
+//  Open or close all folders. Utility used by all 'all' functions
+function opencloseall(folder, status)
+{
+	for (var i = 0; i < folder.kids.length; i++)
+	{
+		folder.kids[i].open = status;
+		if (folder.kids[i].kids != null)
+			opencloseall(folder.kids[i], status);
+	}
+}
+//  Open or close a specific folder and repaint
+function openclose(name,status)
+{
+	folder = findFolder(rootElem, name);
+	folder.open=status;
+	eval(setTimeout("paintMenu()",50));
+	if((folder.url!="") && ((status==1) || (FolderCloseLink==1)))
+	{
+		frames[TargetFrame].location.href=folder.url;
+	}
+}
+//  Open or close a specific folder
+function opencloseonly(name,status)
+{
+	folder = findFolder(rootElem, name);
+	folder.open=status;
+}
+//  Open all folders that lead to the given one.
+function openParent(folder)
+{
+	if (folder.typ != "folder")
+		return;
+	parentFolder = findFolder(rootElem, folder.parent);
+	if (parentFolder != null && parentFolder.typ == "folder")
+	{
+		parentFolder.open = 1;
+		openParent(parentFolder);
+	}
+}
+// Public utility functions, which modify the looks or behaviour of the tree
+//  Set the sorting method for the tree. 0 = no sort.
+function doSort(value)
+{
+	if (value != 0)
+		SortMenu = 1;
+	else
+		SortMenu = 0;
+}
+//  Specifiy if tree is shown as a 'tree' (1) or an 'indented list' (0).
+function showBranches(value)
+{
+	if (value != 0)
+		PaintBranches = 1;
+	else
+		PaintBranches = 0;
+}
+//  If set to 1 this adds two hyperlinks to every folder entry. One over the 
+// +/- sign which only opens or closes the folder and one over the icon and 
+// name which displays the folder's url. Default is to have just one link 
+// which does both.
+function restrictFolderOpen(value)
+{
+	if (value != 0)
+		FolderOpenX = 1;
+	else
+		FolderOpenX = 0;
+}
+//  The following functions implement a history stack. Unfortunately IE5 does
+//  not support the funky stack methods nor does the history button work 
+//  properly, so we have to do it ourselves.
+	var historyStack = new Array();
+	historyMax = 100;
+	historyCurr = -1;
+	historyLast = -1;
+	historyIgnore = false;
+	historyTrailLast = -1;
+	historyTrailIndex = -1;
+function historyAdd(url, longName, shortName, icon, isRoot)
+{
+	// This function can be called with just one parameter (= the url),
+	// in which case the page will not be part of the trail or with
+	// 5 parameters to make it part of the trail.
+	if (arguments.length != 1 && arguments.length != 5)
+		return;
+	// check flag to indicate that this is a historic page.
+	if (historyIgnore == true)
+	{
+		historyIgnore = false;
+		if (arguments.length == 5)
+		{
+			historyTrailLast = historyCurr;
+			paintHistoryTrail(false);
+		}
+		else
+			paintHistoryTrail(true);
+		return;
+	}
+	// Avoid multiple entries of the same url.
+	if (historyCurr >= 0)
+	{
+		if (historyStack[historyCurr].url == url)
+			return;
+	}
+
+	// Check if stack is full
+	if (historyCurr >= historyMax)
+	{
+		// Worry about this later
+	}
+	historyCurr += 1;
+	// Add the entry to the history
+	if (arguments.length == 5)
+	{
+		historyStack[historyCurr] = new HTE(longName, shortName, url,icon, isRoot, historyCurr);
+		// Check if page is already on the trail, if so just use it.
+		if (historyTrailLast != -1)
+		{
+			var obj = historyStack[historyTrailLast];
+			while (obj != null)
+			{
+				if (obj.url == historyStack[historyCurr].url)
+					break;
+				obj = obj.parent;
+			}
+			if (obj != null)
+				historyStack[historyCurr].parent = obj.parent;
+			else if (!isRoot && historyTrailLast >= 0)
+				historyStack[historyCurr].parent = historyStack[historyTrailLast];
+		}
+		historyTrailLast = historyCurr;
+		paintHistoryTrail(false);
+	}
+	else
+	{
+		historyStack[historyCurr] = new HTE("", "", url, "", false);
+		paintHistoryTrail(true);
+	}
+	historyLast = historyCurr;
+}
+function historyBack()
+{
+	if (historyCurr < 1)
+		return;
+	// Set flag to indicate that this is a historic page.
+	historyIgnore = true;
+	// decrement the current entry first
+	historyCurr -= 1;
+	// display the new current entry
+	d=frames[TargetFrame].window;
+	d.location = historyStack[historyCurr].url;
+}
+function historyForward()
+{
+	if (historyCurr >= historyLast)
+		return;
+	// Set flag to indicate that this is a historic page.
+	historyIgnore = true;
+	// increment the current entry first
+	historyCurr += 1;
+	// display the new current entry
+	d=frames[TargetFrame].window;
+	d.location = historyStack[historyCurr].url;
+}
+// Internal functions for handling the memory structure. Those should never
+// be called from user apps.
+// Set of folders and links
+function Set()
+{
+  this.length=0;
+  this.newElem=newElem;
+  this.delElem=delElem;
+  return this;
+}
+// create a new element
+function newElem(object)
+{
+  for (var i = 0; i < this.length; i++)
+  {
+    if (object.typ == "folder" && this[i].typ == "link")
+      break;
+    if (object.typ == "link" && this[i].typ == "folder")
+      continue;
+    if (SortMenu == 1)
+    {
+      if (object.text < this[i].text)
+        break;
+    }
+  }
+  for(var j = this.length; j > i; j--)
+    this[j] = this[j-1];
+  this[i] = object;
+  this.length++;
+}
+// delete an element
+function delElem(object)
+{
+  for (var i = 0; i < this.length; i++)
+  {
+    if (object == this[i])
+      break;
+  }
+  for(var j = i+1; j < this.length; j++)
+    this[j-1] = this[j];
+  this.length--;
+  delete(object);
+}
+// defines the root element of menu tree
+function RE(name,text,icon,stat)
+{
+  this.id=uniqueId++;
+  this.name=name
+  this.text=text
+  this.icon=icon
+  this.typ="root"
+  this.stat=stat
+  this.kids=null
+  return this
+}
+// defines a folder entry
+function FE(name,parentName,text,url,cicon,oicon,vstat)
+{
+  this.id=uniqueId++;
+  this.name=name;
+  this.parent=parentName;
+  this.text=text;
+  if (url != "")
+  {
+    if (url.search(/\:/) != -1)
+      this.url=url;
+    else
+      this.url=DocSrc + url;
+  }
+  else
+    this.url = url;
+  this.cicon=cicon
+  this.oicon=oicon
+  this.typ="folder"
+  this.deletion=0
+  this.open=0
+  this.vstat=vstat
+  this.kids=null
+  return this
+}
+// defines a link entry
+function LE(parentName,text,url,target,icon,lstat)
+{
+  this.id=uniqueId++;
+  this.parent=parentName
+  this.text=text
+  if (url != "")
+  {
+    if (url.search(/\:/) != -1)
+      this.url=url;
+    else
+      this.url=DocSrc + url;
+  }
+  else
+    this.url = url;
+  this.target=target
+  this.icon=icon
+  this.typ="link"
+  this.lstat=lstat
+  return this
+}
+// ----------------------------- Toolbar ------------------------------
+// Set of toolbar items
+function TBSet()
+{
+  this.length=0;
+  this.newTBElem=newTBElem;
+  return this;
+}
+// create a new toolbar elem
+function newTBElem(object)
+{
+  this[this.length]=object;
+  this.length++;
+}
+// defines a toolbar entry
+function TBE(text,icon, url, target)
+{
+  this.typ="button";
+  this.text=text;
+  this.icon=icon;
+  if (url != "")
+  {
+    if (url.search(/\:/) != -1)
+      this.url=url;
+    else
+      this.url=DocSrc + url;
+  }
+  else
+    this.url = url;
+  this.target=target;
+  return this;
+}
+// defines a toolbar separator entry
+function TBS(icon)
+{
+  this.typ="sep";
+  this.icon=icon;
+  return this
+}
+// ----------------------------- History Trail ------------------------------
+// defines a history trail entry
+function HTE(longName,shortName,url,icon,isRoot,index)
+{
+  this.longName=longName;
+  this.shortName=shortName;
+  if (url != "")
+  {
+    if (url.search(/\:/) != -1)
+      this.url=url;
+    else
+      this.url=DocSrc + url;
+  }
+  else
+    this.url = url;
+  this.icon=icon;
+  this.isRoot = isRoot;
+  this.parent = null;
+  this.index = index;
+  return(this);
+}
+
+function openChat()
+{
+	var Bars = 'directories=no,location=no,menubar=no,status=no,titlebar=no';
+	var Options='scrollbar=no,width=275,height=100,resizable=no';
+	var Features=Bars+' '+Options;
+    window.open('CustomerChat.html','Doc',Features)
+}
+
+</script>
+<script LANGUAGE='JavaScript'>
+	startPage('4S-eSupply', '', 'images/', 'ESupplyMenuEmpty.jsp', true);
+	startMenu('e-Supply', '4S e-Supply', 'Tree_root.gif', 'Supply Chain Solution from Four soft');
+	restrictFolderOpen(1);
+	doSort(0);
+	addToolbarSep('sep.gif');
+	addToolbar('Four soft Home', 'Toolbar_4slogo.gif', 'http://www.four-soft.com', '_target');
+	addToolbarSep('sep.gif');
+	addToolbar('Back', 'Toolbar_backward.gif', 'javascript: top.historyBack();','');
+	addToolbar('Forward', 'Toolbar_forward.gif', 'javascript: top.historyForward();','');
+	addToolbarSep('sep.gif');
+	addToolbar('Stop', 'Toolbar_stop.gif', 'ESupplyMenuSamp.jsp', 'detailsFrame');
+	addToolbar('Refresh', 'Toolbar_refresh.gif', 'javascript: if(top.frames[\'detailsFrame\'].location.search!=\'\'){  top.frames[\'detailsFrame\'].location=top.frames[\'detailsFrame\'].location.protocol+\'//\'+top.frames[\'detailsFrame\'].location.host+top.frames[\'detailsFrame\'].location.pathname; } else   top.frames[\'detailsFrame\'].location.reload(true)','detailsFrame');
+	addToolbar('Print', 'Toolbar_print.gif', 'javascript: printFrame()', '');
+	addToolbar('Home www.4s-esupply.com', 'Toolbar_home.gif', 'http://www.4s-esupply.com', '_target');
+	addToolbarSep('sep.gif');
+	addToolbar('Display Help', 'Toolbar_help.gif', 'ESupplyMenuSamp.jsp', 'detailsFrame');
+	addToolbarSep('sep.gif');
+	addToolbar('About', 'Toolbar_about.gif','javascript: showAboutPage()','');
+	addToolbar('Customer Support', 'Toolbar_customersupport.gif','javascript:openChat()','');		
+	paintToolbar();
+top.markAllFolders();
+top.addFolder('Administration',	'e-Supply', 'Administration','ESupplyMenuAdministrationSetup.jsp', 'Tree_administration_open.gif', 'Tree_administration_open.gif', 'User Manager for e-Supply');
+top.addFolder('e-Trans','e-Supply','e-Trans','ESupplyMenuETrans.jsp','Tree_etrans_open.gif', 'Tree_etrans_open.gif', 'e-Transportation');
+top.addFolder('e-Log', 'e-Supply', 'e-Log', 'ESupplyMenuElog.jsp', 'Tree_elog_open.gif', 'Tree_elog_open.gif', 'e-Logistics');
+	top.addFolder('e-Log_Master_Setup', 'e-Log', 'Setup', '', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'Master Setup');
+		top.addFolder('e-Log_Master_Setup_HOSetup', 'e-Log_Master_Setup', 'HO', 'ESupplyMenuELogSetupHO.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'HO Setup');
+		top.addFolder('e-Log_Master_Setup_WHSetup', 'e-Log_Master_Setup', 'WareHouse', 'ESupplyMenuELogSetupWareHouse.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'Customer WH Setup');
+		top.addFolder('e-Log_Master_Setup_ProjectSetup', 'e-Log_Master_Setup', 'Project', 'ESupplyMenuELogSetupProject.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'Project Setup');
+		top.addFolder('e-Log_Master_Setup_PartSetup', 'e-Log_Master_Setup', 'Part', 'ESupplyMenuELogSetupPartMaster.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'Part Master Setup');
+		top.addFolder('e-Log_Master_Setup_VendorSetup', 'e-Log_Master_Setup', 'Vendor', 'ESupplyMenuELogSetupVendor.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'Vendor Setup');
+		top.addFolder('e-Log_Master_Setup_CustomerSetup', 'e-Log_Master_Setup', 'Customer', 'ESupplyMenuELogSetupCustomer.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'Customer Setup');
+	top.addFolder('e-Log_Operations', 'e-Log', 'Operations', '', 'Tree_operations_open.gif', 'Tree_operations_open.gif', 'Logistics Operations');
+		top.addFolder('e-Log_Operations_POMS', 'e-Log_Operations', 'POMS', 'ESupplyMenuELogOperationsPOMS.jsp', 'Tree_operations_open.gif', 'Tree_operations_open.gif', 'Purchase Order Process');
+		top.addFolder('e-Log_Operations_SOMS', 'e-Log_Operations', 'SOMS', 'ESupplyMenuELogOperationsSOMS.jsp', 'Tree_operations_open.gif', 'Tree_operations_open.gif', 'Sales Order Process');
+		top.addFolder('e-Log_Operations_WMS', 'e-Log_Operations', 'WMS', 'ESupplyMenuELogOperationsWMS.jsp', 'Tree_operations_open.gif', 'Tree_operations_open.gif', 'Ware House Management');
+		top.addFolder('e-Log_Operations_BMS', 'e-Log_Operations', 'BMS', 'ESupplyMenuELogOperationsBMS.jsp', 'Tree_operations_open.gif', 'Tree_operations_open.gif', 'Bill ship management');
+		top.addFolder('e-Log_Operations_IMS', 'e-Log_Operations', 'IMS', 'ESupplyMenuELogOperationsIMS.jsp', 'Tree_operations_open.gif', 'Tree_operations_open.gif', 'inventory management');
+	top.addFolder('e-Log_Reports', 'e-Log', 'Reports', 'ESupplyMenuELogReports.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'Logistics Reports');
+	top.addFolder('e-Log_Tracking', 'e-Log', 'Tracking', 'ESupplyMenuSamp.jsp', 'Tree_tracking_open.gif', 'Tree_tracking_open.gif', 'Tracking');
+	top.addFolder('e-Log_MailRequest', 'e-Log', 'Mail', 'ESupplyMenuELogMailReq.jsp', 'Tree_tracking_open.gif', 'Tree_tracking_open.gif', 'Mail Req');
+top.addFolder('e-Accounts', 'e-Supply', 'e-Accounts', 'ESupplyMenuEaccounts.jsp', 'Tree_accounts_open.gif', 'Tree_accounts_open.gif', 'e-Accounts');
+	top.addFolder('e-Accounts_setup', 'e-Accounts', 'Setup', '', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+		top.addFolder('e-Accounts_setup_corporate', 'e-Accounts_setup', 'Corporate Setup', '', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_corporate_features', 'e-Accounts_setup_corporate', 'Features', 'AccountingIdSetUp.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_corporate_acctgroups', 'e-Accounts_setup_corporate', 'Account Groups', 'ESupplyMenuEAccountsSetupCorporateAccountGroups.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_corporate_acctcode', 'e-Accounts_setup_corporate', 'Account Code', 'ESupplyMenuEAccountsSetupCorporateAccountCode.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_corporate_chargeid', 'e-Accounts_setup_corporate', 'Charge Id', 'ESupplyMenuEAccountsSetupCorporateChargeId.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_corporate_transactiontypes', 'e-Accounts_setup_corporate', 'Transaction Types', 'ESupplyMenuEAccountsSetupCorporateTransactionTypes.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+		top.addFolder('e-Accounts_setup_terminal', 'e-Accounts_setup', 'Terminal Setup', '', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_terminal_companyinfo', 'e-Accounts_setup_terminal', 'Company Info', 'ESupplyMenuEAccountsSetupTerminalCompanyInfo.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_terminal_acctcode', 'e-Accounts_setup_terminal', 'Account Code', 'ESupplyMenuEAccountsSetupTerminalAccountCode.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_setup_terminal_transactiontypes', 'e-Accounts_setup_terminal', 'Transaction Types', 'ESupplyMenuEAccountsSetupTerminalTransactionTypes.jsp', 'Tree_setup_open.gif', 'Tree_setup_open.gif', 'e-Accounts');
+		top.addFolder('e-Accounts_transactions', 'e-Accounts', 'Transactions', 'ESupplyMenuEAccountsTransactions.jsp', 'Tree_operations_open.gif', 'Tree_operations_open.gif', 'e-Accounts');
+		top.addFolder('e-Accounts_reports', 'e-Accounts', 'Reports', '', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_reports_financial', 'e-Accounts_reports', 'Financial Statements', 'ESupplyMenuEAccountsReportsFinancialStatements.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_reports_accounting', 'e-Accounts_reports', 'Accounting', 'ESupplyMenuEAccountsReportsAccounting.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_reports_mis', 'e-Accounts_reports', 'MIS', 'ESupplyMenuEAccountsReportsMIS.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_reports_invoice', 'e-Accounts_reports', 'Invoice', 'ESupplyMenuEAccountsReportsInvoice.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_reports_settlement', 'e-Accounts_reports', 'Settlement', 'ESupplyMenuEAccountsReportsSettlement.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_reports_exceptional', 'e-Accounts_reports', 'Exceptional', 'ESupplyMenuEAccountsReportsExceptional.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+			top.addFolder('e-Accounts_reports_conolidation', 'e-Accounts_reports', 'Consolidation', 'ESupplyMenuEAccountsReportsConsolidation.jsp', 'Tree_reports_open.gif', 'Tree_reports_open.gif', 'e-Accounts');
+	top.addFolder('e-HR', 'e-Supply', 'e-HR', 'ESupplyMenuEHR.jsp', 'Tree_ehr_open.gif', 'Tree_ehr_open.gif', 'e-HumanResource');
+top.deleteAllMarkedFolders();
+top.paintMenu();
+</script>
+</html>

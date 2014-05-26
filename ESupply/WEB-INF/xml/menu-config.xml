@@ -1,0 +1,591 @@
+<?xml version="1.0"?>
+<!DOCTYPE menu-names [
+	<!ELEMENT menu-names (leaf-node+)>
+	<!ELEMENT leaf-node (module+)>
+	<!ELEMENT module (uiName+)>
+	<!ELEMENT uiName (#PCDATA)>
+	<!ATTLIST leaf-node
+	leafName CDATA ""
+>
+	<!ATTLIST module 
+	name CDATA ""
+		txid CDATA ""
+		hotkey CDATA ""
+>
+	<!ATTLIST uiName
+	alevel CDATA "1"
+		process CDATA ""
+		url CDATA ""
+>
+]>
+<menu-names>
+	<leaf-node leafName="es-Administration-Setup">
+		<module name="Role" txid="00101" hotkey="R">
+			<uiName alevel="2" process="Add" url="ESACRoleRegistration.jsp">Add</uiName>
+			<uiName alevel="2" process="Modify" url="ESACUserRoleEnterId.jsp?action=MODIFY&amp;UIName=Role">Modify</uiName>
+			<uiName alevel="1" process="View" url="ESACUserRoleEnterId.jsp?action=VIEW&amp;UIName=Role">View</uiName>
+			<uiName alevel="4" process="Delete" url="ESACUserRoleEnterId.jsp?action=DELETE&amp;UIName=Role">Delete</uiName>
+			<uiName alevel="1" process="View All" url="ESACRoleRegistrationController.jsp?action=ViewAll">View All</uiName>
+		</module>
+		<module name="User" txid="00102" hotkey="U">
+			<uiName alevel="2" process="Add" url="ESACUserRegistrationEntry.jsp">Add</uiName>
+			<uiName alevel="2" process="Modify" url="ESACUserRoleEnterId.jsp?action=MODIFY&amp;UIName=User">Modify</uiName>
+			<uiName alevel="1" process="View" url="ESACUserRoleEnterId.jsp?action=VIEW&amp;UIName=User">View</uiName>
+			<uiName alevel="1" process="View All" url="ESACUserRegistrationController.jsp?action=ViewAll">View All</uiName>
+			<uiName alevel="4" process="Delete" url="ESACUserRoleEnterId.jsp?action=DELETE&amp;UIName=User">Delete</uiName>
+			<uiName alevel="4" process="Remove" url="ESACLoggedUsers.jsp">Remove</uiName>
+		</module>
+		<module name="User&amp;nbsp;Activity" txid="00103" hotkey="A">
+			<uiName alevel="1" process="View" url="ESLoggingEnterId.jsp?UIName=View">View</uiName>
+			<uiName alevel="1" process="ViewAll" url="ESLoggingEnterId.jsp?UIName=ViewAll">ViewAll</uiName>
+		</module>
+ 		
+ 		<module name="Password&amp;nbsp;Configuration" txid="00105" hotkey="A">
+			<uiName alevel="2" process="Password Configuration" url="SecuritySettings.jsp">Password Configuration</uiName>
+		</module>
+		<module name="Reset&amp;nbsp;Password" txid="00106" hotkey="A">
+			<uiName alevel="2" process="Reset Password" url="PasswordReset.jsp">Reset Password</uiName>
+		</module>
+    
+	</leaf-node>
+	<!-- ETrans Total -->
+	<leaf-node leafName="es-et-Administration-ModuleI">
+			<module name="Surcharges" txid="32158" hotkey="S">
+			<uiName alevel="2" process="Add" url="QMSSurchargesController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSSurChargesMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="2" process="View" url="etrans/QMSSurChargesMasterEnterId.jsp?Operation=View">View</uiName>
+			<!--  Added by Silpa For SurCharge View All on 22-Apr-11 -->
+            <uiName alevel="2" process="View All" url="QMSSurchargesController?Operation=View All&amp;subOperation=">View All</uiName>
+			<uiName alevel="2" process="Delete" url="etrans/QMSSurChargesMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+      	</module>
+		
+		 <!-- Added By Kishore For Status Reason Module -->
+		<module name="Status Reason" txid="32160" hotkey="T">
+			<uiName alevel="2" process="Add" url="QMSQuoteStatusReasonController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSQuoteStatusReasonMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+ 			<uiName alevel="2" process="View" url="etrans/QMSQuoteStatusReasonMasterEnterId.jsp?Operation=View">View</uiName>
+            <!--  Added by Silpa For Status Reason View All on 24-Mar-11 -->			
+             <uiName alevel="2" process="View All" url="QMSQuoteStatusReasonController?Operation=View All&amp;subOperation=">View All</uiName>
+			<uiName alevel="2" process="Delete" url="etrans/QMSQuoteStatusReasonMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+			 <uiName alevel="2" process="Invalidate" url="etrans/QMSQuoteStatusReasonMasterEnterId.jsp?Operation=Invalidate">Invalidate</uiName>
+      	</module>
+		 <!--End Of Kishore For Status Reason Module -->
+	
+		<module name="Country" txid="10001" hotkey="C">
+			<uiName alevel="2" process="Add" url="etrans/ETCCountryAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCCountryEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCCountryEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=countrymaster">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCCountryEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=countrymaster">Invalidate</uiName>
+			<uiName alevel="2" process="Upload" url="etrans/ETCUploadIndex.jsp?Operation=Upload&amp;Type=Country">Upload</uiName>
+
+		</module>
+		<module name="Company" txid="10002" hotkey="A">
+			<uiName alevel="2" process="Add" url="etrans/ETCHOCompanyRegistrationAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCHOCompanyRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCHOCompanyRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=COMPANYREGISTRATION">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCHOCompanyRegistrationEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module>
+		<module name="Location" txid="10003" hotkey="L">
+			<uiName alevel="2" process="Add" url="etrans/ETLocationAdd.jsp?Operation=Add&amp;UserAccess=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETLocationEnterId.jsp?Operation=Modify&amp;UserAccess=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETLocationEnterId.jsp?Operation=View&amp;UserAccess=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?UserAccess=View&amp;viewParameter=locationmaster">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETLocationEnterId.jsp?Operation=Delete&amp;UserAccess=Delete">Delete</uiName>
+ 			<uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=locationmaster">Invalidate</uiName>
+			<uiName alevel="2" process="Upload" url="etrans/ETCUploadIndex.jsp?Operation=Upload&amp;Type=Location">Upload</uiName>
+
+		</module>
+		<module name="Commodity" txid="10004" hotkey="M">
+			<uiName alevel="2" process="Add" url="etrans/ETCCommodityAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCCommodityEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCCommodityEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=commoditymaster">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCCommodityEnterId.jsp?Operation=Delete">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=commoditymaster">Invalidate</uiName>
+	  <uiName alevel="2" process="Upload" url="etrans/ETCUploadIndex.jsp?Operation=Upload&amp;Type=Commodity">Upload</uiName>
+		</module>
+		<module name="Currency" txid="10006" hotkey="R">
+			<uiName alevel="2" process="Add" url="etrans/ETCCurrencyConversionAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCCurrencyConversionAdd.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCCurrencyConversionView.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETCCurrencyConversionViewAll.jsp?View=CurrencyConversion">View All</uiName>
+		</module>
+		<!-- <module name="Taxes" txid="10304" hotkey="T">
+			<uiName alevel="2" process="Add" url="etrans/ETCTaxMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCTaxMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCTaxMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=taxmaster">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCTaxMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module> -->
+		<module name="Port" txid="10209" hotkey="P">
+			<uiName alevel="2" process="Add" url="etrans/sea/ETSPortMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/sea/ETSPortMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/sea/ETSPortMasterEnterId.jsp?Operation=View">View</uiName>
+      <uiName alevel="1" process="ViewAll" url="etrans/ETAShowViewAllReport.jsp?viewParameter=portmaster">ViewAll</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/sea/ETSPortMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=portmaster">Invalidate</uiName>
+	  <uiName alevel="2" process="Upload" url="etrans/ETCUploadIndex.jsp?Operation=Upload&amp;Type=Port">Upload</uiName>
+		</module>
+		<module name="Code&amp;nbsp;Customization" txid="10008" hotkey="O">
+			<uiName alevel="2" process="Add" url="etrans/ETCCodeCustomisationAdd.jsp">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCCodeCustomisationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCCodeCustomisationEnterId.jsp?Operation=View">View</uiName>
+		</module>
+	</leaf-node>
+		 
+	<leaf-node leafName="es-et-Administration-ModuleII">
+		<module name="Terminal" txid="10101" hotkey="T">
+			<uiName alevel="2" process="Add" url="etrans/ETCOperationTerminalRegistrationEnterId.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCTerminalRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCTerminalRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAViewAllAdmin.jsp?View=ViewTerminal">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCTerminalRegistrationEnterId.jsp?Operation=Delete">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=terminalInvalidate">Invalidate</uiName>
+		</module>
+		<module name="Terminal" txid="32155" hotkey="T">
+			<uiName alevel="2" process="Modify" url="etrans/ETCTerminalRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCTerminalRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAViewAllAdmin.jsp?View=ViewTerminal">View All</uiName>
+		</module>
+		<module name="Gateway/HUB" txid="10102" hotkey="G">
+			<uiName alevel="2" process="Add" url="etrans/ETCGatewayRegistrationAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCGatewayRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCGatewayRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=gatewaymaster">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCGatewayRegistrationEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module>
+        <module name="Service&amp;nbsp;Level" txid="10005" hotkey="S">
+			<uiName alevel="2" process="Add" url="etrans/ETCServiceLevelAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCServiceLevelEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCServiceLevelEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=servicelevel">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCServiceLevelEnterId.jsp?Operation=Delete">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=serviceLevel">Invalidate</uiName>
+		</module>
+        
+        
+        
+		<module name="Margin&amp;nbsp;Limit&amp;nbsp;Master" txid="32146" hotkey="L">
+			<uiName alevel="2" process="Add" url="etrans/QMSMarginLimitMaster.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSMarginLimitMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/QMSMarginLimitMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/QMSMarginLimitMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="1" process="ViewAll" url="etrans/QMSMarginLimitMasterViewAllEnterId.jsp?Operation=ViewAll">View All</uiName>
+			<uiName alevel="8" process="Invalidate" url="etrans/QMSMarginLimitMasterViewAllEnterId.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>    
+    	<module name="Density&amp;nbsp;Group&amp;nbsp;Code" txid="10007" hotkey="Q">
+			<uiName alevel="2" process="Add" url="QMSDensityGroupCodeAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSDensityGroupCodeEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSDensityGroupCodeEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="QMSDensityGroupCodeViewAllEnterId.jsp?Operation=ViewAll">View All</uiName>
+			<uiName alevel="4" process="Delete" url="QMSDensityGroupCodeEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="8" process="Invalidate" url="QMSDensityGroupCodeViewAllEnterId.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>
+    <!--    <module name="Sales&amp;nbsp;Person&amp;nbsp;Registration" txid="10009" hotkey="S">
+			<uiName alevel="2" process="Add" url="QMSSalesPersonRegistrationAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSSalesPersonRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSSalesPersonRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="QMSSalesPersonRegistrationViewAll.jsp?Operation=ViewAll">View All</uiName>
+			<uiName alevel="4" process="Delete" url="QMSSalesPersonRegistrationEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="8" process="Invalidate" url="QMSSalesPersonRegistrationViewAll.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>
+    
+	 	<module name="Customs" txid="10207" hotkey="C">
+			<uiName alevel="2" process="Add" url="etrans/ETCCustomsRegistrationAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCCustomsRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCCustomsRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=customsMaster">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCCustomsRegistrationEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module> -->
+		<!-- <module name="Vendor" txid="10208" hotkey="V">
+			<uiName alevel="2" process="Add" url="etrans/truck/ETTVendorMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/truck/ETTVendorMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/truck/ETTVendorMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/truck/ETTVendorMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module> -->
+<!-- 		<module name="Profit&amp;nbsp;Sharing" txid="10103" hotkey="P">
+			<uiName alevel="2" process="Add" url="etrans/ETRevenueSharingAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETRevenueSharingViewEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETRevenueSharingViewEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAViewAllAdmin.jsp?View=RevenueSharing">View All</uiName>
+		</module> -->
+		<module name="Agent/JV" txid="10104" hotkey="A">
+			<uiName alevel="2" process="Add" url="etrans/ETCJointVentureAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCJointVentureEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCJointVentureEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=agentjv">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCJointVentureEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module>
+		<module name="Project&amp;nbsp;Master" txid="10105" hotkey="M">
+			<uiName alevel="2" process="Add" url="etrans/ETCProjectMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCProjectMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCProjectMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCProjectMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module>
+     <module name="Industry&amp;nbsp;Registration" txid="32145" hotkey="O">
+			<uiName alevel="2" process="Add" url="etrans/QMSIndustryRegistration.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSIndustryRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/QMSIndustryRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/QMSIndustryRegistrationEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="8" process="Invalidate" url="etrans/QMSIndustryRegistration.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module> 
+    
+	</leaf-node>
+	<leaf-node leafName="es-et-Administration-ModuleIII">
+    
+		<module name="Customer" txid="10201" hotkey="C">
+			<uiName alevel="2" process="Add" url="etrans/ETCustomerRegistrationAdd.jsp?Operation=Add&amp;Customer=CCS&amp;registrationLevel=C">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCustomerRegistrationEnterIdC.jsp?Operation=Modify&amp;Customer=CCS&amp;registrationLevel=C">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCustomerRegistrationEnterIdC.jsp?Operation=View&amp;Customer=CCS&amp;registrationLevel=C">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAViewAllAdmin.jsp?View=CustomerRegistration&amp;registrationLevel=C">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCustomerRegistrationEnterIdC.jsp?Operation=Delete&amp;Customer=CCS&amp;registrationLevel=C">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=CustomerRegistration">Invalidate</uiName>
+		</module>
+    <module name="Designation" txid="10206" hotkey="D">
+			<uiName alevel="2" process="Add" url="QMSDesignationAdd.jsp">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSDesignationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSDesignationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="QMSDesignationEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="1" process="ViewAll" url="QMSDesignationViewAll.jsp?Operation=ViewAll">ViewAll</uiName>
+			<uiName alevel="8" process="Invalidate" url="QMSDesignationViewAll.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>
+        <module name="ListMaster" txid="32147" hotkey="L">
+			<uiName alevel="2" process="Add" url="ListMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="ListMasterEnterId.jsp?Operation=modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="ListMasterEnterId.jsp?Operation=view">View</uiName>
+			<uiName alevel="4" process="Delete" url="ListMasterEnterId.jsp?Operation=delete">Delete</uiName>
+			<uiName alevel="1" process="ViewAll" url="ListMasterViewAll.jsp?Operation=ViewAll">ViewAll</uiName>
+			<uiName alevel="8" process="Invalidate" url="ListMasterViewAll.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>
+<!-- 		<module name="Customer&amp;nbsp;Contracts" txid="10202" hotkey="O">
+			<uiName alevel="2" process="Add" url="ETCustomerContractController?Corporate=Yes&amp;Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="ETCustomerContractController?Corporate=Yes&amp;Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="ETCustomerContractController?Corporate=Yes&amp;Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="samp.jsp?View=CustomerContracts">View All</uiName>
+			<uiName alevel="4" process="Delete" url="ETCustomerContractController?Corporate=Yes&amp;Operation=Delete">Delete</uiName>
+		</module> -->
+		<module name="Carrier" txid="10203" hotkey="A">
+			<uiName alevel="2" process="Add" url="etrans/ETCCarrierRegistrationAdd.jsp">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCCarrierRegistrationEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCCarrierRegistrationEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAViewAllAdmin.jsp?View=CarrierRegistration">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCCarrierRegistrationEnterId.jsp?Operation=Delete">Delete</uiName>
+            <uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=CarrierRegistration">Invalidate</uiName>
+		</module>
+<!-- 		<module name="Carrier&amp;nbsp;Contracts" txid="10204" hotkey="R">
+			<uiName alevel="2" process="Add" url="ETCarrierContractsController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCarrierContractsEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="2" process="View" url="etrans/ETCarrierContractsEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="2" process="Delete" url="etrans/ETCarrierContractsEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module> -->
+	<!-- 	<module name="Carrier&amp;nbsp;Schedule" txid="10205" hotkey="S">
+			<uiName alevel="2" process="Add" url="etrans/ETCarrierSchedulesAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCarrierSchedulesEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCarrierSchedulesEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCarrierSchedulesEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module> -->
+<!-- 		<module name="Report&amp;nbsp;Print&amp;nbsp;Formats" txid="10206" hotkey="F">
+			<uiName alevel="2" process="Add" url="etrans/ETransPrintFormatSelection.jsp">Add</uiName>
+		</module> -->
+    
+       <!--  <module name="Zone&amp;nbsp;Code&amp;nbsp;Master" txid="12409" hotkey="Q">
+			<uiName alevel="2" process="Add" url="QMSZoneCodeMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSZoneCodeMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSZoneCodeMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="QMSZoneCodeMasterViewAll.jsp?Operation=ViewAll">View All</uiName>
+			<uiName alevel="4" process="Delete" url="QMSZoneCodeMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="8" process="Invalidate" url="QMSZoneCodeMasterViewAll.jsp?Operation=Invalidate">Invalidate</uiName>
+			<uiName alevel="4" process="UpLoad" url="QMSZoneCodeMasterUploadIndex.jsp?Operation=UpLoad">UpLoad</uiName>
+			<uiName alevel="4" process="DownLoad" url="QMSZoneCodeMasterDownloadIndex.jsp?Operation=DownLoad">DownLoad</uiName>
+		</module> -->
+		<module name="Content Master" txid="32153" hotkey="C">
+			<uiName alevel="2" process="Add" url="QMSSetupController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSSetupController?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSSetupController?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="QMSSetupController?Operation=Delete">Delete</uiName>
+			<!-- <uiName alevel="2" process="ViewAll" url="QMSSetupController?Operation=ViewAll">ViewAll</uiName>
+			<uiName alevel="2" process="Invalidate" url="QMSSetupController?Operation=Invalidate">Invalidate</uiName> -->
+			<uiName alevel="2" process="ViewAll" url="etrans/ETAViewAllAdmin.jsp?View=ContentMaster&amp;Operation=ViewAll">ViewAll</uiName>
+			<uiName alevel="2" process="Invalidate" url="etrans/ETAViewAllAdmin.jsp?View=ContentMaster&amp;Operation=Invalidate">Invalidate</uiName>
+		</module>
+		<!--@@Added by Kameswari for the WPBN issue-61295 -->
+		<module name="Email Text Master" txid="32156" hotkey="E">
+			<uiName alevel="2" process="Add" url="QMSEmailTextController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSEmailTextController?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSEmailTextController?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="QMSEmailTextController?Operation=Delete">Delete</uiName>
+		</module>
+    	<!--@@WPBN  issue-61295 -->
+      	<!--@@Added by Kameswari for the WPBN issue-61289 -->
+        <module name="Attachment Master" txid="32157" hotkey="T">
+			<uiName alevel="2" process="Add" url="QMSAttachmentController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSAttachmentController?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSAttachmentController?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="QMSAttachmentController?Operation=Delete">View</uiName>
+			<uiName alevel="1" process="View All" url="QMSAttachmentController?Operation=ViewAll">ViewAll</uiName>
+			<uiName alevel="8" process="Invalidate" url="QMSAttachmentController?Operation=Invalidate">Invalidate</uiName>
+		</module>
+		<!--@@WPBN issue-61289 -->
+	</leaf-node>
+
+	<!--changed by madhu-->
+    <leaf-node leafName="es-et-Administration-Rates">
+    <module name="Buy&amp;nbsp;Rates" txid="10605" hotkey="B">
+			<uiName alevel="2" process="Add" url="BuyRatesController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="BuyRatesController?Operation=Modify&amp;subOperation=Enter">Modify</uiName>
+			<uiName alevel="1" process="View" url="BuyRatesController?Operation=View&amp;subOperation=Enter">View</uiName>
+			<uiName alevel="8" process="InValidate" url="BuyRatesController?Operation=InValide&amp;subOperation=Enter">Invalidate</uiName>
+			<uiName alevel="2" process="UpLoad"    url="QMSBuyRatesUploadController?Operation=UpLoad&amp;subOperation=">UpLoad</uiName>
+			<uiName alevel="1" process="DownLoad"  url="QMSBuyRatesUploadController?Operation=DownLoad&amp;subOperation=">DownLoad</uiName>
+			<!-- @@Added by Kameswari for the WPBN issue - on 22/06/09 -->
+      <uiName alevel="2" process="Delete"    url="QMSBuyRatesUploadController?Operation=UpLoad&amp;subOperation=uploadDelete">Delete</uiName>
+		 <!--WPBN issue - -->
+    	<!-- <uiName alevel="4" process="Delete" url="etrans/ETCServiceLevelEnterId.jsp?Operation=Delete">Delete</uiName> -->
+		</module>
+        <module name="Recommended Sell Rates" txid="32132" hotkey="R">
+			<uiName alevel="2" process="Add" url="QMSSellRateController?Operation=Add&amp;subOperation=Enter">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSSellRateController?Operation=Modify&amp;subOperation=Enter">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSSellRateController?Operation=View&amp;subOperation=Enter">View</uiName>
+			<uiName alevel="8" process="Invalidate" url="QMSSellRateController?Operation=Invalidate&amp;subOperation=Enter">Invalidate</uiName>
+			<uiName alevel="8" process="Acceptance" url="QMSSellRateController?Operation=Acceptance&amp;subOperation=Enter">Acceptance</uiName>
+		</module>
+		<!-- Added by Yuvraj for CR_DHLQMS_1006 -->
+		<module name="Consolidated Sell Rates" txid="32133" hotkey="C">
+			<uiName alevel="2" process="Add" url="QMSConsolidatedSellRateController?Operation=Add&amp;shipmentMode=Air&amp;fromWhere=menu">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSConsolidatedSellRateController?Operation=Modify&amp;shipmentMode=Air&amp;fromWhere=menu">Modify</uiName>
+		</module>
+	<!-- //@@Yuvraj -->
+	      
+	</leaf-node>
+
+
+	 <leaf-node leafName="es-et-Administration-Charges">
+	 <module name="Charges" txid="32138" hotkey="M">
+			<uiName alevel="2" process="Add" url="etrans/QMSChargesMaster.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSChargesMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/QMSChargesMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/QMSChargesMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="etrans/QMSChargesMaster.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>
+    <module name="Charge Description" txid="32154" hotkey="D">
+			<uiName alevel="2" process="Add" url="etrans/QMSChargeDescriptionAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSChargeDescriptionEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="2" process="Upload" url="QMSChargesUploadController?Operation=Upload&amp;subOperation=chargeDesc">Upload</uiName>
+			<uiName alevel="1" process="View" url="etrans/QMSChargeDescriptionEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/QMSChargeDescriptionEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="1" process="ViewAll" url="etrans/QMSChargeDescriptionView.jsp?Operation=ViewAll">ViewAll</uiName>
+			<uiName alevel="8" process="Invalidate" url="etrans/QMSChargeDescriptionView.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>
+		<module name="Charges Grouping" txid="32139" hotkey="G">
+			<uiName alevel="2" process="Add" url="etrans/QMSChargesGroupingMaster.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSChargesGroupingMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="2" process="Upload" url="QMSChargesUploadController?Operation=Upload&amp;subOperation=chargeGroup">Upload</uiName>
+			<uiName alevel="1" process="View" url="etrans/QMSChargesGroupingMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/QMSChargesGroupingMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="etrans/QMSChargesGroupingMaster.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>
+		<module name="Charges Basis" txid="32140" hotkey="C">
+			<uiName alevel="2" process="Add" url="etrans/QMSChargeBasisMaster.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/QMSChargeBasisMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/QMSChargeBasisMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/QMSChargeBasisMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+      <uiName alevel="8" process="Invalidate" url="etrans/QMSChargeBasisMaster.jsp?Operation=Invalidate">Invalidate</uiName>
+		</module>        
+		<module name="Buy Charges" txid="32141" hotkey="B">
+			<uiName alevel="2" process="Add" url="QMSBuyChargesController?Operation=Add&amp;subOperation=">Add</uiName>
+ 			<uiName alevel="2" process="Modify" url="QMSBuyChargesController?Operation=Modify&amp;subOperation=">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSBuyChargesController?Operation=View&amp;subOperation=">View</uiName>
+			<!-- <uiName alevel="1" process="Delete" url="etrans/QMSChargesMasterEnterId.jsp?Operation=Delete">Delete</uiName> -->
+		</module>
+		<module name="Sell Charges" txid="32142" hotkey="S">
+			<uiName alevel="2" process="Add" url="QMSSellChargesController?Operation=Add&amp;subOperation=">Add</uiName>
+  			<uiName alevel="2" process="Modify" url="QMSSellChargesController?Operation=Modify&amp;subOperation=">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSSellChargesController?Operation=View&amp;subOperation=">View</uiName>
+			<!--@@Added by Kameswari for the WPBN issue- on 12/02/09-->
+			<uiName alevel="1" process="Accept" url="QMSSellChargesController?Operation=Accept&amp;subOperation=Add">Accept</uiName>
+			<!-- <uiName alevel="1" process="Delete" url="etrans/QMSChargesMasterEnterId.jsp?Operation=Delete">Delete</uiName> -->
+		</module>    
+    
+	<!-- Added by Yuvraj for CR_DHLQMS_-->
+		<module name="Cartage Buy&amp;nbsp;Charges" txid="32143" hotkey="t">
+			<uiName alevel="2" process="Add" url="QMSCartageController?Operation=buyAdd">Buy Charges Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSCartageController?Operation=buyModify">Buy Charges Modify</uiName>
+			<!--<uiName alevel="2" process="View" url="QMSCartageController?Operation=buyView">Buy Charges View</uiName>-->
+			<uiName alevel="1" process="View" url="QMSCartageController?Operation=buyView">Buy Charges View</uiName><!--@@Modified by Kameswari for the issue-->
+		</module>
+		<module name="Cartage Sell&amp;nbsp;Charges" txid="32144" hotkey="t">
+			<uiName alevel="2" process="Add" url="QMSCartageController?Operation=sellAdd">Sell Charges Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSCartageController?Operation=sellModify">Sell Charges Modify</uiName>
+			<!--<uiName alevel="2" process="View" url="QMSCartageController?Operation=sellView">Sell Charges View</uiName>-->
+			<uiName alevel="1" process="View" url="QMSCartageController?Operation=sellView">Sell Charges View</uiName><!--@@Modified by Kameswari for the issue-->
+       <uiName alevel="2" process="Accept" url="QMSCartageController?Operation=cartageAccept">Cartage Accept</uiName>
+		</module>
+	<!-- //@@Yuvraj -->
+       
+	</leaf-node>
+
+	 <leaf-node leafName="es-et-Administration-Operations">
+		 <module name="Quote" txid="32134" hotkey="Q">
+			<uiName alevel="2" process="Add" url="QMSQuoteController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSQuoteController?Operation=Modify">Modify</uiName>
+			<uiName alevel="2" process="Copy" url="QMSQuoteController?Operation=Copy">Copy</uiName>
+      <uiName alevel="1" process="Detailed View" url="QMSQuoteController?Operation=View">Detailed View</uiName>
+			<uiName alevel="1" process="View" url="QMSQuoteController?Operation=View&amp;from=summary">View</uiName>
+		    <uiName alevel="1" process="Grouping" url="QMSQuoteController?Operation=Grouping">Grouping</uiName>
+		</module>
+
+		 <module name="Multi Quote" txid="32159" hotkey="MQ">
+			<uiName alevel="2" process="Add" url="QMSMultiQuoteController?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSMultiQuoteController?Operation=Modify">Modify</uiName>
+			<uiName alevel="2" process="Copy" url="QMSMultiQuoteController?Operation=Copy">Copy</uiName>
+            <uiName alevel="1" process="Detailed View" url="QMSMultiQuoteController?Operation=View">Detailed View</uiName> 
+			<uiName alevel="1" process="View" url="QMSMultiQuoteController?Operation=View&amp;from=summary">View</uiName>
+		    <uiName alevel="1" process="Grouping" url="QMSMultiQuoteController?Operation=Grouping">Grouping</uiName>
+		</module>
+
+		<module name="Costing" txid="32134" hotkey="Q">
+			<uiName alevel="2" process="Quote Add" url="QMSCostingController?Operation=Add&amp;subOperation=&amp;fromPage=MultiCosting&amp;isMultiQuote=SingleQuote">Add</uiName>
+			<uiName alevel="2" process="Multi Quote Add" url="QMSCostingController?Operation=Add&amp;subOperation=&amp;fromPage=MultiCosting&amp;isMultiQuote=MultiQuote">Multi Costing Add</uiName>
+	   </module>
+	</leaf-node>
+
+
+	 <leaf-node leafName="es-et-Administration-Reports">
+		 <module name="Quote Reports" txid="32152" hotkey="Q">
+			<uiName alevel="1" process="Approved"  url="QMSReportController?Operation=Approved">Approved</uiName>
+			<uiName alevel="1" process="Rejected"  url="QMSReportController?Operation=Rejected">Rejected</uiName>
+			<uiName alevel="1" process="Escalated" url="QMSReportController?Operation=Escalated">Escalated</uiName>
+			<uiName alevel="1" process="Pending" url="reports/PendingQuotesEnterId.jsp">Pending</uiName>
+			<uiName alevel="1" process="Updated" url="QMSReportController?Operation=updatedQuotes">Update</uiName>
+			<uiName alevel="1" process="Expiry" url="QMSReportController?Operation=quotesExpiryReport">Expiry</uiName>
+			<uiName alevel="1" process="Yield Report" url="QMSReportController?Operation=yieldAdd">Yield Report</uiName>
+			<uiName alevel="1" process="Activity Report" url="QMSReportController?Operation=activityAdd">Activity Report</uiName>
+			<!--@@Added by Kameswari for the WPBN issue-167655 on 23/04/09 -->
+			<uiName alevel="1" process="QuoteGroup Excel Report" url="QMSRatesReportController?Operation=GroupingExcel">QuoteGroupExcel Report</uiName>
+		<!--@@Added by Phani for the WPBN issue-167656 on 23/04/09 -->
+			<uiName alevel="2" process="Freight Rate Excel Report" url="QMSRatesReportController?Operation=FreightRates">Freight Rate Excel Report</uiName>
+      <uiName alevel="1" process="Activity Summary Report" url="QMSReportController?Operation=ActivitySummary">Activity Summary Report</uiName>
+		</module>
+		<module name="Buy Rate Report" txid="32152" hotkey="B">
+			<uiName alevel="1" process="Buy Rates Expiry"  url="QMSReportController?Operation=buyratesExpiryReport">buyratesExpiry</uiName>
+		<!-- 	<uiName alevel="2" process="BuyRatesExpiry" url="reports/QuotesExpiryEnterId.jsp?Operation=buyratesExpiry">Expiry</uiName> -->
+		</module>
+	</leaf-node>
+	<!--End madhu-->
+
+
+<leaf-node leafName="es-et-Terminal-Setup">
+		<!-- <module name="Terminal&amp;nbsp;Information" txid="10301" hotkey="T">
+			<uiName alevel="2" process="Modify" url="etrans/ETCTerminalInformationView.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCTerminalInformationView.jsp?Operation=View">View</uiName>
+		</module> -->
+		<module name="Customer" txid="10302" hotkey="C">
+			<uiName alevel="2" process="Add" url="etrans/ETCustomerRegistrationAdd.jsp?Operation=Add&amp;Customer=CCS&amp;registrationLevel=T">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCustomerRegistrationEnterIdC.jsp?Operation=Modify&amp;Customer=CCS&amp;registrationLevel=T">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCustomerRegistrationEnterIdC.jsp?Operation=View&amp;Customer=CCS&amp;registrationLevel=T">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAViewAllAdmin.jsp?View=CustomerRegistration&amp;registrationLevel=T">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCustomerRegistrationEnterIdC.jsp?Operation=Delete&amp;Customer=CCS&amp;registrationLevel=T">Delete</uiName>
+			<uiName alevel="8" process="Invalidate" url="Invalidate.jsp?View=CustomerRegistration">Invalidate</uiName>
+		</module>
+		
+		<!-- <module name="Customer Mapping" txid="10302" hotkey="M">
+			<uiName alevel="2" process="Customers Mapping" url="etrans/ETShipperConsigneeMapping.jsp?registrationLevel=T">Customers Mapping</uiName>
+		</module> -->
+	
+	<!--	<module name="Vendor" txid="32151" hotkey="V">
+			<uiName alevel="2" process="Add" url="etrans/truck/ETTVendorMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/truck/ETTVendorMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/truck/ETTVendorMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/truck/ETTVendorMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module>
+    -->
+	<!--	<module name="Taxes" txid="10304" hotkey="T">
+			<uiName alevel="2" process="Add" url="etrans/ETCTaxMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETCTaxMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETCTaxMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="etrans/ETAShowViewAllReport.jsp?viewParameter=taxmaster">View All</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETCTaxMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+		</module>-->
+		<module name="RoutePlan" txid="32150" hotkey="R">
+			<uiName alevel="2" process="Add" url="ETMultiModeRoutePlanController?Operation=Add&amp;ShipmentMode=1">Add</uiName>
+			<!--<uiName alevel="1" process="View" url="samp.jsp">View</uiName>-->
+		</module>
+		 <module name="Zone&amp;nbsp;Code&amp;nbsp;Master" txid="12409" hotkey="Z">
+			<uiName alevel="2" process="Add" url="QMSZoneCodeMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="QMSZoneCodeMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="QMSZoneCodeMasterEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="1" process="View All" url="QMSZoneCodeMasterViewAll.jsp?Operation=ViewAll">View All</uiName>
+			<uiName alevel="4" process="Delete" url="QMSZoneCodeMasterEnterId.jsp?Operation=Delete">Delete</uiName>
+		 <!-- 	<uiName alevel="8" process="Invalidate" url="QMSZoneCodeMasterViewAll.jsp?Operation=Invalidate">Invalidate</uiName>  -->
+			<!--@@Added by kiran.v on 06/02/2012 for wpbn issue -289556  -->
+			 <uiName alevel="8" process="Invalidate" url="QMSZoneCodeMasterEnterId.jsp?Operation=Invalidate">Invalidate</uiName> 
+			<uiName alevel="2" process="UpLoad" url="QMSZoneCodeMasterUploadIndex.jsp?Operation=UpLoad">UpLoad</uiName>
+			<uiName alevel="1" process="DownLoad" url="QMSZoneCodeMasterDownloadIndex.jsp?Operation=DownLoad">DownLoad</uiName>
+		</module>
+		<module name="Canada&amp;nbsp;Zone&amp;nbsp;Code&amp;nbsp;Master" txid="12410" hotkey="C">
+			<uiName alevel="2" process="UpLoad" url="QMSCanadaZonesController?Operation=UpLoad">UpLoad</uiName>
+			<uiName alevel="1" process="DownLoad" url="QMSCanadaZonesController?Operation=DownLoad">DownLoad</uiName>
+		</module>
+     <!-- Added by ashlesh for DHL CR 154393 on 23/01/2009 -->
+		<module name="Customer&amp;nbsp;Upload" txid="12411" hotkey="C">
+    <uiName alevel="2" process="UpLoad" url="QMSBuyRatesUploadController?Operation=UpLoad&amp;subOperation=upLoadCustomer">UpLoad</uiName>
+		</module>
+		<!-- <module name="Customer&amp;nbsp;Contracts" txid="10303" hotkey="O">
+			<uiName alevel="2" process="Add" url="ETCustomerContractController?Corporate=No&amp;Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Modify" url="ETCustomerContractController?Corporate=No&amp;Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="ETCustomerContractController?Corporate=No&amp;Operation=View">View</uiName>
+			
+			<uiName alevel="4" process="Delete" url="ETCustomerContractController?Corporate=No&amp;Operation=Delete">Delete</uiName>
+		</module> -->
+		<!-- <module name="PickUp/Delivery Route" txid="10501" hotkey="P">
+			<uiName alevel="2" process="Add" url="etrans/truck/ETTPickupRouteMasterAdd.jsp?Operation=Add">Add</uiName>
+			<uiName alevel="2" process="Attach Truck" url="etrans/truck/ETTAttachToVehicle.jsp?Operation=Assign&amp;ShipmentMode=Truck&amp;fromMenu=Routing">Attach Truck </uiName>
+			<uiName alevel="2" process="Dettach Truck" url="etrans/truck/ETTAttachToVehicle.jsp?Operation=Detach&amp;ShipmentMode=Truck&amp;fromMenu=Routing">Attach Truck </uiName>
+			<uiName alevel="2" process="Modify" url="etrans/truck/ETTPickupRouteMasterEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/truck/ETTPickupRouteMasterEnterId.jsp?Operation=View">View</uiName>
+		</module> -->
+	</leaf-node>
+	<leaf-node leafName="es-et-SFA-Setup">
+		<!-- <module name="General&amp;nbsp;Rates" txid="10401" hotkey="G"> -->
+<!-- 
+			<uiName alevel="1" process="Rate Entry" url="etrans/sfa/ETSFARatesEnter.jsp?shipmentMode=Air">Rate Entry</uiName>
+-->
+			<!-- <uiName alevel="1" process="Air Rate Entry" url="etrans/sfa/ETSFARatesEnter.jsp?shipmentMode=Air">Air Rate Entry</uiName>
+			<uiName alevel="1" process="Sea Rate Entry" url="etrans/sfa/ETSFARatesEnter.jsp?shipmentMode=Sea">Sea Rate Entry</uiName>
+			<uiName alevel="1" process="Truck Rate Entry" url="etrans/sfa/ETSFARatesEnter.jsp?shipmentMode=Truck">Truck Rate Entry</uiName>
+		</module> -->
+		<!-- <module name="RFQ" txid="10402" hotkey="R">
+			<uiName alevel="1" process="Create RFQ" url="etrans/sfa/ETGeneralRatesQuote.jsp?operationType=generateQuote">Create RFQ</uiName>
+			<uiName alevel="1" process="Confirm to Contract" url="etrans/sfa/ETQuoteEnterId.jsp?operationType=generateContract">Confirm to Contract</uiName>
+			<uiName alevel="1" process="Confirm to PRQ" url="etrans/sfa/ETQuoteEnterId.jsp?operationType=generatePrq">Confirm to PRQ</uiName> 
+				</module>-->
+<!--			
+			<uiName alevel="1" process="Convert to PRQ" url="samp.jsp">Convert to PRQ</uiName>
+-->
+	
+	</leaf-node>
+	<!-- <leaf-node leafName="es-et-Operations-OrderManagement">
+		<module name="POMS" txid="10601" hotkey="P">
+			<uiName alevel="2" process="Add" url="ETConsigneeOrderController?Operation=Add&amp;fromMenu=Yes">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETConsigneeOrderEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETConsigneeOrderEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETConsigneeOrderEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="4" process="Pending Orders" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=consigneeOrder&amp;reportType=consigneeReport">Pending Orders</uiName>
+			<uiName alevel="4" process="View All Orders" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=consigneeOrder&amp;reportType=consigneeViewAllReport">View All Orders</uiName>
+			<uiName alevel="4" process="PRQ" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=consigneeOrder">PRQ</uiName>
+		</module>
+		<module name="IMS" txid="10602" hotkey="I">
+			<uiName alevel="2" process="Add" url="ETShipperInvoiceController?Operation=Add&amp;fromMenu=Yes">Add</uiName>
+			<uiName alevel="2" process="Modify" url="etrans/ETShipperInvoiceEnterId.jsp?Operation=Modify">Modify</uiName>
+			<uiName alevel="1" process="View" url="etrans/ETShipperInvoiceEnterId.jsp?Operation=View">View</uiName>
+			<uiName alevel="4" process="Delete" url="etrans/ETShipperInvoiceEnterId.jsp?Operation=Delete">Delete</uiName>
+			<uiName alevel="4" process="Pending Invoices" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=shipperInvoice&amp;reportType=invoiceReport">Pending Invoices</uiName>
+			<uiName alevel="4" process="View All Invoices" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=shipperInvoice&amp;reportType=invoiceViewAllReport">View All Invoices</uiName>
+			<uiName alevel="4" process="PRQ" url="etrans/ETPRQShipperConsigneeSelection.jsp?shipperConsignee=shipperInvoice">PRQ</uiName>
+		</module>
+	</leaf-node> -->
+	
+</menu-names>

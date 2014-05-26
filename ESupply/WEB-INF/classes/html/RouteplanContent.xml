@@ -1,0 +1,63 @@
+<RouteplanContent>
+	<Routeplan>	
+	
+	<ChildElement  elementType="select" id="1" class="formdata">
+		<type>select</type>
+		<name>shipmentMode</name>
+		<onChange>changeValue(this)</onChange>
+		<class>select</class>
+		<option value='1'>Air</option>
+        <option value="2">Sea</option>
+		<option value="4">Truck</option>
+
+	</ChildElement>
+	<ChildElement  elementType="input" id="1" startingElement="true" class="formdata">
+		<type>text</type>
+		<name>orginLocId</name>
+		<size>10</size>
+		<maxLength>6</maxLength>
+		<onBlur>this.value=this.value.toUpperCase()</onBlur>
+		<value></value>
+		<onBlur></onBlur>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" merged="true" id="1" class="formdata">
+		<type>button</type>
+		<name>orgBut</name>
+		<onClick>showLocation(this,"orginLocId");</onClick>
+		<value>...</value>
+		<onBlur></onBlur>
+		<class>input</class>
+	</ChildElement>
+	<ChildElement  elementType="input"  id="1" startingElement="true" class="formdata">
+		<type>text</type>
+		<name>destinationLocId</name>
+		<size>10</size>
+		<maxLength>6</maxLength>
+		<onBlur>this.value=this.value.toUpperCase();</onBlur>
+		<value></value>
+		<onBlur></onBlur>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" merged="true" id="1" class="formdata">
+		<type>button</type>
+		<name>desBut</name>
+		<onClick>showLocation(this,"destinationLocId");</onClick>
+		<value>...</value>
+		<onBlur></onBlur>
+		<class>input</class>
+	</ChildElement>
+
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>remarks</name>
+		<size>20</size>
+		<maxLength>50</maxLength>
+		<onBlur>toUpper(this);</onBlur>
+		<value></value>
+		<onBlur></onBlur>
+		<class>text</class>
+	</ChildElement>
+
+	</Routeplan>
+</RouteplanContent>

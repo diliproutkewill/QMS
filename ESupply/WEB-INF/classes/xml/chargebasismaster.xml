@@ -1,0 +1,77 @@
+<DynamicContent>
+	<chargebasismaster>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>chargebasisid</name>
+			<size>6</size>
+			<maxLength>10</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter1(this.value,"chargeBasis");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>chargebasisdesc</name>
+			<size>35</size>
+			<maxLength>50</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter1(this.value,"chargeBasis")</onBlur><!-- @@toUpper(this); Commented by Kameswari for WPBN - 29901-->
+		</ChildElement>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>block</name>
+			<size>6</size>
+			<maxLength>5</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>numberFilter(this,"Block");</onBlur>
+		</ChildElement>
+		<ChildElement elementType="select"  class="formdata" align="center">
+			<name>primary</name>
+			<type>select</type>
+			<class>select</class>
+				  <option value=''></option>
+                  <option value="KG">Per Kilogram</option>
+                  <option value="LB">Per Pound</option>
+                  <option value="CBM">Per Cubic Meter</option>
+                  <option value="CFT">Per Cubic Feet</option>
+                  <option value="Shipment">Per Shipment</option>
+                  <option value="Document">Per Document</option>
+                  <option value="Piece">Per Piece</option>
+                  <option value="Container">Per Container</option>
+                  <option value="Pallet">Per Pallet</option>
+                  <option value="Value">Value</option>
+                  <option value="KM">Per Kilometer</option>
+                  <option value="Line">Per Line</option>
+                  <option value="Person">Per Person</option>
+		</ChildElement>
+		<ChildElement elementType="select"  class="formdata" align="center">
+			<name>secondary</name>
+			<type>select</type>
+			<class>select</class>
+                  <option value=''></option>
+                  <option value="Day">Per Day</option>
+                  <option value="Hour">Per Hour</option>
+                  <option value="Invoice">Invoice</option>
+                  <option value="Charge">Charge</option>
+                  <option value="Freight">Freight</option>
+                  <option value="List">List</option>
+		</ChildElement>
+		<ChildElement elementType="select"  class="formdata" align="center">
+			<name>tertiary</name>
+			<type>select</type>
+			<class>select</class>
+                  <option value="Actual">Actual</option>
+                  <option value="Chargeable">Chargeable</option>
+		</ChildElement>
+<!-- 		<ChildElement elementType="select"  class="formdata" align="center">
+			<name>calculation</name>
+			<type>select</type>
+			<class>select</class>
+                  <option value=''></option>
+                  <option value="Auto">Auto</option>
+                  <option value="Manual">Manual</option>
+		</ChildElement> -->
+	</chargebasismaster>
+</DynamicContent>

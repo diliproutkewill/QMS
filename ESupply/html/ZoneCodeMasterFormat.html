@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>Zone Code Upload Format</TITLE>
+</HEAD>
+
+<BODY>
+<table width="100%" border="1">
+  <tbody>
+    <tr>
+      <td width="100%" bgColor="#DF0000"><font face="Arial" size="4" color="#FFFFFF">Zone Code Upload
+        - File Format</font></td>
+    </tr>
+    <tr>
+      <td width="100%" bgColor="#E1E1E1"><font face="Arial" size="2">	<u>Important Points</u><br> 												
+													
+1	The Zone Code upload  data is entered under 2 headers<br>												
+2	First header is used to enter MASTER data for the Zone Codes<br>												
+3	The user can also enter multiple MASTER data & corresponding DETAILS data in the same sheet <br>							
+4	The user can enter any number of DETAILS data<br>												
+5	First header is used to enter MASTER data for the Zone Codes<br>
+
+7	For multiple MASTER data, the user can specify a matching ROW.NO under MASTER & DETAILS data as a reference number<br>						e.g In the above example, Zone Codes with Sl.No.1 corresponds to Zip Code Type N while Sl.No.2 corresponds to Zip Code Type AN	<br>
+8	There should be one empty row between Master & Detail<br>						
+9	For Zip Code Type Numeric you Should enter N<br>						
+		Alpha Numeric you Should enter AN<br>	
+10  For Numeric ,Alphanumeric Value Should be '-'<br>
+
+</font></td>
+    </tr>
+  </tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="4">		
+<tr bgColor="#DF0000">
+<td>ROW ID</td>
+<td>Shipment Mode</td>
+<td>Console Type</td>
+<td>Location</td>
+<td>TerminalId</td>
+<td>City</td>
+<td>State</td>
+<td>Zipcode Type</td>
+</tr>
+</font>						
+
+<tr bgColor="#E1E1E1">
+<td>1</td>
+<td>Air</td>
+<td></td>
+<td>HYD</td>
+<td>DHLHYD</td>
+<td>HYDERABAD</td>
+<td>AP</td>
+<td>N</td>
+</tr>
+
+<tr bgColor="#E1E1E1">
+<td>2</td>
+<td>Sea</td>
+<td>LCL</td>
+<td>HYD</td>
+<td>DHLHYD</td>
+<td>HYDERABAD</td>
+<td>AP</td>
+<td>N</td>
+</tr>
+<tr bgColor="#E1E1E1">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>					
+
+<tr bgColor="#DF0000">
+<td>ROW ID</td>
+<td>Alpha-Numeric Code</td>
+<td>From Zipcode</td>
+<td>To Zipcode</td>
+<td>Zone</td>
+<td>Estimated Time</td>
+<td>Estimated Distance</td>
+<td></td>
+</tr>
+<tr bgColor="#E1E1E1">
+<td>1</td>
+<td>-</td>
+<td>500000</td>
+<td>500010</td>
+<td>A</td>
+<td>1:00</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr bgColor="#E1E1E1">
+<td>1</td>
+<td>-</td>
+<td>500011</td>
+<td>500020</td>
+<td>B</td>
+<td>1:30</td>
+<td>10</td>
+<td></td>
+</tr>					
+
+<tr bgColor="#E1E1E1">
+<td>2</td>
+<td>-</td>
+<td>500000</td>
+<td>500010</td>
+<td>C</td>
+<td>1:00</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr bgColor="#E1E1E1">
+<td>2</td>
+<td>-</td>
+<td>500011</td>
+<td>500020</td>
+<td>D</td>
+<td>1:30</td>
+<td>10</td>
+<td></td>
+</tr>
+</font>
+</table>
+
+</BODY>
+</HTML>

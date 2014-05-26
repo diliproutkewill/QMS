@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Under Construction</title>
+<script language="JavaScript" src="../eventhandler.js"></script>
+</head>
+<script LANGUAGE='JavaScript'>
+	var historyStack = new Array();
+	historyMax = 100;
+	historyCurr = -1;
+	historyLast = -1;
+	historyIgnore = false;
+	historyTrailLast = -1;
+	historyTrailIndex = -1;
+function handleEvent(evnt)
+{
+	if (evnt.button == 2)
+	{
+		alert("Please Click on Online Help");
+		return false;
+	}
+}
+function historyAdd(url, longName, shortName, icon, isRoot)
+{
+	// This function can be called with just one parameter (= the url),
+	// in which case the page will not be part of the trail or with
+	// 5 parameters to make it part of the trail.
+	if (arguments.length != 1 && arguments.length != 5)
+		return;
+	// check flag to indicate that this is a historic page.
+	if (historyIgnore == true)
+	{
+		historyIgnore = false;
+		if (arguments.length == 5)
+		{
+			historyTrailLast = historyCurr;
+			paintHistoryTrail(false);
+		}
+		else
+			paintHistoryTrail(true);
+		return;
+	}
+	// Avoid multiple entries of the same url.
+	if (historyCurr >= 0)
+	{
+		if (historyStack[historyCurr].url == url)
+			return;
+	}
+	// Check if stack is full
+	if (historyCurr >= historyMax)
+	{
+		// Worry about this later
+	}
+	historyCurr += 1;
+	// Add the entry to the history
+	if (arguments.length == 5)
+	{
+		historyStack[historyCurr] = new HTE(longName, shortName, url,icon, isRoot, historyCurr);
+		// Check if page is already on the trail, if so just use it.
+		if (historyTrailLast != -1)
+		{
+			var obj = historyStack[historyTrailLast];
+			while (obj != null)
+			{
+				if (obj.url == historyStack[historyCurr].url)
+					break;
+				obj = obj.parent;
+			}
+			if (obj != null)
+				historyStack[historyCurr].parent = obj.parent;
+			else if (!isRoot && historyTrailLast >= 0)
+				historyStack[historyCurr].parent = historyStack[historyTrailLast];
+		}
+		historyTrailLast = historyCurr;
+		paintHistoryTrail(false);
+	}
+	else
+	{
+		historyStack[historyCurr] = new HTE("", "", url, "", false);
+		paintHistoryTrail(true);
+	}
+	historyLast = historyCurr;
+}
+top.historyAdd('ESupplyMenuSamp.html');
+  </script>
+<body bgcolor=#00005E leftmargin="5" topmargin="0" marginwidth="0" marginheight="0" text="#000080" onMouseDown='handleEvent(event)'>
+<br><table width="760" border="0" cellspacing="0" cellpadding="0">
+<tr valign="top" bgcolor="#FFFFFF"><td>
+<table width="760" cellpadding="4" cellspacing="1">
+<tr valign="top" bgcolor="#000000"> 
+<td width="50%" height="17" bgcolor="#014896"><font face="Verdana" size="4" color="#FFFFFF"><b><font color="#FFFF66"><span class="unnamed1"><span class="unnamed1"><span class="unnamed1"><span class="unnamed1"><font color="#FFFFFF" size="3">To 
+be implemented.....</font></span></span></span></span></font></b></font></td>
+</tr><tr valign="top" bgcolor="e5e5e5"> 
+<td width="50%" height="17" bgcolor="#F9F5E6" bordercolor="#E1EFFF"><font color="#CCFFFF"><font face="Verdana" size="2" color="#000000">This 
+page is currently <b>under construction</b>. You may be able to access 
+this page shortly.<br>
+<font color="#FF0000">Sorry for the inconvenience</font>.</font></font></td>
+</tr></table></td></tr></table>
+<br><font color="#CCFFFF"></font></body>

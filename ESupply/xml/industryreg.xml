@@ -1,0 +1,23 @@
+<DynamicContent>
+<industryreg>
+	<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+		<type>text</type>
+		<name>industry</name>
+		<size>15</size>
+		<maxLength>25</maxLength>
+		<class>text</class>
+		<onKeyPress></onKeyPress>
+		<onBlur>specialCharFilter(this,"IndustryId");toUpperCase();</onBlur>
+	</ChildElement>
+
+	<ChildElement elementType="input" class="formdata" align="center">
+		<type>text</type>
+		<name>description</name>
+		<size>20</size>
+		<maxLength>50</maxLength>
+		<class>text</class>
+		<onKeyPress></onKeyPress>
+		<onBlur>specialCharFilter(this,"Description");toUpperCase();</onBlur>
+	</ChildElement>
+</industryreg>
+</DynamicContent>

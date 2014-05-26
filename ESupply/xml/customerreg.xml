@@ -1,0 +1,80 @@
+<DynamicContent>
+	<customerreg>
+		<ChildElement elementType="select" startingElement="true" class="formdata" align="center">
+			<name>addrtype</name>
+			<type>select</type>
+			<class>select</class>
+				  <option value="P">PickUp</option>
+				  <option value="D">Delivery</option>
+				  <option value="B">Billing</option>
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>text</type>
+				<name>contactPerson</name>
+				<size>20</size>
+				<maxLength>25</maxLength>
+				<class>text</class>
+				<onKeyPress></onKeyPress>
+				<onBlur>upper(this)</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>text</type>
+				<name>Designation</name>
+				<size>15</size>
+				<maxLength>15</maxLength>
+				<class>text</class>
+				<onKeyPress></onKeyPress>
+				<onBlur>upper(this)</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>text</type>
+				<name>Department</name>
+				<size>10</size>
+				<maxLength>15</maxLength>
+				<class>text</class>
+				<onKeyPress></onKeyPress>
+				<onBlur>upper(this)</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>text</type>
+				<name>ZipCode</name>
+				<size>10</size>
+				<maxLength>15</maxLength>
+				<class>text</class>
+				<onKeyPress></onKeyPress>
+				<onBlur>stringFilter(this);chrnum(this)</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>text</type>
+				<name>Contact</name>
+				<size>10</size>
+				<maxLength>15</maxLength>
+				<class>text</class>
+				<onKeyPress></onKeyPress>
+				<!--<onBlur>checkNumeric(this)</onBlur>-->
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>text</type>
+				<name>conFax</name>
+				<size>10</size>
+				<maxLength>15</maxLength>
+				<class>text</class>
+				<onKeyPress>checkSpecialKeyCode()</onKeyPress>
+				<!-- <onBlur>checkNumeric(this)</onBlur> -->
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>text</type>
+				<name>Email</name>
+				<size>15</size>
+				<!--<maxLength>30</maxLength>--><!--@@Modified by Kameswari for the WPBN issue-->
+				<maxLength>250</maxLength>
+				<class>text</class>
+				<onKeyPress></onKeyPress>
+				<onBlur></onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" class="formdata" align="center">
+				<type>hidden</type>
+				<name>ContactId</name>
+		</ChildElement>
+	</customerreg>
+</DynamicContent>

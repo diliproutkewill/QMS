@@ -1,0 +1,1427 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
+<ejb-jar>
+  <description>No Description</description>
+  <display-name>EJB</display-name>
+  <enterprise-beans>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>CountryManagerBean</display-name>
+      <ejb-name>CountryManagerBean</ejb-name>
+      <home>com.foursoft.esupply.common.ejb.sls.CountryManagerHome</home>
+      <remote>com.foursoft.esupply.common.ejb.sls.CountryManager</remote>
+      <ejb-class>com.foursoft.esupply.common.ejb.sls.CountryManagerBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <resource-ref>
+        <res-ref-name>oraclePool</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>QMSQuoteSessionBean</display-name>
+      <ejb-name>QMSQuoteSessionBean</ejb-name>
+      <home>com.qms.operations.quote.ejb.sls.QMSQuoteSessionHome</home>
+      <remote>com.qms.operations.quote.ejb.sls.QMSQuoteSession</remote>
+      <local-home>com.qms.operations.quote.ejb.sls.QMSQuoteSessionLocalHome</local-home>
+      <local>com.qms.operations.quote.ejb.sls.QMSQuoteSessionLocal</local>
+      <ejb-class>com.qms.operations.quote.ejb.sls.QMSQuoteSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <ejb-local-ref>
+        <ejb-ref-name>QMSQuoteEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityLocalHome</local-home>
+        <local>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityLocal</local>
+        <ejb-link>QMSQuoteEntityBean</ejb-link>
+      </ejb-local-ref>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+      <resource-ref>
+        <res-ref-name>mail/MS</res-ref-name>
+        <res-type>javax.mail.Session</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+
+    </session>
+    <!-- 
+     <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>QMSMultiQuoteSessionBean</display-name>
+      <ejb-name>QMSMultiQuoteSessionBean</ejb-name>
+      <home>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionHome</home>
+      <remote>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSession</remote>
+      <ejb-class>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <resource-ref>
+        <res-ref-name>oraclePool</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    -->
+        <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>QMSMultiQuoteSessionBean</display-name>
+      <ejb-name>QMSMultiQuoteSessionBean</ejb-name>
+      <home>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionHome</home>
+      <remote>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSession</remote>
+      <local-home>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionLocalHome</local-home>
+      <local>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionLocal</local>
+      <ejb-class>com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+     <ejb-local-ref>
+        <ejb-ref-name>QMSMultiQuoteEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.operations.multiquote.ejb.bmp.QMSMultiQuoteEntityLocalHome</local-home>
+        <local>com.qms.operations.multiquote.ejb.bmp.QMSMultiQuoteEntityLocal</local>
+        <ejb-link>QMSMultiQuoteEntityBean</ejb-link>
+      </ejb-local-ref>
+      
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+      <resource-ref>
+        <res-ref-name>mail/MS</res-ref-name>
+        <res-type>javax.mail.Session</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+
+    </session>
+    
+    
+	<session>
+            <description>Session Bean ( Stateless )</description>
+            <display-name>ETMultiModeRoutePlanSessionBean</display-name>
+            <ejb-name>ETMultiModeRoutePlanSessionBean</ejb-name>
+            <home>com.foursoft.etrans.common.routeplan.ejb.sls.ETMultiModeRoutePlanSessionHome</home>
+            <remote>com.foursoft.etrans.common.routeplan.ejb.sls.ETMultiModeRoutePlanSession</remote>
+            <ejb-class>com.foursoft.etrans.common.routeplan.ejb.sls.ETMultiModeRoutePlanSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+    </session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>ChargeMasterSessionBean</display-name>
+      <ejb-name>ChargeMasterSessionBean</ejb-name>
+      <home>com.qms.operations.charges.ejb.sls.ChargeMasterSessionHome</home>
+      <remote>com.qms.operations.charges.ejb.sls.ChargeMasterSession</remote>
+      <ejb-class>com.qms.operations.charges.ejb.sls.ChargeMasterSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <ejb-local-ref>
+        <ejb-ref-name>BuyChargesEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBeanLocalHome</local-home>
+        <local>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBeanLocal</local>
+        <ejb-link>BuyChargesEntityBean</ejb-link>
+     </ejb-local-ref>
+      <ejb-local-ref>
+        <ejb-ref-name>SellChargesEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+	       <local-home>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityBeanLocalHome</local-home>
+		   <local>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityLocal</local>
+        <ejb-link>SellChargesEntityBean</ejb-link>
+     </ejb-local-ref>     
+      <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>QMSSellRatesSessionBean</display-name>
+      <ejb-name>QMSSellRatesSessionBean</ejb-name>
+      <home>com.qms.operations.sellrates.ejb.sls.QMSSellRatesSessionHome</home>
+      <remote>com.qms.operations.sellrates.ejb.sls.QMSSellRatesSession</remote>
+      <ejb-class>com.qms.operations.sellrates.ejb.sls.QMSSellRatesSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <ejb-local-ref>
+        <ejb-ref-name>QMSSellRatesEntity</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityLocalHome</local-home>
+        <local>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityLocal</local>
+        <ejb-link>QMSSellRatesEntityBean</ejb-link>
+     </ejb-local-ref>
+	  <resource-ref>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+
+    </session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>BuyRatesSessionBean</display-name>
+      <ejb-name>BuyRatesSessionBean</ejb-name>
+      <home>com.qms.operations.rates.ejb.sls.BuyRatesSessionHome</home>
+      <remote>com.qms.operations.rates.ejb.sls.BuyRatesSession</remote>
+      <ejb-class>com.qms.operations.rates.ejb.sls.BuyRatesSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+	   <ejb-local-ref>
+        <ejb-ref-name>BuyRatesEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.operations.rates.ejb.bmp.BuyRatesEntityLocalHome</local-home>
+        <local>com.qms.operations.rates.ejb.bmp.BuyRatesEntityLocal</local>
+        <ejb-link>BuyRatesEntityBean</ejb-link>
+     </ejb-local-ref>  
+         <resource-ref>
+          <description>No Description</description>
+          <res-ref-name>jdbc/DB</res-ref-name>
+          <res-type>javax.sql.DataSource</res-type>
+          <res-auth>Container</res-auth>
+		</resource-ref>
+    </session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>ReportsSessionBean</display-name>
+      <ejb-name>ReportsSessionBean</ejb-name>
+      <home>com.qms.reports.ejb.sls.ReportsSessionBeanHome</home>
+      <remote>com.qms.reports.ejb.sls.ReportsSession</remote>
+      <ejb-class>com.qms.reports.ejb.sls.ReportsSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <resource-ref>
+          <description>No Description</description>
+          <res-ref-name>jdbc/DB</res-ref-name>
+          <res-type>javax.sql.DataSource</res-type>
+          <res-auth>Container</res-auth>
+		</resource-ref>
+    <resource-ref>
+        <res-ref-name>mail/MS</res-ref-name>
+        <res-type>javax.mail.Session</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+	</session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>CurrencySession</display-name>
+      <ejb-name>CurrencySession</ejb-name>
+      <home>com.foursoft.etrans.setup.currency.ejb.sls.CurrencySessionHome</home>
+      <remote>com.foursoft.etrans.setup.currency.ejb.sls.CurrencySession</remote>
+      <ejb-class>com.foursoft.etrans.setup.currency.ejb.sls.CurrencySessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+      <entity>
+      <description>No Description</description>
+      <display-name>UserMasterBean</display-name>
+      <ejb-name>UserMasterBean</ejb-name>
+      <home>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMasterHome</home>
+      <remote>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMaster</remote>
+      <ejb-class>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMasterBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMasterBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>oraclePool</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </entity>
+    <session>
+      <description>No Description</description>
+      <display-name>UserRoleRegistrationSessionBean</display-name>
+      <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+      <home>com.foursoft.esupply.accesscontrol.ejb.sls.UserRoleRegistrationSessionHome</home>
+      <remote>com.foursoft.esupply.accesscontrol.ejb.sls.UserRoleRegistrationSession</remote>
+      <ejb-class>com.foursoft.esupply.accesscontrol.ejb.sls.UserRoleRegistrationSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <ejb-ref>
+        <ejb-ref-name>MailerBean</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>com.foursoft.esupply.common.ejb.sls.MailerHome</home>
+        <remote>com.foursoft.esupply.common.ejb.sls.Mailer</remote>
+        <ejb-link>MailerBean</ejb-link>
+      </ejb-ref>
+      <ejb-ref>
+        <ejb-ref-name>RoleMasterBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMasterHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMaster</remote>
+        <ejb-link>RoleMasterBean</ejb-link>
+      </ejb-ref>
+      <ejb-ref>
+        <ejb-ref-name>UserMaster</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <home>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMasterHome</home>
+        <remote>com.foursoft.esupply.accesscontrol.ejb.bmp.UserMaster</remote>
+        <ejb-link>UserMasterBean</ejb-link>
+      </ejb-ref>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>oraclePool</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    <session>
+      <description>No Description</description>
+      <display-name>AccessControlSessionBean</display-name>
+      <ejb-name>AccessControlSessionBean</ejb-name>
+      <home>com.foursoft.esupply.accesscontrol.ejb.sls.AccessControlSessionHome</home>
+      <remote>com.foursoft.esupply.accesscontrol.ejb.sls.AccessControlSession</remote>
+      <ejb-class>com.foursoft.esupply.accesscontrol.ejb.sls.AccessControlSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>oraclePool</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>SetUpSessionBean</display-name>
+      <ejb-name>SetUpSessionBean</ejb-name>
+      <home>com.qms.setup.ejb.sls.SetUpSessionHome</home>
+      <remote>com.qms.setup.ejb.sls.SetUpSession</remote>
+      <local-home>com.qms.setup.ejb.sls.SetUpSessionLocalHome</local-home>
+      <local>com.qms.setup.ejb.sls.SetUpSessionLocal</local>
+      <ejb-class>com.qms.setup.ejb.sls.SetUpSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+
+      <ejb-local-ref>
+        <ejb-ref-name>IndustryRegEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.ejb.bmp.IndustryRegEntityLocalHome</local-home>
+        <local>com.qms.setup.ejb.bmp.IndustryRegEntityLocal</local>
+        <ejb-link>IndustryRegEntityBean</ejb-link>
+     </ejb-local-ref>
+     <ejb-local-ref>
+        <ejb-ref-name>MarginLimitMasterBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.ejb.bmp.MarginLimitMasterBeanLocalHome</local-home>
+        <local>com.qms.setup.ejb.bmp.MarginLimitMasterBeanLocal</local>
+        <ejb-link>MarginLimitMasterBean</ejb-link>
+     </ejb-local-ref>
+     <ejb-local-ref>
+        <ejb-ref-name>ChargesMasterEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBeanLocalHome</local-home>
+        <local>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBeanLocal</local>
+        <ejb-link>ChargesMasterEntityBean</ejb-link>
+     </ejb-local-ref>
+     <ejb-local-ref>
+        <ejb-ref-name>ListMasterEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.ejb.bmp.ListMasterEntityBeanLocalHome</local-home>
+        <local>com.qms.setup.ejb.bmp.ListMasterEntityBeanLocal</local>
+        <ejb-link>ListMasterEntityBean</ejb-link>
+     </ejb-local-ref>
+     <ejb-local-ref>
+        <ejb-ref-name>ChargeBasisMasterEntityBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBeanLocalHome</local-home>
+        <local>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBeanLocal</local>
+        <ejb-link>ChargeBasisMasterEntityBean</ejb-link>
+     </ejb-local-ref>     
+	 	  <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>QMSSetUpSessionBean</display-name>
+      <ejb-name>QMSSetUpSessionBean</ejb-name>
+      <home>com.qms.setup.ejb.sls.QMSSetUpSessionHome</home>
+      <remote>com.qms.setup.ejb.sls.QMSSetUpSession</remote>
+      <local-home>com.qms.setup.ejb.sls.QMSSetUpSessionLocalHome</local-home>
+      <local>com.qms.setup.ejb.sls.QMSSetUpSessionLocal</local>
+      <ejb-class>com.qms.setup.ejb.sls.QMSSetUpSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+	  <ejb-local-ref>
+        <ejb-ref-name>DensityGroupCodeBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.ejb.cmp.DensityGroupCodeLocalHome</local-home>
+        <local>com.qms.setup.ejb.cmp.DensityGroupCodeLocal</local>
+        <ejb-link>DensityGroupCodeBean</ejb-link>
+      </ejb-local-ref>
+      <ejb-local-ref>
+        <ejb-ref-name>SalesPersonRegistrationBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.ejb.bmp.SalesPersonRegistrationLocalHome</local-home>
+        <local>com.qms.setup.ejb.bmp.SalesPersonRegistrationLocal</local>
+		<ejb-link>SalesPersonRegistrationBean</ejb-link>
+      </ejb-local-ref>
+	   <ejb-local-ref>
+        <ejb-ref-name>DesignationBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.ejb.cmp.DesignationLocalHome</local-home>
+        <local>com.qms.setup.ejb.cmp.DesignationLocal</local>
+		<ejb-link>DesignationBean</ejb-link>
+      </ejb-local-ref>
+       <ejb-local-ref>
+        <ejb-ref-name>ZoneCodeMasterBean</ejb-ref-name>
+        <ejb-ref-type>Entity</ejb-ref-type>
+        <local-home>com.qms.setup.ejb.bmp.ZoneCodeMasterLocalHome</local-home>
+        <local>com.qms.setup.ejb.bmp.ZoneCodeMasterLocal</local>
+		<ejb-link>ZoneCodeMasterBean</ejb-link>
+      </ejb-local-ref>
+      <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>SalesPersonRegistrationBean</display-name>
+      <ejb-name>SalesPersonRegistrationBean</ejb-name>
+	  <home>com.qms.setup.ejb.bmp.SalesPersonRegistrationHome</home>
+      <remote>com.qms.setup.ejb.bmp.SalesPersonRegistration</remote>
+      <local-home>com.qms.setup.ejb.bmp.SalesPersonRegistrationLocalHome</local-home>
+      <local>com.qms.setup.ejb.bmp.SalesPersonRegistrationLocal</local>
+      <ejb-class>com.qms.setup.ejb.bmp.SalesPersonRegistrationBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.setup.ejb.bmp.SalesPersonRegistrationPK</prim-key-class>
+      <reentrant>False</reentrant>
+            <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+	</entity>
+    <entity>
+      <description>Entity Bean ( CMP )</description>
+      <display-name>DesignationBean</display-name>
+      <ejb-name>DesignationBean</ejb-name>
+      <home>com.qms.setup.ejb.cmp.DesignationHome</home>
+      <remote>com.qms.setup.ejb.cmp.Designation</remote>
+      <local-home>com.qms.setup.ejb.cmp.DesignationLocalHome</local-home>
+      <local>com.qms.setup.ejb.cmp.DesignationLocal</local>
+      <ejb-class>com.qms.setup.ejb.cmp.DesignationBean</ejb-class>
+      <persistence-type>Container</persistence-type>
+      <prim-key-class>com.qms.setup.ejb.cmp.DesignationPK</prim-key-class>
+      <reentrant>False</reentrant>
+      <cmp-version>2.x</cmp-version>
+      <abstract-schema-name>Designation</abstract-schema-name>
+      <cmp-field>
+        <field-name>description</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>designationId</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>invalidate</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>levelNo</field-name>
+      </cmp-field>
+    </entity>
+    
+	<entity>
+      <description>Entity Bean ( CMP )</description>
+      <display-name>com.qms.setup.ejb.cmp.DensityGroupCodeBean</display-name>
+      <ejb-name>DensityGroupCodeBean</ejb-name>
+      <home>com.qms.setup.ejb.cmp.DensityGroupCodeHome</home>
+      <remote>com.qms.setup.ejb.cmp.DensityGroupCode</remote>
+      <local-home>com.qms.setup.ejb.cmp.DensityGroupCodeLocalHome</local-home>
+      <local>com.qms.setup.ejb.cmp.DensityGroupCodeLocal</local>
+      <ejb-class>com.qms.setup.ejb.cmp.DensityGroupCodeBean</ejb-class>
+      <persistence-type>Container</persistence-type>
+      <prim-key-class>com.qms.setup.ejb.cmp.DensityGroupCodePK</prim-key-class>
+      <reentrant>False</reentrant>
+      <cmp-version>2.x</cmp-version>
+      <abstract-schema-name>DensityGroupCode</abstract-schema-name>
+	<cmp-field>
+	<description>No Description</description>
+	<field-name>dgcCode</field-name>
+	</cmp-field>
+	<cmp-field>
+	<description>No Description</description>
+	<field-name>uom</field-name>
+	</cmp-field>
+	<cmp-field>
+	<description>No Description</description>
+	<field-name>perKG</field-name>
+	</cmp-field>
+	<cmp-field>
+	<description>No Description</description>
+	<field-name>perLB</field-name>
+	</cmp-field>
+	<cmp-field>
+	<description>No Description</description>
+	<field-name>invaliDate</field-name>
+	</cmp-field>
+
+	        <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+		
+    <query>
+        <query-method>
+          <method-name>findAll</method-name>
+          <method-params/>
+        </query-method>
+     <ejb-ql>SELECT OBJECT(o) FROM  DensityGroupCode  o</ejb-ql>
+    </query>
+    </entity>
+    
+    <entity>
+      <description>No Description</description>
+      <display-name>RoleMasterBean</display-name>
+      <ejb-name>RoleMasterBean</ejb-name>
+      <home>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMasterHome</home>
+      <remote>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMaster</remote>
+      <ejb-class>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMasterBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.foursoft.esupply.accesscontrol.ejb.bmp.RoleMasterBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>oraclePool</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </entity>
+    <session>
+            <description>No Description</description>
+            <display-name>OIDSessionBean</display-name>
+            <ejb-name>OIDSessionBean</ejb-name>
+            <home>com.foursoft.etrans.common.util.ejb.sls.OIDSessionHome</home>
+            <remote>com.foursoft.etrans.common.util.ejb.sls.OIDSession</remote>
+            <ejb-class>com.foursoft.etrans.common.util.ejb.sls.OIDSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+        </session>
+    <session>
+      <description>Session Bean ( Stateless )</description>
+      <display-name>MailerBean</display-name>
+      <ejb-name>MailerBean</ejb-name>
+      <home>com.foursoft.esupply.common.ejb.sls.MailerHome</home>
+      <remote>com.foursoft.esupply.common.ejb.sls.Mailer</remote>
+      <ejb-class>com.foursoft.esupply.common.ejb.sls.MailerBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <resource-ref>
+        <res-ref-name>mail/MS</res-ref-name>
+        <res-type>javax.mail.Session</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </session>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>TerminalRegistrationEntityBean</display-name>
+      <ejb-name>TerminalRegistrationEntityBean</ejb-name>
+      <home>com.foursoft.etrans.setup.terminal.ejb.bmp.TerminalRegistrationEntityHome</home>
+      <remote>com.foursoft.etrans.setup.terminal.ejb.bmp.TerminalRegistrationEntity</remote>
+      <ejb-class>com.foursoft.etrans.setup.terminal.ejb.bmp.TerminalRegistrationEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>java.lang.String</prim-key-class>
+      <reentrant>False</reentrant>
+      <resource-ref>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>IndustryRegEntityBean</display-name>
+      <ejb-name>IndustryRegEntityBean</ejb-name>
+      <local-home>com.qms.setup.ejb.bmp.IndustryRegEntityLocalHome</local-home>
+      <local>com.qms.setup.ejb.bmp.IndustryRegEntityLocal</local>
+      <ejb-class>com.qms.setup.ejb.bmp.IndustryRegEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.setup.ejb.bmp.IndustryRegEntityPK</prim-key-class>
+      <reentrant>False</reentrant>
+	  	  <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>MarginLimitMasterBean</display-name>
+      <ejb-name>MarginLimitMasterBean</ejb-name>
+      <local-home>com.qms.setup.ejb.bmp.MarginLimitMasterBeanLocalHome</local-home>
+      <local>com.qms.setup.ejb.bmp.MarginLimitMasterBeanLocal</local>
+      <ejb-class>com.qms.setup.ejb.bmp.MarginLimitMasterBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.setup.ejb.bmp.MarginLimitMasterBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+	  	  <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>ChargesMasterEntityBean</display-name>
+      <ejb-name>ChargesMasterEntityBean</ejb-name>
+      <local-home>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBeanLocalHome</local-home>
+      <local>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBeanLocal</local>
+      <ejb-class>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.setup.chargemaster.ejb.bmp.ChargesMasterEntityBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+	  	  <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>ChargeBasisMasterEntityBean</display-name>
+      <ejb-name>ChargeBasisMasterEntityBean</ejb-name>
+      <local-home>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBeanLocalHome</local-home>
+      <local>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBeanLocal</local>
+      <ejb-class>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.setup.chargebasis.ejb.bmp.ChargeBasisMasterEntityBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+	  	  <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>ZoneCodeMasterBean</display-name>
+      <ejb-name>ZoneCodeMasterBean</ejb-name>
+	  <home>com.qms.setup.ejb.bmp.ZoneCodeMasterHome</home>
+      <remote>com.qms.setup.ejb.bmp.ZoneCodeMaster</remote>
+      <local-home>com.qms.setup.ejb.bmp.ZoneCodeMasterLocalHome</local-home>
+      <local>com.qms.setup.ejb.bmp.ZoneCodeMasterLocal</local>
+      <ejb-class>com.qms.setup.ejb.bmp.ZoneCodeMasterBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.setup.ejb.bmp.ZoneCodeMasterPK</prim-key-class>
+      <reentrant>False</reentrant>
+            <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+	</entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>BuyChargesEntityBean</display-name>
+      <ejb-name>BuyChargesEntityBean</ejb-name>
+      <local-home>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBeanLocalHome</local-home>
+      <local>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBeanLocal</local>
+      <ejb-class>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.operations.charges.buycharges.ejb.bmp.BuyChargesEntityBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+            <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>      
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>SellChargesEntityBean</display-name>
+      <ejb-name>SellChargesEntityBean</ejb-name>
+      <local-home>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityBeanLocalHome</local-home>
+      <local>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityLocal</local>
+      <ejb-class>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.operations.charges.sellcharges.ejb.bmp.SellChargesEntityBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+            <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref> 
+    </entity>    
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>QMSSellRatesEntityBean</display-name>
+      <ejb-name>QMSSellRatesEntityBean</ejb-name>
+      <local-home>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityLocalHome</local-home>
+      <local>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityLocal</local>
+      <ejb-class>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.operations.sellrates.ejb.bmp.QMSSellRatesEntityPK</prim-key-class>
+      <reentrant>False</reentrant>
+	  <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+      </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>ListMasterEntityBean</display-name>
+      <ejb-name>ListMasterEntityBean</ejb-name>
+      <local-home>com.qms.setup.ejb.bmp.ListMasterEntityBeanLocalHome</local-home>
+      <local>com.qms.setup.ejb.bmp.ListMasterEntityBeanLocal</local>
+      <ejb-class>com.qms.setup.ejb.bmp.ListMasterEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.setup.ejb.bmp.ListMasterEntityBeanPK</prim-key-class>
+      <reentrant>False</reentrant>
+	  	  <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>QMSQuoteEntityBean</display-name>
+      <ejb-name>QMSQuoteEntityBean</ejb-name>
+      <local-home>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityLocalHome</local-home>
+      <local>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityLocal</local>
+      <ejb-class>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.operations.quote.ejb.bmp.QMSQuoteEntityPK</prim-key-class>
+      <reentrant>False</reentrant>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>QMSMultiQuoteEntityBean</display-name>
+      <ejb-name>QMSMultiQuoteEntityBean</ejb-name>
+      <local-home>com.qms.operations.multiquote.ejb.bmp.QMSMultiQuoteEntityLocalHome</local-home>
+      <local>com.qms.operations.multiquote.ejb.bmp.QMSMultiQuoteEntityLocal</local>
+      <ejb-class>com.qms.operations.multiquote.ejb.bmp.QMSMultiQuoteEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>com.qms.operations.multiquote.ejb.bmp.QMSMultiQuoteEntityPK</prim-key-class>
+      <reentrant>False</reentrant>
+      <resource-ref>
+        <description>No Description</description>
+        <res-ref-name>jdbc/DB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+      </resource-ref>
+    </entity>
+    <entity>
+      <description>Entity Bean ( BMP )</description>
+      <display-name>BuyRatesEntityBean</display-name>
+      <ejb-name>BuyRatesEntityBean</ejb-name>
+      <home>com.qms.operations.rates.ejb.bmp.BuyRatesEntityHome</home>
+      <remote>com.qms.operations.rates.ejb.bmp.BuyRatesEntity</remote>
+      <local-home>com.qms.operations.rates.ejb.bmp.BuyRatesEntityLocalHome</local-home>
+      <local>com.qms.operations.rates.ejb.bmp.BuyRatesEntityLocal</local>
+      <ejb-class>com.qms.operations.rates.ejb.bmp.BuyRatesEntityBean</ejb-class>
+      <persistence-type>Bean</persistence-type>
+      <prim-key-class>java.lang.Long</prim-key-class>
+      <reentrant>False</reentrant>
+	    <resource-ref>
+                <description>No Description</description>
+                <res-ref-name>jdbc/DB</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+            </resource-ref>   
+    </entity>
+  </enterprise-beans>
+  <assembly-descriptor>
+   <container-transaction>
+   
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>updateRoleModel</method-name>
+                <method-params>
+                    <method-param>com.foursoft.esupply.accesscontrol.java.RoleModel</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getRoleIdLocDescription</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getRoleIds</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getUserIds</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getUserIds</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <!--@@Added by Kameswari for the WPBN issue-154384 on 11/04/09-->
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                     <!--@@WPBN issue-154384 on 11/04/09-->
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getRoleViewAllInformation</method-name>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>updateUserInformation</method-name>
+                <method-params>
+                    <method-param>com.foursoft.esupply.accesscontrol.java.UserModel</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>removeRole</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getUserLogDetails</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.sql.Timestamp</method-param>
+                    <method-param>java.sql.Timestamp</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>isMaxLimitNotExceeded</method-name>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getUserInformation</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>registerRole</method-name>
+                <method-params>
+                    <method-param>com.foursoft.esupply.accesscontrol.java.RoleModel</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getAllRolePermissions</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getRoleModel</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getUserViewAllInformation</method-name>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionDetailVOBs</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionDetailVOBs</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>int</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionDetailVOBs</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>registerUser</method-name>
+                <method-params>
+                    <method-param>com.foursoft.esupply.accesscontrol.java.UserModel</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+					<method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getRolePermissions</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getLocationIds</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>removeUser</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getRoleIdLocation</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+					<method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getUserLogViewAllDetails</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.sql.Timestamp</method-param>
+                    <method-param>java.sql.Timestamp</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionIds</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionIds</method-name>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionIds</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>int</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionIds</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>changePassword</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+                    <method-param>java.lang.String</method-param>
+					<method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionIdAndDescription</method-name>
+            </method>
+            <method>
+                <description>No Description</description>
+                <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getTransactionIdAndDescription</method-name>
+                <method-params>
+                    <method-param>java.lang.String</method-param>
+                </method-params>
+            </method>
+      <method>
+        <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>UserRoleRegistrationSessionBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>*</method-name>
+      </method>
+     
+     
+      <method>
+        <ejb-name>AccessControlSessionBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>AccessControlSessionBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>*</method-name>
+      </method>
+     
+      <method>
+        <ejb-name>RoleMasterBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+     
+      <method>
+        <ejb-name>RoleMasterBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>*</method-name>
+      </method>
+
+      <method>
+        <ejb-name>UserMasterBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+    
+      <method>
+        <ejb-name>UserMasterBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>*</method-name>
+      </method>
+  
+      <method>
+        <ejb-name>MailerBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>MailerBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>create</method-name>
+      </method>
+     
+      <method>
+        <ejb-name>CountryManagerBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>CountryManagerBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>*</method-name>
+      </method>
+      
+      <method>
+        <ejb-name>QMSMultiQuoteSessionBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>QMSMultiQuoteSessionBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>OIDSessionBean</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>OIDSessionBean</ejb-name>
+        <method-intf>Home</method-intf>
+        <method-name>*</method-name>
+      </method>
+      <method>
+                <description>No Description</description>
+                <ejb-name>TerminalRegistrationEntityBean</ejb-name>
+                <method-intf>Home</method-intf>
+                <method-name>create</method-name>
+                <method-params>
+					<method-param>com.foursoft.etrans.setup.terminal.bean.TerminalRegJspBean</method-param>
+                </method-params>
+            </method>            
+            <method>
+                <description>No Description</description>
+                <ejb-name>TerminalRegistrationEntityBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>*</method-name>
+            </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>DesignationBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>DensityGroupCodeBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>IndustryRegEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>MarginLimitMasterBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <description>No Description</description>
+        <ejb-name>SetUpSessionBean</ejb-name>
+	    <method-intf>Remote</method-intf>
+        <method-name>invalidateMarginLimitDetails</method-name>
+                <method-params>
+                    <method-param>java.util.ArrayList</method-param>
+                    <method-param>com.foursoft.esupply.common.bean.ESupplyGlobalParameters</method-param>
+                </method-params>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <description>No Description</description>
+        <ejb-name>SetUpSessionBean</ejb-name>
+	    <method-intf>Remote</method-intf>
+         <method-name>addAttachmentDtls</method-name>
+        <method-params>
+              <method-param>com.qms.setup.java.QMSAttachmentDOB</method-param>
+        </method-params>
+      </method>
+    <method>
+     <description>No Description</description>
+        <ejb-name>SetUpSessionBean</ejb-name>
+	    <method-intf>Remote</method-intf>
+          <method-name>deleteAttachmentDtls</method-name>
+        <method-params>
+              <method-param>com.qms.setup.java.QMSAttachmentDOB</method-param>
+        </method-params>
+        </method>
+         <method>
+       <description>No Description</description>
+        <ejb-name>SetUpSessionBean</ejb-name>
+	     <method-intf>Remote</method-intf>
+        <method-name>updateAttachmentDtls</method-name>
+        <method-params>
+              <method-param>com.qms.setup.java.QMSAttachmentDOB</method-param>
+        </method-params>  
+         </method>
+         <method>
+       <description>No Description</description>
+        <ejb-name>SetUpSessionBean</ejb-name>
+	     <method-intf>Remote</method-intf>
+        <method-name>attachFile</method-name>
+        <method-params>
+              <method-param>com.qms.setup.java.QMSAttachmentFileDOB</method-param>
+        </method-params>
+         </method>
+         <method>
+       <description>No Description</description>
+        <ejb-name>SetUpSessionBean</ejb-name>
+	     <method-intf>Remote</method-intf>
+         <method-name>deleteFile</method-name>
+        <method-params>
+              <method-param>java.util.ArrayList</method-param>
+        </method-params>
+      </method>
+        <method>
+                <description>No Description</description>
+                <ejb-name>SetUpSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>getChargeDescList</method-name>
+                
+              
+       </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+     <container-transaction>
+      <method>
+                <description>No Description</description>
+                <ejb-name>SetUpSessionBean</ejb-name>
+                <method-intf>Remote</method-intf>
+                <method-name>invalidateIndustryDetails</method-name>
+                <method-params>
+                      <method-param>java.util.ArrayList</method-param>
+                    <method-param>com.foursoft.esupply.common.bean.ESupplyGlobalParameters</method-param>
+           
+                 </method-params>
+      </method>
+    
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>ChargeBasisMasterEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+
+    <container-transaction>
+      <method>
+        <ejb-name>ChargesMasterEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>ZoneCodeMasterBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>ChargeMasterSessionBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>BuyChargesEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+		  <method>
+			<ejb-name>SellChargesEntityBean</ejb-name>
+			<method-name>*</method-name>
+		  </method>
+		  <trans-attribute>Required</trans-attribute>
+	  </container-transaction>  
+    <container-transaction>
+      <method>
+        <ejb-name>BuyRatesSessionBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>BuyRatesEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>ETMultiModeRoutePlanSessionBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>QMSSellRatesEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>QMSSellRatesSessionBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>QMSQuoteSessionBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>QMSQuoteEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>QMSMultiQuoteEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Supports</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>ReportsSessionBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>CurrencySession</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+  </assembly-descriptor>
+</ejb-jar>

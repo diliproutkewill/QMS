@@ -1,0 +1,199 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Location Master</title>
+</head>
+
+<body>
+
+<table width="100%" border="1">
+  <tbody>
+    <tr>
+      <td width="100%" bgColor="#DF0000"><font face="Arial" size="4" color="#FFFFFF">Location
+        - File Format</font></td>
+    </tr>
+    <tr>
+      <td width="100%" bgColor="#E1E1E1"><font face="Arial" size="2">1) First
+        Row should be Header.<br>
+        2) Every column should have a tab space.<br>
+        3) Location Id and Country Id can be of maximum 3 &amp; 2 characters
+        respectively.<br>
+        4) Valid numeric values for SHIPMENT MODE are as follows:<br>
+        &nbsp; <b>1</b> - Air<br>
+        &nbsp; <b>2</b> - Sea<br>
+        &nbsp; <b>3</b> - Truck<br>
+        &nbsp; <b>4</b> - Air &amp; Sea<br>
+        &nbsp; <b>5</b> - Air &amp; Truck<br>
+        &nbsp; <b>6</b> - Sea &amp; Truck<br>
+        &nbsp; <b>7</b> - Air, Sea &amp; Truck<br>
+        5) If Allow Modify is not selected then only new location details will be added
+        provided that the location id does not already exist.<br>
+        6) If Allow Modify is selected then it will update the previous location
+        details provided that the location id already exists.&nbsp;<br>
+        7) If &quot;Export exceptions to excel file&quot; is checked then it
+        will export all the un-uploadable charge details to an excel file with a
+        extra remarks column which contains the reasons for not uploading that
+        record.<br>
+        8) User can correct the remarks accordingly and upload the generated
+        file, removing the remarks column.<br>
+        9) Show Report will generate an excel report showing all the data
+        accordingly.<br>
+        <br>
+        <b>
+        Note :&nbsp;<br>
+        </b> 1. Open Microsoft Excel Sheet and enter data as mentioned above.&nbsp;<br>
+ 2. Save the
+        file in 'Comma Delimited' (.CSV) format .<br>
+        3.<font color="red">*</font>
+        Denotes Compulsory Fields.<br>
+        4.Comma's
+        are not allowed within a cell.<br>
+        5.If there
+        is any empty Row in between the file then it will be treated as End Of
+        File and the records after the empty row will not be considered for
+        upload.</font></td>
+    </tr>
+  </tbody>
+</table>
+<p><font face="Arial" size="2">Example :</font></p>
+<table width="651">
+  <tr>
+    <th scope="col"  width="82">
+      <p align="left"><font size="2" face="Arial">LOCATIONID</font></p>
+    </th>
+    <th scope="col"  width="128">
+      <p align="left"><font size="2" face="Arial">LOCATIONNAME</font></p>
+    </th>
+    <th scope="col"  width="114">
+      <p align="left"><font size="2" face="Arial">COUNTRYID</font></p>
+    </th>
+    <th scope="col"  width="124">
+      <p align="left"><font size="2" face="Arial">CITY</font></p>
+    </th>
+    <th scope="col"  width="121">
+      <p align="left"><font size="2" face="Arial">ZIPCODE</font></p>
+    </th>
+    <th scope="col"  width="108">
+      <p align="left"><font size="2" face="Arial">SHIPMENTMODE</font></p>
+    </th>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">AES</font></td>
+    <td width="128"><font size="2" face="Arial">AALESUND</font></td>
+    <td width="114"><font size="2" face="Arial">NO</font></td>
+    <td width="124"><font size="2" face="Arial">AALESUND</font></td>
+    <td width="121"><font size="2" face="Arial">4543</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">ALF</font></td>
+    <td width="128"><font size="2" face="Arial">ALTA</font></td>
+    <td width="114"><font size="2" face="Arial">NO</font></td>
+    <td width="124"><font size="2" face="Arial">ALTA</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">BGO</font></td>
+    <td width="128"><font size="2" face="Arial">BERGEN</font></td>
+    <td width="114"><font size="2" face="Arial">NO</font></td>
+    <td width="124"><font size="2" face="Arial">BERGEN</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">KRS</font></td>
+    <td width="128"><font size="2" face="Arial">KRISTIANSAND</font></td>
+    <td width="114"><font size="2" face="Arial">NO</font></td>
+    <td width="124"><font size="2" face="Arial">KRISTIANSAND</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">CHC</font></td>
+    <td width="128"><font size="2" face="Arial">CHRISTCHURCH</font></td>
+    <td width="114"><font size="2" face="Arial">NZ</font></td>
+    <td width="124"><font size="2" face="Arial">CHRISTCHURCH</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">AKL</font></td>
+    <td width="128"><font size="2" face="Arial">AUCKLANDHHH</font></td>
+    <td width="114"><font size="2" face="Arial">NZ</font></td>
+    <td width="124"><font size="2" face="Arial">AUCKLAND</font></td>
+    <td width="121"><font size="2" face="Arial">2222</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">DUD</font></td>
+    <td width="128"><font size="2" face="Arial">DUNEDIN</font></td>
+    <td width="114"><font size="2" face="Arial">NZ</font></td>
+    <td width="124"><font size="2" face="Arial">DUNEDIN</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">HLZ</font></td>
+    <td width="128"><font size="2" face="Arial">HAMILTON</font></td>
+    <td width="114"><font size="2" face="Arial">NZ</font></td>
+    <td width="124"><font size="2" face="Arial">HAMILTON</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">WLG</font></td>
+    <td width="128"><font size="2" face="Arial">WELLINGTON</font></td>
+    <td width="114"><font size="2" face="Arial">NZ</font></td>
+    <td width="124"><font size="2" face="Arial">WELLINGTON</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">LIM</font></td>
+    <td width="128"><font size="2" face="Arial">LIMA</font></td>
+    <td width="114"><font size="2" face="Arial">PE</font></td>
+    <td width="124"><font size="2" face="Arial">LIMA</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">POM</font></td>
+    <td width="128"><font size="2" face="Arial">PORT MORESBY</font></td>
+    <td width="114"><font size="2" face="Arial">PG</font></td>
+    <td width="124"><font size="2" face="Arial">PORT MORESBY</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">MNL</font></td>
+    <td width="128"><font size="2" face="Arial">MANILA</font></td>
+    <td width="114"><font size="2" face="Arial">PH</font></td>
+    <td width="124"><font size="2" face="Arial">MANILA</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">ISB</font></td>
+    <td width="128"><font size="2" face="Arial">ISLAMABAD</font></td>
+    <td width="114"><font size="2" face="Arial">PK</font></td>
+    <td width="124"><font size="2" face="Arial">ISLAMABAD</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+  <tr>
+    <td width="82"><font size="2" face="Arial">UET</font></td>
+    <td width="128"><font size="2" face="Arial">QUETTA</font></td>
+    <td width="114"><font size="2" face="Arial">PK</font></td>
+    <td width="124"><font size="2" face="Arial">QUETTA</font></td>
+    <td width="121"><font size="2" face="Arial">&nbsp;</font></td>
+    <td align="right" width="108"><font size="2" face="Arial">7</font></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

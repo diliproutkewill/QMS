@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE orion-ejb-jar PUBLIC "-//Evermind//DTD Enterprise JavaBeans 1.1 runtime//EN" "http://xmlns.oracle.com/ias/dtds/orion-ejb-jar.dtd">
+<orion-ejb-jar>
+    <enterprise-beans>
+    
+    <session-deployment name="SetUpSessionBean" location="SetUpSessionBean">
+      <ejb-ref-mapping name="ejb/IndustryRegEntity">IndustryRegEntity</ejb-ref-mapping>
+      <ejb-ref-mapping name="ejb/MarginLimitMasterBean">MarginLimitMasterBean</ejb-ref-mapping>
+			<ejb-ref-mapping name="ejb/ChargesMasterEntityBean">ChargesMasterEntityBean</ejb-ref-mapping>
+			<ejb-ref-mapping name="ejb/ChargeGroupEntityBean">ChargeGroupEntityBean</ejb-ref-mapping>
+			<ejb-ref-mapping name="ejb/ChargeBasisMasterEntityBean">ChargeBasisMasterEntityBean</ejb-ref-mapping>      
+            <ejb-ref-mapping name="SalesPersonRegistrationBean" location="SalesPersonRegistrationBean"/>
+			<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+		</session-deployment>
+    <session-deployment name="ChargeMasterSessionBean" location="ChargeMasterSession">
+      <ejb-ref-mapping name="ejb/BuyChargesEntityBean">BuyChargesEntityBean</ejb-ref-mapping>
+      <ejb-ref-mapping name="ejb/SellChargesEntityBean">SellChargesEntityBean</ejb-ref-mapping>
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </session-deployment>
+    
+	<session-deployment name="QMSSellRatesSession" location="QMSSellRatesSession">
+    <ejb-ref-mapping name="ejb/QMSSellRatesEntity">QMSSellRatesEntity</ejb-ref-mapping>
+			<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+	</session-deployment>
+
+     <session-deployment name="ETMultiModeRoutePlanSessionBean" location="ETMultiModeRoutePlanSessionBean">
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </session-deployment>
+
+    <session-deployment name="QMSQuoteSessionBean">
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </session-deployment>
+     <session-deployment name="QMSMultiQuoteSessionBean">
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </session-deployment>
+    <session-deployment name="BuyRatesSession"/>
+    <session-deployment name="RepotsSession"/>
+    <session-deployment name="ReportsSessionBean"/>
+    <session-deployment name="CurrencySession"/>
+    
+    <entity-deployment name="DesignationBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="DesignationBean" max-instances="0" table="qms_DESIGNATION">
+      <primkey-mapping>
+        <cmp-field-mapping>
+          <fields>
+            <cmp-field-mapping name="designationId" persistence-name="designation_Id"/>
+           </fields>
+        </cmp-field-mapping>
+      </primkey-mapping>
+            <cmp-field-mapping name="description" persistence-name="description"/>
+            <cmp-field-mapping name="levelNo" persistence-name="level_No"/>
+            <cmp-field-mapping name="invalidate" persistence-name="invalidate"/>
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </entity-deployment>
+    
+		<session-deployment name="QMSSetUpSessionBean">
+			<ejb-ref-mapping name="DensityGroupCodeBean" location="DensityGroupCodeBean"/>
+			<ejb-ref-mapping name="DesignationBean" location="DesignationBean"/>
+            <ejb-ref-mapping name="ZoneCodeMasterBean" location="ZoneCodeMasterBean"/>
+			<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+		</session-deployment>
+		<entity-deployment name="SetUp" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="SetUp" max-tx-retries="0">		
+            <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+        </entity-deployment>
+        
+		<entity-deployment name="UserMasterBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="UserMasterBean" max-tx-retries="0">
+            <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+        </entity-deployment>
+        <entity-deployment name="RoleMasterBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="RoleMasterBean" max-tx-retries="0">
+            <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+        </entity-deployment>
+        <session-deployment name="OIDSessionBean" location="OIDSessionBean">
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </session-deployment>
+        <session-deployment name="UserRoleRegistrationSessionBean" location="UserRoleRegistrationSessionBean" max-tx-retries="0">
+            <ejb-ref-mapping name="ejb/Mailer">MailerBean</ejb-ref-mapping>
+            <ejb-ref-mapping name="ejb/RoleMaster">RoleMasterBean</ejb-ref-mapping>
+            <ejb-ref-mapping name="ejb/ListMasterEntityBean">ListMasterEntityBean</ejb-ref-mapping>
+            <ejb-ref-mapping name="ejb/UserMaster">UserMasterBean</ejb-ref-mapping>
+            <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+        </session-deployment>
+        <session-deployment name="AccessControlSessionBean" location="AccessControlSessionBean" max-tx-retries="0">
+            <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+        </session-deployment>
+        <session-deployment name="MailerBean" location="MailerBean" max-tx-retries="0">
+            <resource-ref-mapping name="mail/MS" location="mailPool"/>
+        </session-deployment>
+        <session-deployment name="CountryManagerBean" location="CountryManagerBean" max-tx-retries="0">
+            <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+        </session-deployment>
+        
+        
+      <entity-deployment name="com.qms.setup.ejb.cmp.DensityGroupCodeBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="DensityGroupCodeBean" max-instances="0" table="QMS_DENSITY_GROUP_CODE">
+			<primkey-mapping>
+				<cmp-field-mapping>
+					<fields>
+						<cmp-field-mapping name="dgcCode" persistence-name="DGCCODE"/>
+						<cmp-field-mapping name="perKG" persistence-name="KG_PER_M3"/>
+						<cmp-field-mapping name="uom" persistence-name="UOM"/>
+					</fields>
+				</cmp-field-mapping>
+			</primkey-mapping>
+		  <cmp-field-mapping name="dgcCode" persistence-name="DGCCODE"/>
+		  <cmp-field-mapping name="perKG" persistence-name="KG_PER_M3"/>
+		  <cmp-field-mapping name="uom" persistence-name="UOM"/> 
+		  <cmp-field-mapping name="perLB" persistence-name="LB_PER_F3"/> 
+		  <cmp-field-mapping name="invaliDate" persistence-name="INVALIDATE"/> 
+		  <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+	   </entity-deployment>
+     <entity-deployment name="ListMasterEntityBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="ListMasterEntityBean" max-tx-retries="0">
+			<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/> 
+		</entity-deployment>
+        
+        <entity-deployment name="TerminalRegistrationEntityBean" location="TerminalRegistrationEntityBean">
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </entity-deployment>
+   	<entity-deployment name="IndustryRegEntity" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="IndustryRegEntity" max-tx-retries="0">
+				<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+		</entity-deployment>
+		<entity-deployment name="MarginLimitMasterBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="MarginLimitMasterBean" max-tx-retries="0">
+			<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/> 
+		</entity-deployment>
+		<entity-deployment name="ChargesMasterEntityBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="ChargesMasterEntityBean" max-tx-retries="0">
+				<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+		</entity-deployment>
+		<entity-deployment name="ChargeBasisMasterEntityBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="ChargeBasisMasterEntityBean" max-tx-retries="0">
+				<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+		</entity-deployment>   
+        <entity-deployment name="SalesPersonRegistration" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="SalesPersonRegistration" max-tx-retries="0">
+		  <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+	   </entity-deployment>
+    <entity-deployment name="ZoneCodeMaster" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="ZoneCodeMaster" max-tx-retries="0">
+		  <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+	   </entity-deployment>
+	    <entity-deployment name="BuyChargesEntityBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="BuyChargesEntityBean" max-tx-retries="0">
+				<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+		</entity-deployment>
+	  <entity-deployment name="SellChargesEntityBean" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="SellChargesEntityBean" max-tx-retries="0">
+				<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+		</entity-deployment>		
+		<entity-deployment name="QMSSellRatesEntity" copy-by-value="false" data-source="jdbc/DB" exclusive-write-access="false" location="QMSSellRatesEntity" max-tx-retries="0">
+			<resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+	   </entity-deployment>
+       
+    <entity-deployment name="QMSQuoteEntityBean">
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </entity-deployment>
+     <entity-deployment name="QMSMultiQuoteEntityBean">
+      <resource-ref-mapping name="jdbc/DB" location="jdbc/DB"/>
+    </entity-deployment>
+    <entity-deployment name="BuyRatesEntity"/>    
+    </enterprise-beans>
+    <assembly-descriptor>
+        <default-method-access>
+            <security-role-mapping impliesAll="true" name="&lt;default-ejb-caller-role>"/>
+        </default-method-access>
+    </assembly-descriptor>
+</orion-ejb-jar>

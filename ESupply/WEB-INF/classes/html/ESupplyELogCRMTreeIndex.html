@@ -1,0 +1,638 @@
+<html>
+<head>
+<script type="text/javascript" src="mtmcode.js"></script>
+<script language="JavaScript" src="../eventhandler.js"></script>
+
+<script type="text/javascript">
+
+var MTMTableWidth = "100%";
+
+// Name of the frame where the menu is to appear.
+var MTMenuFrame = "menu";
+
+// variable for determining whether a sub-menu always gets a plus-sign
+// regardless of whether it holds another sub-menu or not
+var MTMSubsGetPlus = "Always";
+
+// variable that defines whether the menu emulates the behaviour of
+// Windows Explorer
+var MTMEmulateWE = false;
+
+// Directory of menu images/icons
+var MTMenuImageDirectory = "../images/";
+
+// Variables for controlling colors in the menu document.
+// Regular BODY atttributes as in HTML documents.
+var MTMBGColor = "#000000";
+var MTMBackground = "blueback1`s.jpg";
+var MTMTextColor = "black";
+
+// color for all menu items
+var MTMLinkColor = "black";
+
+// Hover color, when the mouse is over a menu link
+var MTMAhoverColor = "red";
+
+// Foreground color for the tracking & clicked submenu item
+var MTMTrackColor ="yellow";
+var MTMSubExpandColor = "black";
+var MTMSubClosedColor = "black";
+
+// All options regarding the root text and it's icon
+var MTMRootIcon = "Tree_root.gif";
+var MTMenuText = "4S e-Supply:";
+var MTMRootColor = "black";
+var MTMRootFont = "Arial, Helvetica, sans-serif";
+var MTMRootCSSize = "84%";
+var MTMRootFontSize = "2";
+
+// Font for menu items.
+var MTMenuFont = "Arial, Helvetica, sans-serif";
+var MTMenuCSSize = "84%";
+var MTMenuFontSize = "-1";
+
+// Variables for style sheet usage
+// 'true' means use a linked style sheet.
+var MTMLinkedSS = false;
+var MTMSSHREF = "style/menu.css";
+
+// Additional style sheet properties if you're not using a linked style sheet.
+// See the documentation for details on IDs, classes & elements used in the menu.
+// Empty string if not used.
+var MTMExtraCSS = "";
+
+// Header & footer, these are plain HTML.
+// Leave them to be "" if you're not using them
+
+var MTMHeader = "";
+var MTMFooter = "";
+
+// Whether you want an open sub-menu to close automagically
+// when another sub-menu is opened.  'true' means auto-close
+var MTMSubsAutoClose = false;
+
+// This variable controls how long it will take for the menu
+// to appear if the tracking code in the content frame has
+// failed to display the menu. Number if in tenths of a second
+// (1/10) so 10 means "wait 1 second".
+var MTMTimeOut = 25;
+
+// Tool tips.  A true/false-value defining whether the support
+// for tool tips should exist or not.
+var MTMUseToolTips = true;
+
+
+// Main menu.
+var menu = null;
+menu = new MTMenu();
+
+//function MTMenuItem(text, url, target, itemtype,itemaction,tooltip,icon) {
+
+menu.MTMAddItem(new MTMenuItem("e-CRM","","text","","","e-Trans","vendor.jpg"));
+
+// nested submenu #1, multiple submenu levels example
+var number_1 = null;
+number_1 = new MTMenu();
+
+//Sub Menu Items
+number_1.MTMAddItem(new MTMenuItem("Setup","","text","","","Setup","Tree_setup_open.gif"));
+
+
+//number_1.MTMAddItem(new MTMenuItem("Enterprise Setup","","",""));
+var number_1_1=new MTMenu();
+number_1_1.MTMAddItem(new MTMenuItem("Customer Setup", "../ESupplyMenuECRMSetup.jsp","text","","","","Tree_setup_open.gif"));
+number_1.items[0].MTMakeSubmenu(number_1_1,false);
+
+
+// nested submenu #2, multiple submenu levels example
+
+
+number_1.MTMAddItem(new MTMenuItem("Operations","","text","","","","Tree_operations_open.gif"));
+var number_1_2=new MTMenu();
+number_1_2.MTMAddItem(new MTMenuItem("Sales Order","/ESupplyMenuECRMOperations.jsp","text","","","","Tree_operations_open.gif"));
+number_1.items[1].MTMakeSubmenu(number_1_2,false,"Tree_operations_open.gif","Tree_operations_open.gif");
+
+menu.MTMAddItem(new MTMenuItem("Reports", "/ESupplyMenuECRMReports.jsp", "text","","","","Tree_reports_open.gif"));
+menu.MTMAddItem(new MTMenuItem("Tracking", "/ELReleaseTrackIndex.jsp", "text","","","","Tree_reports_open.gif"));
+//menu.MTMAddItem(new MTMenuItem("Mails", "/CheckAllRequest.jsp?party=Customer", "text","","","","Tree_reports_open.gif"));
+
+menu.items[0].MTMakeSubmenu(number_1,false);
+//menu.items[1].MTMakeSubmenu(number_2);
+
+
+//***************************************************************************************
+
+	/******************************************************************************
+	* Define the MenuItem object.                                                 *
+	******************************************************************************/
+var lastClickedLink = "";
+
+var hotKeys		= new Array();
+var ctrlKeys	= new Array();
+var shiftKeys	= new Array();
+var altKeys 	= new Array();
+
+var names = new Array();
+var urls = new Array();
+var targets = new Array();
+
+var myItems = new Array();
+var myString = "";
+var addedItems = new Array();
+
+	function setDefault(str)
+	{
+		if(str==null)
+			return "";
+		else
+			return str;
+	}
+
+	function MTMenuItem( text, url, target, itemtype, itemaction, tooltip, icon, closedIcon, hotKey, ctrlKey, shiftKey, altKey) 
+	{
+		text=setDefault(text);
+		url=setDefault(url);
+		target=setDefault(target);
+		itemtype=setDefault(itemtype);
+		itemaction=setDefault(itemaction);
+		tooltip=setDefault(tooltip);
+		icon=setDefault(icon);
+
+		this.text = text;
+		this.url = url ? url : "";
+		this.target =  target ? target : "";
+		this.itemtype= itemtype;
+		this.itemaction= itemaction;
+		this.tooltip = tooltip;
+		this.icon = icon ? icon : "";
+		
+		this.number = MTMNumber++;
+		this.name = "sub"+this.number;
+		this.itemnumber = this.number;
+
+		this.hotKey		= setDefault( hotKey );
+		this.ctrlKey	= setDefault( ctrlKey );
+		this.shiftKey	= setDefault( shiftKey );
+		this.altKey		= setDefault( altKey );
+		
+		if(ctrlKey==null || ctrlKey=="") {
+			ctrlKey = "N";
+		}
+		if(shiftKey==null || shiftKey=="") {
+			shiftKey = "N";
+		}
+		if(altKey==null || altKey=="") {
+			altKey = "N";
+		}
+		
+		if(hotKey != null && hotKey != "" && hotKey.length > 0)
+		{
+			if(ctrlKey.length > 0 || shiftKey.length > 0 || altKey.length > 0)
+			{
+				hotKeys[hotKeys.length]		= hotKey.toUpperCase();
+				ctrlKeys[ctrlKeys.length]	= ctrlKey.toUpperCase();
+				shiftKeys[shiftKeys.length]	= shiftKey.toUpperCase();
+				altKeys[altKeys.length]		= altKey.toUpperCase();
+			}
+			
+			urls[urls.length]		= url;
+			targets[targets.length] = target;
+			myItems[myItems.length] = text;
+			names[names.length]		= "sub"+this.number;
+		}
+
+		this.submenu     = null;
+		this.expanded    = false;
+		this.MTMakeSubmenu = MTMakeSubmenu;
+	}
+
+	function MTMakeSubmenu(eSupply, isExpanded, collapseIcon, expandIcon) {
+	  this.submenu = eSupply;
+	  this.expanded = isExpanded;
+
+	  this.collapseIcon = collapseIcon ? collapseIcon : "menu_folder_closed.gif";
+	  this.expandIcon = expandIcon ? expandIcon : "menu_folder_open.gif";
+	}
+
+	/******************************************************************************
+	* Define the Menu object.                                                     *
+	******************************************************************************/
+
+	function MTMenu() {
+	  this.items   = new Array();
+	  this.MTMAddItem = MTMAddItem;
+	}
+
+	function MTMAddItem(item) {
+	  this.items[this.items.length] = item;
+	}
+
+	/******************************************************************************
+	* Define the icon list, addIcon function and MTMIcon item.                    *
+	******************************************************************************/
+
+	function IconList() {
+	  this.items = new Array();
+	  this.addIcon = addIcon;
+	}
+
+	function addIcon(item) {
+	  this.items[this.items.length] = item;
+	}
+
+	function MTMIcon(iconfile, match, type) {
+	  this.file = iconfile;
+	  this.match = match;
+	  this.type = type;
+	}
+
+	function MTMBrowser() {
+	  this.preHREF = "";
+	  this.MTMable = false;
+	  this.cssEnabled = true;
+	  this.browserType = "other";
+
+	  if(navigator.appName == "Netscape" && navigator.userAgent.indexOf("WebTV") == -1) {
+	    if(parseInt(navigator.appVersion) == 3 && (navigator.userAgent.indexOf("Opera") == -1)) {
+	      this.MTMable = true;
+	      this.browserType = "NN3";
+	      this.cssEnabled = false;
+
+	    } else if(parseInt(navigator.appVersion) >= 4) {
+	      this.MTMable = true;
+	      this.browserType = parseInt(navigator.appVersion) == 4 ? "NN4" : "NN5";
+	    }
+	  } else if(navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion) >= 4) {
+	    this.MTMable = true;
+	    this.browserType = "IE4";
+	  } else if(navigator.appName == "Opera" && parseInt(navigator.appVersion) >= 5) {
+	    this.MTMable = true;
+	    this.browserType = "O5";
+	  }
+
+	  if(this.browserType != "NN4") {
+	    this.preHREF = location.href.substring(0, location.href.lastIndexOf("/") +1)
+	  }
+	}
+
+	/******************************************************************************
+	* Global variables.  Not to be altered unless you know what you're doing.     *
+	* User-configurable options are at the end of this document.                  *
+	******************************************************************************/
+	var MTMLoaded = false;
+	var MTMLevel;
+	var MTMBar = new Array();
+	var MTMIndices = new Array();
+
+	var MTMUA = new MTMBrowser();
+
+	var MTMClickedItem = false;
+	var MTMExpansion = false;
+
+	var MTMNumber = 1;
+	var itemnumber=0;
+	var MTMTrackedItem = false;
+	var MTMTrack = false;
+	var MTMFrameNames;
+
+	var MTMFirstRun = true;
+	var MTMCurrentTime = 0; // for checking timeout.
+	var MTMUpdating = false;
+	var MTMWinSize, MTMyval, MTMxval;
+	var MTMOutputString = "";
+	/******************************************************************************
+	* Code that picks up frame names of frames in the parent frameset.            *
+	******************************************************************************/
+
+	function MTMgetFrames() {
+	  if(MTMUA.MTMable) {
+	    MTMFrameNames = new Array();
+	    for(i = 0; i < parent.frames.length; i++) {
+	      MTMFrameNames[i] = parent.frames[i].name;
+	    }
+	  }
+	}
+	/******************************************************************************
+	* Functions to draw the menu.                                                 *
+	******************************************************************************/
+
+	function MTMSubAction(SubItem) {
+
+	  SubItem.expanded = (SubItem.expanded) ? false : true;
+	  if(SubItem.expanded) {
+	    MTMExpansion = true;
+	  }
+
+	  MTMClickedItem = SubItem.number;
+
+	  if(MTMTrackedItem && MTMTrackedItem != SubItem.number) {
+	    MTMTrackedItem = false;
+	  }
+
+	  //if(MTMEmulateWE || SubItem.url == "" || !SubItem.expanded) {
+	  //if(SubItem.url == "") {
+	    
+	    setTimeout("MTMDisplayMenu()", 10);
+		
+		if(SubItem.itemtype && SubItem.itemtype!="")
+		{
+			//alert(	"SubItem.url = "+ SubItem.url +"\n"+
+			//		"SubItem.itemaction = "+SubItem.itemaction +"\n"+
+			//		"SubItem.itemtype = "+SubItem.itemtype);
+					
+			//parent.frames[3].location.href = SubItem.itemaction;
+			parent.frames['text'].location.href = SubItem.itemaction;
+			
+		}
+		//alert("In MTMSubAction returning false : SubItem.expanded = "+SubItem.expanded);
+		return false;
+	    
+	 // } else {
+	//		alert("In MTMSubAction returning true : SubItem.expanded = "+SubItem.expanded);
+	 //		return false;
+	  //}
+	}
+
+	function MTMStartMenu() {
+	  MTMLoaded = true;
+	  if(MTMFirstRun) {
+	    MTMCurrentTime++;
+	    if(MTMCurrentTime == MTMTimeOut) {
+			alert("ok");
+	      MTMDisplayMenu();
+	    } else {
+	      MTMStartMenu();
+	    }
+	  } 
+	}
+	
+	
+	
+	
+	
+	function MTMDisplayMenu() {
+		
+		
+	  if(MTMUA.MTMable && !MTMUpdating) {
+	    MTMUpdating = true;
+
+	    if(MTMFirstRun) {
+	      MTMgetFrames();
+	    }
+
+	    if(MTMTrack) { MTMTrackedItem = MTMTrackExpand(eSupply); }
+
+	    if(MTMExpansion && MTMSubsAutoClose) { MTMCloseSubs(eSupply); }
+
+	    MTMLevel = 0;
+	    MTMDoc = parent.frames[MTMenuFrame].document
+	    MTMDoc.open("text/html", "replace");
+	    MTMOutputString = '<html><head>\n';
+	    if(MTMLinkedSS) {
+	      MTMOutputString += '<link rel="stylesheet" type="text/css" href="' + MTMUA.preHREF + MTMSSHREF + '">\n';
+	    } else if(MTMUA.cssEnabled) {
+
+			MTMOutputString += '<style type="text/css">\nbody {\n\tcolor:' + MTMTextColor + ';\n}\n';
+			MTMOutputString += '#root {\n\tcolor:' + MTMRootColor + ';\n\tbackground:transparent;\n\tfont-family:' + MTMRootFont + ';\n\tfont-size:' + MTMRootCSSize + ';\n}\n';
+			MTMOutputString += 'a {\n\tfont-family:' + MTMenuFont + ';\n\tfont-size:' + MTMenuCSSize + ';\n\ttext-decoration:none;\n\tcolor:' + MTMLinkColor + ';\n\tbackground:transparent;\n}\n';
+			MTMOutputString += MTMakeA('pseudo', 'hover', MTMAhoverColor);
+			MTMOutputString += MTMakeA('class', 'tracked', MTMTrackColor);
+			MTMOutputString += MTMakeA('class', 'subexpanded', MTMSubExpandColor);
+			MTMOutputString += MTMakeA('class', 'subclosed', MTMSubClosedColor) + MTMExtraCSS + '\n<\/style>\n';
+
+			
+			MTMOutputString += '<script language="JavaScript">\n';
+
+			
+			MTMOutputString += '\n'+	' var browser = ""; ';
+			MTMOutputString += '\n'+	' if(navigator.appName=="Netscape") { ';
+			MTMOutputString += '\n'+	' 	browser = "NN"; ';
+			MTMOutputString += '\n'+	' } ';
+			MTMOutputString += '\n'+	' if(navigator.appName=="Microsoft Internet Explorer") { ';
+			MTMOutputString += '\n'+	' 	browser = "IE"; ';
+			MTMOutputString += '\n'+	' } ';
+			
+			MTMOutputString	+= '\n';
+			MTMOutputString += '\n'+	' var hotKeys	= new Array();';
+			MTMOutputString += '\n'+	' var shiftKeys = new Array();';
+			MTMOutputString += '\n'+	' var altKeys	= new Array();';
+			MTMOutputString += '\n'+	' var ctrlKeys	= new Array();';
+			MTMOutputString += '\n'+	' var urls		= new Array();';
+			MTMOutputString += '\n'+	' var targets	= new Array();';
+			MTMOutputString += '\n'+	' var names		= new Array();';
+			MTMOutputString	+= '\n';
+			MTMOutputString	+= '\n';
+			
+			MTMOutputString += '\n'+	'function handleMouseEvents(e) ';
+			MTMOutputString += '\n'+	'{ ';
+			MTMOutputString += '\n'+	'	if(browser == "IE") { ';
+			MTMOutputString += '\n'+	'		if(document.all) { ';
+			MTMOutputString += '\n'+	'			if(event.button==2 || event.button==3) { ';
+			MTMOutputString += '\n'+	'				alert("Sorry, Right Click is Disabled."); ';
+			MTMOutputString += '\n'+	'				return false; ';
+			MTMOutputString += '\n'+	'			} ';
+			MTMOutputString += '\n'+	'		} ';
+			MTMOutputString += '\n'+	'	} ';
+			MTMOutputString += '\n'+	'	if(browser == "NN") { ';
+			MTMOutputString += '\n'+	'		e.cancelBubble = true; ';
+			MTMOutputString += '\n'+	'		if(e.which == 2 || e.which == 3) {  ';
+			MTMOutputString += '\n'+	'			alert("Sorry, Right Click is Disabled."); ';
+			MTMOutputString += '\n'+	'			return false; ';
+			MTMOutputString += '\n'+	'		} ';
+			MTMOutputString += '\n'+	'	} ';
+			MTMOutputString += '\n'+	'} ';
+			
+			MTMOutputString	+= '\n';
+
+			MTMOutputString	+= 'if(browser == "IE") { ';
+			MTMOutputString	+= '	document.onmousedown = handleMouseEvents; ';
+			MTMOutputString	+= '} ';
+			MTMOutputString	+= 'if(browser == "NN") { ';
+			MTMOutputString	+= '	window.captureEvents(Event.MOUSEDOWN | Event.KEYPRESS); ';
+			MTMOutputString	+= '	window.onmousedown = handleMouseEvents; ';
+			MTMOutputString	+= '} ';
+			
+			MTMOutputString	+= '\n';
+			
+			var temp = '';
+			
+			for(count=0; count < hotKeys.length; count++)
+			{
+				temp += '\n'+			' hotKeys['+count+']	= "'+hotKeys[count]+'"; ';
+				temp += '\n'+			' ctrlKeys['+count+']	= "'+ctrlKeys[count]+'"; ';
+				temp += '\n'+			' shiftKeys['+count+']	= "'+shiftKeys[count]+'"; ';
+				temp += '\n'+			' altKeys['+count+']	= "'+altKeys[count]+'"; ';
+				
+				temp += '\n'+			' urls['+count+']		= "'+urls[count]+'"; ';
+				temp += '\n'+			' targets['+count+']	= "'+targets[count]+'"; ';
+				temp += '\n'+			' names['+count+']		= "'+names[count]+'"; ';
+				temp += '\n';			
+			}
+
+			MTMOutputString	+= temp;
+
+			MTMOutputString += '\n'+	'function handlePress(e) ';
+			MTMOutputString += '\n'+	'{';
+			MTMOutputString += '\n'+	'  try';
+			MTMOutputString += '\n'+   	'  {';
+			MTMOutputString += '\n'+	'	var whichCode    = (window.Event) ? e.which : e.keyCode;';
+			
+			MTMOutputString += '\n';
+			MTMOutputString += '\n'+	'	//alert(" INITIAL whichCode = "+ whichCode+".... "+window.Event); ';			
+			MTMOutputString += '\n';
+
+			MTMOutputString += '\n'+ 	'	var altPressed   = (window.Event) ? e.modifiers & Event.ALT_MASK : window.event.altKey;';
+			MTMOutputString += '\n'+	'	var shiftPressed = (window.Event) ? e.modifiers & Event.SHIFT_MASK : window.event.shiftKey;';
+			MTMOutputString += '\n'+ 	'	var ctrlPressed  = (window.Event) ? e.modifiers & Event.CONTROL_MASK : window.event.ctrlKey;';
+			
+			MTMOutputString += '\n'+	'	//alert("SHIFT_MASK = "+ Event.SHIFT_MASK ); ';
+			MTMOutputString += '\n'+	'	//alert("CONTROL_MASK  = "+ Event.CONTROL_MASK ); ';
+			MTMOutputString += '\n'+	'	//alert("ALT_MASK   = "+ Event.ALT_MASK ); ';
+
+			MTMOutputString += '\n'+	'	//alert("\\n ALT   = "+ e.altKey + "\\n CTRL  = "+ e.ctrlKey + "\\n SHIFT = "+ e.shiftKey); ';
+			MTMOutputString += '\n'+	'	//alert(" e.modifiers ="+e.modifiers +"  AND Event.SHIFT_MASK = "+ Event.SHIFT_MASK); ';
+			MTMOutputString += '\n'+	'	//alert(" shiftPressed = "+shiftPressed ); ';
+			
+			MTMOutputString += '\n'+	'	var key = "" ';
+
+			//MTMOutputString += '\n'+	'	//alert(" AFTER manipulating whichCode = "+ whichCode + "   SHIFT = "+shiftPressed); ';
+
+			MTMOutputString += '\n'+	'	key = String.fromCharCode(whichCode); ';
+			
+			MTMOutputString += '\n'+	'	//alert(" AFTER SHIFT CHECK whichCode = "+ whichCode); ';
+
+			MTMOutputString += '\n'+	'	if(!ctrlPressed && !shiftPressed && !altPressed) {';
+			MTMOutputString += '\n'+	'		if(whichCode==118) {';
+			MTMOutputString += '\n'+	'			parent.frames["menu"].focus();';
+			MTMOutputString += '\n'+	'		}';
+			MTMOutputString += '\n'+	'		if(whichCode==119) {';
+			MTMOutputString += '\n'+	'			parent.frames["text"].focus();';
+			MTMOutputString += '\n'+	'		}';
+			MTMOutputString += '\n'+	'		if(whichCode==120) {';
+			MTMOutputString += '\n'+	'			parent.frames["heading"].focus();';
+			MTMOutputString += '\n'+	'		}';
+			MTMOutputString += '\n'+	'		if(whichCode==123) {';
+			MTMOutputString += '\n'+	'			parent.frames["heading"].document.images("logoutImage").click(); ';
+			MTMOutputString += '\n'+	'		}';
+			MTMOutputString += '\n'+	'	}';
+			
+			MTMOutputString += '\n'+	'	//alert("KEY = "+ key + "\\n ALT   = "+ e.altKey + "\\n CTRL  = "+ e.ctrlKey + "\\n SHIFT = "+ e.shiftKey); ';			
+			
+			MTMOutputString += '\n'+	'	for( i=0; i < hotKeys.length; i++)';
+			MTMOutputString += '\n'+	'	{';
+			MTMOutputString += '\n'+	'		if(key==hotKeys[i] || key.toUpperCase()==hotKeys[i])';
+			MTMOutputString += '\n'+	'		{';
+
+			MTMOutputString += '\n'+	'			var hotkeyWithCtrl	= ctrlKeys[i] =="Y" ? true : false; ';			
+			MTMOutputString += '\n'+	'			var hotkeyWithShift	= shiftKeys[i]=="Y" ? true : false; ';
+			MTMOutputString += '\n'+	'			var hotkeyWithAlt	= altKeys[i]  =="Y" ? true : false; ';
+			MTMOutputString += '\n';
+			
+			MTMOutputString += '\n'+	'			//alert("hotKeys["+i+"] = "+hotKeys[i]+"\\nhotkeyWithShift = "+ hotkeyWithShift + "\\nhotkeyWithCtrl   = "+ hotkeyWithCtrl + "\\nhotkeyWithAlt  = "+ hotkeyWithAlt); ';
+			
+			MTMOutputString += '\n'+	'			if(e.ctrlKey==hotkeyWithCtrl && e.shiftKey==hotkeyWithShift && e.altKey==hotkeyWithAlt) { ';
+			MTMOutputString += '\n'+	'				//alert("hotKeys In url selection : urls[i] = "+urls[i]); ';
+			
+			MTMLevel =0;
+			getListItem(eSupply);
+			MTMLevel =0;
+			MTMOutputString += '\t'+myString;
+			
+			MTMOutputString += '\n'+	'				if(urls[i] != "" && urls[i].length > 0)	';
+			MTMOutputString += '\n'+	'				{';			
+			MTMOutputString += '\n'+	'					//alert("KEY PRESS LINK = \'"+lastClickedLink+"\'"); 	';
+			MTMOutputString += '\n'+	'					parent.frames[ targets[i] ].location.href = urls[i];';
+			MTMOutputString += '\n'+	'					while(parent.frames[ targets[i] ].document.all==false) { ';
+			MTMOutputString += '\n'+	'					}';
+			
+			MTMOutputString += '\n'+	'				}';
+			
+			MTMOutputString += '\n'+	'			}';	// Test
+			
+			MTMOutputString += '\n'+	'		}';
+			MTMOutputString += '\n'+	'	}';
+			
+			MTMOutputString += '\n'+	'  }';
+			MTMOutputString += '\n'+	'  catch(e)';
+			MTMOutputString += '\n'+	'  {';
+			MTMOutputString += '\n'+	'		//alert("Invalid Key Combination");';
+			MTMOutputString += '\n'+	'  }';
+			
+			MTMOutputString += '\n'+	'}';	// function 'handlePress' ends here
+			
+			MTMOutputString += '\n\n';
+			
+			MTMOutputString += '\n'+	'function stopError(){';
+			MTMOutputString += '\n'+	'	alert("Invalid Key Combination");';
+			MTMOutputString += '\n'+	'	return true;';
+			MTMOutputString += '\n'+	'}';
+
+			MTMOutputString += '\n\n';
+			
+			MTMOutputString += '\n\n'+	' window.onerror=stopError; ';
+			
+			// The Frame swithing function is added here
+			
+			MTMOutputString += '\n\n\n'+ F_KeyFunction +'\n';
+			
+			MTMOutputString += '\n<\/script>';
+
+	   }
+		MTMOutputString += '<\/head>\n<body ';
+	    if(MTMBackground != "") {
+	      MTMOutputString += 'background="' + MTMUA.preHREF + MTMenuImageDirectory + MTMBackground + '" ';
+	    }
+	    
+	    MTMOutputString += 'bgcolor=white text="' + MTMTextColor + '" link="' + MTMLinkColor + '" vlink="' + MTMLinkColor + '" alink="' + MTMLinkColor + '" onLoad=" this.focus();" onKeyDown="handleKeyDown(event); handlePress(event);">\n';
+	  
+		MTMOutputString += MTMHeader + '\n<table border="0" cellpadding="0" cellspacing="0" width="' + MTMTableWidth + '">\n';
+	    MTMOutputString += '<tr valign="top"><td nowrap><img src="' + MTMUA.preHREF + MTMenuImageDirectory + MTMRootIcon + '" align="left" border="0" vspace="0" hspace="0">';
+	    if(MTMUA.cssEnabled) {
+	      MTMOutputString += '<span id="root"><font size=2>&nbsp;' + MTMenuText + '<\/span>';
+		  
+	    } else {
+	      MTMOutputString += '<font size="' + MTMRootFontSize + '" face="' + MTMRootFont + '" color="' + MTMRootColor + '">' + MTMenuText + '<\/font>';
+	    }
+	    MTMDoc.writeln(MTMOutputString + '</td></tr>');
+
+	    MTMListItems(eSupply);
+
+	    MTMDoc.writeln('<\/table>\n' + MTMFooter + '\n<\/body>\n<\/html>');
+	    MTMDoc.close();
+
+	    if(MTMUA.browserType == "NN5") {
+	      parent.frames[MTMenuFrame].scrollTo(0, 0);
+	    }
+
+	    if((MTMClickedItem || MTMTrackedItem) && MTMUA.browserType != "NN3" && !MTMFirstRun) {
+	      MTMItemName = "sub" + (MTMClickedItem ? MTMClickedItem : MTMTrackedItem);
+	      if(document.layers && parent.frames[MTMenuFrame].scrollbars) {
+	        MTMyval = parent.frames[MTMenuFrame].document.anchors.item[MTMItemName].y;
+	        MTMWinSize = parent.frames[MTMenuFrame].innerHeight;
+	      } else if(MTMUA.browserType != "O5") {
+	        if(MTMUA.browserType == "NN5") {
+	          parent.frames[MTMenuFrame].document.all = parent.frames[MTMenuFrame].document.getElementsByTagName("*");
+	        }
+	        MTMyval = MTMGetYPos(parent.frames[MTMenuFrame].document.all[MTMItemName]);
+	        MTMWinSize = MTMUA.browserType == "NN5" ? parent.frames[MTMenuFrame].innerHeight : parent.frames[MTMenuFrame].document.body.offsetHeight;
+	      }
+	      if(MTMyval > (MTMWinSize - 60)) {
+	        parent.frames[MTMenuFrame].scrollBy(0, parseInt(MTMyval - (MTMWinSize * 1/3)));
+	      }
+	    }
+	    MTMFirstRun = false;
+	    MTMClickedItem = false;
+	    MTMExpansion = false;
+	    MTMTrack = false;
+	  }
+	  
+	  MTMUpdating = false;
+	}
+	
+
+//***************************************************************************************
+</script>
+</head>
+<body onload="MTMStartMenu()">
+</body>
+</html>

@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+<TITLE>Canada Zone Code Upload Format</TITLE>
+<style>
+body {background-color: #000000; margin-left: 0px; margin-top: 0px;  margin-width: 0px; margin-height:   0px;}
+.formlabel{  font-family: Verdana; font-size: 12pt; font-weight: bold; color: #ffffff;background-color: #d00000;  vertical-align: top}
+.formheader{font-family: Verdana; font-size: 10pt; font-weight: bold; color: #ffffff; background-color: #ffa206;  vertical-align: top}
+.formdata {font-family: Verdana; font-size: 10pt; background-color: #efefef; vertical-align: top}
+.notes { font-family: Verdana; font-size: 10pt; vertical-align: top }
+</style>
+</HEAD>
+
+<BODY>
+<table width="100%" cellpadding="4" cellspacing="0" bgcolor='#FFFFFF'>
+		<tr class="formlabel">
+			<td >Canada Zone Code Upload - File Format</td><td align='right'>&nbsp;</td>
+		</tr>
+	</table>
+	 <table border="0" cellpadding="4" cellspacing="0" width="100%"  bgcolor='#FFFFFF'>
+	<tr class="notes">
+      <td width="100%"><b><u>Important Points</u></b><br> 												
+<ol>													
+<li>Canada Zone Code upload  data is entered under 2 headers.</li>												
+<li>First header is used to enter MASTER data for the Zone Codes.</li>												
+<li>The user can also enter multiple MASTER data & corresponding DETAILS data in the same sheet .</li>							
+<li>The user can enter any number of DETAILS data.</li>												
+<li>First header is used to enter MASTER data for the Zone Codes.</li>
+
+<li>For multiple MASTER data, the user can specify a matching ROW NO under MASTER & DETAILS data as a reference number.</li>				
+<li>There should be one empty row between Master & Detail Data.</li>						
+</ol>
+</font></td>
+    </tr>
+</table>
+<table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor='#FFFFFF'>	
+<tr class="notes">
+<td colspan='7'><b><u>Example</u></b></td>
+</tr>
+<tr class="formheader">
+<td>ROW ID</td>
+<td>Shipment Mode</td>
+<td>Console Type</td>
+<td>Location</td>
+<td>TerminalId</td>
+<td>City</td>
+<td>State</td>
+</tr>
+</font>						
+
+<tr class="formdata">
+<td>1</td>
+<td>Air</td>
+<td></td>
+<td>YUL</td>
+<td>DHLYUL</td>
+<td>Montreal</td>
+<td></td>
+</tr>
+
+<tr class="formdata">
+<td>2</td>
+<td>Sea</td>
+<td>FCL</td>
+<td>YOW</td>
+<td>DHLYOW</td>
+<td>OTTAWA</td>
+<td></td>
+</tr>
+
+<tr>
+<td><br></td>
+</tr>
+<tr class="formheader">
+<td>ROW ID</td>
+<td>From Zipcode</td>
+<td>To Zipcode</td>
+<td colspan='4'>Zone</td>
+</tr>
+<tr class="formdata">
+<td>1</td>
+<td>G0A 1E0</td>
+<td>G0A 1E0</td>
+<td colspan='4'>C</td>
+</tr>
+<tr class="formdata">
+<td>1</td>
+<td>G0A 1S0</td>
+<td>G0A 1S0</td>
+<td colspan='4'>C</td>
+</tr>					
+
+<tr class="formdata">
+<td>2</td>
+<td>K1A 0A1</td>
+<td>K4C 1R8</td>
+<td colspan='4'>A</td>
+</tr>
+<tr class="formdata">
+<td>2</td>
+<td>K4C 1R8</td>
+<td>K4C 1R9</td>
+<td colspan='4'>B</td>
+</tr>
+</font>
+</table>
+
+</BODY>
+</HTML>

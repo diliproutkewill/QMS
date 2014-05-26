@@ -1,0 +1,260 @@
+
+<DynamicContent>
+<DynamicNumeric>
+     <ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>fromZipCode</name>
+		<onBlur>numericOnly(this);checkZipCodes(this);</onBlur>
+		<value></value>
+		<size>15</size>
+		<maxLength>16</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>toZipCode</name>
+		<onBlur>numericOnly(this);checkZipCodes(this);</onBlur>
+		<value></value>
+		<size>15</size>
+		<maxLength>16</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>zone</name>
+		<onBlur>toUpperCase(this)</onBlur>
+		<value></value>
+		<size>15</size>
+		<maxLength>20</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>estimatedTime</name>
+		<onBlur>checkTime(this)</onBlur>
+		<value></value>
+		<size>5</size>
+		<maxLength>5</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>estimatedDistance</name>
+		<onBlur></onBlur>
+		<value></value>
+		<size>5</size>
+		<maxLength>16</maxLength>
+		<class>text</class>
+	</ChildElement>
+</DynamicNumeric>
+
+<DynamicAlphaNumeric>	
+	<ChildElement  startingElement="true" elementType="input" class="formdata">
+		<type>text</type>
+		<name>alphaNumeric</name>
+		<onBlur>toUpperCase(this)</onBlur>
+		<value></value>
+		<size>6</size>
+		<maxLength>15</maxLength>
+		<class>text</class>
+	</ChildElement>
+
+	<ChildElement  elementType="input" merged="true" class="formdata">
+		<type>text</type>
+		<name>fromZipCode</name>
+		<onBlur>numericOnly(this);checkZipCodes(this);</onBlur>
+		<value></value>
+		<size>5</size>
+		<maxLength>16</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>toZipCode</name>
+		<onBlur>numericOnly(this);checkZipCodes(this);</onBlur>
+		<value></value>
+		<size>5</size>
+		<maxLength>16</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>zone</name>
+		<onBlur>toUpperCase(this)</onBlur>
+		<value></value>
+		<size>15</size>
+		<onBlur></onBlur>
+		<maxLength>20</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>estimatedTime</name>
+		<onBlur>checkTime(this)</onBlur>
+		<value></value>
+		<size>5</size>
+		<maxLength>5</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>estimatedDistance</name>
+		<onBlur></onBlur>
+		<value></value>
+		<size>5</size>
+		<maxLength>16</maxLength>
+		<class>text</class>
+		</ChildElement>
+	</DynamicAlphaNumeric>
+
+
+	<ChargeDescription>	
+	
+
+	<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>aircheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>air</name>
+			<labelText>Air</labelText>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>seacheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>sea</name>
+			<labelText>Sea</labelText>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>truckcheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>truck</name>
+			<labelText>Truck</labelText>
+		</ChildElement>
+
+	<ChildElement  elementType="input" startingElement="true" class="formdata" align="center">
+		<type>text</type>
+		<name>chargeId</name>
+		<onBlur>toUpper(this);specialCharFilter(this,"Charge Desc Id")</onBlur>		
+		<value></value>
+		<size>5</size>
+		<maxLength>16</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" merged="true"  class="formdata" >
+		<type>button</type>
+		<name>chargeDescriptionButton</name>
+		<onClick>showchaLOV(this);</onClick>
+		<value>...</value>
+		<onBlur></onBlur>
+		<class>input</class>
+	</ChildElement>
+
+	<ChildElement  elementType="input" class="formdata" align="center" >
+		<type>text</type>
+		<name>chargeDescId</name>
+		<onBlur>toUpper(this);trimAll(this);specialCharFilter(this,"Charge Desc Id")</onBlur>
+		<value></value>
+		<size>20</size>
+		<maxLength>50</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata" align="center">
+		<type>text</type>
+		<name>remarks</name>
+		<onBlur>trimAll(this)</onBlur>
+		<value></value>
+		<size>20</size>
+		<maxLength>50</maxLength>
+		<class>text</class>
+		</ChildElement>
+	<ChildElement  elementType="input" class="formdata" align="center">
+		<type>text</type>
+		<name>externalChargeName</name>
+		<onBlur>trimAll(this)</onBlur>
+		<value></value>
+		<size>20</size>
+		<maxLength>50</maxLength>
+		<class>text</class>
+		</ChildElement>
+	</ChargeDescription>
+
+
+	<QuoteContent>	
+	<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>aircheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>air</name>
+			<labelText>Air</labelText>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>seacheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>sea</name>
+			<labelText>Sea</labelText>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>truckcheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>truck</name>
+			<labelText>Truck</labelText>
+		</ChildElement>
+
+	<ChildElement  elementType="select"  class="formdata">
+		<type>select</type>
+		<name>headerFooter</name>
+		<class>select</class>
+		<option value='H'>Header</option>
+        <option value='F'>Footer</option>
+	</ChildElement>
+	<ChildElement  elementType="input" class="formdata">
+		<type>text</type>
+		<name>contentId</name>
+		<onBlur>toUpper(this);spacetest(this);specialCharFilter(this,"Content Id")</onBlur>
+		<value></value>		
+		<size>20</size>
+		<maxLength>25</maxLength>
+		<class>text</class>
+	</ChildElement>
+
+	<ChildElement  elementType="textArea" class="formdata">
+		<type>TextArea</type>
+		<name>contentDescription</name>
+		<!-- commented by VLAKSHMI for internal issue on 11/06/2009in next line it is not coming.coming continulously in pDF <onBlur>check_Length(500,this);spacetest(this)</onBlur>-->
+    <onBlur>check_Length(500,this);</onBlur>
+		<rows>4</rows>
+		<cols>20</cols>
+		<maxLength>200</maxLength>
+		<class>text</class>
+	</ChildElement>
+	<ChildElement  elementType="select" class="formdata">
+		<type>select</type>
+		<name>default</name>
+		<class>select</class>
+		<option value='T'>Yes</option>
+        <option value="F">No</option>
+	</ChildElement>
+	</QuoteContent>
+  <!--@@Added by Kameswari for the WPBN issue-61289-->
+	<QMSAttachment>
+		<ChildElement elementType="input" class="formdata">
+			<type>file</type>
+			<name>fileName</name>
+			<size>45</size>
+			<maxLength>100</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+		</ChildElement>
+	</QMSAttachment>
+  <!--@@WPBN issue-61289-->
+</DynamicContent>

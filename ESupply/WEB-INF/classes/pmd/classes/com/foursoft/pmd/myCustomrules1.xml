@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <ruleset name="My custom rules"
+            xmlns="http://pmd.sf.net/ruleset/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+            xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+	 <description></description>
+	    
+      <rule name="AllStaticShouldbeFinalSessionBeanRule"
+             message="All the static variables in the enterprise beans must be final. "
+             class="com.foursoft.pmd.AllStaticShouldbeFinalSessionBeanRule">
+              <description>
+				All the static variables in the enterprise beans must be final
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="AssignNullToReferVariableExpecForArraysRule"
+             message="Assign null to any reference variable that is no longer being used. (This includes, especially, elements of arrays.) To explicitly help the garbage collector, in indentifying unreachable objects."
+             class="com.foursoft.pmd.AssignNullToReferVariableExpecForArraysRule">
+              <description>
+              Assign null to any reference variable that is no longer being used. (This includes, especially, elements of arrays.) To explicitly help the garbage collector, in indentifying unreachable objects.
+
+			  </description>
+                <priority>1</priority>
+        <example>
+         <![CDATA[      
+        for(int k=0;k>10;k++)
+		{
+			float f;	
+			String s;
+			char c='v';
+		}
+		while(j>19)
+		{
+			String s1;
+			String s="cnu";
+		}
+		do
+		{
+		   Connection con;
+		}while(i>j);
+		 
+				
+      	 ]]>
+        </example>
+      </rule>
+      <rule name="AvoidConnObjInLoopRule"
+             message="Avoid To Create new DB Connection Objects in loops"
+             class="com.foursoft.pmd.AvoidConnObjInLoopRule">
+              <description>
+				"? Avoid creating new DB connections in loops. Pass Connection object to the 
+				 called method."
+    			</description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="AvoidDeclInstanceVarInServletsRule"
+            message="Avoid declaration of instance variable in servlets"
+            class="com.foursoft.pmd.AvoidDeclInstanceVarInServletsRule">
+            <description>
+				Avoid declaration of instance variable in servlets
+            </description>
+            <priority>1</priority>
+            
+        <example>
+         <![CDATA[  
+      	  class Hello {
+					int i=9;
+					protected static float f=10;
+					Connection con=null;
+					String s="hai";
+					int j=9;
+					int kk;	
+					public  void test(){
+						int j=9;
+						final float g=10;
+						String s="bye";
+						}
+					}
+
+      	 ]]>
+        </example>
+      </rule>
+      <rule name="AvoidInstaVariaInLoopBodyRule"
+             message="Avoid instantiating variables in a loop body."
+             class="com.foursoft.pmd.AvoidInstaVariaInLoopBodyRule">
+              <description>
+			 Avoid instantiating variables in a loop body
+            </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="AvoidMethodsInExprLoopsRule"
+             message="Avoid calling methods in Loops. "
+             class="com.foursoft.pmd.AvoidMethodsInExprLoopsRule">
+              <description>
+			Avoid calling methods in loop condition statements
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="AvoidToCreateDBObjectsinLoopsRule"
+             message="Avoid to create new DB Objects in loops like Statement,PreparedStatement,Connection etc."
+             class="com.foursoft.pmd.AvoidToCreateDBObjectsinLoopsRule">
+              <description>
+				"? We should not create the Statements or PreparedStatements in for loops or while 
+				loops. This leads to the opening of more cursors in the database and causes the 
+				 DB servers hang."
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="AvoidToCreateMultipleConnectionsRule"
+             message="Avoid to create new DB Objects in loops like Statement,PreparedStatement,Connection etc."
+             class="com.foursoft.pmd.AvoidToCreateMultipleConnectionsRule">
+              <description>
+				"? We should not create the Statements or PreparedStatements in for loops or while 
+				loops. This leads to the opening of more cursors in the database and causes the 
+				 DB servers hang."
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="AvoidToCreateTempObjectsinLoopsRule"
+             message="Avoid creating temporary objects being used, especially in  loops"
+             class="com.foursoft.pmd.AvoidToCreateTempObjectsinLoopsRule">
+              <description>
+					Avoid creating temporary objects being used, especially in for loops
+               </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="AvoidUnrelatedObjectsIntoCollectionRule"
+             message="Avoid names that are similar or differ only in Case 4S-CS-1.1.5Warning:Avoid storing unrelated/different types of objects into collection. Instead store them into ValueObject/DTO object"
+             class="com.foursoft.pmd.AvoidUnrelatedObjectsIntoCollectionRule">
+              <description>
+					Avoid storing unrelated or different types of objects into same collection. Instead store them in Value Objects.
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="BatchUpdateRule"
+             message="Try to combine queries and batch updates-4S-CS-4.1.5 "
+             class="com.foursoft.pmd.BatchUpdateRule">
+              <description>
+        Try to combine queries and batch updates-4S-CS-4.1.5
+              </description>
+                <priority>1</priority>
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+      </rule>
+     <rule name="CloseStreamObjInFinallyRule"
+             message="Use buffering to minimize disk access and underlying operating system.Make sure to close the stream objects once out of scope, in finally block. -4S-CR-2.3.42"
+             class="com.foursoft.pmd.CloseStreamObjInFinallyRule">
+              <description>
+				Use buffering to minimize disk access and underlying operating system.Make sure to close the stream objects once out of scope, in finally block -4S-CR-2.3.42
+              </description>
+              <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="CoarseGrainedSessionRule"
+             message="Make coarse grained session and entity beans to reduce network calls.-4S-CS-4.4.10 "
+             class="com.foursoft.pmd.CoarseGrainedSessionRule">
+              <description>
+			  Make coarse grained session and entity beans to reduce network calls.-4S-CS-4.4.10
+ 
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="CollectionObjectsNullRule"
+             message="Make all objects to null in finally block before leave from the method-4S-CS-4.7.2.10"
+             class="com.foursoft.pmd.CollectionObjectsNullRule">
+              <description>
+           		Need to remove the data from Collection objects like ArrayList, HashMap using clear() method before making the Collection objects to NULL-4S-CS-4.7.2.10
+              </description>
+                <priority>1</priority>
+        <example>
+         <![CDATA[      
+        
+        public class CollectionObjectsNullTest2 {	
+	HashSet hs = new HashSet();
+	HashSet hs1 = new HashSet();
+	ArrayList al3= new ArrayList();
+	Set s1= null;
+	public Set test() throws SQLException{
+		Connection con = null;
+		
+		Map m1 = null;
+		ArrayList al2= new ArrayList();
+		
+		try{
+			con = DriverManager.getConnection("");
+			 s1= new HashSet();
+			 s1.add("sai");
+			 s1.add("cnu");
+			 m1= new HashMap();
+			System.out.println("try");
+		}
+		finally{
+			con=null;
+			hs1=null;
+			
+		}
+		return s1;
+	}
+
+}
+
+      	 ]]>
+        </example>
+      </rule>
+	    <rule name="DeclareAllSQLVarAsStaticRule"
+             message="Declare All SQL Query variables as Static in SessionBeans and DAO’s -4S-CS-4.1.17"
+             class="com.foursoft.pmd.DeclareAllSQLVarAsStaticRule">
+              <description>
+   Declare All SQL Query variables as Static in SessionBeans and DAO’s -4S-CS-4.1.17
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+      <rule name="DontCallGetConnMethInPrivateMethRule"
+             message="In private methods no need to call the getConnection() method because in caller 
+					  method (public method) Connection is already instantiated.-4S-CS-4.1.14"
+             class="com.foursoft.pmd.DontCallGetConnMethInPrivateMethRule">
+              <description>
+					In private methods no need to call the getConnection() method because in caller 
+					method (public method) Connection is already instantiated.-4S-CS-4.1.14
+			  </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="DontCallMethInExprLoopsRule"
+            message="Assign value to variable and use the variable object instead of using the function so many times. i.e Don?t call .length and size() in loops causes so many method calls"
+            class="com.foursoft.pmd.DontCallMethInExprLoopsRule">
+            <description>
+           Assign value to variable and use the variable object instead of using the function so many times. 
+            </description>
+            <priority>1</priority>
+            
+        <example>
+         <![CDATA[  
+      	  class Hello {
+					int i=9;
+					protected static float f=10;
+					Connection con=null;
+					String s="hai";
+					int j=9;
+					int kk;	
+					public  void test(){
+						int j=9;
+						final float g=10;
+						String s="bye";
+						}
+					}
+
+      	 ]]>
+        </example>
+      </rule>
+      <rule name="DontCallServletsInDAOEJBRule"
+             message="Dont use Servlets in DAO'S and EJBS(Business layer)-4S-CS-2.4.12"
+             class="com.foursoft.pmd.DontCallServletsInDAOEJBRule">
+              <description>
+ We should not build the presentation logic in Session Beans and returns to the Web tier components. We should return only the Data Objects to the Web tier components intern these web tier components will generate the presentation logic to give the response to the client-4S-CS-2.4.12
+			</description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="DontUseSelectStarOrCountRule"
+             message="In SQL select query mention the column names of the table to fetch the data 
+						from the database. Don’t mention “select * from Tablename” even though we 
+ 						don’t require all the columns.If we want the count out of a SQL Query, make  sure to give some column name or 0 index instead of count(*). -4S-CR-4.1.22"
+             class="com.foursoft.pmd.DontUseSelectStarOrCountRule">
+              <description>
+         		In SQL select query mention the column names of the table to fetch the data 
+				from the database. Don’t mention “select * from Tablename” even though we 
+ 				don’t require all the columns.If we want the count out of a SQL Query, make  sure to give some column name or 0 index instead of count(*). -4S-CR-4.1.22
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+        <rule name="MaintainClntSpecVarAsGlobalInSBRule"
+             message="Don?t maintain global variables in Session Beans unless it is client in specific like DataSource, InitialContext"
+             class="com.foursoft.pmd.MaintainClntSpecVarAsGlobalInSBRule">
+              <description>
+				Don?t maintain global variables in Session Beans unless it is client in specific like DataSource, InitialContext
+			 </description>
+                <priority>1</priority>
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+      <rule name="PassConnObjeFromPublMetToPriMetRule"
+             message="If a private method is called from a public method, pass the connection object to
+ the private method if exists in public method. -4S-CS-4.1.24"
+             class="com.foursoft.pmd.PassConnObjeFromPublMetToPriMetRule">
+              <description>
+			   If a private method is called from a public method, pass the connection object to
+ the private method if exists in public method. -4S-CS-4.1.24
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+         </rule>
+         <rule name="PrepareStmtOutSideLoopRule"
+             message="Don't create the PrepareStatement Object creation inside loops"
+             class="com.foursoft.pmd.PrepareStmtOutSideLoopRule">
+              <description>
+				Create Prepared Statements outside of for loop.
+             </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="RollbackTransactionBeforeThrowingExceptionRule"
+             message="We should rollback the current transaction before throwing any application exceptions from the EJB components. This can be done by marking the current transaction as rollback using following method in SessionBeans or EntityBeans -4S-CR-2.4.13"
+             class="com.foursoft.pmd.RollbackTransactionBeforeThrowingExceptionRule">
+              <description>
+				We should rollback the current transaction before throwing any application exceptions from the EJB components. This can be done by marking the current transaction as rollback using following method in SessionBeans or EntityBeans
+                </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="SessionBeanJavaIOValidationRule"
+             message="An EJB must not use the java.io package to attempt to access the files and directories -4S-CS-2.4.6"
+             class="com.foursoft.pmd.SessionBeanJavaIOValidationRule">
+              <description>
+       			An EJB must not use the java.io package to attempt to access the files and directories -4S-CS-2.4.6
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="SessionBeanReflectioValidationRule"
+             message="EJB should not attempt to use the Reflection API -4S-CS-2.4.7"
+             class="com.foursoft.pmd.SessionBeanReflectioValidationRule">
+              <description>
+     			EJB should not attempt to use the Reflection API -4S-CS-2.4.7
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+       <rule name="SingleTimeQueryStatementRule"
+             message="For single time execution of query, use statements and for multiple stmts executions use PreparedStatements. -4S-CR-4.1.10"
+             class="com.foursoft.pmd.SingleTimeQueryStatementRule">
+              <description>
+        For single time execution of query, use statements and for multiple executions  like in for loop use PreparedStatements. -4S-CR-4.1.10
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+        <rule name="UseConnectionPoolingRule"
+             message="Use connection pooling.-4S-CS-4.1.4 "
+             class="com.foursoft.pmd.UseConnectionPoolingRule">
+              <description>
+         Use connection pooling.-4S-CS-4.1.4 
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+         <rule name="UsePreparedStmtparameterizedSQLRule"
+             message="Use prepared statements. Use parameterized SQL. Use PreparedStatement over Statements where there is parameterized SQL. This will exploit all the caching and optimizations at every layer right from J2ee server’s PreparedStatement cache to DB cache. We have Shared Connection at DB level. So it ensures the Hashing and execution plan at DB level is shared. -4S-CS-4.1.1"
+             class="com.foursoft.pmd.UsePreparedStmtparameterizedSQLRule">
+              <description>
+				Use prepared statements. Use parameterized SQL. Use PreparedStatement over Statements where there is parameterized SQL. This will exploit all the caching and optimizations at every layer right from J2ee server’s PreparedStatement cache to DB cache. We have Shared Connection at DB level. So it ensures the Hashing and execution plan at DB level is shared. -4S-CS-4.1.1
+              </description>
+                <priority>1</priority>
+                
+                 <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+      <rule name="UseServiceLocatorRule"
+             message="Cache EJBHome references to avoid JNDI lookup overhead (pattern called  ServiceLocator). -4S-CS-4.4.6"
+             class="com.foursoft.pmd.UseServiceLocatorRule">
+              <description>
+        Cache EJBHome references to avoid JNDI lookup overhead (pattern called  ServiceLocator).  -4S-CS-4.4.6
+              </description>
+                <priority>1</priority>
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+           ]]>
+        </example>
+      </rule>
+      <rule name="UseStringToConcatStaticStringsInsteadBufferRule"
+             message="Use ’String’ instead of ’StringBuffer’ for concatenation of static strings at compile time. -4S-CS-2.3.7"
+             class="com.foursoft.pmd.UseStringToConcatStaticStringsInsteadBufferRule">
+              <description>
+         		Use ’String’ instead of ’StringBuffer’ for concatenation of static strings at compile time. -4S-CS-2.3.7
+              </description>
+                <priority>1</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+       </ruleset>

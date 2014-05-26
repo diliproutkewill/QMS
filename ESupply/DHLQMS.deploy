@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ear-deployment nselem="ear-deployment" class="oracle.jdeveloper.deploy.ear.EarProfile" xmlns="http://xmlns.oracle.com/jdeveloper/10120/deploy/j2ee-ear">
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>true</compressed>
+      <hasManifest>false</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <defaultConnection class="java.lang.String"/>
+   <deployClientMaxHeapSize/>
+   <description/>
+   <earURL path="deploy/QMSDHL100120090831.ear"/>
+   <enterpriseAppName>QMSDHL100120090831</enterpriseAppName>
+   <fileGroups>
+      <groups>
+         <Item class="oracle.jdeveloper.deploy.common.LibraryFileGroup" internalName="libraries">
+            <displayName>log4j</displayName>
+            <filters>
+               <rules>
+                  <Item type="1" pattern="weblogic.jar"/>
+                  <Item type="1" pattern="cos.jar"/>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <selectedLibraries>
+               <Item>JDeveloper Runtime</Item>
+            </selectedLibraries>
+            <selectionMode>0</selectionMode>
+            <targetWithinJar/>
+         </Item>
+      </groups>
+   </fileGroups>
+   <profileDeps>
+      <Item>
+         <profileURL path="../DHLQMSEJB/DHLQMSEJB.deploy"/>
+         <projectURL path="../DHLQMSEJB/DHLQMSEJB.jpr"/>
+      </Item>
+      <Item>
+         <profileURL path="ESupply.deploy"/>
+         <projectURL path="ESupply.jpr"/>
+      </Item>
+   </profileDeps>
+   <properties/>
+</ear-deployment>

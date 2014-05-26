@@ -1,0 +1,162 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Country Master</title>
+</head>
+
+<body>
+
+<table width="100%" border="1">
+  <tbody>
+    <tr>
+      <td width="100%" bgColor="#DF0000"><font face="Arial" size="4" color="#FFFFFF">Country
+        - File Format</font></td>
+    </tr>
+    <tr>
+      <td width="100%" bgColor="#E1E1E1"><font face="Arial" size="2">1) First
+        Row should be Header.<br>
+        2) Every column should have a tab space.<br>
+        3) Country Id, Country Name &amp; Currency ID can be of maximum 2, 30
+        &amp; 3 characters respectively.<br>
+        4) Valid values for REGION are: Asia, Africa, Europe, Australia, North
+        America, South America, Antarctica<br>
+        5) Valid values for AREA are: Area1, Area2 &amp; Area3<br>
+        6) If Allow Modify is not selected then only new country details can be
+        added.<br>
+        7) If Allow Modify is selected then it will update the previous country
+        details<br>
+        8) If &quot;Export exceptions to excel file&quot; is checked then it
+        will export all the un-uploadable country details to an excel file with a
+        extra remarks column which contains the reasons for not uploading that
+        record.<br>
+        9) User can correct the remarks accordingly and upload the generated
+        file, removing the remarks column.<br>
+        10) Show Report will generate an excel report showing all the data
+        accordingly.<br>
+        <br>
+        <b>
+        Note :&nbsp;<br>
+        </b> 1. Open Microsoft Excel Sheet and enter data as mentioned above.&nbsp;<br>
+ 2. Save the
+        file in 'Comma Delimited' (.CSV) format .<br>
+        3.<font color="red">*</font>
+        Denotes Compulsory Fields.<br>
+        4.Comma's
+        are not allowed within a cell.<br>
+        5.If there
+        is any empty Row in between the file then it will be treated as End Of
+        File and the records after the empty row will not be considered for
+        upload.</font></td>
+    </tr>
+  </tbody>
+</table>
+<p><font face="Arial" size="2"><b>Example :</b></font></p>
+<div align="left">
+  <table width="503" height="254">
+    <tr>
+      <th scope="col" width="85" height="8"><font face="Arial" size="2">COUNTRY_ID</font><font face="Arial" size="2"><font color="red">*</font>
+        &nbsp;</font></th>
+      <th scope="col" width="162"height="8">
+        <p align="left"><font face="Arial" size="2">COUNTRY_NAME</font><font face="Arial" size="2"><font color="red">*</font>
+        </font></p>
+      </th>
+      <th scope="col" width="67" height="8">
+        <p align="left"><font face="Arial" size="2">CURR_ID</font><font face="Arial" size="2"><font color="red">*</font>
+        &nbsp;</font></p>
+      </th>
+      <th scope="col" width="120" height="8">
+        <p align="left"><font face="Arial" size="2">REGION</font><font face="Arial" size="2"><font color="red">*</font>
+        </font></p>
+      </th>
+      <th scope="col" width="37" height="8"><font face="Arial" size="2">AREA</font></th>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">ZM</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Zambia</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">ZMK</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">AFRICA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">ZR</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Zaire</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">DOP</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">AFRICA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">ZW</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Zimbabwe</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">ZWD</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">AFRICA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AE</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">United Arab
+        Emirates</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">AED</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">ASIA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AF</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Afghanistan</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">AFN</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">ASIA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AG</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Antigua and
+        Barbuda</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">XCD</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">SOUTH
+        AMERICA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AI</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">ANGUILLA</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">XCD</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">ASIA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">Area2</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AL</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Albania</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">ALL</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">EUROPE</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AM</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">ARMENIA</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">AMD</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">ASIA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">Area1</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AN</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Netherlands
+        Antilles</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">ANG</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">EUROPE</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+    <tr>
+      <td width="85"  height="18"><font face="Arial" size="2">AO</font></td>
+      <td width="162"  height="18"><font face="Arial" size="2">Angola</font></td>
+      <td width="67"  height="18"><font face="Arial" size="2">AOA</font></td>
+      <td width="120"  height="18"><font face="Arial" size="2">AFRICA</font></td>
+      <td width="37"  height="18"><font face="Arial" size="2">&nbsp;</font></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+
+</html>

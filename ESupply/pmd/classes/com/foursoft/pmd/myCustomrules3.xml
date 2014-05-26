@@ -1,0 +1,709 @@
+<?xml version="1.0"?>
+      <ruleset name="My custom rules"
+            xmlns="http://pmd.sf.net/ruleset/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+            xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+	 <description></description>
+
+
+  <rule name="AbstractClassMethDeclarationRule"
+            message="In Abstarct Class Declare default to implement Methods as Abstract-4S-CS-2.3.52"
+            class="com.foursoft.pmd.AbstractClassMethDeclarationRule">
+            <description>
+				Prefer abstract methods in base classes to those with default no-op implementations. The Java compiler will force subclass authors to	implement abstract methods, avoiding problems occurring when they forget to do so but should have
+				-4S-CS-2.3.52
+            </description>
+            <priority>3</priority>
+            
+        <example>
+        <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+    
+        </example> 
+      </rule>
+
+ <rule name="AvoidcallSynMethodRule"
+             message=" Avoid calling a synchronized method in a loop, have synchronization only to the required block of code.-4S-CS-2.3.13"
+             class="com.foursoft.pmd.AvoidcallSynMethodRule">
+              <description>
+				 Avoid calling a "synchronized" method in a loop, have synchronization only to the required block of code-4S-CS-2.3.13
+			 </description>
+                <priority>3</priority>
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	   <rule name="AvoidDeclMultipleVarInaStmtRule"
+             message="Avoid declaring multiple variables in one statement, provides better readability-4S-CS-2.3.15 "
+             class="com.foursoft.pmd.AvoidDeclMultipleVarInaStmtRule">
+              <description>
+				Avoid declaring multiple variables in one statement, provides better readability-4S-CS-2.3.15 
+               </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="AvoidPublicAttributesToJavaBeanRule"
+             message="Avoid public attributes to the java bean holding the business data.-4S-CS-2.3.29"
+             class="com.foursoft.pmd.AvoidPublicAttributesToJavaBeanRule">
+              <description>
+				Avoid public attributes to the java bean holding the business data.-4S-CS-2.3.29
+             </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="AvoidTooLongLinesRule"
+		      message="Avoid too long lines (>80) in the Java source files.-4S-CS-2.3.31"
+             class="com.foursoft.pmd.AvoidTooLongLinesRule">
+              <description>
+			  Avoid too long lines (>80) in the Java source files.-4S-CS-2.3.31
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="CollectionAndStringBufferInitialcapacitiesRule"
+             message="Specify initial capacity for all data collection objects and String Buffer objects-4S-CS-2.3.37 "
+             class="com.foursoft.pmd.CollectionAndStringBufferInitialcapacitiesRule">
+              <description>
+			Specify initial capacity for all data collection objects and String Buffer objects-4S-CS-2.3.37
+ 
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="ConstantsShouldbeFinalRule"
+		       message="Declare all constant fields as “final”-4S-CS-2.3.26"
+             class="com.foursoft.pmd.ConstantsShouldbeFinalRule">
+              <description>
+				Declare all constant fields as “final”-4S-CS-2.3.26
+                </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="ConstantVariableRule"
+             message="All Constants should start with capital letters(All capital letters with embedded Constant) 4S-CS-1.1.6.5"
+             class="com.foursoft.pmd.ConstantVariableRule">
+              <description>
+        All Constants should start with capital letters(All capital letters with embedded Constant) 4S-CS-1.1.6.5"
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="ConstructorFieldsInitializationRule"
+             message="Explicitly initialize all fields in a constructor-4S-CS-2.3.21"
+             class="com.foursoft.pmd.ConstructorFieldsInitializationRule">
+              <description>
+            Explicitly initialize all fields in a constructor-4S-CS-2.3.21
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule> 
+		  <rule name="ControlSerializationTransientRule"
+             message=" Control serialization by modifying unnecessary data variables with ’transient’ key word to avoid unnecessary data transfer over network.-4S-CS-4.4.11"
+             class="com.foursoft.pmd.ControlSerializationTransientRule">
+              <description>
+				 Control serialization by modifying unnecessary data variables with ’transient’ key word to avoid unnecessary data transfer over network.-4S-CS-4.4.11
+               </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule> 
+ <rule name="DontRetrunThisInSessionBeanRule"
+             message="Session Bean method should not return only this. 'return this').-4S-CS-2.3.58"
+             class="com.foursoft.pmd.DontRetrunThisInSessionBeanRule">
+              <description>
+			Define return types as void unless they return results that are not easily) acessible otherwise. (i.e., hardly ever write ``return this''). 
+			Rationale: While convenient, the resulting method cascades (a.meth1().meth2().meth3()) can be the sources of synchronization problems and other failed expectations about the states of target objects-4S-CS-2.3.58
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		 <rule name="EmbedCastsInConditionalRule"
+   message="Embed casts in conditionals (Use instanceOf  in Conditional expressions only)-4S-CS-2.3.51"
+    class="com.foursoft.pmd.EmbedCastsInConditionalRule">
+              <description>
+		Embed casts in conditionals. 
+		For example: 
+		C cx = null;
+		if (x instanceof C) cx = (C)x;
+		else evasiveAction();
+		This forces you to consider what to do if the object is not an instance of the intended class rather than just generating a ClassCastException.-4S-CS-2.3.51
+
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+ <rule name="HandleNullsCorrectlyRule"
+             message=" Handle Nulls Correctly. Check for null condition before calling any methods on the object.-4S-CS-2.3.41"
+             class="com.foursoft.pmd.HandleNullsCorrectlyRule">
+              <description>
+				Handle Nulls Correctly. Check for null condition before calling any methods on the object.-4S-CS-2.3.41
+                </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="InitialCapacitiesforCollectionObjectsRule"
+             message=" Define initial capacities for ArrayList HashSet and LinkedList-4S-CS-2.3.5 "
+             class="com.foursoft.pmd.InitialCapacitiesforCollectionObjectsRule">
+              <description>
+   Define initial capacities for ArrayList HashSet and LinkedList-4S-CS-2.3.5   
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="InitialcapacitySBRule"
+             message="Specify an initial StringBuffer capacity.(default is 16).-4S-CS-2.3.37"
+             class="com.foursoft.pmd.InitialcapacitySBRule">
+              <description>
+			Specify initial capacity for all data collection objects and String Buffer objects-4S-CS-2.3.37
+               </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="InitialocalVariaAtDeclarationTimeRule"
+             message=" Initialize all Local variables at the time of declaration only.-4S-CS-2.3.22"
+             class="com.foursoft.pmd.InitialocalVariaAtDeclarationTimeRule">
+              <description>
+  Initialize all Local variables at the time of declaration only -4S-CS-2.3.22  
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="IsAssignableFromRule"
+             message="Class casting is costly avoid unnecessary casting.Use isAssignableFrom() method instead to check the class type at runtime instead of instanceof operator-4S-CS-2.3.14"
+             class="com.foursoft.pmd.IsAssignableFromRule">
+              <description>
+  Class casting is costly avoid unnecessary casting.Use isAssignableFrom() method instead to check the class type at runtime instead of instanceof operator-4S-CS-2.3.14
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="LoopVariableCheckingRule"
+             message="It is generally accepted to use the letters i, j , k or counter  for For Loops 4S-CS-1.1.11"
+             class="com.foursoft.pmd.LoopVariableCheckingRule">
+              <description>
+           It is generally accepted to use the letters i, j , k or counter  for For Loops 4S-CS-1.1.11(For Variables) 
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="MessageShouldNotHardCodeRule"
+             message="Messages should not be hard coded in the java code, including reports. Messages should be read from property file as a resource bundle.4S-CS-2.3.36"
+             class="com.foursoft.pmd.MessageShouldNotHardCodeRule">
+              <description>
+         Messages should not be hard coded in the java code, including reports. Messages should be read from property file as a resource bundle.4S-CS-2.3.36
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		<rule name="MoveStaticCodetoInitRule"
+             message="Shift any static code to init() method in Servlets.-4S-CS-4.7.1.7"
+             class="com.foursoft.pmd.MoveStaticCodetoInitRule">
+              <description>
+              	Shift any static code to init()-4S-CS-4.7.1.7
+			  </description>
+                <priority>3</priority>
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	   <rule name="NonTransforableObjectsRule"
+             message="Use 'transient' key word for variables of ObjectMessage which need not be transferred like Stream,DataSource,Connection Objects-4S-CS-4.6.14"
+             class="com.foursoft.pmd.NonTransforableObjectsRule">
+              <description>
+			Use 'transient' key word for variables of ObjectMessage which need not be transferred-4S-CS-4.6.14
+    			</description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+ <rule name="ObjectReassigningRule"
+             message="Declare a local variable only at that point in the code where you know what its initial value should be. This minimizes bad assumptions about values of variables.-4S-CS-2.3.47"
+             class="com.foursoft.pmd.ObjectReassigningRule">
+              <description>
+			 Declare a local variable only at that point in the code where you know what its initial value should be. This minimizes bad assumptions about values of variables.-4S-CS-2.3.47
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="OverrideObjectsInSerializationClassRule"
+            message="Override readObject() and writeObject if a Serializable class contains Constructor with non-serializable objects like Thread,Socket etc-4S-CS-2.3.62"
+            class="com.foursoft.pmd.OverrideObjectsInSerializationClassRule">
+            <description>
+			Override readObject and WriteObject if a Serializable class relies on any state that could differ across processes, including, in particular, hashCodes and transient fields. 
+			 Rationale: Otherwise, objects of the class will not transport properly-4S-CS-2.3.62
+            </description>
+            <priority>3</priority>
+            
+        <example>
+        <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+		   <rule name="PreferSynchMethodOverSynchBlockRule"
+             message="Prefer synchronized methods to synchronized blocks for better encsapsulation -4S-CS-2.3.53" 
+             class="com.foursoft.pmd.PreferSynchMethodOverSynchBlockRule">
+              <description>
+  				Prefer synchronized methods to synchronized blocks for better encsapsulation less prone to subclassing snags can be more efficient -4S-CS-2.3.53
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="PrivaConsInUtilityandSingletonClassesRule"
+             message="Declare only private constructors in utility classes and singleton classes.-4S-CS-2.3.16"
+             class="com.foursoft.pmd.PrivaConsInUtilityandSingletonClassesRule">
+              <description>
+				 Declare only "private" constructors in utility classes and singleton classes.-4S-CS-2.3.16
+              </description>
+                <priority>3</priority>
+        <example>
+        <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	   <rule name="RemoveObjectReferencefromVariableRule"
+             message="We can remove an object reference from a variable by setting the variable to null in finally block once after their usage.-4S-CS-4.7.2.2"
+             class="com.foursoft.pmd.RemoveObjectReferencefromVariableRule">
+              <description>
+				We can remove an object reference from a variable by setting the variable to null-4S-CS-4.7.2.2
+
+              </description>
+             <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="ReplaceHashTablewithHashMapRule"
+             message="Replace Hash Table With Hash Map. -4S-CS-2.3.4"
+             class="com.foursoft.pmd.ReplaceHashTablewithHashMapRule">
+              <description>
+				Replace Hash Table With Hash Map. -4S-CS-2.3.4
+
+              </description>
+             <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		 <rule name="ReplaceStringsWithIntegerConstantsRule"
+             message="Replace strings and other objects with integer constants. Compare these integers by Identity.-4S-CS-4.7.1.15"
+             class="com.foursoft.pmd.ReplaceStringsWithIntegerConstantsRule">
+              <description>
+					Replace strings and other objects with integer constants. Compare these integers by Identity.-4S-CS-4.7.1.15
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="ReusableComponentsForDBResourceRule"
+             message="Use 4S Reusable Components to close the Database Connections, Statements, PreparedStatements and ResultSets in Enterprise java Beans and DAO?s.-4S-CS-2.9.3"
+             class="com.foursoft.pmd.ReusableComponentsForDBResourceRule">
+              <description>
+				 Use DBUtil.java class available in 4S Reusable Components to close the Database Connections, Statements, PreparedStatements and ResultSets in Enterprise java Beans and DAO?s.-4S-CS-2.9.3
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="SessionBeanReturningNullRule"
+            message="Don’t rerun null from the business methods of a SessionBean if no business data found -4S-CS-2.4.16"
+            class="com.foursoft.pmd.SessionBeanReturningNullRule">
+            <description>
+	Don’t rerun null from the business methods of a SessionBean if no business data found -4S-CS-2.4.16
+			</description>
+            <priority>3</priority>
+            
+        <example>
+          <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	     <rule name="SessionEntityBeanTryCatchShouldFollowFinallyRule"
+             message="In Session and entity beans try and Catch should be followed by finally -4S-CS-2.4.17"
+             class="com.foursoft.pmd.SessionEntityBeanTryCatchShouldFollowFinallyRule">
+              <description>
+				In Session and entity beans try and Catch should be followed by finally -4S-CS-2.4.17
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="SimplifyStartsWithRule"
+             message="String.startsWith passes literal of length 1 can be rewritten using String.charAt(0)"
+             class="com.foursoft.pmd.SimplifyStartsWithRule">
+              <description>
+ 			  String.startsWith passes literal of length 1 can be rewritten using String.charAt(0)
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="SortMapWithoutUsingTreeMapRule"
+             message="Use the TreeMap to get the sorted output of data in terms of keys. Default sorted order is ascending. -4S-CR-2.3.19"
+             class="com.foursoft.pmd.SortMapWithoutUsingTreeMapRule">
+              <description>
+				Use the TreeMap to get the sorted output of data in terms of keys. Default sorted order is ascending. -4S-CR-2.3.19
+                </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  
+		  <rule name="StaticFieldInitializationRule"
+             message=" Explicitly initialize all static fields -4S-CR-2.3.23"
+             class="com.foursoft.pmd.StaticFieldInitializationRule">
+              <description>
+  				Explicitly initialize all static fields -4S-CR-2.3.23
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="UnsetEntityContextRule"
+            message="Release acquired resources in unSetEntityContext() method -4S-CS-4.4.29"
+            class="com.foursoft.pmd.UnsetEntityContextRule">
+            <description>
+               Release acquired resources in unSetEntityContext() method  -4S-CS-4.4.29         
+            </description>
+            <priority>3</priority>
+            
+        <example>
+          <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	  <rule name="UseArrayInsteadArrayListFixedSizeRule"
+             message="Use Array instead of an ArrayList if the size of the data elements can be fixed-4S-CS-2.3.1"
+             class="com.foursoft.pmd.UseArrayInsteadArrayListFixedSizeRule">
+              <description>
+ Use Array instead of an ArrayList if the size of the data elements can be fixed. ArrayList are slower than Arrays-4S-CS-2.3.1
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		   <rule name="UseArrayListInsteadOfVector"
+             message="Use ArrayList Instead Of Vector -4S-CS-2.3.3"
+             class="com.foursoft.pmd.UseArrayListInsteadOfVector">
+              <description>
+ Use ArrayList Instead Of Vector -4S-CS-2.3.3
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+		  <rule name="UseCustomConversionMethodsRule"
+            message="Use custom conversion methods for converting between data types (especially strings and 
+                          streams) to reduce the number of temporory objects. -4S-CS-4.7.1.13"
+            class="com.foursoft.pmd.UseCustomConversionMethodsRule">
+            <description>
+    	Use custom conversion methods for converting between data types (especially strings and streams) to reduce the number of temporory objects.-4S-CS-4.7.1.13
+            </description>
+            <priority>3</priority>
+            
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	   <rule name="UsenotifyAllVSnotifyRule"
+             message="Classes that uses only notify can normally only support at most one kind of waits condition across all methods in the class and all possible subclasses. And unguarded suspends/resumes are even more fragile -4S-CS-2.3.59"
+             class="com.foursoft.pmd.UsenotifyAllVSnotifyRule">
+              <description>
+         Classes that uses only notify can normally only support at most one kind of waits condition across all methods in the class and all possible subclasses. And unguarded suspends/resumes are even more fragile-4S-CS-2.3.59
+              </description>
+                <priority>3</priority>
+                
+                 <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+      </rule>
+	    <rule name="UsePrimitiveDataTypesInsteadObjectsRule"
+            message="Use primitive datatypes instead of objects as instance variables if applicable-4S-CS-4.7.1.16"
+            class="com.foursoft.pmd.UsePrimitiveDataTypesInsteadObjectsRule">
+             <description>
+             Use primitive datatypes instead of objects as instance variables if applicable-4S-CS-4.7.1.16
+             </description>
+             <priority>3</priority>          
+          <example>
+           <![CDATA[      
+            public void foo() {
+            foo a="abc";
+    	    }
+           ]]>
+         </example>
+    </rule>
+	  <rule name="UseTransientForSessionBeans"
+             message="Use 'transient' key word for unnecessary variables of Stateful session bean to avoid 
+serialization overhead. -4S-CS-4.4.24"
+             class="com.foursoft.pmd.UseTransientForSessionBeans">
+              <description>
+         		Use 'transient' key word for unnecessary variables of Stateful session bean to avoid 
+serialization overhead. -4S-CS-4.4.24
+              </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+	 <rule name="UseTransientKeyasClasslevelVariablesRule"
+             message="Declare the Connection and DataSource as class level variables in Enterprise 
+					  Java Beans and DAO’s with access modifier as transient. -4S-CS-4.1.11"
+
+             class="com.foursoft.pmd.UseTransientKeyasClasslevelVariablesRule">
+              <description>
+					  Declare the Connection and DataSource as class level variables in Enterprise 
+					  Java Beans and DAO’s with access modifier as transient. -4S-CS-4.1.11
+			  </description>
+                <priority>3</priority>          
+        <example>
+         <![CDATA[      
+         public void foo() {
+         foo a="abc";
+    	  }
+
+           ]]>
+        </example>
+         </rule>
+
+     	</ruleset>

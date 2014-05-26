@@ -1,0 +1,54 @@
+<DynamicContent>
+	<chargesmaster>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>chargeid</name>
+			<size>6</size>
+			<maxLength>10</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter(this,"chargeid");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>text</type>
+			<name>chargedesc</name>
+			<size>35</size>
+			<maxLength>50</maxLength>
+			<class>text</class>
+			<onKeyPress></onKeyPress>
+			<onBlur>specialCharFilter(this,"chargeDescription");toUpper(this);</onBlur>
+		</ChildElement>
+		<ChildElement elementType="input" startingElement="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>aircheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>air</name>
+			<labelText>Air</labelText>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>seacheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>sea</name>
+			<labelText>Sea</labelText>
+		</ChildElement>
+		<ChildElement elementType="input" merged="true" class="formdata" align="center">
+			<type>checkbox</type>
+			<name>truckcheckbox</name>
+		</ChildElement>
+		<ChildElement elementType="label" merged="true" class="formdata" align="center">
+			<name>truck</name>
+			<labelText>Truck</labelText>
+		</ChildElement>
+		<ChildElement elementType="select"  class="formdata" align="center">
+			<name>costincurr</name>
+			<type>select</type>
+			<class>select</class>
+			<option value='Origin'>Origin</option>
+			<option value='Destination'>Destination</option>
+		</ChildElement>
+
+	</chargesmaster>
+</DynamicContent>
