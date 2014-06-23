@@ -18,7 +18,7 @@
  * * @date 25-06-2005
  * Modified by      Date     Reason
  */
-package etrans;
+//package etrans;
 import com.foursoft.esupply.common.exception.FoursoftException;
 import com.qms.operations.charges.java.BuySellChargesEnterIdDOB;
 import javax.servlet.http.HttpServlet;
