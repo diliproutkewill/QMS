@@ -9,6 +9,6 @@ import javax.ejb.EJBObject;
 public interface CurrencySession extends EJBObject 
 {
   public void insertCurrencyMasterDetails(ArrayList currConvDOBs) throws	EJBException,RemoteException;
-  public HashMap getUrlProxyDetails()throws EJBException,RemoteException;
+  public HashMap getUrlDetails()throws EJBException,RemoteException;/*@@Modified by Anusha for DHL-4S-CR in Kewill Time & Expense*/
   public boolean checkCurrencyUpdation()throws EJBException,RemoteException;
 }

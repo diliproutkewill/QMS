@@ -46,6 +46,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 
+import weblogic.utils.FileUtils;
+
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.dom.DOMSource;
@@ -55,8 +57,11 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.Locale;
+import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
 import com.foursoft.esupply.common.util.Logger;
@@ -115,7 +120,8 @@ public class JobSchedulerProcess implements StatefulJob
 			} 
 	    Logger.info(FILE_NAME,">>> currencyProcess ended.");
 	 }
-	 private ArrayList getCurrencyDOBs() throws Exception
+	/*@@Commented by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	/*private ArrayList getCurrencyDOBs() throws Exception
 	 {
 		 Logger.info(FILE_NAME,">>> getCurrencyDOBs called.");
 	    ArrayList currArr = new ArrayList();
@@ -152,7 +158,7 @@ public class JobSchedulerProcess implements StatefulJob
 			}
 			out.close();
 			in.close();*/
-	    Logger.info(FILE_NAME,">>> isFileDownloaded "+isFileDownloaded);
+	    /*Logger.info(FILE_NAME,">>> isFileDownloaded "+isFileDownloaded);
 	    if(isFileDownloaded)
 	    {
 	    	Logger.info(FILE_NAME,">>> isFileDownloaded called.");
@@ -235,12 +241,167 @@ public class JobSchedulerProcess implements StatefulJob
 	   }
 	    Logger.info(FILE_NAME,">>> getCurrencyDOBs ended.");
 	   return currArr;
-	 }
-	 private HashMap getUrlProxyDatails()
+	 }*/
+	/*@@Commented by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	/*@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	private ArrayList getCurrencyDOBs() throws Exception
 	 {
-		 Logger.info(FILE_NAME,">>> getUrlProxyDatails called.");
+		Logger.info(FILE_NAME,">>> getCurrencyDOBs called.");
+	    ArrayList currArr = new ArrayList();
+	    HashMap urlDetails = null;
+	    urlDetails = getUrlDetails();
+	    String currencyURL  = null;    
+	    boolean isFileDownloaded = false;
+	    Collection cl=urlDetails.values();
+    	//System.out.println(cl.size());
+    	Iterator it=cl.iterator();
+    	ArrayList urls = new ArrayList();
+    	while(it.hasNext())
+    	{
+    		String s=(String)it.next();
+    		if(s.contains("xml"))
+    		{
+    			urls.add(s);
+    			System.out.println("url"+s);
+    		}
+    	}
+    	//System.out.println("size"+urls.size());
+    	deleteDirectory();//This method is used to delete the existing files in xmls directory
+    	if(urlDetails!=null)
+	    {
+	    	for(int j=0;j<urls.size();j++)
+	    	{
+	    	  currencyURL  = (String)urls.get(j);
+			  //System.out.println("currency url"+currencyURL);
+	    	  /*This method is used to get the key value(filename) using CurrencyURL*/
+	          String key=getKeyFromValue(urlDetails,currencyURL);
+	          String file=key+".xml";
+	          isFileDownloaded = doURLRequest(currencyURL,file);
+	          Logger.info(FILE_NAME,">>> isFileDownloaded "+isFileDownloaded);
+	          if(isFileDownloaded)
+	          {
+	    	   Logger.info(FILE_NAME,">>> isFileDownloaded called.");
+	    	   String path="xmls/"+file;
+	           File docFile = new File(path);	
+	           CurrencyConversionDOB currDob = null;
+	           Document doc = null;
+	           try 
+	           {
+	             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+	             DocumentBuilder db = dbf.newDocumentBuilder();
+	             doc = db.parse(docFile);
+	           } 
+	           catch (java.io.IOException e) 
+	           {
+	             //System.out.println("Can't find the file");
+	             Logger.info(FILE_NAME,">>> Can't find the file.");
+	             Logger.error(FILE_NAME, " [error in getCurrencyDOBs()] -> "+e.toString());
+	           } 
+	           catch (Exception e) 
+	           {
+	            //System.out.print("Problem parsing the file.");
+	            Logger.info(FILE_NAME,">>> Problem in parsing the file.");
+	            Logger.error(FILE_NAME, " [error in getCurrencyDOBs()] -> "+e.toString());
+	           }
+	           Element root = doc.getDocumentElement();						 
+	           //NodeList children  = root.getChildNodes();
+	           //System.out.println(root.getNodeName());
+               Node child = root.getFirstChild();
+               String base=null;
+               for (child = root.getFirstChild();child != null;child = child.getNextSibling())
+	           {  
+			    if(child.getNodeName().equalsIgnoreCase("base_currency"))
+	        	base=child.getFirstChild().getNodeValue();
+	            if (child.getNodeType() == child.ELEMENT_NODE)
+	            {
+	              if(child.getNodeName().equalsIgnoreCase("quotes")) 
+	              {				
+	        	    NodeList list=child.getChildNodes();
+	        	    //System.out.println(list.getLength());
+	          	    for (int i=0;i<list.getLength();i++)
+	                {
+	        	      currDob = new CurrencyConversionDOB();
+	        	      currDob.setConvFrom(base);
+	                  Node nd = list.item(i);
+	                  if(nd.getNodeType() == child.ELEMENT_NODE)
+	                  {
+	            	    for(Node c=nd.getFirstChild();c != null;c = c.getNextSibling())
+	            	    {
+	                    if(null!=c.getFirstChild())
+	                    {
+	                      if(c.getNodeName().equalsIgnoreCase("ask"))
+	                      {
+	                        currDob.setExchangeSell(c.getFirstChild().getNodeValue().equalsIgnoreCase("na")? 0.0D : Double.parseDouble(c.getFirstChild().getNodeValue()));
+	                        //System.out.println(nd.getNodeName()+" = "+nd.getFirstChild().getNodeValue()+" -- "+currDob.getExchangeSell());
+	                      }
+	                      else if(c.getNodeName().equalsIgnoreCase("bid"))
+	                      {
+	                        currDob.setExchangeBuy(c.getFirstChild().getNodeValue().equalsIgnoreCase("na")? 0.0D :Double.parseDouble(c.getFirstChild().getNodeValue()));
+	                        //System.out.println(nd.getNodeName()+" = "+nd.getFirstChild().getNodeValue()+" -- "+currDob.getExchangeBuy());
+	                      }
+	                      else if(c.getNodeName().equalsIgnoreCase("currency"))
+		                  {
+		                    currDob.setConvTo(c.getFirstChild().getNodeValue());
+		                    //System.out.println(child.getNodeName()+" = "+child.getFirstChild().getNodeValue()+" -- "+currDob.getConvTo());
+		                  }
+	                    }
+	                   }
+	               
+	               /*System.out.println(currDob.getConvFrom());
+	               System.out.println(currDob.getConvTo());
+	               System.out.println(currDob.getExchangeSell());
+	               System.out.println(currDob.getExchangeBuy());*/
+	               currArr.add(currDob);
+	               
+	                }
+	              }
+	            }
+	         }
+	        
+	      }
+	      }
+	    }
+	     
+	   }
+	    Logger.info(FILE_NAME,">>> getCurrencyDOBs ended.");
+	   return currArr;
+	 }
+	/*@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	/*@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	private void deleteDirectory() {
+		// TODO Auto-generated method stub
+		if(new File("xmls").exists()){
+		    File cd=new File("xmls");
+			final File[] files = cd.listFiles();
+			if(files.length>0){
+			for(int i=0;i<files.length;i++)
+			{
+				files[i].delete();
+			}
+			}
+			//cd.delete();
+		}
+	}
+	/*@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	/*@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	/*used to get key value using url*/
+	private String getKeyFromValue(HashMap urlDetails, String currencyURL) {
+		// TODO Auto-generated method stub
+		 String key =null;
+		 for(Object o:urlDetails.keySet()){
+		        if(urlDetails.get(o).equals(currencyURL)) {
+		            key=(String)o;
+		            System.out.println(key);
+		        }
+		    }
+		return key;
+	}
+	/*@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense*/
+	private HashMap getUrlDetails()
+	 {
+		 Logger.info(FILE_NAME,">>> getUrlDetails called.");
 	    //System.out.println("In getUrlProxyData() ");
-	    HashMap urlProxyDetails    =  null;
+	    HashMap urlDetails    =  null;
 	    CurrencySessionHome home   =  null;
 	    CurrencySession     remote =  null;
 	    
@@ -248,15 +409,15 @@ public class JobSchedulerProcess implements StatefulJob
 	    {      
 	      home        = (CurrencySessionHome)LookUpBean.getEJBHome("CurrencySession");
 	      remote      = home.create();
-	      urlProxyDetails = remote.getUrlProxyDetails();
+	      urlDetails = remote.getUrlDetails();
 	    }    
 	    catch(Exception ex)
 			{
 	      ex.printStackTrace();
 				Logger.error(FILE_NAME, " [error in handleNotification()] -> "+ex.toString());
 			}
-	    Logger.info(FILE_NAME,">>> getUrlProxyDatails end.");
-	    return urlProxyDetails;
+	    Logger.info(FILE_NAME,">>> getUrlDetails end.");
+	    return urlDetails;
 	 }
 	 private static Timestamp getTimestampWithTime(String str1)
 		{
@@ -324,7 +485,8 @@ public class JobSchedulerProcess implements StatefulJob
 	  timeStamp = new Timestamp((gc.getTime()).getTime());
 	  return timeStamp;
 	 }
-	 private boolean doURLRequest(String strURL, String strProxy, int iProxyPort)
+	//@@Commented by Anusha for DHL-4S-CR in Kewill Time & Expense//
+	 /*private boolean doURLRequest(String strURL, String strProxy, int iProxyPort)
 		{
 		 Logger.info(FILE_NAME,">>> doURLRequest called.");
 			boolean rc = false;
@@ -455,7 +617,122 @@ public class JobSchedulerProcess implements StatefulJob
 			}
 			Logger.info(FILE_NAME,">>> doURLRequest end ");
 	    return rc;
+		}*/
+	//@@Commented by Anusha for DHL-4S-CR in Kewill Time & Expense//
+	//@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense//
+	 private boolean doURLRequest(String strURL,String file)
+		{
+		 Logger.info(FILE_NAME,">>> doURLRequest called.");
+			boolean rc = false;
+
+			URL url = null;
+			URLConnection c = null;
+
+			try
+			{
+				URL urlOriginal = new URL(strURL);
+				url = urlOriginal;
+				Logger.info(FILE_NAME,">>> URL"+url);
+				c = url.openConnection();
+
+				// In this example, we only consider HTTP connections.
+				if (c instanceof HttpURLConnection)// instanceof returns true only if the object is not null.
+				{
+
+					Logger.info(FILE_NAME,">>> before Connect ");
+					HttpURLConnection h = (HttpURLConnection) c;
+					h.connect();
+					String strStatus = h.getResponseMessage() + " (" + h.getResponseCode() + ")";
+					/*if(h.getResponseCode()!=200)
+					{
+						return false;
+					}*/
+					Logger.info(FILE_NAME,">>> h.getResponseMessage():"+h.getResponseMessage());
+					Logger.info(FILE_NAME,">>> h.getResponseCode():"+h.getResponseCode());
+					// Evidently, index 0 always returns null, so we start with index 1.
+					for (int i = 1; ; i++)
+					{
+						String strKey = h.getHeaderFieldKey(i);
+						if (null == strKey)
+						{
+							break;
+						}
+					}
+
+					// Normally at this point, one would download data from the connection.
+					// For example, if the MIME type is xml, then download the string.
+					String strContentType = h.getContentType();			
+					
+					Logger.info(FILE_NAME,">>> strContentType:"+strContentType);
+					//Logger.info(FILE_NAME,">>> getResponseCode:"+h.getResponseCode());
+				  if ((null != strContentType) && (0 == strContentType.compareTo("text/xml; charset=utf-8")))
+					{		
+					  	int iNumLines = 0;
+
+							try
+							{
+								
+								InputStream in = h.getInputStream();
+								BufferedReader data = new BufferedReader(new InputStreamReader(in));
+								String str = null;
+								File cd=new File("xmls");
+								if(!cd.exists()){
+								cd.mkdir();
+								}
+								String path="xmls/"+file;
+								BufferedWriter out = new BufferedWriter(new FileWriter(path));
+								while ((str = data.readLine()) != null) {          
+								out.write(str);
+								iNumLines++;
+									}
+									out.close();
+									in.close();
+	                data.close();
+							}
+							catch(Exception exc2)
+							{
+								//System.out.println("**** IO failure: " + exc2.toString());
+								Logger.error(FILE_NAME, " [error in doURLRequest()] -> "+exc2.toString());
+								return rc;
+							}
+							finally
+							{							
+								//System.out.println("Received text/xml has " + iNumLines + " lines");
+								Logger.info(FILE_NAME,">>> Received text/xml has "+ iNumLines + " lines");
+								
+							}
+					}
+				  h.disconnect();
+				}
+				else
+				{
+					Logger.info(FILE_NAME,">>> No download: connection was not HTTP ");
+				}
+				rc = true;
+			}
+			// Catch all exceptions.
+			catch(Exception exc)
+			{
+				//System.out.println("**** Connection failure: " + exc.toString());
+				Logger.info(FILE_NAME,">>> in catch Connect ");
+				Logger.error(FILE_NAME, " [error in doURLRequest()] -> "+exc.toString());
+				// System.out.println("**** Connection failure: " + exc.getMessage());// Same as above line but without the exception class name.
+			}
+			finally
+			{
+				// Do cleanup here.
+				// For example, the following, in theory, could make garbage collection more efficient.
+				// This might be the place where you choose to put your method call to your connection's "disconnect()";
+				// curiously, while every URLConnection has a connect() method, they don't necessarily have a disconnect() method.
+				// HttpURLConnection has a disconnect() which is called above.
+				c = null;
+				url = null;
+                
+				
+			}
+			Logger.info(FILE_NAME,">>> doURLRequest end ");
+	    return rc;
 		}
-	
+	//@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense//
 			
 }

@@ -147,14 +147,28 @@ public class CurrencySessionBean implements SessionBean
         pStmt.setTimestamp(8,timeStamp);
         pStmt.addBatch();
       }
-      pStmt.executeBatch();
+      //@@Commented by Anusha for DHL-4S-CR in Kewill Time & Expense//
+      /*pStmt.executeBatch();
+      upStmt = connection.prepareStatement(updateQry);
+      upStmt.setString(1,displayString);
+      upStmt.executeUpdate();
       
+      csmt  = connection.prepareCall("{call currency_archival()}");
+      csmt.execute();*/
+      //@@Commented by Anusha for DHL-4S-CR in Kewill Time & Expense//
+      //@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense//
+      int rowseffected[]=pStmt.executeBatch();
+      if(rowseffected.length>0)
+      {
       upStmt = connection.prepareStatement(updateQry);
       upStmt.setString(1,displayString);
       upStmt.executeUpdate();
       
       csmt  = connection.prepareCall("{call currency_archival()}");
       csmt.execute();
+      }
+    //@@Added by Anusha for DHL-4S-CR in Kewill Time & Expense//
+      //@@Added by subrahmanyam for the Enhancement 146444 on 10/02/09//
 
     }
     catch(EJBException sqEx)
@@ -219,22 +233,22 @@ public class CurrencySessionBean implements SessionBean
 		}
 		return connection;
 	}
-  public HashMap getUrlProxyDetails() throws EJBException
+  public HashMap getUrlDetails() throws EJBException
   {
     Connection          conn        =   null;
     Statement           stmt        =   null;
     ResultSet           rs          =   null;
-    String              urlProxyQry =   " SELECT * FROM QMS_CURRENCY_CONFIGURATION ";
-    HashMap             urlProxyDetails = new HashMap();
+    String              urlQry =   " SELECT * FROM QMS_CURRENCY_CONFIGURATION ";
+    HashMap             urlDetails = new HashMap();
     try
     {
       conn  = this.getConnection();
       stmt  = conn.createStatement();
-      rs    = stmt.executeQuery(urlProxyQry);
+      rs    = stmt.executeQuery(urlQry);
       while(rs.next())
       {
         if(rs.getString("KEY")!=null && rs.getString("VALUE")!=null)
-        urlProxyDetails.put(rs.getString("KEY"),rs.getString("VALUE"));
+        urlDetails.put(rs.getString("KEY"),rs.getString("VALUE"));
       }      
     }
     catch(EJBException ejb)
@@ -274,6 +288,6 @@ public class CurrencySessionBean implements SessionBean
         throw new EJBException(e);
       }
     }
-    return urlProxyDetails;
+    return urlDetails;
   }
 }
