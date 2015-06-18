@@ -246,7 +246,7 @@ public void contextDestroyed(ServletContextEvent event)
     {      
       home        = (CurrencySessionHome)LookUpBean.getEJBHome("CurrencySession");
       remote      = home.create();
-      urlProxyDetails = remote.getUrlProxyDetails();
+      urlProxyDetails = remote.getUrlDetails();/*@@Modified by Anusha for DHL-4S-CR in Kewill Time & Expense*/
     }    
     catch(Exception ex)
 		{
