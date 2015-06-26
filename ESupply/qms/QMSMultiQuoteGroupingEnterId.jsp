@@ -308,7 +308,10 @@ function toUpperCase(obj)
         <td>
          <table width="100%" cellpadding="4" cellspacing="0">
 			<tr valign="top" class='formlabel'>
-			   <td colspan="12" width="903">Quote - Group</td>
+			   <!-- Commented by Anusha V -->
+			   <!-- <td colspan="12" width="903">Quote - Group</td> -->
+			   <!-- Added by Anusha V -->
+			   <td colspan="12" width="903">MultiQuote - Group</td>
 			   <td align="right">QS1060211</td>
 			</tr>
 	     </table>

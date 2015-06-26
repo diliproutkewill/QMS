@@ -209,7 +209,7 @@ function mandatory()
 
 		<table width="100%" cellpadding="0" cellspacing="0">
 		  <tr valign="top" class="formlabel">
-			<td	colspan="2"><table cellpadding="4" cellspacing="1" width="100%"><tr class='formlabel'><td align='right'>EXPORT AIR FREIGHT QUOTE <%//=operation%></td><td align=right>QS1060212</td></tr></table></td>
+			<td	colspan="2"><table cellpadding="4" cellspacing="1" width="100%"><tr class='formlabel'><td align='right'>FREIGHT QUOTE <%//=operation%></td><td align=right>QS1060212</td></tr></table></td>
 		  </tr></table>
 <%
         for(int k=0;k<mainDtl.size();k++)
