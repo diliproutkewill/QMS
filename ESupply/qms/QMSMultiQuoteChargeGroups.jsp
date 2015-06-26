@@ -71,7 +71,7 @@ Author    		: K Rakesh
 			<table width="800" cellpadding="4" cellspacing="1">
 			  <tr valign="top" class='formlabel'>
 			    <td colspan="3"><table width="710" border="0" ><tr class='formlabel'>
-			      <!-- Commented by Anusha V -->
+			    <!-- Commented by Anusha V -->
 			    <!-- <td>Quote Grouping</td> -->
 			    <!-- Added by Anusha V -->
 			      <td>MultiQuote Grouping</td>
@@ -88,17 +88,24 @@ Author    		: K Rakesh
 	       <% 
               while(chargeGroups.hasNext())
 		      {  
+		         
 		         chargedesc=(String)chargeGroups.next();
+		         
+		         
 				 quoteIds=(String)quoteGroupsDtl.get(chargedesc);
+				 
 				 if("null".equalsIgnoreCase(chargedesc) || chargedesc==null)
 					chargedesc	=	"-";
+					if(quoteIds.length()>0)
 		         appendQuotes=quoteIds.substring(0,quoteIds.length()-1)+","+appendQuotes;
+		         
 			%>
-		   <tr class="formdata"> 
-		    <% 
+		   <tr class="formdata">
+		   <% 
 	            if(quoteIds.length()>0)	{  %> 
 				<td><%=quoteIds.substring(0,quoteIds.length()-1)%></td>
-				<td colspan="4"><%=chargedesc%></td><input type="hidden" name="quoteGroupIds" value='<%=appendQuotes%>'> 
+				<td colspan="4"><%=chargedesc%></td><input type="hidden" name="quoteGroupIds" value='<%=appendQuotes%>'>
+				<%}%> 
 			 </tr>
 		   <%
 			  } 
