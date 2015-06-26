@@ -71,7 +71,10 @@ Author    		: K Rakesh
 			<table width="800" cellpadding="4" cellspacing="1">
 			  <tr valign="top" class='formlabel'>
 			    <td colspan="3"><table width="710" border="0" ><tr class='formlabel'>
-			      <td>Quote Grouping</td>
+			      <!-- Commented by Anusha V -->
+			    <!-- <td>Quote Grouping</td> -->
+			    <!-- Added by Anusha V -->
+			      <td>MultiQuote Grouping</td>
 			      <td align=right>
 						</td></tr></table></td><td align=right>QS1012511</td>
 			  
