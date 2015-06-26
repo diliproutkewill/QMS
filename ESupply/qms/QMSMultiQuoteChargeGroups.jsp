@@ -95,6 +95,8 @@ Author    		: K Rakesh
 		         appendQuotes=quoteIds.substring(0,quoteIds.length()-1)+","+appendQuotes;
 			%>
 		   <tr class="formdata"> 
+		    <% 
+	            if(quoteIds.length()>0)	{  %> 
 				<td><%=quoteIds.substring(0,quoteIds.length()-1)%></td>
 				<td colspan="4"><%=chargedesc%></td><input type="hidden" name="quoteGroupIds" value='<%=appendQuotes%>'> 
 			 </tr>
