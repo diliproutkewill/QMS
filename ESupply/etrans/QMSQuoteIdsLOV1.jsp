@@ -25,8 +25,8 @@
 				com.foursoft.esupply.common.util.Logger,
 				com.qms.operations.quote.ejb.sls.QMSQuoteSession,
 				com.qms.operations.quote.ejb.sls.QMSQuoteSessionHome,
-				com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSession,	 //Added by Rakesh on 12-01-2010
-				com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionHome,	  //Added by Rakesh on 12-01-2010
+				com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSession,	 
+				com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionHome,	  
 				com.foursoft.esupply.common.java.LOVListHandler,
 				com.qms.operations.quote.dob.QuoteMasterDOB,
 				com.foursoft.esupply.common.java.FoursoftConfig" %>
