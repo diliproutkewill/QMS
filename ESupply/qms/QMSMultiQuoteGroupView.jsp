@@ -236,6 +236,15 @@ function mandatory()
        <table width="100%" cellpadding="4" cellspacing="1" bgcolor='#FFFFFF'>
 		<tr class="formdata">
               <td width='42%'>QUOTEID : <%=masterDOB.getQuoteId()%></td>
+              <!-- Modified by Anusha V -->
+              <td colspan="7" >&nbsp;&nbsp;ORIGIN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<%=costingMasterDOB.getOrigin()!=null?costingMasterDOB.getOrigin().toUpperCase():""%>  </td></tr>
+		<tr class="formdata">
+			  <td>&nbsp;</td>
+			  <td colspan="7">&nbsp; DESTINATION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<%=costingMasterDOB.getDestination()!=null?costingMasterDOB.getDestination().toUpperCase():""%></td>
+			  </tr>
+			  <tr class="formdata">
+			  <td>&nbsp;</td>
+			  <!-- Modified by Anusha V -->
 			  <td colspan="7">&nbsp;&nbsp;CUSTOMER NAME:&nbsp;<%=headerDOB.getCustomerName()!=null?headerDOB.getCustomerName():""%></td>
             </tr>
 			<tr class="formdata">
@@ -312,15 +321,15 @@ function mandatory()
 <!-- @@ Ended by subrahmanyam for the WPBN ISSUE:150460 ON 23/12/2008 -->
 			 <!--  <td colspan="4" ><%=headerDOB.getCargoAcceptancePlace()!=null?headerDOB.getCargoAcceptancePlace():""%></td> -->
           <!--   </tr>
+			<!-- Modified by Anusha V -->
 			<tr class="formdata">
               <td colspan="4" >Origin Port: </td>
-			  <td colspan="4" ><%=headerDOB.getOriginPortName()!=null?headerDOB.getOriginPortName()+", ":""%><%=headerDOB.getOriginPortCountry()!=null?headerDOB.getOriginPortCountry():""%></td>
+			  <td colspan="4" ><%=costingMasterDOB.getOrigin()!=null?costingMasterDOB.getOrigin()+", ":""%><%=costingMasterDOB.getOriginCountryName()!=null?costingMasterDOB.getOriginCountryName():""%></td>
             </tr>
 			<tr class="formdata">
               <td colspan="4">Destination Port: </td>
-			  <td colspan="4"><%=headerDOB.getDestPortName()!=null?headerDOB.getDestPortName()+", ":""%><%=headerDOB.getDestPortCountry()!=null?headerDOB.getDestPortCountry():""%></td>
-            </tr> -->
-			  
+			  <td colspan="4"><%=costingMasterDOB.getDestination()!=null?costingMasterDOB.getDestination()+", ":""%><%=costingMasterDOB.getDestCountryName()!=null?costingMasterDOB.getDestCountryName():""%></td>
+            </tr> 
               <!-- Commented by subrahmanyam for the enhancement #148546 on 09/12/2008 -->
 			<!-- <tr class="formdata">
               <td colspan="4" >Routing: </td>
