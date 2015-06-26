@@ -164,6 +164,7 @@ public class QMSMultiQuoteSessionBean implements SessionBean
       logger.error(FILE_NAME+"Exception in getConnectin() method of QMSMultiQuoteSessionBean.java: "+e.toString());
     }
     return con;
+  
   }
   
  /**
@@ -5776,7 +5777,10 @@ public ArrayList  getQuoteGroups(String[] quoteIds,ESupplyGlobalParameters login
  try
  {      
     connection        =    this.getConnection();
-    query             =   "SELECT  M.QUOTE_ID,C.CHARGEGROUPID  FROM QMS_QUOTE_MASTER M,QMS_QUOTE_CHARGEGROUPDTL C WHERE M.QUOTE_ID=? AND M.VERSION_NO=(SELECT MAX(VERSION_NO) FROM QMS_QUOTE_MASTER WHERE QUOTE_ID=?) AND M.ID=C.ID AND IS_MULTI_QUOTE='Y'";                    
+    //Commented by Anusha V
+    //query             =   "SELECT  M.QUOTE_ID,C.CHARGEGROUPID  FROM QMS_QUOTE_MASTER M,QMS_QUOTE_CHARGEGROUPDTL C WHERE M.QUOTE_ID=? AND M.VERSION_NO=(SELECT MAX(VERSION_NO) FROM QMS_QUOTE_MASTER WHERE QUOTE_ID=?) AND M.ID=C.ID AND IS_MULTI_QUOTE='Y'";
+  //Added by Anusha V
+    query             =   "SELECT  M.QUOTE_ID,C.CHARGEGROUPID  FROM QMS_QUOTE_MASTER M,QMS_QUOTE_CHARGEGROUPDTL C WHERE M.QUOTE_ID=? AND M.VERSION_NO=(SELECT MAX(VERSION_NO) FROM QMS_QUOTE_MASTER WHERE QUOTE_ID=?) AND M.ID=C.QUOTE_ID AND IS_MULTI_QUOTE='Y'";
     psmt              =   connection.prepareStatement(query);
     int quoteIdLen	=	quoteIds.length;
     for(int m=0;m<quoteIdLen;m++)
@@ -5833,6 +5837,7 @@ public CostingMasterDOB getQuoteRateInfo(CostingHDRDOB costingHDRDOB,ESupplyGlob
 
   return costingMasterDOB;
 }
+
 //Added for the Issue 234719
 public MultiQuoteFinalDOB getUpdatedQuoteInfo(long uniqueId,String changeDesc,String sellBuyFlag,String buyRatesFlag,ESupplyGlobalParameters loginbean,String quoteType) throws EJBException
 {

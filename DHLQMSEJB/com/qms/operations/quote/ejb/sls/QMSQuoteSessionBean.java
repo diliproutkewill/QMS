@@ -127,6 +127,9 @@ public class QMSQuoteSessionBean implements SessionBean
     return con;
   }
   
+  
+ 
+  
   /**
 	 * This method helps in inserting the quote master details by calling the entity bean
    * 
@@ -5018,7 +5021,10 @@ psmt  = connection.prepareStatement(s);
          connection        =    this.getConnection();
          //query             =   "SELECT DISTINCT QUOTE_ID FROM QMS_QUOTE_MASTER WHERE CUSTOMER_ID=? AND ORIGIN_LOCATION IN(?) AND DEST_LOCATION IN(?)";
          query.append("SELECT DISTINCT QUOTE_ID FROM QMS_QUOTE_MASTER WHERE ACTIVE_FLAG='A' AND SHIPMENT_MODE=").append(masterDOB.getShipmentMode()).append(" ");
-         query.append(" AND QUOTE_STATUS NOT IN ('QUE') AND ESCALATION_FLAG='N' ");
+         //Commented by Anusha V
+         //query.append(" AND QUOTE_STATUS NOT IN ('QUE') AND ESCALATION_FLAG='N' ");
+         //Added by Anusha V 
+         query.append(" AND QUOTE_STATUS NOT IN ('QUE') AND ESCALATION_FLAG='N' AND IS_MULTI_QUOTE='N' ");
          if(masterDOB.getCustomerId()!=null && masterDOB.getCustomerId().trim().length()!=0)
             query.append("AND ").append("CUSTOMER_ID='").append(masterDOB.getCustomerId()).append("' ");
          if(masterDOB.getOriginLocation()!=null && masterDOB.getOriginLocation().trim().length()!=0)

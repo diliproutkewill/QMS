@@ -108,6 +108,7 @@ import com.qms.operations.multiquote.dob.MultiQuoteMasterDOB;
 import com.qms.operations.multiquote.dob.MultiQuoteTiedCustomerInfo;
 import com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSession;
 import com.qms.operations.multiquote.ejb.sls.QMSMultiQuoteSessionHome;
+import com.qms.operations.quote.dao.QMSQuoteDAO;
 import com.qms.operations.quote.dob.QuoteCartageRates;
 import com.qms.operations.quote.dob.QuoteCharges;
 import com.qms.operations.quote.dob.QuoteFreightLegSellRates;
@@ -964,6 +965,7 @@ public void doMasterInfo(HttpServletRequest request, HttpServletResponse respons
             	//finalDOB  = doGetHeaderAndCharges(request,response);
                 session.setAttribute("finalDOB",finalDOB);
                 request.setAttribute("fromWhere","qms/QMSMultiQuoteMaster.jsp");
+                
                 doDispatcher(request, response, "qms/QMSMultiQuoteChargesSelect.jsp?count="+count);
             }
             }
@@ -5591,8 +5593,10 @@ quoteStatus="NAC";
 	            /*PdfPCell hLine = new PdfPCell(new Phrase(""));
 	            hLine.setBorder(PdfPCell.NO_BORDER);*/
 	            
-	            if(originChargesSize>0)
+	            if(originChargesSize<=0)
 					    {
+	            	continue;
+					    }
 	               /*  if(b1>1)
 	                {
 	                 chk = new Chunk("QUOTE REFERENCE:"+masterDOB.getQuoteId(),FontFactory.getFont("ARIAL", 10, Font.BOLD,Color.BLACK));
@@ -5955,10 +5959,9 @@ quoteStatus="NAC";
 	            	pTable.addCell(pCell);
 	            	document.add(pTable);
 	            	
-					} // Added by Gowtham on 01-Feb-2011.
+					//} // Added by Gowtham on 01-Feb-2011.
 	          //@@Added by kiran.v on 31/01/2012 for Wpbn Issue-287659
-	           // if( originChargesSize >0)
-                	//document.newPage(); 
+	           
 	            }
 	              pTable = new PdfPTable(1);
 	              pTable.setSpacingAfter(10f);
@@ -8960,6 +8963,7 @@ try
        
        Table partZone = null;
        Cell cellZone;
+      
       if(pickUpQuoteCartageRates!=null&&pickUpQuoteCartageRates.size()>0)
       {
         /*Set keys = null;            
@@ -9074,6 +9078,7 @@ try
         
         
         int pikupQuoteCartRatSize	=	pickUpQuoteCartageRates.size();
+        label0:
         for(int i=0;i<pikupQuoteCartRatSize;i++)
         {  
           pickQuoteCartageRates = (MultiQuoteCartageRates) pickUpQuoteCartageRates.get(i); // By Kishore For Multiple Zone Code
@@ -9090,6 +9095,7 @@ try
           partZone.addCell(cellZone);
           
           pickUpZoneCodeMap   =  pickQuoteCartageRates.getRates();
+          
           /*breaksSet = pickBreaks.iterator();
           while(breaksSet.hasNext())
            {
@@ -9108,30 +9114,37 @@ try
             cellZone.setNoWrap(true);            
             partZone.addCell(cellZone); 
            }*/
-           if(pickupWeightBreaks!=null)
-           {
-             String wBreak =  null;
-             for(int k=0;k<pickupWeightBreaksSize;k++)
-             {
-               wBreak = (String)pickupWeightBreaks.get(k);
-               if(wBreak!=null && pickUpZoneCodeMap.containsKey(wBreak))
-               {
-                chargeRate = (String)pickUpZoneCodeMap.get(wBreak);
-                chargeRate  = df.format(Double.parseDouble(chargeRate));
-               }
-               else
-               {
-                chargeRate = "--";              
-               }
-              chk = new Chunk(chargeRate,FontFactory.getFont("ARIAL", 8, Font.BOLD,Color.BLACK));
+          
+         
+      // ------------------------------------------------------  //added by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
+          if(pickupWeightBreaks == null)
+          {
+              continue;
+          }
+          String wBreak = null;
+          int k = 0;
+          do
+          {
+              if(k >= pickupWeightBreaksSize)
+              {
+                  continue label0;
+              }
+              wBreak = (String)pickupWeightBreaks.get(k);
+              if(wBreak != null && pickUpZoneCodeMap.containsKey(wBreak))
+              {
+                  chargeRate = (String)pickUpZoneCodeMap.get(wBreak);
+                  chargeRate = df.format(Double.parseDouble(chargeRate));
+              } else
+              {
+                  chargeRate = "--";
+              }
+              chk = new Chunk(chargeRate, FontFactory.getFont("ARIAL", 8F, 1, Color.BLACK));
               cellZone = new Cell(chk);
-              cellZone.setLeading(8.0f);
-              //cellZone.setNoWrap(true);            
-              partZone.addCell(cellZone); 
-             }
-           }
-         }
-        //System.out.println("After zone header------------------------------>");
+              cellZone.setLeading(8F);
+              partZone.addCell(cellZone);
+              k++;
+          } while(true);
+      }
         document.add(partZone);
         }
         if(deliveryQuoteCartageRates!=null&&deliveryQuoteCartageRates.size()>0)
@@ -9787,6 +9800,9 @@ private void quoteGroupsDtl(HttpServletRequest request,HttpServletResponse respo
   String[]                  quoteValues       = null;
  HttpSession  session      = request.getSession();
   ArrayList                 mainDtl           = new ArrayList();
+  
+  QMSQuoteDAO qqd=new QMSQuoteDAO();
+  List lanedtls;
   try
   {
     quoteId     = (String[])session.getAttribute("quoteIdDtl");
@@ -9801,22 +9817,37 @@ private void quoteGroupsDtl(HttpServletRequest request,HttpServletResponse respo
     int quoteIdLen	=	quoteId.length;
     for(int m=0;m<quoteIdLen;m++)
     {
-     
      costingHDRDOB = new CostingHDRDOB();
      finalDOB      = null; 
      costingHDRDOB.setQuoteid(quoteId[m]);          
-     finalDOB    = remote.getMasterInfo(quoteId[m],loginbean); 
+     /*finalDOB    = remote.getMasterInfo(quoteId[m],loginbean); 
      masterDOB   = finalDOB.getMasterDOB();
      masterDOB.setCompanyId(loginbean.getCompanyId());
-      finalDOB    = remote.getQuoteHeader(finalDOB);
+      finalDOB    = remote.getQuoteHeader(finalDOB);*/
+     lanedtls=qqd.getQuoteLaneDetails(costingHDRDOB);
+     for(int i=0;i<lanedtls.size();i++)
+     {
+    	 finalDOB      = null; 
+    	 finalDOB    = remote.getMasterInfo(quoteId[m],loginbean); 
+    	 masterDOB   = finalDOB.getMasterDOB();
+         masterDOB.setCompanyId(loginbean.getCompanyId());
+          finalDOB    = remote.getQuoteHeader(finalDOB);
+    	 System.out.println("lane count"+lanedtls.size());
+     costingHDRDOB =(CostingHDRDOB)lanedtls.get(i);
+      //mainDtl.add(finalDOB);   
+      costingMasterDOB = remote.getQuoteRateInfo(costingHDRDOB,loginbean);
+finalDOB.setCostingMasterDOB(costingMasterDOB);
+      masterDOB   = finalDOB.getMasterDOB();
+      masterDOB.setOperation("QuoteGrouping");
+      finalDOB.setMasterDOB(masterDOB);
+      finalDOB    = remote.getQuoteContentDtl(finalDOB);
+      mainDtl.add(finalDOB);
+//MultiQuoteFinalDOB cmd=(MultiQuoteFinalDOB) mainDtl.get(i);
+     
+   }
+    
+    
 
-     costingMasterDOB = remote.getQuoteRateInfo(costingHDRDOB,loginbean);
-     finalDOB.setCostingMasterDOB(costingMasterDOB);
-     masterDOB   = finalDOB.getMasterDOB();
-     masterDOB.setOperation("QuoteGrouping");
-     finalDOB.setMasterDOB(masterDOB);
-     finalDOB    = remote.getQuoteContentDtl(finalDOB);
-     mainDtl.add(finalDOB);
     }
      
     session.setAttribute("mainDtl",mainDtl);
@@ -10439,6 +10470,8 @@ private ArrayList doPDFGenerationForQuoteGroup(ArrayList mainDtl,HttpServletRequ
            
            finalDOB               =   (MultiQuoteFinalDOB)mainDtl.get(m);
            // added by kiran.v on 16/09/2011
+           //added by Anusha V.
+           session=request.getSession();
            session.setAttribute("finalDOBPdf",finalDOB );
            headerDOB		          =	  finalDOB.getHeaderDOB();
            masterDOB              =   finalDOB.getMasterDOB();
@@ -11374,7 +11407,10 @@ private ArrayList doPDFGenerationForQuoteGroup(ArrayList mainDtl,HttpServletRequ
            //logger.info("thread");
             //String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime()+masterDOB.getQuoteId());  //@@ Commented by subrahmanyam for the Enhancement #146971 on 2/12/08
            // String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime()+Long.parseLong(masterDOB.getQuoteId()));  //@@ Added by subrahmanyam for the Enhancement #146971 on 2/12/08
-             String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime())+masterDOB.getQuoteId();  //@@ Added by subrahmanyam for the Enhancement #146971 on 2/12/08
+            //Commenetd by Anusha V 
+            //String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime())+masterDOB.getQuoteId(); //@@ Added by subrahmanyam for the Enhancement #146971 on 2/12/08
+            //Added by Anusha V
+             String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime());
             file_tsmp        = file_tsmp.replaceAll("\\:","");
             file_tsmp        = file_tsmp.replaceAll("\\.","");
             file_tsmp        = file_tsmp.replaceAll("\\-","");

@@ -19,68 +19,29 @@
  *	This Controller is used to control the flow in the quote module
  */
  
-import com.foursoft.esupply.common.bean.UserCredentials;
-import com.foursoft.esupply.common.exception.FoursoftException;
-import com.lowagie.text.HeaderFooter;
-import com.lowagie.text.pdf.BaseFont;
-import com.lowagie.text.pdf.PdfContentByte;
-import com.lowagie.text.pdf.PdfReader;
-import com.lowagie.text.Document;
-import com.lowagie.text.pdf.PRAcroForm;
-import com.lowagie.text.pdf.PdfCopy;
-import com.lowagie.text.pdf.PdfImportedPage;
-import com.lowagie.text.pdf.PdfStamper;
-import com.qms.operations.costing.dob.CostingChargeDetailsDOB;
-import com.qms.operations.costing.dob.CostingHDRDOB;
-import com.qms.operations.costing.dob.CostingLegDetailsDOB;
-import com.qms.operations.costing.dob.CostingMasterDOB;
-import com.lowagie.text.Cell;
-import com.lowagie.text.Chunk;
-import com.lowagie.text.Element;
-import com.lowagie.text.Font;
-import com.lowagie.text.FontFactory;
-import com.lowagie.text.Image;
-import com.lowagie.text.PageSize;
-import com.lowagie.text.pdf.PdfPageEventHelper;
-import com.lowagie.text.Phrase;
-import com.lowagie.text.Table;
-import com.lowagie.text.pdf.PdfWriter;
-import com.qms.operations.costing.dob.CostingRateInfoDOB;
-import com.qms.operations.quote.dob.QuoteAttachmentDOB;
-import com.qms.operations.quote.dob.QuoteCartageRates;
-import com.qms.operations.quote.dob.QuoteChargeInfo;
-import com.qms.operations.quote.dob.QuoteCharges;
-import com.qms.operations.quote.dob.QuoteFlagsDOB;
-import com.qms.operations.quote.dob.QuoteFreightRSRCSRDOB;
-import com.qms.operations.quote.dob.QuoteHeader;
-import com.qms.operations.quote.dob.QuoteTiedCustomerInfo;
-import com.qms.reports.ejb.sls.ReportsSession;
-import com.qms.reports.ejb.sls.ReportsSessionBeanHome;
-import com.qms.reports.java.UpdatedQuotesReportDOB;
 import java.awt.Color;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.sql.Timestamp;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
+
 import javax.activation.DataHandler;
-import javax.imageio.ImageIO;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -91,32 +52,61 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpSession;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.qms.operations.quote.dob.QuoteFinalDOB;
-import com.qms.operations.quote.dob.QuoteMasterDOB;
-import com.qms.operations.quote.dob.QuoteFreightLegSellRates;
-import com.qms.operations.quote.ejb.sls.QMSQuoteSession;
-import com.qms.operations.quote.ejb.sls.QMSQuoteSessionHome;
-//import com.foursoft.esupply.common.util.Logger;
-import org.apache.log4j.Logger; 
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+
+import com.foursoft.esupply.common.bean.ESupplyGlobalParameters;
+import com.foursoft.esupply.common.exception.FoursoftException;
+import com.foursoft.esupply.common.java.ErrorMessage;
 import com.foursoft.esupply.common.java.KeyValue;
 import com.foursoft.esupply.common.java.LookUpBean;
-import com.foursoft.esupply.common.java.ErrorMessage;
 import com.foursoft.esupply.common.util.ESupplyDateUtility;
-import com.foursoft.esupply.common.bean.ESupplyGlobalParameters;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import com.lowagie.text.Cell;
+import com.lowagie.text.Chunk;
+import com.lowagie.text.Document;
+import com.lowagie.text.Element;
+import com.lowagie.text.Font;
+import com.lowagie.text.FontFactory;
+import com.lowagie.text.Image;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Phrase;
+import com.lowagie.text.Table;
+import com.lowagie.text.pdf.BaseFont;
+import com.lowagie.text.pdf.PdfContentByte;
+import com.lowagie.text.pdf.PdfCopy;
+import com.lowagie.text.pdf.PdfImportedPage;
+import com.lowagie.text.pdf.PdfReader;
+import com.lowagie.text.pdf.PdfStamper;
+import com.lowagie.text.pdf.PdfWriter;
+import com.qms.operations.costing.dob.CostingChargeDetailsDOB;
+import com.qms.operations.costing.dob.CostingHDRDOB;
+import com.qms.operations.costing.dob.CostingLegDetailsDOB;
+import com.qms.operations.costing.dob.CostingMasterDOB;
+import com.qms.operations.costing.dob.CostingRateInfoDOB;
+import com.qms.operations.quote.dao.QMSQuoteDAO;
+import com.qms.operations.quote.dob.QuoteAttachmentDOB;
+import com.qms.operations.quote.dob.QuoteCartageRates;
+import com.qms.operations.quote.dob.QuoteChargeInfo;
+import com.qms.operations.quote.dob.QuoteCharges;
+import com.qms.operations.quote.dob.QuoteFinalDOB;
+import com.qms.operations.quote.dob.QuoteFlagsDOB;
+import com.qms.operations.quote.dob.QuoteFreightLegSellRates;
+import com.qms.operations.quote.dob.QuoteFreightRSRCSRDOB;
+import com.qms.operations.quote.dob.QuoteHeader;
+import com.qms.operations.quote.dob.QuoteMasterDOB;
+import com.qms.operations.quote.dob.QuoteTiedCustomerInfo;
+import com.qms.operations.quote.ejb.sls.QMSQuoteSession;
+import com.qms.operations.quote.ejb.sls.QMSQuoteSessionHome;
+import com.qms.reports.java.UpdatedQuotesReportDOB;
 
 public class QMSQuoteController extends HttpServlet 
 {
@@ -169,7 +159,7 @@ public class QMSQuoteController extends HttpServlet
        
       //Depending up on the operation the request is forwarded to different methods which handle operations of different pages
 
-      if(("Add".equalsIgnoreCase(operation) || "Modify".equalsIgnoreCase(operation)  || "Copy".equalsIgnoreCase(operation) || "View".equalsIgnoreCase(operation) || "Grouping".equalsIgnoreCase(operation)) && subOperation==null)
+      if(("Add".equalsIgnoreCase(operation) || "Modify".equalsIgnoreCase(operation)  || "Copy".equalsIgnoreCase(operation) || "View".equalsIgnoreCase(operation) || "Grouping".equalsIgnoreCase(operation))&& subOperation == null)
       {//this is the initial request
 
         doForwardToInitialJSP(request,response);
@@ -217,6 +207,8 @@ public class QMSQuoteController extends HttpServlet
       {
         getUpdatedQuoteInfo(request,response,loginbean);
       }
+    
+      
     }
     catch(Exception e)
     {
@@ -230,6 +222,12 @@ public class QMSQuoteController extends HttpServlet
     
   }
   
+  
+  
+  
+  
+  
+    
   /**
 	 * This method helps in validating the master info and forwards request to the next jsp as per the operation from the initial screen 
 	 *
@@ -368,7 +366,7 @@ public class QMSQuoteController extends HttpServlet
           }
         }
         else if("Next >>".equalsIgnoreCase(request.getParameter("submit")) ||"Next >>".equalsIgnoreCase(request.getParameter("submitt1")) )
-        {          
+        {
             long start = System.currentTimeMillis();
             if(isSpotRates)//if spot rates are given, forward directly 
             {                               //to the charges select page
@@ -682,6 +680,7 @@ public class QMSQuoteController extends HttpServlet
           
         }
         finalDOB.setLegDetails(freightRates);
+      
         
       }
       if("Next >>".equalsIgnoreCase(request.getParameter("submit")))
@@ -783,9 +782,6 @@ public class QMSQuoteController extends HttpServlet
     
   }
   
-  
-  
-  
   /**
 	 * This method helps in processing the request from the sell Charges screen
 	 *
@@ -861,8 +857,11 @@ public class QMSQuoteController extends HttpServlet
       else
           finalDOB      =   (QuoteFinalDOB)session.getAttribute("finalDOB");
      // flagsDOB    = finalDOB.getFlagsDOB();
-      //Added by kiran.v on 27/05/2012 for Wpbn Issue- 304241 (for annexures pdf
-     if("Add".equalsIgnoreCase(operation)||"Modify".equalsIgnoreCase(operation)||"Copy".equalsIgnoreCase(operation)){
+      
+      //Added by Rakesh 
+      
+      
+      /*if("Add".equalsIgnoreCase(operation)||"Modify".equalsIgnoreCase(operation)||"Copy".equalsIgnoreCase(operation)){
     	  ArrayList ratelist=finalDOB.getPickUpCartageRatesList(); 
     	  ArrayList deliveryratelist=finalDOB.getDeliveryCartageRatesList();
     	  QuoteCartageRates rates;
@@ -882,9 +881,82 @@ public class QMSQuoteController extends HttpServlet
     		  hs.put(breakpoints[j],sellrates[j]);
     	  }
     	  }
-    
+    	  if(deliveryratelist!=null&&deliveryratelist.size()>0){
+    		  int temp=0,temp1=0;
+    	  for(int i=0;i<deliveryratelist.size();i++,temp1++){
+    		  charge=(QuoteCartageRates)deliveryratelist.get(i);
+    		  hs1=charge.getRates();
+    		  System.out.println("===before==="+hs1);
+    		  String[] tempsell;
+    		  if(i==0){
+    		  do
+    		  {
+    			  tempsell=request.getParameterValues("destSellRatei"+temp);  
+    		  temp1=temp;
+    		  temp++;
+    		  }while(tempsell==null);
+    		  }
+    		  sellrates=request.getParameterValues("destSellRate"+temp1);
+    		  breakpoints=request.getParameterValues("dbpi"+temp1);
+    		  if(sellrates!=null && breakpoints!=null)
+    		  for(int j=0;j<sellrates.length;j++){
+    		  if(breakpoints!=null&&breakpoints[j]!=null&&hs1!=null)
+    		  hs1.put(breakpoints[j],sellrates[j]);
+    		  }
+    		  System.out.println("===after==="+hs1);
+    	  }
+    	  }
+    		  if(deliveryratelist!=null&&deliveryratelist.size()>0){
+		  int temp=0,temp1=0;
+	  for(int i=0;i<deliveryratelist.size();i++,temp1++){
+		  charge=(QuoteCartageRates)deliveryratelist.get(i);
+		  hs1=charge.getRates();
+		  System.out.println("===before==="+hs1);
+		  String[] tempsell;
+		  if(i==0){
+		  do
+		  {
+			  tempsell=request.getParameterValues("destSellRatei"+temp);  
+		  temp1=temp;
+		  temp++;
+		  }while(tempsell==null);
+		  }
+		  sellrates=request.getParameterValues("destSellRate"+temp1);
+		  breakpoints=request.getParameterValues("dbpi"+temp1);
+		  if(sellrates!=null && breakpoints!=null)
+		  for(int j=0;j<sellrates.length;j++){
+		  if(breakpoints!=null&&breakpoints[j]!=null&&hs1!=null)
+		  hs1.put(breakpoints[j],sellrates[j]);
+		  }
+		  System.out.println("===after==="+hs1);
+	  }
+	  }
+      }*/
+      if("Add".equalsIgnoreCase(operation) || "Modify".equalsIgnoreCase(operation) || "Copy".equalsIgnoreCase(operation))
+      {
+          ArrayList ratelist = finalDOB.getPickUpCartageRatesList();
+          ArrayList deliveryratelist = finalDOB.getDeliveryCartageRatesList();
+          if(ratelist != null && ratelist.size() > 0)
+          {
+              for(int i = 0; i < ratelist.size(); i++)
+              {
+                  QuoteCartageRates rates = (QuoteCartageRates)ratelist.get(i);
+                  HashMap hs = rates.getRates();
+                  String sellrates[] = request.getParameterValues((new StringBuilder()).append("originSellRate").append(i).toString());
+                  String breakpoints[] = request.getParameterValues((new StringBuilder()).append("bp").append(i).toString());
+                  if(sellrates == null || breakpoints == null)
+                  {
+                      continue;
+                  }
+                  for(int j = 0; j < sellrates.length; j++)
+                  {
+                      hs.put(breakpoints[j], sellrates[j]);
+                  }
+
+              }
+
+          }
       }
-   //Added by Rakesh 
       if("Save & Exit".equalsIgnoreCase(request.getParameter("submit")))
       {
         
@@ -3737,11 +3809,15 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                   content.setTableFitsPage(true);
                   Cell  cellContent =  null;
                   int hFLen	=	headFoot.length;
+                  
+                  
                   for(int i=0;i<hFLen;i++)
                   {
                     if(headFoot[i]!=null && "F".equalsIgnoreCase(headFoot[i]))
                     {
                       chk = new Chunk(contents[i],FontFactory.getFont("ARIAL", 7, Font.ITALIC,Color.BLACK));
+                      /////////////////chk.setUnderline(+1f,-2f);
+                      
                       cellContent = new Cell(chk);
                       cellContent.setBorder(0);
                       cellContent.setLeading(8.0f);
@@ -4295,6 +4371,7 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
             int				  pickupChargeBasisSize		   = 0;
             int         	  delChargeBasisSize           = 0;
             
+            
             pickupChargeBasisList        =  finalDOB.getPickupChargeBasisList();  
             delChargeBasisList           =  finalDOB.getDelChargeBasisList(); 
             
@@ -4309,6 +4386,7 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
           
             deliveryQuoteCartageRates =  finalDOB.getDeliveryCartageRatesList(); 
             pickupWeightBreaks        =  finalDOB.getPickupWeightBreaks();
+           // ArrayList pickupWeightBreaksFOr = finalDOB.getOriginChargesList();
             delWeightBreaks           =  finalDOB.getDeliveryWeightBreaks();
             
             if(pickupWeightBreaks!=null)
@@ -4367,7 +4445,7 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
               }
             }
             
-            String  chargeRate        =  null;
+            String  chargeRate =null;
             
               
             //System.out.println("After getting data------------------------------>"+pickUpQuoteCartageRates.size());
@@ -4606,7 +4684,7 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
             //if(pickupWeightBreaks!=null)
             //{
               //logger.info("pickupWeightBreaks"+pickupWeightBreaks);
-              for(int i=0;i<pickupWeightBreaksSize;i++)
+           for(int i=0;i<pickupWeightBreaksSize;i++)
               {
                 chk = new Chunk((String)pickupWeightBreaks.get(i),FontFactory.getFont("ARIAL", 8, Font.BOLD,Color.BLACK));
                 cellZone = new Cell(chk);              
@@ -4616,8 +4694,9 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 cellZone.setBackgroundColor(Color.LIGHT_GRAY);
                 partZone.addCell(cellZone);
               }
-              
-             
+          
+           
+          
               
               //Added By Kishore For the ChargeBasis in the Annexure PDF on 06-Jun-11
               chk = new Chunk("");
@@ -4634,9 +4713,10 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
               //cellZone.setBackgroundColor(Color.LIGHT_GRAY);
               partZone.addCell(cellZone);
               
-              for(int i=0;i<pickupChargeBasisSize;i++)
+              for(int i=0;i<pickupChargeBasisSize;i++)////commented by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
               {
                 chk = new Chunk(toTitleCase((String)pickupChargeBasisList.get(i)),FontFactory.getFont("ARIAL", 7, Font.BOLD,Color.BLACK));
+              
                 cellZone = new Cell(chk);              
                 //cellZone.setNoWrap(true);
                 cellZone.setLeading(8.0f);
@@ -4644,6 +4724,33 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 //cellZone.setBackgroundColor(Color.LIGHT_GRAY);
                 partZone.addCell(cellZone);
               }
+             ////added by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
+          /*    for(int J=0;J<originChargesSize;J++)
+              {
+                if(originIndices[J] !=-1)
+                {
+                chargesDOB				    = (QuoteCharges)originCharges.get(originIndices[J]);
+                 logger.info("Origin Charges doPDFGeneration::"+J+":"+chargesDOB); // newly added                  
+                originChargeInfo		  = chargesDOB.getChargeInfoList();
+                originChargesInfoSize	= originChargeInfo.size();
+                int m =0;
+            String breakPoint = null;
+                for(int k=0;k<originChargesInfoSize;k++)
+                {
+                  chargeInfo = (QuoteChargeInfo)originChargeInfo.get(k);
+                  String chargeBasis = (String)(chargeInfo.getBasis());
+                 // chargeBasis  = df.format(Double.parseDouble(chargeBasis));
+                  chk = new Chunk(chargeBasis,FontFactory.getFont("ARIAL", 8, Font.BOLD,Color.BLACK));
+                  cellZone = new Cell(chk);              
+                  //cellZone.setNoWrap(true);
+                  cellZone.setLeading(8.0f);
+                  //cellZone.setHeader(true);
+                //  cellZone.setBackgroundColor(Color.LIGHT_GRAY);
+                  partZone.addCell(cellZone);
+                  
+                }
+                }
+              }//ended by Brahmaiah .R */
             //Added By Kishore For the ChargeBasis in the Annexure PDF on 06-Jun-11 
               
             //}
@@ -4683,16 +4790,19 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 cellZone.setNoWrap(true);            
                 partZone.addCell(cellZone); 
                }*/
-               if(pickupWeightBreaks!=null)
+             //-------------------------------------------Commented  by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
+                 if(pickupWeightBreaks!=null)
                {
                  String wBreak =  null;
                  for(int k=0;k<pickupWeightBreaksSize;k++)
                  {
                    wBreak = (String)pickupWeightBreaks.get(k);
+                   
                    if(wBreak!=null && pickUpZoneCodeMap.containsKey(wBreak))
                    {
                     chargeRate = (String)pickUpZoneCodeMap.get(wBreak);
                     chargeRate  = df.format(Double.parseDouble(chargeRate));
+                   
                    }
                    else
                    {
@@ -4706,9 +4816,37 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                  }
                }
              }
+            ////added by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
+             /* for(int J=0;J<originChargesSize;J++)
+            {
+              if(originIndices[J] !=-1)
+              {
+              chargesDOB				    = (QuoteCharges)originCharges.get(originIndices[J]);
+               logger.info("Origin Charges doPDFGeneration::"+J+":"+chargesDOB); // newly added                  
+              originChargeInfo		  = chargesDOB.getChargeInfoList();
+              originChargesInfoSize	= originChargeInfo.size();
+              int m =0;
+          String breakPoint = null;
+              for(int k=0;k<originChargesInfoSize;k++)
+              {
+                chargeInfo = (QuoteChargeInfo)originChargeInfo.get(k);
+                chargeRate =  ((Double)chargeInfo.getSellRate()).toString();
+                chargeRate  = df.format(Double.parseDouble(chargeRate));
+                chk = new Chunk(chargeRate,FontFactory.getFont("ARIAL", 8, Font.BOLD,Color.BLACK));
+                cellZone = new Cell(chk);              
+                //cellZone.setNoWrap(true);
+                cellZone.setLeading(8.0f);
+               // cellZone.setHeader(true);
+                //cellZone.setBackgroundColor(Color.LIGHT_GRAY);
+                partZone.addCell(cellZone);
+              }
+              }
+            }
+            }//ended by Brahmaiah.R */
             //System.out.println("After zone header------------------------------>");
             document.add(partZone);
             }
+          
             if(deliveryQuoteCartageRates!=null&&deliveryQuoteCartageRates.size()>0)
             {
              /*Set dkeys         = null;
@@ -4812,7 +4950,7 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
             //cellZone.setHeader(true);
             //cellZone.setBackgroundColor(Color.LIGHT_GRAY);
             partZone.addCell(cellZone);
-            
+           ////commented  by Brahmaiah.R on 31/5/2012 for WPBN issue 304241 
             for(int i=0;i<delChargeBasisSize;i++)
             {
               chk = new Chunk(toTitleCase((String)delChargeBasisList.get(i)),FontFactory.getFont("ARIAL", 7, Font.BOLD,Color.BLACK));
@@ -4823,7 +4961,33 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
               //cellZone.setBackgroundColor(Color.LIGHT_GRAY);
               partZone.addCell(cellZone);
             }
-            
+            //added by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
+        /*    for(int J=0;J<destChargesSize;J++)
+            {
+              if(destIndices[J] !=-1)
+              {
+              chargesDOB				    = (QuoteCharges)destCharges.get(destIndices[J]);
+               logger.info("Dest Charges doPDFGeneration::"+J+":"+chargesDOB); // newly added                  
+              ArrayList destChargeInfo = chargesDOB.getChargeInfoList();
+              int destChargesInfoSize = destChargeInfo.size();
+              int m =0;
+          String breakPoint = null;
+              for(int k=0;k<destChargesInfoSize;k++)
+              {
+                chargeInfo = (QuoteChargeInfo)destChargeInfo.get(k);
+                String chargeDestBasis = (String)chargeInfo.getBasis();
+                //chargeRate  = df.format(Double.parseDouble(chargeRate));
+                chk = new Chunk(chargeDestBasis,FontFactory.getFont("ARIAL", 8, Font.BOLD,Color.BLACK));
+                cellZone = new Cell(chk);              
+                //cellZone.setNoWrap(true);
+                cellZone.setLeading(8.0f);
+               // cellZone.setHeader(true);
+                //cellZone.setBackgroundColor(Color.LIGHT_GRAY);
+                partZone.addCell(cellZone);
+              }
+              }
+            }
+            }//ended by Brahmaiah.R  */
              //End of Kishore For the ChargeBasis in the Annexure PDF on 06-Jun-11
             
             
@@ -4865,6 +5029,7 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 cellZone.setNoWrap(true);            
                 partZone.addCell(cellZone); 
                }*/
+            //commented  by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
                String wBreak = null;
                for(int k=0;k<delWeightBreaksSize;k++)
                {
@@ -4885,10 +5050,40 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 partZone.addCell(cellZone); 
                }
              }
-            //System.out.println("After zone header------------------------------>");
+            //added by Brahmaiah.R on 31/5/2012 for WPBN issue 304241
+       /*     for(int J=0;J<destChargesSize;J++)
+            {
+              if(destIndices[J] !=-1)
+              {
+              chargesDOB				    = (QuoteCharges)destCharges.get(destIndices[J]);
+               logger.info("Dest Charges doPDFGeneration::"+J+":"+chargesDOB); // newly added                  
+              ArrayList destChargeInfo = chargesDOB.getChargeInfoList();
+              int destChargesInfoSize = destChargeInfo.size();
+              int m =0;
+          String breakPoint = null;
+              for(int k=0;k<destChargesInfoSize;k++)
+              {
+                chargeInfo = (QuoteChargeInfo)destChargeInfo.get(k);
+                String percent = chargeInfo.isPercentValue()?"%":"";
+                String chargeDestRate = round1(((Double)chargeInfo.getSellRate()),percent).toString();
+                chargeDestRate  = df.format(Double.parseDouble(chargeDestRate));
+                chk = new Chunk(chargeDestRate,FontFactory.getFont("ARIAL", 8, Font.BOLD,Color.BLACK));
+                cellZone = new Cell(chk);              
+                //cellZone.setNoWrap(true);
+                cellZone.setLeading(8.0f);
+               // cellZone.setHeader(true);
+                //cellZone.setBackgroundColor(Color.LIGHT_GRAY);
+                partZone.addCell(cellZone);
+              }
+              }
+            }*/
             document.add(partZone);
-            
             }
+            //ended by Brahmaiah.R 
+            //System.out.println("After zone header------------------------------>");
+            
+           
+            
        
             pickUpZoneZipMap  =  finalDOB.getPickZoneZipMap();
             //@@For Sorting the Zone Codes in an Order.
@@ -5139,7 +5334,8 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 //f.delete();
                 baos.close();
                 //System.out.println("End of generation header------------------------------>");
-    }
+    
+              } 
     catch(Exception e)
     {
       e.printStackTrace();
@@ -5990,7 +6186,7 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
     int                     originChargesSize  =	0;
     int                     destChargesInfoSize=  0;
     int                     frtChargesInfoSize =  0;
-    
+   
     double                  originChargesMargin   = 0;
     double                  originChargesDiscount = 0;
     
@@ -6005,11 +6201,15 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
     int dCcount = 0;
     ArrayList               originChargesTemp     = new ArrayList();
     ArrayList               destChargesTemp       = new ArrayList();
+   
+
 // ended for duplicate charges
 
     try
     {       
- 
+    	
+    		
+    	
       originCharges  = finalDOB.getOriginChargesList();
       destCharges    = finalDOB.getDestChargesList(); 
       
@@ -6155,14 +6355,68 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
               marginType  =  request.getParameterValues("originMarginType"+originIndices[i]);
               margin      =  request.getParameterValues("originMargin"+originIndices[i]);
               sellRate    =  request.getParameterValues("originSellRate"+originIndices[i]);
+              
               if(margin!=null)
               {
               chargesDOB.setMarginDiscountFlag("M");
               int marginLen	=	margin.length;
+              
+              /*ArrayList pqcl=finalDOB.getPickupChargeBasisList();
+              int basisSize=pqcl.size();
+              for(i=0;i<basisSize;i++)
+              {
+            	  String basislist =(String)pqcl.get(i);
+            	  pickupChargeBasisList.add(basislist);
+              }
+              finalDOB.setPickupChargeBasisList(pickupChargeBasisList);
+              ArrayList pqwb=finalDOB.getPickupWeightBreaks();
+              int pickuSize = pqwb.size();
+              int j=0;
+              while(j<pickuSize)
+              {*/
               for(int k=0;k<marginLen;k++)
               {
                 chargeInfo = (QuoteChargeInfo)originChargeInfo.get(k);
-             
+             /*  if("Add".equalsIgnoreCase(request.getParameter("Operation"))||"Modify".equalsIgnoreCase(request.getParameter("Operation")))
+            		   {
+                ArrayList pqcr = finalDOB.getPickUpCartageRatesList();
+               
+                
+               // Object PickupChargeBasis = pqcl.get(i);
+                pickQuoteCartageRates = new QuoteCartageRates();
+              logger.info("WeightBreak@@"+pqwb.get(j)+"SellRate@@"+sellRate[k]);
+                charge.put((String)pqwb.get(j),sellRate[k]);
+                pickQuoteCartageRates.setRates(charge);
+                pickUpQuoteCartageRates
+				.add(pickQuoteCartageRates);
+                pickQuoteCartageRates = (QuoteCartageRates) pickUpZoneCode.get(
+        				pickQuoteCartageRates.getZone()
+        						+ pickQuoteCartageRates.getCartageId());
+                pickUpZoneCode.put(pickQuoteCartageRates.getZone()
+						+ pickQuoteCartageRates.getCartageId(),
+						pickQuoteCartageRates);
+                */
+               
+             /*if("Add".equalsIgnoreCase(request.getParameter("Operation"))||"Modify".equalsIgnoreCase(request.getParameter("Operation")))
+                {
+              
+                
+                	for(int x=0;x<pickupWeightBreaksSize;x++)
+                	{
+                	//charge = pickQuoteCartageRates.getRates();
+              	  charge.put((String)pickupWeightBreaks.get(x),sellRate[k]);
+              	pickQuoteCartageRates.setRates(charge);
+              	
+                	
+              	
+                
+                
+               
+                pickUpQuoteCartageRates.add(pickQuoteCartageRates.getZone()+pickQuoteCartageRates.getCartageId());
+                pickUpQuoteCartageRates.add(pickQuoteCartageRates);
+                */
+                
+               
                 chargeInfo.setMarginType(marginType[k]);
                 chargeInfo.setMargin(Double.parseDouble(margin[k]));
                 chargeInfo.setSellRate(Double.parseDouble(sellRate[k]));
@@ -6176,6 +6430,8 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 				  (Double.parseDouble(margin[k])>chargeInfo.getTieMarginDiscountValue() && Double.parseDouble(margin[k])<=originChargesMargin) )
                		  {
                			    chargeInfo.setMarginTestFailed(false);
+               			    
+               			   
                		  }
                		  else
                		  {
@@ -6224,9 +6480,15 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
                 }
                 originChargeInfo.remove(k);
                 originChargeInfo.add(k,chargeInfo);
-               }
+                }
+               /*j++;
+            		   }
+              
+                }*/
               }
             }
+              
+            
         //  } //newly commented
             //if(!"M".equalsIgnoreCase(chargesDOB.getMarginDiscountFlag()))//@@If discount is given by the user
               if("SC".equals(chargesDOB.getSellBuyFlag())||"S".equals(chargesDOB.getSellBuyFlag()))//@@Modified by Kameswari for the enhancement
@@ -6335,7 +6597,8 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
             originCharges.add(originIndices[i],chargesDOB);
            }//newly added if end           
           }
-          finalDOB.setOriginChargesList(originCharges);
+          
+           finalDOB.setOriginChargesList(originCharges);
           finalDOB.setSelectedOriginChargesListIndices(originIndices);
           finalDOB.setOriginChargesSelectedFlag(originChargeSelectedFlag);//@@ Added by subrahmanyam for the Enhancement 154381 on 14/02/09  
         }
@@ -7101,6 +7364,8 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
       {
         doDispatcher(request,response,"qms/QMSQuoteGroupingEnterId.jsp");
       }
+      
+      
     }
     catch(Exception ex)
 		{
@@ -7497,6 +7762,7 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
       remote      = (QMSQuoteSession)home.create();
       chargeGroups = remote.getQuoteGroups(quoteId,loginbean);
       String temp=""; 
+      
       int chargGrpSize	=	chargeGroups.size();
        for(int m=0;m<chargGrpSize;m++)
 			 {
@@ -7623,6 +7889,7 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
         {
            keyValueList.add(new KeyValue("shipmentMode",""+finalDOB.getMasterDOB().getShipmentMode()));
         }
+        
       }
       //@@Yuvraj
 			errorMessageObject.setKeyValueList(keyValueList);
@@ -7648,6 +7915,9 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
     CostingHDRDOB             costingHDRDOB     = null;
     String[]                  quoteValues       = null;
    HttpSession  session      = request.getSession();
+   //Added by Anusha V
+   QMSQuoteDAO qqd=new QMSQuoteDAO();
+   List lanedtls;
     ArrayList                 mainDtl           = new ArrayList();
     try
     {
@@ -7671,8 +7941,16 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
        masterDOB   = finalDOB.getMasterDOB();
        masterDOB.setCompanyId(loginbean.getCompanyId());
         finalDOB    = remote.getQuoteHeader(finalDOB);
- 
-       costingMasterDOB = remote.getQuoteRateInfo(costingHDRDOB,loginbean);
+        //Commented by Anusha V
+        //costingMasterDOB = remote.getQuoteRateInfo(costingHDRDOB,loginbean);
+        //Added by Anusha V
+        lanedtls=qqd.getQuoteLaneDetails(costingHDRDOB);
+        for(int i=0;i<lanedtls.size();i++)
+        {
+         costingHDRDOB =(CostingHDRDOB)lanedtls.get(i);
+             
+         costingMasterDOB = remote.getQuoteRateInfo(costingHDRDOB,loginbean);
+       }
        finalDOB.setCostingMasterDOB(costingMasterDOB);
        masterDOB   = finalDOB.getMasterDOB();
        masterDOB.setOperation("QuoteGrouping");
@@ -9237,8 +9515,13 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
              document.add(notes); 
             //Default Footer Content Starts
             contents = masterDOB.getDefaultContent();
+            //Added by Anusha V
+            int hFLen = 0;
             headFoot = masterDOB.getDefaultHeaderFooter();
-            int hFLen	=	headFoot.length;
+            //if(headFoot.length>0){
+            //hFLen	=	headFoot.length;}
+            //Commented by Anusha V
+            //int hFLen = headFoot.length;
             if(contents!=null && contents.length>0)
             {
               content  =  new Table(1);
@@ -9251,7 +9534,8 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
               content.setBorderWidth(1f);
               Cell  cellContent =  null;
               chk         =  null;
-              for(int i=0;i<hFLen;i++)
+              
+              for(int i=0;i<headFoot.length;i++)
               {
                 if(headFoot[i]!=null && "F".equalsIgnoreCase(headFoot[i]))
                 {
@@ -9275,7 +9559,10 @@ else if("Queued".equalsIgnoreCase(quoteStatus) || "QUEUED".equalsIgnoreCase(quot
              //logger.info("thread");
               //String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime()+masterDOB.getQuoteId());  //@@ Commented by subrahmanyam for the Enhancement #146971 on 2/12/08
              // String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime()+Long.parseLong(masterDOB.getQuoteId()));  //@@ Added by subrahmanyam for the Enhancement #146971 on 2/12/08
-               String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime())+masterDOB.getQuoteId();  //@@ Added by subrahmanyam for the Enhancement #146971 on 2/12/08
+              //Commented by Anusha V
+              //String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime())+masterDOB.getQuoteId();//@@ Added by subrahmanyam for the Enhancement #146971 on 2/12/08
+              //Added by Anusha V
+              String file_tsmp = ""+new java.sql.Timestamp((new java.util.Date()).getTime());
               file_tsmp        = file_tsmp.replaceAll("\\:","");
               file_tsmp        = file_tsmp.replaceAll("\\.","");
               file_tsmp        = file_tsmp.replaceAll("\\-","");
