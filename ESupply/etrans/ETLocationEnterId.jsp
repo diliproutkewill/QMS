@@ -129,7 +129,7 @@ function openLocationIdLov()
 <%           String param = request.getParameter("Operation");
 %>
 <body  OnLoad="placeFocus()" >
-<form method="POST" name="location" onSubmit="return Mandatory()" action="ETLocationView.jsp" >
+<form method="POST" name="loc" onSubmit="return Mandatory()" action="ETLocationView.jsp" >
 <table width="800" border="0" cellspacing="0" cellpadding="0">
   <tr valign="top" bgcolor="ffffff">
     <td  colspan="2">

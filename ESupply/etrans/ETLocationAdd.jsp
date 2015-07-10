@@ -227,7 +227,7 @@ function changeToUpper(field)
 <link rel="stylesheet" href="../ESFoursoft_css.jsp">
 </head>
 <body   onLoad="placeFocus()">
-<form method="post" name="location" onSubmit="return Mandatory()" action="ETLocationProcess.jsp" >
+<form method="post" name="loc" onSubmit="return Mandatory()" action="ETLocationProcess.jsp" >
 <table width="800" border="0" cellspacing="0" cellpadding="0">
   <tr valign="top" bgcolor="ffffff"> 
     <td  colspan="2"> 
