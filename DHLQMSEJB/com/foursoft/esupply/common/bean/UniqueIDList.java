@@ -141,7 +141,7 @@ public final class UniqueIDList
 		uniqueIdList.put("ETCCurrencyConversionAddProcessModify", "QS1000622");
 		uniqueIdList.put("ETCCurrencyConversionViewView", "QS1000631");
 		uniqueIdList.put("ETCCurrencyConversionViewProcessView", "QS1000632");
-		uniqueIdList.put("ETCCurrencyConversionViewAllALL", "QS1000641");
+		uniqueIdList.put("ETCCurrencyConversionViewAllSelectForAllCurrencies", "QS1000641");/*@@Modified by Anusha in DHL-4S-CR in Kewill Time & Expense*/
 		uniqueIdList.put("ETCCurrencyConversionViewAllProcessALL", "QS1000642");
 		///For Tax Ids at Ho_Terminal
 		uniqueIdList.put("ETCTaxMasterAddAddHO_TERMINAL", "QS1040211");
