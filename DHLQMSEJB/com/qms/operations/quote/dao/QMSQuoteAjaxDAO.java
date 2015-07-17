@@ -1139,15 +1139,21 @@ public String getSalesPerson(String custId ,ESupplyGlobalParameters loginBean,St
 
   public String getCustomerIDs(String party_Id ,ESupplyGlobalParameters loginBean)throws Exception 
   {
-	    PreparedStatement pstmt1 	=	null;
-		Connection con				=	null;
-		ResultSet	rs				=	null;
+	  PreparedStatement pstmt1;
+      Connection con;
+      ResultSet rs;
+      String accessType;
+      StringBuffer terminalQryCustQuote;
+      StringBuffer result;
+      pstmt1 = null;
+      con = null;
+      rs = null;
 		OperationsImpl      impl    =	null;
-		String accessType			=	loginBean.getAccessType();
-		StringBuffer   terminalQryCustQuote     = new StringBuffer();
-		StringBuffer   result     = new StringBuffer();
-	 	
-		impl = new OperationsImpl();
+		accessType			=	loginBean.getAccessType();
+		   terminalQryCustQuote     = new StringBuffer();
+		   result     = new StringBuffer();
+		   impl = new OperationsImpl();
+		  
 		if("HO_TERMINAL".equals(accessType)){
 			     terminalQryCustQuote.append( " (SELECT terminalid term_id FROM FS_FR_TERMINALMASTER)");
 		}else if("ADMN_TERMINAL".equals(accessType)){
@@ -1173,8 +1179,8 @@ public String getSalesPerson(String custId ,ESupplyGlobalParameters loginBean,St
 						            .append(" where fr1.child_terminal_id= ? ))");
 		}
 		String  qryforCustomerID  ="SELECT COMPANYNAME,CUSTOMERID FROM FS_FR_CUSTOMERMASTER WHERE COMPANYNAME LIKE ? AND TERMINALID IN "+terminalQryCustQuote.toString();
+		try{
 		con = impl.getConnection();
-
 		pstmt1 = con.prepareStatement(qryforCustomerID);
 		pstmt1.setString(1, party_Id+"%");
 			if(!"HO_TERMINAL".equals(accessType)){
@@ -1197,9 +1203,45 @@ public String getSalesPerson(String custId ,ESupplyGlobalParameters loginBean,St
 			result.append(rs.getString("COMPANYNAME")+";"+rs.getString("CUSTOMERid"));
 			result.append("</id>");
 		}
-		
-		
-		return result.toString();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally{
+			if(rs != null)
+	        {
+			try{
+	            rs.close();
+	           }
+	        catch(Exception e)
+	        {
+	        	e.printStackTrace();
+	        }
+	        }
+		if(pstmt1 != null)
+        {
+			try
+			{
+            pstmt1.close();
+        }
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
+        }
+        if(con != null)
+        {
+        	try
+			{
+            con.close();
+			 }
+            catch(Exception e)
+            {
+            	e.printStackTrace();
+            }
+        }
+		}
+return result.toString();
   }
 
 /*//@ ADDED BY SILPA FOR UPDATE THE CONTACT PERSONS TABLE

@@ -1,5 +1,6 @@
 /**
  * @ (#) QMSSellChargesController.java
+
  * Copyright (c) 2001 The Four Soft Pvt Ltd., 
  * 5Q1A3, Cyber Towers, 5th floor, HiTec City, Madhapur, Hyderabad - 33.
  * All rights reserved.
@@ -18,7 +19,7 @@
  * * @date 25-06-2005
  * Modified by      Date     Reason
  */
-//package etrans;
+package etrans;
 import com.foursoft.esupply.common.exception.FoursoftException;
 import com.qms.operations.charges.java.BuySellChargesEnterIdDOB;
 import javax.servlet.http.HttpServlet;

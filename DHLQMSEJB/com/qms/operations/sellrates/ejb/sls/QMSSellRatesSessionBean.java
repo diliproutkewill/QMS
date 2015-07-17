@@ -731,8 +731,8 @@ public class QMSSellRatesSessionBean implements SessionBean
                             {
                                 sellDobvalues1  = new QMSSellRatesDOB();
                                 //System.out.println("IN FclList chargeRates :: "+chargeRates[j]);
-                                if(chargeRates[j]>0)
-                                {
+                                //if(chargeRates[j]>0.0D)
+                               // {
                                     sellDobvalues1.setCarrier_id(sellDob1.getCarrier_id());
                                     sellDobvalues1.setOrigin(sellDob1.getOrigin());
                                     sellDobvalues1.setOriginCountry(sellDob1.getOriginCountry());
@@ -793,7 +793,7 @@ public class QMSSellRatesSessionBean implements SessionBean
                                     sellDobvalues1.setSurChargeDescription(rateDescription[j]);
                                     listFCLValues.add(sellDobvalues1);
                                     m++;
-                                }
+                                //}
                             }
                       }
                         

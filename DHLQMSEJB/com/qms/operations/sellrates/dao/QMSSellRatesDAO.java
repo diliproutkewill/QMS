@@ -2788,9 +2788,12 @@ public ArrayList getAcceptanceRateDetails(QMSSellRatesDOB sellRatesDob,ESupplyGl
                for(int j=0;j<wtBrkLen-1;j++)
              {
             	   //@@ Modified by subrahmanyam for the CR-219973
-                if(("FSKG".equalsIgnoreCase(weightbreaks[j])&&"FSMIN".equalsIgnoreCase(weightbreaks[j+1]))||("SSKG".equalsIgnoreCase(weightbreaks[j])&&"SSMIN".equalsIgnoreCase(weightbreaks[j+1]))
+                /*if(("FSKG".equalsIgnoreCase(weightbreaks[j])&&"FSMIN".equalsIgnoreCase(weightbreaks[j+1]))||("SSKG".equalsIgnoreCase(weightbreaks[j])&&"SSMIN".equalsIgnoreCase(weightbreaks[j+1]))
                 ||("CAF%".equalsIgnoreCase(weightbreaks[j])&&"CAFMIN".equalsIgnoreCase(weightbreaks[j+1]))||"BAFM3".equalsIgnoreCase(weightbreaks[j])&&"BAFMIN".equalsIgnoreCase(weightbreaks[j+1])
-                ||"PSSM3".equalsIgnoreCase(weightbreaks[j])&&"PSSMIN".equalsIgnoreCase(weightbreaks[j+1]) || (  weightbreaks[j] !=null && weightbreaks[j+1] !=null && weightbreaks[j].endsWith("FLAT")&& weightbreaks[j+1].endsWith("MIN") && weightbreaks[j+1].length()>3)  )
+                ||"PSSM3".equalsIgnoreCase(weightbreaks[j])&&"PSSMIN".equalsIgnoreCase(weightbreaks[j+1]) || (  weightbreaks[j] !=null && weightbreaks[j+1] !=null && weightbreaks[j].endsWith("FLAT")&& weightbreaks[j+1].endsWith("MIN") && weightbreaks[j+1].length()>3)   )*/
+            	   if("FSKG".equalsIgnoreCase(weightbreaks[j]) && "FSMIN".equalsIgnoreCase(weightbreaks[j + 1]) || "SSKG".equalsIgnoreCase(weightbreaks[j]) && "SSMIN".equalsIgnoreCase(weightbreaks[j + 1]) 
+            	|| "CAF%".equalsIgnoreCase(weightbreaks[j]) && "CAFMIN".equalsIgnoreCase(weightbreaks[j + 1]) || "BAFM3".equalsIgnoreCase(weightbreaks[j]) && "BAFMIN".equalsIgnoreCase(weightbreaks[j + 1]) 
+            	|| "PSSM3".equalsIgnoreCase(weightbreaks[j]) && "PSSMIN".equalsIgnoreCase(weightbreaks[j + 1]) || weightbreaks[j] != null && weightbreaks[j + 1] != null && weightbreaks[j].endsWith("FLAT") && weightbreaks[j + 1].endsWith("MIN") && weightbreaks[j + 1].length() > 3 && ratedescs[j] == ratedescs[j + 1])
                 {
                     temp                   =    weightbreaks[j];
                     weightbreaks[j]        =    weightbreaks[j+1];

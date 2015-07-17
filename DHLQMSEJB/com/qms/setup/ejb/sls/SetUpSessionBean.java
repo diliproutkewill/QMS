@@ -2461,13 +2461,13 @@ public boolean isCarrierExists(String carrierId,String shipmentMode)
 			shipMode    =   Integer.parseInt(shipmentMode.trim());
 			sql		=	"SELECT CARRIERID FROM FS_FR_CAMASTER WHERE CARRIERID= '" + carrierId +"' ";
 			rs = stmt.executeQuery(sql);
-			if(rs.next())
+			if(!rs.next())
       {
-				return true;
+				return false;
       }
 			else
       {
-				return false;
+				return true;
       }
 		}
 		catch(SQLException e)
