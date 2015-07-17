@@ -1323,10 +1323,10 @@
 		<jsp-file>QMSLOVZoneCodes.jsp</jsp-file>
 	</servlet>
     <!-- Anil -->
-      <servlet>
+    <!-- <servlet>
     <servlet-name>SetUpController</servlet-name>
     <servlet-class>com.dhl.qms.setup.SetUpController</servlet-class>
-  </servlet>
+  </servlet> -->
  <servlet>
     <servlet-name>QMSConsolidatedSellRateController</servlet-name>
     <servlet-class>QMSConsolidatedSellRateController</servlet-class>
