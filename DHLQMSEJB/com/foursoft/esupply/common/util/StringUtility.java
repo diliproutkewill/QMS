@@ -103,6 +103,16 @@ public class StringUtility
 		}
 		tempBuff = new StringBuffer(str.substring(counter));
 	}
+	//Added by Maruthi for Multi-Language CR on 08/09/2015
+	public static String getWeighBreakConverionValue(String str) {
+
+		try {
+			Integer.parseInt(str);
+		} catch (Exception e) {
+			return str;
+		}
+		return str.indexOf("-") == -1 ? ("+" + str) : str;
+	}
 
 	private static StringBuffer tempBuff = null;
 	private static StringBuffer returnStr = new StringBuffer();
