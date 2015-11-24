@@ -263,7 +263,7 @@ public class RoleDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, pstmt);
+			ConnectionUtil.closeConnection(connection, pstmt,rs); // Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		if(hasRows)
 			return true;
@@ -374,6 +374,7 @@ public class RoleDAO extends BaseDAOImpl
 	{
 		PreparedStatement   pstmt = null;
 		RoleModel roleModel	= null;
+		ResultSet rs= null;
 		try
 		{
 			roleModel		= new RoleModel();
@@ -381,7 +382,8 @@ public class RoleDAO extends BaseDAOImpl
 
 			pstmt.setString(1,(String)roleId);
 			pstmt.setString(2,(String)locationId );
-			ResultSet rs = pstmt.executeQuery();
+			//ResultSet rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			if(rs.next()){
 				roleModel.setRoleId(rs.getString(1) );
 				roleModel.setLocationId(rs.getString(2) );
@@ -405,7 +407,8 @@ public class RoleDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(pstmt);	
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Modified by Dilip for PMD Correction
 		}
 	} // end of loadRoleMaster(Connection connection)
 
@@ -466,7 +469,8 @@ public class RoleDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(pstmt);	
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		
 
