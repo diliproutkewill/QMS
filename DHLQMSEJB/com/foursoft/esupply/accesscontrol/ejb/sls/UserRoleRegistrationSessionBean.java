@@ -277,7 +277,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, stmt);
+				//ConnectionUtil.closeConnection(connection, stmt);
+				ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return transactionList;
 	} // end of getModuleWiseTransactionIds(String module, String accessType)
@@ -338,7 +339,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, stmt);
+				//ConnectionUtil.closeConnection(connection, stmt);
+				ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return transactionList;
 	} // end of getModuleWiseTransactionIds(String module, String accessType)
@@ -487,7 +489,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, stmt);
+				//ConnectionUtil.closeConnection(connection, stmt);
+				ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return transactionList;
 	} //	end of getModuleWiseTransactionDetailVOBs(String module, String accessType)
@@ -567,7 +570,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return transactionList;
 	} //	end of getModuleWiseTransactionDetailVOBs(String module, int shipmentMode, String accessType)
@@ -798,7 +802,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, stmtRoles);
+				//ConnectionUtil.closeConnection(connection, stmtRoles);
+			    ConnectionUtil.closeConnection(connection, stmtRoles,rsRoles);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return roleList;
 	} // end of getRoleIds(String locationId, String accessType, String filter)
@@ -902,7 +907,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 
 		return hashRolePermissions;
@@ -1006,7 +1012,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, pstmt);
+				//ConnectionUtil.closeConnection(connection, pstmt);
+			    ConnectionUtil.closeConnection(connection, pstmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		accessList.trimToSize();
 		return accessList;
@@ -1137,7 +1144,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		roleList.trimToSize();
 		return roleList;
@@ -1181,7 +1189,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		roleList.trimToSize();
 		return roleList;
@@ -1343,7 +1352,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, stmtUser);
+				//ConnectionUtil.closeConnection(connection, stmtUser);
+				ConnectionUtil.closeConnection(connection, stmtUser,rsUser);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return userList;
 	} // end of getUserIds(String locationId, String accessType, String filter)
@@ -1403,7 +1413,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmtUser);
+			//ConnectionUtil.closeConnection(connection, stmtUser);
+			ConnectionUtil.closeConnection(connection, stmtUser,rsUser);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return userList;
 	} // end of getUserIds(String locationId)
@@ -1470,7 +1481,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, stmt);
+				//ConnectionUtil.closeConnection(connection, stmt);
+				ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return roleList;
 	} // end of getRoleIdLocDescription(String locationId, String roleAccessType, String roleModule)
@@ -1520,7 +1532,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, stmt);
+				//ConnectionUtil.closeConnection(connection, stmt);
+				ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		boolean flag = currentUsers < maxAllowedUsers;
 		return flag;
@@ -1852,7 +1865,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rsValidUser);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return isValid;
 	}
@@ -1878,7 +1892,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rsValidUser);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return isValid;
 	}
@@ -1903,7 +1918,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rsValidUser);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return isValid;
 	}
@@ -2396,7 +2412,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs); // Modified by Dilip for PMD Correction on 22/09/2015
 		}
         return txList;
     } // end of getTransactionIdAndDescription(String module)
@@ -2443,7 +2460,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
         return txList;
     } // end of getTransactionIdAndDescription()
@@ -2612,7 +2630,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
         }   
 		finally
 		{
-				ConnectionUtil.closeConnection(connection, pstmt);
+				//ConnectionUtil.closeConnection(connection, pstmt);
+				ConnectionUtil.closeConnection(connection, pstmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return userLogList;
 	} //	end of getUserLogDetails(String locationId, String userId, Timestamp fromDate, Timestamp toDate)
@@ -2685,7 +2704,8 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, pstmt);
+			//ConnectionUtil.closeConnection(connection, pstmt);
+			ConnectionUtil.closeConnection(connection, pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return userLogList;
 	} //	end of getUserLogViewAllDetails(String locationId, String userId, Timestamp fromDate, Timestamp toDate)
@@ -2747,6 +2767,7 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		
       //  ResultSet			rsWh			= null;//  Commented by Govind on 15-02-2010 for Connection Leakages
 		ResultSet			rsRole			= null;
+		ResultSet			rsSpRole		= null;
 
 		//Logger.info(FILE_NAME,"getWarehousesAndRoles(String locationId,  Timestamp fromDate, Timestamp toDate)","LOG SQL : "+USERLOG_ALLUSERS_QUERY);
 		
@@ -2794,7 +2815,7 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 			for(int i=0; i < alWarHousSize; i++) {
 
 				String		whName 			=	(String) alWareHouses.get(i);
-				ResultSet	rsSpRole		=	null;
+				//ResultSet	rsSpRole		=	null;
 				ArrayList	alSpecificRoles	=	new ArrayList(15);
 
 				pstmtRole.clearParameters();
@@ -2829,6 +2850,15 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 			try {
 				//if(pstmtWh!=null)
 				//	pstmtWh.close();//Commented By RajKumari on 23-10-2008 for Connection Leakages.
+				// Added by Dilip for PMD Correction on 22/09/2015
+				if(rsRole!=null){
+					rsRole.close();
+					rsRole=null;
+				}
+				if(rsSpRole!=null){
+					rsSpRole.close();
+					rsSpRole=null;
+				}
 				if(pstmtRole!=null)
 					pstmtRole.close();
 			} catch(Exception sqe){}
@@ -3285,6 +3315,7 @@ public class UserRoleRegistrationSessionBean implements SessionBean
 		finally
 		{
 			ConnectionUtil.closeConnection(connection,stmt,rs);
+			ConnectionUtil.closePreparedStatement(pStmt);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return emailAdd;
     }
@@ -3448,8 +3479,10 @@ public class UserRoleRegistrationSessionBean implements SessionBean
         }
         finally
         {
-            ConnectionUtil.closeStatement(pStmt);
-			ConnectionUtil.closeStatement(pStmt1);
+            //ConnectionUtil.closeStatement(pStmt);
+			//ConnectionUtil.closeStatement(pStmt1);
+        	ConnectionUtil.closePreparedStatement(pStmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
+        	ConnectionUtil.closePreparedStatement(pStmt1);// Added by Dilip for PMD Correction on 22/09/2015
         }
     }
 
