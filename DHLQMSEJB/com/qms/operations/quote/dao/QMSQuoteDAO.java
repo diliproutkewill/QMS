@@ -2738,6 +2738,7 @@ public class QMSQuoteDAO {
 			throw new SQLException(e.toString());
 		} finally {
 			try {
+				ConnectionUtil.closePreparedStatement(pstmt);// Added by Dilip for PMD Correction on 22/09/2015
 				ConnectionUtil.closeConnection(connection, csmt, rs);
 				ConnectionUtil.closePreparedStatement(notesPstmt, notesRs);// Added
 																			// by
@@ -4224,7 +4225,8 @@ public class QMSQuoteDAO {
 							delChargeBasisList.add("Per Container");
 						
 						} else if ("Per Kg".equalsIgnoreCase(delWeightBreaksRS
-								.getString("CHARGEBASIS"))) {
+								.getString("CHARGEBASIS")) || "Per Kilogram".equalsIgnoreCase(delWeightBreaksRS
+										.getString("CHARGEBASIS"))) {
 							delWeightBreaksList.add(delWeightBreaksRS
 									.getString("CHARGESLAB"));
 							delChargeBasisList.add("Per Kilogram");
@@ -7845,6 +7847,7 @@ if (costingRateInfoDOB.getWeightBreakSlab().equalsIgnoreCase("BAFM3")
 				if (cStmt != null) {
 					cStmt.close();
 				}
+				ConnectionUtil.closePreparedStatement(pstmt1,rs2);// Added by Dilip for PMD Correction on 22/09/2015
 				if (connection != null) {
 					connection.close();
 				}

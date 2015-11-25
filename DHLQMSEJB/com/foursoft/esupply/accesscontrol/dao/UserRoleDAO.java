@@ -467,7 +467,8 @@ public class UserRoleDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return locationList;
 	}
@@ -551,7 +552,8 @@ public class UserRoleDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return roleList;
 	} // end of getRoleIdLocation(String locationId, String accessType, String roleModule, String usersLocation, String usersRoleAccessType)
@@ -587,7 +589,8 @@ public class UserRoleDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt, rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return roleModule;
 
@@ -620,7 +623,8 @@ public class UserRoleDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt, rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return locationList;
 	}
@@ -656,7 +660,8 @@ public boolean isExists(String locationId,String accessType)
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt, rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return status;
 	}
@@ -1056,7 +1061,8 @@ public boolean isExists(String locationId,String accessType)
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, stmt);
+			//ConnectionUtil.closeConnection(connection, stmt);
+			ConnectionUtil.closeConnection(connection, stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return status;
 	}

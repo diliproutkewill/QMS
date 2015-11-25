@@ -148,8 +148,8 @@ private static final String delSurChargeQry			= 	" DELETE FROM QMS_SURCHARGE_MAS
 		throw new Exception ("Problem while Modifying the SurCharges");
 	}
 	finally{
+		ConnectionUtil.closePreparedStatement(pStatement);//call arder changed by Dilip for PMD Correction 
 		ConnectionUtil.closeConnection(connection);
-		ConnectionUtil.closePreparedStatement(pStatement);
 	}
 	
   }

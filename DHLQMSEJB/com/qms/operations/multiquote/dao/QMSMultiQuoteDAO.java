@@ -7659,6 +7659,15 @@ public CostingMasterDOB getQuoteRateInfo(CostingHDRDOB costingHDRDOB,ESupplyGlob
               { rs.close();}
             if(cStmt!=null)
               { cStmt.close();}
+         // Added by Dilip for PMD Correction on 22/09/2015
+            if(rs2!=null){ 
+            	rs2.close();
+            	rs2=null;
+            }
+            if(pstmt1!=null){ 
+            	pstmt1.close();
+            	pstmt1=null;
+            }
             if(connection!=null)
               { connection.close();}
           }catch(SQLException e)

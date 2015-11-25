@@ -1547,6 +1547,7 @@ psmt  = connection.prepareStatement(s);
 		{
 			try
 			{
+				ConnectionUtil.closePreparedStatement(psmtSub,rsSub);// Added by Dilip for PMD Correction on 22/09/2015	
 				ConnectionUtil.closeConnection(connection,psmt,rs);
        // ConnectionUtil.closeConnection(null,stmt,null); //Commented By RajKumari on 27-10-2008 for Connection Leakages.
 			}
@@ -2705,6 +2706,20 @@ psmt  = connection.prepareStatement(s);
 		}
 		finally
 		{
+			try
+			{	if(rs!=null){
+		          rs.close();
+		          rs=null;
+				}
+		      if(psmt!=null){
+		        psmt.close();
+		        psmt=null;
+		      }
+		      if(psmt1!=null){
+		        psmt1.close();
+		        psmt1=null;
+		      }
+			}catch(Exception e){}
 			try
 			{
 				ConnectionUtil.closeConnection(connection,psmt,rs);
@@ -5681,7 +5696,51 @@ psmt  = connection.prepareStatement(s);
     }
     finally
     {
-      ConnectionUtil.closeConnection(connection,cStmt,null);
+    	//Added by Dilip for PMD correction
+    	try{
+			 if(rs!=null){
+		        rs.close();
+		        rs=null;
+			 }
+		     if(rs1!=null){
+		       rs1.close();
+		       rs1=null;
+		     }
+		     if(rs2!=null){
+		       rs2.close(); 
+		       rs2=null;
+		     }
+		     if(ratesRslt!=null){
+		    	ratesRslt.close();
+		    	ratesRslt=null;
+		     }
+		     if(ratesStmt!=null){
+		    	ratesStmt.close();
+		    	ratesStmt=null;
+		     }
+		     if(pstmt!=null){
+		        pstmt.close();
+		        pstmt=null;
+		     }
+		     if(pstmt1!=null){
+		       pstmt1.close();
+		       pstmt1=null;   
+		     }
+		     if(pstmt2!=null){
+		      pstmt2.close();
+		      pstmt2=null;
+		     }
+		     if(pstmt3!=null){
+		        pstmt3.close();
+		        pstmt3=null;    
+		     }
+		    if(cStmt!=null){
+			 cStmt.close();
+			 cStmt=null;
+		    }
+   	}catch(Exception e){}
+      //ConnectionUtil.closeConnection(connection,cStmt,null);
+    	ConnectionUtil.closeConnection(connection,null,null);
     }
     return quoteId;  //@@ Commented by subrahmanyam for the enhancement #146970 on 05/12/2008
    // return quoteId;

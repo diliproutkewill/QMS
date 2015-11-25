@@ -366,6 +366,7 @@ public class SellChargesDAO
         {
           if(cstmt!=null)
           { cstmt.close();}
+          ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
           if(connection!=null)
           { connection.close();}
         }catch(SQLException e)

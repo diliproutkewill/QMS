@@ -42,6 +42,7 @@ import java.sql.Timestamp;
 //import com.foursoft.esupply.common.util.Logger;
 import org.apache.log4j.Logger;
 import com.foursoft.esupply.common.java.FoursoftWebConfig;
+import com.foursoft.esupply.common.util.ConnectionUtil;
  
 public final class RawData 
 {
@@ -328,6 +329,13 @@ public final class RawData
 		} catch(SQLException sqe) {
 			//Logger.error(FILENAME,"SQL Excpetion while checking data", sqe );
       logger.error(FILENAME+"SQL Excpetion while checking data"+ sqe );
+		}finally{// Added by Dilip for PMD Correction on 23/09/2015
+			try{
+				if(rsTableData!=null){
+					rsTableData.close();
+					rsTableData=null;
+				}
+			}catch(Exception e){}	
 		}
     
   

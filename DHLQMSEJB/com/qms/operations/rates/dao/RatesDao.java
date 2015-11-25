@@ -1826,6 +1826,7 @@ public class RatesDao
 	  
 //@@ Added by subrahmanyam for the pbn id: 211196 on 20-Jul-10	  
 	  PreparedStatement pstmt1 = null;
+	  ResultSet rs1= null;// Added by Dilip for PMD Correction on 22/09/2015
 	 String lovSize	= "SELECT PARAM_VALUE FROM FS_USER_PREFERENCES WHERE USERID='"+loginBean.getUserId()+"'"+" AND LOCATIONID='"+loginBean.getTerminalId()+"' AND  PARAM_NAME='segmentSize'";
 //@@ Ended by subrahmanyam for the pbn id: 211196 on 20-Jul-10
 	
@@ -1852,7 +1853,8 @@ public class RatesDao
         // csmt = connection.prepareCall("{CALL qms_buy_rates_pkg.buy_rates_proc(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)} ");
  //@@ Added by subrahmanyam for the pbn id: 211196 on 20-Jul-10        
           pstmt1 = connection.prepareStatement(lovSize);
-          ResultSet rs1 =pstmt1.executeQuery();
+          //ResultSet rs1 =pstmt1.executeQuery();
+          rs1 =pstmt1.executeQuery();
           int lovsizeVal=0;
 		if(rs1.next())
         	  lovsizeVal = rs1.getInt(1);
@@ -2702,6 +2704,7 @@ public class RatesDao
           srRs.close();
           if(srchargeStmt != null)
 		    srchargeStmt.close();
+          ConnectionUtil.closePreparedStatement(pstmt1,rs1);// Added by Dilip for PMD Correction on 22/09/2015
          if(srConnection != null)
           srConnection.close();
             
@@ -6168,6 +6171,9 @@ public String upLoadcreateBuyFlatRate(RateDOB rateDOB,ArrayList list,Connection 
               if(pStmtFreq!=null)//@@Added now by Kameswari
              pStmtFreq.close(); 
               ConnectionUtil.closeStatement(pStmtb,rs);  // Added by Gowtham
+              ConnectionUtil.closePreparedStatement(pStmtCount,rsCount);// Added by Dilip for PMD Correction on 22/09/2015
+              ConnectionUtil.closePreparedStatement(pStmtQuote,rsQuote);// Added by Dilip for PMD Correction on 22/09/2015
+              ConnectionUtil.closePreparedStatement(pstmtSelectQuoteId,rsSelectQuoteId);// Added by Dilip for PMD Correction on 22/09/2015
              /*if(connection!=null)
              connection.close();*/
            }catch(SQLException e)

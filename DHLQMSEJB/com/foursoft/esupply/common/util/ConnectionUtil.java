@@ -133,6 +133,57 @@ public class ConnectionUtil
 			throw new EJBException( "Exceptions trying to close connection!" );
 		}
 	}// end of closeConnection( Connection conn, Statement st )
+	
+	//Added by Dilip for PMD  correction	
+	public static void closeConnection( Connection conn, PreparedStatement st, ResultSet rs)
+	{
+			boolean closeError = false;
+
+			if( rs != null )
+			{
+				try
+				{
+					rs.close();
+					rs = null;
+				}
+				catch( SQLException e )
+				{
+					e.printStackTrace( System.err );
+					closeError = true;
+				}
+			}
+
+			if( st != null )
+			{
+				try
+				{
+					st.close();
+					st = null;
+				}
+				catch( SQLException e )
+				{
+					e.printStackTrace( System.err );
+					closeError = true;
+				}
+			}
+			if( conn != null )
+			{
+				try
+				{
+					conn.close();
+					conn = null;
+				}
+				catch( SQLException e )
+				{
+					e.printStackTrace( System.err );
+					closeError = true;
+				}
+			}
+			if( closeError )
+			{
+				throw new EJBException( "Exceptions trying to close connection!" );
+			}
+	}// end of closeConnection( Connection conn, PreparedStatement st, ResultSet rs )
 
 	public static void closePreparedStatement(PreparedStatement pStmt, ResultSet rs)
 	{

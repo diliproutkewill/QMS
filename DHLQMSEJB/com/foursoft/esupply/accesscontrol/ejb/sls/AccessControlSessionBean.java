@@ -153,7 +153,10 @@ public class AccessControlSessionBean implements SessionBean
 		
 		String USER_LEVEL = null;
 		String ROLE_LEVEL = null;
-    String EMP_ID     = null;
+		String EMP_ID     = null;
+		// added by Dilip for PMD Correction on 22/09/2015
+		PreparedStatement pstmt=null;
+		ResultSet rs = null;
 		try
 	  	{
         	makeConnection();
@@ -188,11 +191,11 @@ public class AccessControlSessionBean implements SessionBean
       
 
       
-			PreparedStatement pstmt = connection.prepareStatement(ESPQuery);
+			pstmt = connection.prepareStatement(ESPQuery);
 			pstmt.setString(1, userId);
 			pstmt.setString(2, locationId);
 
-			ResultSet rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			
 			if(rs.next())
 			{
@@ -329,7 +332,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection);
+			//ConnectionUtil.closeConnection(connection);
+			ConnectionUtil.closeConnection(connection, pstmt,rs);// added by Dilip for PMD Correction on 22/09/2015
 		}
 
 		return globalParameters;
@@ -712,7 +716,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection);
+			//ConnectionUtil.closeConnection(connection);
+			ConnectionUtil.closeConnection(connection, pstmt,rs);// added by Dilip for PMD Correction on 22/09/2015
 		}
 		globalParameters.setUserId(userId);
 		globalParameters.setCustWHId(custWHId);
@@ -917,7 +922,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, pstmt);
+			//ConnectionUtil.closeConnection(connection, pstmt);
+			ConnectionUtil.closeConnection(connection, pstmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return userPermissions;
 	} // end of getRolePermissions(String roleId, String locationId)
@@ -975,7 +981,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, pstmt);
+			//ConnectionUtil.closeConnection(connection, pstmt);
+			ConnectionUtil.closeConnection(connection, pstmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015 
 		}
 		return shipmentMode;
 	} // end of getRolePermissions(String roleId, String locationId)
@@ -1023,7 +1030,8 @@ public class AccessControlSessionBean implements SessionBean
         }
 		finally
 		{
-			ConnectionUtil.closeStatement(pstmt);
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 
 		return isValid;
@@ -1058,7 +1066,8 @@ public class AccessControlSessionBean implements SessionBean
         }
 		finally
 		{
-			ConnectionUtil.closeStatement(pstmt);
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 
 		return isLocked;
@@ -1131,6 +1140,9 @@ public class AccessControlSessionBean implements SessionBean
 			String custWHId = null;
 			String terminalId = null;
 			String licenseeId = null;
+			// added by Dilip for PMD Correction on 22/09/2015
+			PreparedStatement pstmt	=	null;
+			ResultSet rsPrj = null;
 			try
 			{
 				stmt = connection.createStatement();
@@ -1189,7 +1201,7 @@ public class AccessControlSessionBean implements SessionBean
 						rs.close();
 					////////////////////
 
-					PreparedStatement pstmt	=	null;
+					//PreparedStatement pstmt	=	null;
 					 int custwhListSize		= custwhList.size();//Added for loop performance
 					ArrayList	permittedWHIds	= new ArrayList();
 
@@ -1221,7 +1233,7 @@ public class AccessControlSessionBean implements SessionBean
 
 					pstmt = connection.prepareStatement("SELECT PROJECTID FROM FS_LG_CUSTWHMASTER WHERE CUSTWHID= ?");
 
-					ResultSet rsPrj = null;
+					//ResultSet rsPrj = null;
 
 					Hashtable projectTable = new Hashtable();
 					
@@ -1336,7 +1348,9 @@ public class AccessControlSessionBean implements SessionBean
 			}
 			finally
 			{
-				ConnectionUtil.closeStatement(stmt);
+				//ConnectionUtil.closeStatement(stmt);
+				ConnectionUtil.closePreparedStatement(pstmt,rsPrj);// Added by Dilip for PMD Correction on 22/09/2015
+				ConnectionUtil.closeStatement(stmt,rs);// added by Dilip for PMD Correction on 22/09/2015
 			}
 			
 			return globalParameters;
@@ -1481,7 +1495,9 @@ public class AccessControlSessionBean implements SessionBean
       logger.warn(FILE_NAME+" getEPCredentials(ESupplyGlobalParameters globalParameters, String roleLevel, String locationId) : "+sqle.getMessage());
             throw FoursoftException.getException(sqle,FILE_NAME,"getEPCredentials()");
 		} finally {
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);//Modified by Dilip for PMD Correction on 22/09/2015
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		
 		return globalParameters;
@@ -1522,7 +1538,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return userTerminalType;	
 	}
@@ -1563,7 +1580,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return companyId;	
 	}
@@ -1624,7 +1642,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return currencyId;	
 	}
@@ -1681,7 +1700,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 			ConnectionUtil.closeConnection(connection);
 		}
 		return currencyId;	
@@ -1747,7 +1767,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 			ConnectionUtil.closeConnection(conn);
 		}
 		return currencyId;	
@@ -1790,7 +1811,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return flag;	
 	}
@@ -1838,7 +1860,8 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(stmt);
+			//ConnectionUtil.closeStatement(stmt);
+			ConnectionUtil.closeStatement(stmt,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		return timeZone;			
 
@@ -1963,8 +1986,10 @@ public class AccessControlSessionBean implements SessionBean
 		{
 			try
 			{
-				ConnectionUtil.closeStatement(pstmt);
-				ConnectionUtil.closeStatement( pstmt1);
+				//ConnectionUtil.closeStatement(pstmt);
+				//ConnectionUtil.closeStatement( pstmt1);
+				ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
+				ConnectionUtil.closePreparedStatement(pstmt1,rs);// Added by Dilip for PMD Correction on 22/09/2015
 				ConnectionUtil.closeConnection( con );
 			}
 			catch(Exception e)
@@ -2039,9 +2064,10 @@ public class AccessControlSessionBean implements SessionBean
             throw FoursoftException.getException(e,FILE_NAME,"getUserPreferences()");
 		} finally {
 			try {
-				if(rs!=null)
+				/*if(rs!=null)
 					rs.close();
-				ConnectionUtil.closeStatement(pstmt);
+				ConnectionUtil.closeStatement(pstmt);*/
+				ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 			} catch(Exception e) { }
 			
 			// Create the value object
@@ -2166,7 +2192,9 @@ public class AccessControlSessionBean implements SessionBean
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, pstmt1);
+			//ConnectionUtil.closeConnection(connection, pstmt1);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
+			ConnectionUtil.closeConnection(connection, pstmt1,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 		}
 		
 		return userPermissions;
@@ -2606,13 +2634,13 @@ private  HashMap  getCodeCustProjectLevel(String accessType,String locationId,Co
   }finally
   {
    
-  if(pStmt1 != null)
-    pStmt1.close();//Modified By RajKumari on 23-10-2008 for Connection Leakages.
+  /*if(pStmt1 != null)
+    pStmt1.close();//Modified By RajKumari on 23-10-2008 for Connection Leakages.*/
+  ConnectionUtil.closePreparedStatement(pStmt1,rs1);// Added by Dilip for PMD Correction on 22/09/2015 	  
   if(rs!= null)
     rs.close();
   if(pStmt != null)
     pStmt.close();
-    
   }
 
   return hMap;

@@ -1980,6 +1980,7 @@ private String getNextVersionQuote(String quoteId)
             rs.close();
           if(cstmt!=null)
           { cstmt.close();}
+          ConnectionUtil.closeStatement(statusReasonstmt,statusReasonRs);// Added by Dilip for PMD Correction on 22/09/2015
           if(connection!=null)
           { connection.close();}
         }catch(SQLException e) 
@@ -3402,6 +3403,7 @@ private String getNextVersionQuote(String quoteId)
             cstmt.close();
           if(pStmt!=null)
           { pStmt.close();}
+          ConnectionUtil.closePreparedStatement(pStmt4,rs4);// Added by Dilip for PMD Correction on 22/09/2015
           if(connection!=null)
           { connection.close();}
         }catch(SQLException e) 

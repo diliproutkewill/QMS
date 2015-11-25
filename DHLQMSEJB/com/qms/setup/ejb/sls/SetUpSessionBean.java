@@ -1081,6 +1081,11 @@ public ArrayList getCustomerDetail(String customerId, ESupplyGlobalParameters es
 		  {
 		      try
 		      {
+		    	// Added by Dilip for PMD Correction on 23/09/2015
+			    if(rs!=null){
+			    	rs.close();
+			    	rs=null;
+			    } 
 		       if(stmt!=null)
 				 {stmt.close();	}		   
 			   if(connection!=null)
@@ -8838,6 +8843,11 @@ public String deleteVendorDetails(String vendorId)
           {
 					pstmt.close();
           }*///Commented By RajKumari on 30-10-2008 for Connection Leakages.
+					// Added by Dilip for PMD Correction on 23/09/2015
+					if(rs!=null){
+			            rs.close();
+			            rs=null;
+					}			
 					if(pstmt1!=null)
           {
 					pstmt1.close();
@@ -8955,6 +8965,11 @@ public String deleteVendorDetails(String vendorId)
 			{
 				try
 				{
+					// Added by Dilip for PMD Correction on 23/09/2015
+					if(rs!=null){
+			            rs.close();
+			            rs=null;
+					}
 					if(pstmt!=null)
           {
 					pstmt.close();
@@ -13352,11 +13367,13 @@ public String[][] getGatewayDetails(String values,int count)
         }
        	finally
 		{
-			ConnectionUtil.closeConnection(con,pstmtGetAcctMasterInfo);
-			ConnectionUtil.closeConnection(null,pstmtSetAcctMasterInfo);
+			//ConnectionUtil.closeConnection(con,pstmtGetAcctMasterInfo);
+ 			ConnectionUtil.closeConnection(null,pstmtSetAcctMasterInfo);
 			ConnectionUtil.closeConnection(null,pstmtSetOpgBalInfo);
-			ConnectionUtil.closeConnection(null,pstmtGetVoucherTypes);
+			//ConnectionUtil.closeConnection(null,pstmtGetVoucherTypes);
 			ConnectionUtil.closeConnection(null,pstmtSetVoucherTypes);
+			ConnectionUtil.closePreparedStatement(pstmtGetVoucherTypes,rsVoucherTypes);// Added by Dilip for PMD Correction on 23/09/2015
+			ConnectionUtil.closeConnection(con,pstmtGetAcctMasterInfo,rsAcctMaster);
 		}	  
 
  	}
@@ -20999,9 +21016,9 @@ public ArrayList getLocIds(String searchString,String searchString2,String termi
       finally
       {
         chargeDOB    =    null;
-        ConnectionUtil.closeConnection(connection,pStmt,resultSet);
+        ConnectionUtil.closePreparedStatement(pStmtsub,subResultSet);// Added by Dilip for PMD Correction on 23/09/2015
         ConnectionUtil.closeConnection(null,pStmtsub,null);
-        
+        ConnectionUtil.closeConnection(connection,pStmt,resultSet);
       }
       return chargeList;
     }
@@ -21259,7 +21276,8 @@ public ArrayList getLocIds(String searchString,String searchString2,String termi
 				finally
 			 	{
 					ConnectionUtil.closeConnection(connection,pStmt);
-          ConnectionUtil.closeConnection(connection,pStmt1);
+          //ConnectionUtil.closeConnection(connection,pStmt1);
+			        ConnectionUtil.closeConnection(connection,pStmt1,rs);// Modified by Dilip for PMD Correction on 22/09/2015
 			 	}
         return "success";
  }
