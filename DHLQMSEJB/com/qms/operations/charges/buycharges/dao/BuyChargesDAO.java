@@ -856,6 +856,11 @@ private static final String selectHdrQry = "SELECT BSM.BUYSELLCHARGEID,BSM.CHARG
       {
         try
         {
+          // Added by Dilip for PMD Correction on 22/09/2015
+           if(rs!=null){ 
+             rs.close();
+          	 rs=null;
+            }
           if(cstmt!=null)
             { cstmt.close();}
           if(pstmt1!=null)
