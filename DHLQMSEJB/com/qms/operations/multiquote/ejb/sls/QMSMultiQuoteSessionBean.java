@@ -3307,8 +3307,9 @@ public StringBuffer validateQuoteId(MultiQuoteMasterDOB masterDOB) throws	EJBExc
   }
   finally
   {
+	ConnectionUtil.closePreparedStatement(pstmt,rs);// call order changed by Dilip for PMD Correction
     ConnectionUtil.closeConnection(connection,null,null); 
-    ConnectionUtil.closePreparedStatement(pstmt,rs);   
+    //ConnectionUtil.closePreparedStatement(pstmt,rs);   
   }
   return errorMessage;
 }
@@ -4029,10 +4030,20 @@ hStmt  = connection.prepareStatement(contactsQry);
 	}
 finally
 {
+	// Added by Dilip for PMD Correction on 22/09/2015
+	  if(multipleReturn!=null){
+		  multipleReturn.close();
+		  multipleReturn=null;
+	  }
+	  if(singleReturn!=null){
+		  singleReturn.close();
+		  singleReturn=null;
+	  }
+	  if(count!=null)
+		  count.close(); // Added by Gowtham on 04Feb2011 for Connection Leaks.
+  ConnectionUtil.closePreparedStatement(idStmt,idReturn);// Added by Dilip for PMD Correction on 22/09/2015
   ConnectionUtil.closeConnection(connection,pStmt,hRs);
   ConnectionUtil.closeConnection(connection,hStmt);
-  if(count!=null)
-	  count.close(); // Added by Gowtham on 04Feb2011 for Connection Leaks.
 }
 return finalDOB;
 
