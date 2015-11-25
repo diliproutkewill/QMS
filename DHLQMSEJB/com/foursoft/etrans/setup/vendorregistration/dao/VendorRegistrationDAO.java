@@ -315,7 +315,8 @@ public class VendorRegistrationDAO
 		{
 			try
 			{
-				ConnectionUtil.closeConnection(connection);
+				//ConnectionUtil.closeConnection(connection);
+				ConnectionUtil.closeConnection(connection,pStmt);// Modified by Dilip for PMD Correction on 22/09/2015
         ConnectionUtil.closeStatement(null,rs);//Added By RajKumari on 24-10-2008 for Connection Leakages.
 			}
 			catch(EJBException e)
@@ -373,7 +374,8 @@ public class VendorRegistrationDAO
 		{
 			try
 			{
-				ConnectionUtil.closeConnection(connection);
+				//ConnectionUtil.closeConnection(connection);
+				ConnectionUtil.closeConnection(connection,pStmt);// Modified by Dilip for PMD Correction on 22/09/2015
 			}
 			catch(EJBException e)
 			{
@@ -583,6 +585,8 @@ public class VendorRegistrationDAO
         logger.error(FILE_NAME+"insertAddressDetails()"+"Exception while inserting  the Addressdetails "+ e);
 				e.printStackTrace();
 				throw new SQLException(e.toString());
+		}finally{
+			ConnectionUtil.closePreparedStatement(pStmt);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		
 	}
@@ -618,6 +622,8 @@ public class VendorRegistrationDAO
         logger.error(FILE_NAME+"insertVendorDetails()"+"Exception while inserting  the insertVendorDetails "+ e);
 				e.printStackTrace();
 				throw new SQLException(e.toString());
+		}finally{
+			ConnectionUtil.closePreparedStatement(pStmt);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		
 	}
