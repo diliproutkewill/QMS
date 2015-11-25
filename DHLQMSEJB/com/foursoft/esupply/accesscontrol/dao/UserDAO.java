@@ -330,7 +330,8 @@ public class UserDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeConnection(connection, pstmt);
+			//ConnectionUtil.closeConnection(connection, pstmt);
+			ConnectionUtil.closeConnection(connection, pstmt,rs);// added by Dilip for PMD Correction on 22/09/2015
 		}
 		if(hasRows)
 			return true;
@@ -614,7 +615,8 @@ public class UserDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(pstmt);
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
       try
       {
       	if(rs1!=null)
@@ -667,7 +669,8 @@ public class UserDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(pstmt);
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return userModel;
 	} // end of loadUserRole(Connection connection)
@@ -714,7 +717,8 @@ public class UserDAO extends BaseDAOImpl
 		}
 		finally
 		{
-			ConnectionUtil.closeStatement(pstmt);
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return userModel;
 	} // end of loadOptionalRoles(Connection connection)
@@ -1102,7 +1106,8 @@ String QUERY_NOT_WITH_PASSWORD =  "UPDATE FS_USERMASTER  SET USERNAME = ?, EMPID
 		finally
 		{
 			//System.out.println("User Preferences : "+userPreferences);
-			ConnectionUtil.closeStatement(pstmt);
+			//ConnectionUtil.closeStatement(pstmt);
+			ConnectionUtil.closePreparedStatement(pstmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 		}
 		return userPreferences;
 	} // end of loadUserMasterAndRole(Connection connection)
@@ -1285,7 +1290,8 @@ String QUERY_NOT_WITH_PASSWORD =  "UPDATE FS_USERMASTER  SET USERNAME = ?, EMPID
         }
         finally
         {
-          ConnectionUtil.closeStatement(pStmt);
+          //ConnectionUtil.closeStatement(pStmt);
+        	ConnectionUtil.closePreparedStatement(pStmt,rs);// Added by Dilip for PMD Correction on 22/09/2015
 			ConnectionUtil.closeStatement(pStmt1);
           
         }
