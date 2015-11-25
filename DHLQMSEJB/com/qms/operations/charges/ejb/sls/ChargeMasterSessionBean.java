@@ -1836,6 +1836,8 @@ public class ChargeMasterSessionBean implements SessionBean
     }
     finally
     {
+      ConnectionUtil.closePreparedStatement(pStmt1,rs1);// Added by Dilip for PMD Correction on 22/09/2015
+      ConnectionUtil.closePreparedStatement(pStmt2,rs2);// Added by Dilip for PMD Correction on 22/09/2015
       ConnectionUtil.closeConnection(connection,pStmt,rs);
     }
     return errors;
