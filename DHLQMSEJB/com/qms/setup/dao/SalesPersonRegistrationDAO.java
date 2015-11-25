@@ -287,6 +287,8 @@ public class SalesPersonRegistrationDAO
             logger.error(FILE_NAME+"Error while Deleting Record"+e.toString());
             ConnectionUtil.closeConnection(connection,pStmt,null);//Modified By RajKumari on 27-10-2008 for Connection Leakages.
             return false;
+          }finally{
+        	  ConnectionUtil.closePreparedStatement(pStmt);// Added by Dilip for PMD Correction on 22/09/2015
           }
           return flag;
       }
