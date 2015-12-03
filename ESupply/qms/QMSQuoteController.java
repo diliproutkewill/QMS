@@ -6290,7 +6290,10 @@ PdfWriter writer                       =null;        //Method: doPDFGeneration D
         if(request.getParameterValues("externalNotes") != null && !"".equals(request.getParameterValues("externalNotes")))
         finalDOB.setExternalNotes(removeEnterForNotes(request.getParameterValues("externalNotes")));
         else//esle condition added by govind for the issue not getting th einternal and external notes in quote escalated view
-        finalDOB.setInternalNotes(removeEnterForNotes(finalDOB.getExternalNotes()));	
+        //@@Commented by Anusha V for the issue not appearing internal notes in quote escalated view
+        //finalDOB.setInternalNotes(removeEnterForNotes(finalDOB.getExternalNotes()));	
+        //@@Added by Anusha V for the issue not appearing internal notes in quote escalated view
+          finalDOB.setExternalNotes(removeEnterForNotes(finalDOB.getExternalNotes()));	
         //@@Ended for the notes Issue 194328
         originChargeSelectedFlag = request.getParameterValues("originChargeSelectedFlag");//@@ Added by subrahmanyam for the Enhancement 154381 on 14/02/09    
          destChargeSelectedFlag = request.getParameterValues("destChargeSelectedFlag");//@@ Added by subrahmanyam for the Enhancement 154381 on 14/02/09    
